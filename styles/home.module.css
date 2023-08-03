@@ -1,0 +1,5 @@
+.hero__main_image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}

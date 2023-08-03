@@ -1,0 +1,82 @@
+@import url(https://fonts.bunny.net/css?family=asap:300,300i,400,400i,500,500i,600,700,800,900);
+
+.main_nav__nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.main_nav__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    background-color: #fff;
+    box-shadow:
+    0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075),
+    0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075),
+    0 16px 16px hsl(0deg 0% 0% / 0.075);
+}
+
+@media (prefers-color-scheme: dark) {
+    .main_nav__container {
+        background-color: #333;
+    }
+}
+
+.main_nav__logo {
+    width: 100%;
+    object-fit: cover;
+}
+
+.main_nav__navLinks {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 10000;
+    visibility: hidden;
+    list-style: none;
+}
+
+.main_nav__navLinks li {
+    /* font-family: 'Asap', sans-serif; */
+    padding: 8px 15px;
+    margin: 5px 0;
+    /* background-color: #333; */
+}
+
+.main_nav__social_icons {
+    display: flex;
+    list-style: none;
+}
+
+.main_nav__social_icons li {
+    margin: 0 5px;
+}
+
+.main_nav__navLinks li:hover,
+.main_nav__social_icons li {
+    color: orange;
+}
+
+@media screen and (min-width: 767px) {
+    .main_nav__navLinks {
+        flex-direction: row;
+        justify-content: space-around;
+        position: relative;
+        visibility: visible;
+    }
+
+    .main_nav__navLinks li {
+        background-color: transparent;
+    }
+
+    .main_nav__toggle {
+        display: none;
+    }
+}
