@@ -1,4 +1,4 @@
-import Navigation from "./navigation/navigation.component";
+import Navigation from "./navigation.component";
 import Footer from "./footer/footer.component";
 
 export default function Layout({ children }) {

@@ -45,3 +45,10 @@ export async function getStaticProps() {
     revalidate: 60, // In seconds
   };
 }
+
+export async function getThreeLatestPosts() {
+  const response = await fetch('https://shop.webcheddar.ca/wp-json/wp/v2/posts?_embed&per_page=3');
+  const posts = await response.json();
+
+  return posts;
+}

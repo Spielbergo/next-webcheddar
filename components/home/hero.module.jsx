@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import heroImage from '../../../assets/images/hero/header.webp';
+import heroImage from '../../assets/images/hero/header.webp';
 
-import styles from '../../../styles/home.module.css';
+import styles from '../../styles/home.module.css';
 
 const Hero = () => {
     return (

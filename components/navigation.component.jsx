@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from '../../styles/navigation.module.css';
+import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 
-import NavLogoWhite from '../../assets/images/logos/web-cheddar-logo-white.png';
-import NavLogoBlack from '../../assets/images/logos/web-cheddar-logo-black.png';
+import styles from '../styles/navigation.module.css';
+
+import NavLogoWhite from '../assets/images/logos/web-cheddar-logo-white.png';
+import NavLogoBlack from '../assets/images/logos/web-cheddar-logo-black.png';
 
 const Navigation = () => {
     return (
@@ -47,9 +49,9 @@ const Navigation = () => {
               {/* Social Icons */}
               <div>
                 <ul className={styles.main_nav__social_icons}>
-                  <li>F</li>
-                  <li>I</li>
-                  <li>L</li>
+                  <li><FaFacebookF /></li>
+                  <li><FaInstagram /></li>
+                  <li><FaLinkedin /></li>
                 </ul>
               </div>
               {/* Mobile Nav Menu Toggle */}

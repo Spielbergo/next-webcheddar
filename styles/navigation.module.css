@@ -61,7 +61,7 @@
 
 .main_nav__navLinks li:hover,
 .main_nav__social_icons li {
-    color: orange;
+    color: var(--primary-orange);
 }
 
 @media screen and (min-width: 767px) {

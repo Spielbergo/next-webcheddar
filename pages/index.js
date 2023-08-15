@@ -1,11 +1,25 @@
-import Hero from './home/hero/hero.module';
-import Clients from './home/clients/clients.module';
+import Hero from '../components/home/hero.module';
+import Clients from '../components/home/clients.module';
+import Services from '../components/home/services.module';
+import OurWork from '../components/home/our-work.module';
+import WhyChooseUs from '../components/home/why-choose-us.module';
+import TestimonialSlider from '../components/TestimonialSlider.component';
+import ContactHome from '../components/home/ContactHome.module';
 
-const Home = () => {
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
+
+const Home = ({ posts }) => {
   return (    
     <>
       <Hero />  
       <Clients /> 
+      <WhyChooseUs />
+      <Services />
+      <OurWork />      
+      <TestimonialSlider />
+      <ContactHome />
     </>
   )
 }
