@@ -1,5 +1,8 @@
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+
+
 import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { navigation } from '../constants';
 
@@ -8,17 +11,24 @@ import styles from '../styles/navigation.module.css';
 import NavLogoWhite from '../assets/images/logos/web-cheddar-logo-white.png';
 import NavLogoBlack from '../assets/images/logos/web-cheddar-logo-black.png';
 
-const socialIcons = [
-  "FaFacebookF",
-  "FaInstagram",
-  "FaLinkedin",
-];
-
 const Navigation = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
     return (
         <>
-          <nav className={styles.main_nav__nav}>
-            <div className={styles.main_nav__container}>
+          <nav className={styles.main_nav__nav} style={{ backgroundColor: scrolled ? '#333' : 'transparent' }}>
+            <div className={styles.main_nav__container} style={{ boxShadow: scrolled ? '0 1px 1px hsl(0deg 0% 0% / 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075), 0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);' : 'none' }}>
               {/* Nav Logo */}
               <div>
                 <Link href="/">
