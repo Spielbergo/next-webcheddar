@@ -12,8 +12,8 @@ import { clientLogos } from '../../constants/index';
                     <Image  
                         src={client.image}
                         alt={client.alt}
-                        width={250}
-                        height={100}
+                        width={125}
+                        height={50}
                     />
                 </li>
             )}

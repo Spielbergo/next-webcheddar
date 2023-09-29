@@ -35,7 +35,7 @@ export default function Blog({ posts }) {
 }
 
 export async function getStaticProps() {
-  const response = await fetch('https://shop.webcheddar.ca/wp-json/wp/v2/posts?_embed');
+  const response = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/posts/?_embed');
   const posts = await response.json();
 
   return {
@@ -47,7 +47,7 @@ export async function getStaticProps() {
 }
 
 export async function getThreeLatestPosts() {
-  const response = await fetch('https://shop.webcheddar.ca/wp-json/wp/v2/posts?_embed&per_page=3');
+  const response = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/posts/?_embed&per_page=3');
   const posts = await response.json();
 
   return posts;

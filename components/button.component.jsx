@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-
  
 export default function Button() {
   const router = useRouter()

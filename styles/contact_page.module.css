@@ -1,0 +1,20 @@
+.contact_page__container {
+    padding: 75px 15px;
+}
+
+.contact_page__title {
+    text-align: center;
+    padding: 75px 0;
+}
+
+.contact_page__details li {
+    list-style: none;
+}
+
+.contact_page__form_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+}

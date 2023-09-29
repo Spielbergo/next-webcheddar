@@ -9,7 +9,7 @@ export default function Post({ post }) {
   const router = useRouter();
 
   if (router.isFallback) {
-    return <div>Loading...</div>
+    return <div className='blog_loader'>Loading...</div>
   }
 
   return (
@@ -51,7 +51,7 @@ export default function Post({ post }) {
 }
 
 export async function getStaticPaths() {
-  const response = await fetch('https://shop.webcheddar.ca/wp-json/wp/v2/posts?_embed');
+  const response = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/posts/?_embed');
   const posts = await response.json();
 
   const paths = posts.map((post) => ({
@@ -62,7 +62,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const response = await fetch(`https://shop.webcheddar.ca/wp-json/wp/v2/posts?_embed&slug=${params.slug}`);
+  const response = await fetch(`https://www.webcheddar.ca/blog/wp-json/wp/v2/posts/?_embed&slug=${params.slug}`);
   const posts = await response.json();
   const post = posts[0];
 

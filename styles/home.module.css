@@ -9,8 +9,32 @@
 
 .hero__main_image {
     width: 100%;
-    height: auto;
+    height: 650px;
     object-fit: cover;
+    opacity: 0.1;
+}
+
+.hero__container {
+    width: 100%;
+    height: 650px;
+    background-image: linear-gradient(to right top, #fd7304, #d55227, #a7392e, #75272c, #441a21, #441a21, #441a21, #441a21, #75272c, #a7392e, #d55227, #fd7304);
+}
+
+.hero__title {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 650px;
+    max-width: 82%;
+    padding: 0 15px;
+}
+
+.hero__title h2 {
+    font-size: 1rem;
 }
 
 /* Client Logos */
@@ -20,15 +44,20 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: auto;
-    padding: 75px 15px;
+    padding: 25px 15px;
+    background-color: #222;
     list-style: none;
 }
 
 .client_logos__logo img {
     object-fit: contain;
     filter: grayscale(1);
+}
+
+.client_logos__logo img:hover {
+    filter: grayscale(0);
 }
 
 /* Services Section */
@@ -55,10 +84,11 @@
     text-align: center;
     /* background-color: #1f1f27;
     background-image: linear-gradient(160deg, #1f1f27 0%, #3d21df 100%); */
-    background-color: #1f1f27;
-    background-image: linear-gradient(160deg, #1f1f27 0%, #261395 100%);
-    border: 2px solid #261395;
+    background-color: #0f0f12;
+    background-image: linear-gradient(160deg, #0f0f12 0%, var(--primary-orange) 100%);
+    border: 2px solid var(--primary-orange);
     border-radius: 10px;
+
 }
 
 .services_home__card img {
@@ -69,6 +99,7 @@
     padding: 10px;
     border-radius: 50%;
     background-color: #fff;
+    color: var(--primary-orange);
 
 }
 
@@ -85,6 +116,38 @@
     .services_home__card {
         color: #fff;
     }
+}
+
+/* Our Work Section */
+.cards__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 25px;
+    max-width: 80%;
+    margin: auto;
+    padding: 0 15px;
+}
+
+.cards__card {
+    display: flex;
+    flex-direction: column;
+    max-width: 360px;
+}
+
+.cards__card img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.cards__text_container {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #333;
+}
+
+.cards__title {
+    font-size: 1.2rem;
 }
 
 /* Text */

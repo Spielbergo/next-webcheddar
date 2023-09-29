@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
     return (
         <>
         <Head>
-            
+            <meta ></meta>
         </Head>
         <Layout>
             <Component {...pageProps} />

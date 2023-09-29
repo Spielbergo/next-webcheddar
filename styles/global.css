@@ -97,7 +97,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-    padding-top: 75px;
+    /* padding-top: 75px; */
 }
 
 a {
@@ -110,10 +110,17 @@ button {
   padding: 10px 20px;
   background-color: var(--primary-orange);
   border-radius: 5px;
+  width: 15%;
+  cursor: pointer;
 }
 
 .button {
   margin-top: 20px;
+}
+
+.button:hover,
+button:hover {
+  filter: brightness(1.2);
 }
 
 .shadow {
@@ -123,6 +130,17 @@ button {
     0 4px 4px hsl(0deg 0% 0% / 0.075),
     0 8px 8px hsl(0deg 0% 0% / 0.075),
     0 16px 16px hsl(0deg 0% 0% / 0.075);
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-none {
+  list-style: none;
 }
 
 @media (prefers-color-scheme: dark) {

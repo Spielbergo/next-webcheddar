@@ -1,3 +1,47 @@
+export const navigation = [
+    {
+        id: "home",
+        anchor: 'Home',
+        link: '/',
+    },
+    {
+        id: "about",
+        anchor: 'About',
+        link: '/about',
+    },
+    {
+        id: "services",
+        anchor: 'Services',
+        link: '/services',
+    },
+    {
+        id: "blog",
+        anchor: 'Blog',
+        // link: 'https://www.webcheddar.ca/blog',
+        link: '/blog',
+    },
+    {
+        id: "contact",
+        anchor: 'Contact',
+        link: '/contact',
+    },
+];
+
+export const socialIcons = [
+    {
+        id: "facebook",
+        icon: "FaFacebookF",
+    },
+    {
+        id: "instagram",
+        icon: "FaInstagram",
+    },
+    {
+        id: "linkedin",
+        icon: "FaLinkedin",
+    },
+];
+
 export const clientLogos = [
     {
         id: "uoft",
@@ -125,3 +169,46 @@ export const testimonials = [
         image: "/logos/clients/croc-rock.png",
     },
   ];
+
+export const projectsHome = [
+    {
+        id: 'project-1',
+        title: 'University of Toronto',
+        text: 'Med Store',
+        image: '/projects/uoft.jpg',
+        alt: 'University of Toronto Med Store Website Screenshot',
+    },
+    {
+        id: 'project-2',
+        title: 'Smash Pets',
+        text: 'Pet Care',
+        image: '/projects/smashpets.jpg',
+        alt: 'Smash Pets  Website Screenshot'
+    },
+    {
+        id: 'project-3',
+        title: 'Rosemary Hutton',
+        text: 'Author',
+        image: '/projects/rohutton.jpg',
+        alt: 'Rosemary Hutton Website Screenshot',
+    }
+]
+
+export const contactDetails = [
+    {
+        id: 'contact-name',
+        detail: 'Web Cheddar'
+    },
+    {   
+        id: 'contact-city',
+        detail: 'Toronto, ON'
+    },
+    {
+        id: 'contact-email',
+        detail: 'info@webcheddar.ca'
+    },
+    {   
+        id: 'contact-phone',
+        detail: '647-339-9475'
+    },
+]
