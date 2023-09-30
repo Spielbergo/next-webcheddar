@@ -119,15 +119,10 @@ button {
   margin-top: 20px;
 }
 
-.button:hover,
+/* .button:hover,
 button:hover {
   filter: brightness(1.2);
-}
-
-.button .inverted {
-  background-color: transparent;
-  border: 1px solid var(--primary-orange);
-}
+} */
 
 .shadow {
   box-shadow:

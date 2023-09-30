@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import styles from '../styles/contact_form.module.css';
+import buttonStyles from '../styles/button.module.css';
 
 export default function ContactForm() {
   const [formState, setFormState] = useState({
@@ -100,7 +101,7 @@ export default function ContactForm() {
           onChange={handleChange}
         />
       </div>
-      <button type="submit" disabled={isSubmitting}>
+      <button className={buttonStyles.default} type="submit" disabled={isSubmitting}>
         {isSubmitting ? 'Submitting...' : 'Submit'}
       </button>
       {error && <p style={{ color: 'red' }}>{error}</p>}
