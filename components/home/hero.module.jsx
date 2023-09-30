@@ -17,7 +17,7 @@ const Hero = () => {
                     <h1>Web Cheddar</h1>
                     <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique maxime, rem molestias</h2>
                     <Button 
-                        variant="default" 
+                        variant="default__home" 
                         onClick={() => router.push('/services')}>
                         Learn More
                     </Button>
