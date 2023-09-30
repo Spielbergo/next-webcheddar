@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import styles from '../styles/contact_form.module.css';
+
 export default function ContactForm() {
   const [formState, setFormState] = useState({
     firstName: '',
@@ -50,13 +52,14 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.contact_form__form}>
       <div>
         <label htmlFor="firstName">First Name:</label>
         <input
           type="text"
           name="firstName"
           id="firstName"
+          placeholder="First Name"
           required
           value={formState.firstName}
           onChange={handleChange}
@@ -68,6 +71,7 @@ export default function ContactForm() {
           type="text"
           name="lastName"
           id="lastName"
+          placeholder="Last Name"
           required
           value={formState.lastName}
           onChange={handleChange}
@@ -79,6 +83,7 @@ export default function ContactForm() {
           type="email"
           name="email"
           id="email"
+          placeholder="Email Address"
           required
           value={formState.email}
           onChange={handleChange}
@@ -89,6 +94,7 @@ export default function ContactForm() {
         <textarea
           name="message"
           id="message"
+          placeholder="Message"
           required
           value={formState.message}
           onChange={handleChange}

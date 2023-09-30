@@ -26,9 +26,9 @@ const Navigation = () => {
   }, []);
 
     return (
-        <>
-          <nav className={styles.main_nav__nav} style={{ backgroundColor: scrolled ? '#333' : 'transparent' }}>
-            <div className={styles.main_nav__container} style={{ boxShadow: scrolled ? '0 1px 1px hsl(0deg 0% 0% / 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075), 0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);' : 'none' }}>
+        <>  
+          <nav className={`${styles.main_nav__nav} ${scrolled ? styles.main_nav__scrolled : ''}`}>
+            <div className={`${styles.main_nav__container} ${scrolled ? styles.main_container__scrolled : ''}`}>
               {/* Nav Logo */}
               <div>
                 <Link href="/">

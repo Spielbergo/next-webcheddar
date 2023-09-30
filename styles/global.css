@@ -110,7 +110,6 @@ button {
   padding: 10px 20px;
   background-color: var(--primary-orange);
   border-radius: 5px;
-  width: 15%;
   cursor: pointer;
 }
 

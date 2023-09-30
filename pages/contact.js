@@ -1,4 +1,5 @@
 import ContactForm from "../components/ContactForm";
+import GoogleMaps from "../components/googleMaps.component";
 import { contactDetails } from "../constants/index"
 
 import styles from "../styles/contact_page.module.css";
@@ -23,7 +24,9 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
+            <GoogleMaps />
         </section>
+        
     )
 }
 

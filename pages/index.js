@@ -4,7 +4,6 @@ import Services from '../components/home/services.module';
 import OurWork from '../components/home/our-work.module';
 import WhyChooseUs from '../components/home/why-choose-us.module';
 import TestimonialSlider from '../components/TestimonialSlider.component';
-import ContactHome from '../components/home/ContactHome.module';
 
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -19,7 +18,6 @@ const Home = ({ posts }) => {
       <Services />
       <OurWork />      
       <TestimonialSlider />
-      <ContactHome />
     </>
   )
 }

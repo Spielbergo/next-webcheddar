@@ -1,0 +1,15 @@
+.contact_form__form > div input,
+.contact_form__form > div textarea {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.contact_form__form > div label {
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    font-size: 1px;
+    height: 10px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+}
