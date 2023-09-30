@@ -37,6 +37,10 @@
     font-size: 1rem;
 }
 
+.hero__button {
+    cursor: pointer;
+}
+
 /* Client Logos */
 /* FLEXXXXXXXX */
 .client_logos__container {

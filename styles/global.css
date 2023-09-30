@@ -107,9 +107,11 @@ a {
 
 .button,
 button {
+  position: relative;
   padding: 10px 20px;
   background-color: var(--primary-orange);
   border-radius: 5px;
+  z-index: 100000;
   cursor: pointer;
 }
 
@@ -120,6 +122,11 @@ button {
 .button:hover,
 button:hover {
   filter: brightness(1.2);
+}
+
+.button .inverted {
+  background-color: transparent;
+  border: 1px solid var(--primary-orange);
 }
 
 .shadow {

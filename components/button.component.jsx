@@ -1,11 +1,13 @@
-import { useRouter } from 'next/router';
- 
-export default function Button() {
-  const router = useRouter()
- 
+const Button = ({ text, onClick, className }) => {
   return (
-    <button onClick={() => router.push('/services')} className='button'>
-      Learn More
+    <button
+      type="button"
+      onClick={onClick}
+      className={className}
+    >
+      {text}
     </button>
-  )
-}
+  );
+};
+
+export default Button;
