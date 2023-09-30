@@ -16,7 +16,11 @@ const Hero = () => {
                 <div className={styles.hero__title}>
                     <h1>Web Cheddar</h1>
                     <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique maxime, rem molestias</h2>
-                    <Button className='button' text="Learn More" onClick={() => router.push('/services')} />
+                    <Button 
+                        variant="default" 
+                        onClick={() => router.push('/services')}>
+                        Learn More
+                    </Button>
                 </div>
                 <Image 
                     src={heroImage}
