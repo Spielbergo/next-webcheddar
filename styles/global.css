@@ -124,6 +124,13 @@ button:hover {
   filter: brightness(1.2);
 } */
 
+/* Move or delete below */
+.devtools__container {
+  display: flex;
+  padding: 100px;
+}
+/* End move */
+
 .shadow {
   box-shadow:
     0 1px 1px hsl(0deg 0% 0% / 0.075),

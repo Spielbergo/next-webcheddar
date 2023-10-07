@@ -15,6 +15,11 @@ export const navigation = [
         link: '/services',
     },
     {
+        id: "tools",
+        anchor: 'Tools',
+        link: '/devtools',
+    },
+    {
         id: "blog",
         anchor: 'Blog',
         // link: 'https://www.webcheddar.ca/blog',
