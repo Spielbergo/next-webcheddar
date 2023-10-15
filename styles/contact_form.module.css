@@ -19,3 +19,8 @@
     position: absolute;
     color: #fff;
 }
+
+.contact_form__form input::placeholder,
+.contact_form__form textarea::placeholder {
+    color: #fff;
+}

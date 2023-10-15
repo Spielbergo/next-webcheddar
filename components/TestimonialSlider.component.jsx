@@ -9,10 +9,10 @@ const TestimonialSlider = () => {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     pauseOnHover: true
   };
 
@@ -21,17 +21,24 @@ const TestimonialSlider = () => {
       <Slider {...settings} className={styles.testimonial_slider__container}>
         {testimonials.map((testimonial, id) => (
           <div key={id} className={styles.testimonial_slider__card}>
-            {testimonial.image && (
+          <p>{testimonial.text}</p>    
+          <div className={styles.testimonial_slider__content}>        
+              <div>                
+                <p>{testimonial.name}</p>
+                <p style={{color: 'var(--primary-orange)' }}>{testimonial.company}</p>
+                <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
+              </div>
+              {testimonial.image && (
+              <div>
               <Image
                 src={testimonial.image}
                 alt={testimonial.name}
-                width={100}
+                width={80}
                 height={100}
               />
+              </div>
             )}
-            <p>{testimonial.text}</p>
-            <p>{testimonial.name}</p>
-            <p>{testimonial.company}</p>
+          </div>
           </div>
         ))}
       </Slider>

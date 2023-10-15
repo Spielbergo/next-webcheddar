@@ -10,8 +10,7 @@ import styles from '../../styles/home.module.css';
 const Hero = () => {
     const router = useRouter()
     return (
-        <section>
-            
+        <section>            
             <div className={styles.hero__container}>
                 <div className={styles.hero__title}>
                     <h1>Web Cheddar</h1>
