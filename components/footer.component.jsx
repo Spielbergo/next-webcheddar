@@ -5,6 +5,7 @@ import { navigation } from "../constants";
 import { contactDetails } from "../constants";
 
 import ContactForm from './ContactForm';
+import SocialIcons from "./socialIcons.component";
 
 import styles from "../styles/footer.module.css";
 
@@ -41,6 +42,7 @@ const Footer = () => {
                         </li>
                         )}
                     </ul>
+                    <SocialIcons />
                 </div>
 
                 {/* Links */}

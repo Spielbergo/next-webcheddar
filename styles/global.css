@@ -151,6 +151,10 @@ button:hover {
   list-style: none;
 }
 
+.social_icons__component {
+  display: flex;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

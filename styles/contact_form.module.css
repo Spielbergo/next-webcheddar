@@ -2,6 +2,11 @@
 .contact_form__form > div textarea {
     width: 100%;
     margin-bottom: 8px;
+    padding: 10px;
+    background: transparent;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid #fff;
 }
 
 .contact_form__form > div label {
@@ -12,4 +17,5 @@
     width: 1px;
     overflow: hidden;
     position: absolute;
+    color: #fff;
 }

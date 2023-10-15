@@ -96,6 +96,13 @@ export const servicesHome = [
     {
         id: "webdev",
         image: "/services/coding.png",
+        title: "Our Services",
+        text: "Lorem Ipsum Fuck You",
+        path: "/services",
+    },
+    {
+        id: "webdev",
+        image: "/services/coding.png",
         title: "Website Design and Development",
         text: "We craft unique websites that capture your brand's essence and engage your audience seamlessly.",
         path: "/services",
@@ -103,21 +110,21 @@ export const servicesHome = [
     {
         id: "webmaint",
         image: "/services/coding.png",
-        title: "Website Maintenance and Support",
+        title: "Website Maintenance",
         text: "Keep your site running smoothly. We handle updates, fixes, and ensure everything works as it should.",
         path: "/about",
     },
     {
         id: "seoservices",
         image: "/services/coding.png",
-        title: "Search Engine Optimiztion",
+        title: "SEO",
         text: "Boost your site's visibility. We make sure people find you easily on popular search engines.",
         path: "/contact",
     },
     {
         id: "socialmedia",
         image: "/services/coding.png",
-        title: "Social Media Management",
+        title: "Social Media",
         text: "Engage your audience online. We manage posts, replies, and make sure your brand shines on social.",
         path: "/services",
     },

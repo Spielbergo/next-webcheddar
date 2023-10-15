@@ -126,6 +126,8 @@ export default function ColorPalette() {
         <div className="color-input">
             <ChromePicker color={selectedColor} onChangeComplete={handleColorChange} />
             <CirclePicker color={selectedColor} onChangeComplete={handleColorChange} />
+            <div className="color-box" style={{ backgroundColor: selectedColor }}></div>
+
             <label>
                 Or Enter Hex Code:
                 <input 
@@ -253,6 +255,10 @@ export default function ColorPalette() {
                 display: flex;
                 gap: 10px;
                 margin-top: 10px;
+            }
+            .color-box {
+              width: 500px;
+              height: 500px;
             }
         `}</style>
     </div>

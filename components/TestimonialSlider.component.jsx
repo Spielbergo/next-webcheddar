@@ -20,7 +20,7 @@ const TestimonialSlider = () => {
     <section>
       <Slider {...settings} className={styles.testimonial_slider__container}>
         {testimonials.map((testimonial, id) => (
-          <div key={id}>
+          <div key={id} className={styles.testimonial_slider__card}>
             {testimonial.image && (
               <Image
                 src={testimonial.image}
