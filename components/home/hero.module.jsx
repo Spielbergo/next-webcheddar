@@ -13,12 +13,12 @@ const Hero = () => {
         <section>            
             <div className={styles.hero__container}>
                 <div className={styles.hero__title}>
-                    <h1>Web Cheddar</h1>
-                    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique maxime, rem molestias</h2>
+                    <h1 className={styles.hero__h1}>Web Cheddar Web Solutions</h1>
+                    <h2 className={styles.hero__h2}>Quality Digital Services Your Business Needs</h2>
                     <Button 
                         variant="default__home" 
                         onClick={() => router.push('/services')}>
-                        Learn More
+                        Our Services
                     </Button>
                 </div>
                 <Image 

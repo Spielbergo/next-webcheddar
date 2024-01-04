@@ -7,6 +7,19 @@
       0 16px 16px hsl(0deg 0% 0% / 0.075);
 }
 
+.section_title_01 {
+    font-size: 1em;
+    color: var(--primary-orange);
+}
+
+.section_title_02 {
+    font-size: 2.5em;
+}
+
+.section_text {
+    margin: 10px 0;
+}
+
 .hero__main_image {
     width: 100%;
     height: 750px;
@@ -33,8 +46,15 @@
     padding: 0 15px;
 }
 
-.hero__title h2 {
-    font-size: 1rem;
+.hero__h1 {
+    color: var(--primary-orange);
+    margin-bottom: 5px;
+}
+
+.hero__h2 {
+    font-size: 4em;
+    max-width: 76%;
+    margin-bottom: 15px;
 }
 
 .hero__container.button {
@@ -62,6 +82,16 @@
 
 .client_logos__logo img:hover {
     filter: grayscale(0);
+}
+
+/* About (Why Choose Us) Section */
+.home_about__container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1400px;
+    padding: 125px 15px;
+    margin: auto;
 }
 
 /* Services Section */
@@ -122,7 +152,13 @@
     }
 } */
 
-/* GRID */
+/* Services GRID */
+.services_home__titles {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 15px auto;
+}
+
 .services_home__container {
     display: flex;
     flex-wrap: wrap;
@@ -142,16 +178,12 @@
     /* grid-column: span 4/span 4; */
     grid-template-rows: 150px;
     background-color: #0f0f12;
-    background-image: linear-gradient(185deg, transparent 35%, var(--primary-orange) 100%), url('http://localhost:3000/_next/image/?url=https%3A%2F%2Fwebcheddar.ca%2Fblog%2Fwp-content%2Fuploads%2F2023%2F10%2Fbest-practices-in-html.webp&w=1920&q=75');
+    background-image: linear-gradient(194deg, transparent 50%, var(--primary-orange) 100%), url('http://localhost:3000/_next/image/?url=https%3A%2F%2Fwebcheddar.ca%2Fblog%2Fwp-content%2Fuploads%2F2023%2F10%2Fbest-practices-in-html.webp&w=1920&q=75');
     background-size: cover;
     border: 2px solid var(--primary-orange);
     width: 100%;
     min-width: 320px;
     padding: 20px;
-}
-
-.services_home__card:nth-child(1) {
-    background: #333;
 }
 
 .services_home__card:nth-child(2),
@@ -161,7 +193,7 @@
 }
 
 .services_home__card:nth-child(6) {
-    background-image:  linear-gradient(180deg, transparent 41%, var(--primary-orange) 100%), url('http://localhost:3000/_next/image/?url=https%3A%2F%2Fwebcheddar.ca%2Fblog%2Fwp-content%2Fuploads%2F2023%2F10%2Fhtml-validation.webp&w=1920&q=75');
+    background-image:  linear-gradient(190deg, transparent 47%, var(--primary-orange) 100%), url('http://localhost:3000/_next/image/?url=https%3A%2F%2Fwebcheddar.ca%2Fblog%2Fwp-content%2Fuploads%2F2023%2F10%2Fhtml-validation.webp&w=1920&q=75');
     background-position: bottom;
 }
 
@@ -192,6 +224,12 @@
 }
 
 /* Our Work Section */
+.our_work__titles {
+    max-width: 1130px;
+    margin: auto;
+    padding: 75px 15px 25px;
+}
+
 .cards__container {
     display: flex;
     flex-wrap: wrap;

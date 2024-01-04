@@ -96,13 +96,6 @@ export const servicesHome = [
     {
         id: "webdev",
         image: "/services/coding.png",
-        title: "Our Services",
-        text: "Lorem Ipsum Fuck You",
-        path: "/services",
-    },
-    {
-        id: "webdev",
-        image: "/services/coding.png",
         title: "Website Design and Development",
         text: "We craft unique websites that capture your brand's essence and engage your audience seamlessly.",
         path: "/services",

@@ -1,12 +1,31 @@
 import Image from 'next/image';
+import aboutImage from '../../assets/images/why-choose-us.webp';
+import Button from "../button.component";
+
 import styles from '../../styles/home.module.css';
 
 const WhyChooseUs = () => {
     return (
         <section>
-            <div className={styles.text__container}>
-                <h2>Why Choose Us</h2>
-                <p>At Web Cheddar Web Solutions, we do things differently. First, we really listen to you. This way, we make sure your website matches your vision. Next, we use our years of experience to build something special, so you stand out online. Also, we believe in clear communication. You'll always know what's going on with your project. And lastly, our support doesn’t end once your site is live. We're here to help, making sure your website keeps running smoothly. </p>
+            <div className={styles.home_about__container}>
+                <div>
+                    <Image 
+                        src={aboutImage}
+                        className={`${styles.home_about__image} ${styles.shadow}`}
+                        width={640}
+                        height={427}
+                        alt="Close up of people working in an office."/>
+                </div>
+                <div>
+                    <h2 className={styles.section_title_01}>Why Choose Us</h2>
+                    <h3 className={styles.section_title_02}>Transforming Your Ideas into Exceptional Digital Experiences</h3>
+                    <p className={styles.section_text}>At Web Cheddar Web Solutions, we do things differently. First, we really listen to you. This way, we make sure your website matches your vision. Next, we use our years of experience to build something special, so you stand out online. Also, we believe in clear communication. You'll always know what's going on with your project. And lastly, our support doesn’t end once your site is live. We're here to help, making sure your website keeps running smoothly. </p>
+                    <Button 
+                        variant="default__home" 
+                        onClick={() => router.push('/services')}>
+                        Our Services
+                    </Button>
+                </div>
             </div>
         </section>
     )

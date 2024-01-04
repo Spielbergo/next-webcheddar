@@ -4,7 +4,7 @@ import Link from "next/link";
 import { navigation } from "../constants";
 import { contactDetails } from "../constants";
 
-import ContactForm from './ContactForm';
+import ContactForm from './contactForm';
 import SocialIcons from "./socialIcons.component";
 
 import styles from "../styles/footer.module.css";
@@ -58,9 +58,9 @@ const Footer = () => {
                 </div>    
 
                 {/* Contact Form */}
-                <div>
+                {/* <div>
                     <ContactForm />
-                </div>
+                </div> */}
             </div>
         </footer>
     )

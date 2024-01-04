@@ -111,7 +111,7 @@ button {
   padding: 10px 20px;
   background-color: var(--primary-orange);
   border-radius: 5px;
-  z-index: 100000;
+  z-index: 10;
   cursor: pointer;
 }
 
@@ -149,6 +149,19 @@ button:hover {
 
 .list-none {
   list-style: none;
+}
+
+.section_title_01 {
+  font-size: 1em;
+  color: var(--primary-orange);
+}
+
+.section_title_02 {
+  font-size: 2.5em;
+}
+
+.section_text {
+  margin: 10px 0;
 }
 
 .social_icons__component {

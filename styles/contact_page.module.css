@@ -5,16 +5,32 @@
 .contact_page__title {
     text-align: center;
     padding: 75px 0;
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact_page__details {
+    width: 100%;
+    background-color: var(--primary-orange);
+    padding: 50px 50px 50px 150px;
 }
 
 .contact_page__details li {
     list-style: none;
+    font-size: 2em;
+    font-weight: 600;
 }
 
 .contact_page__form_container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;
     width: 100%;
+    background-color: var(--primary-orange);
+}
+
+.contact_page__form {
+    width: 100%;
+    background-color: #333;
+    padding: 50px 150px 50px 100px;
 }

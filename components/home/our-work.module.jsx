@@ -7,9 +7,10 @@ import styles from '../../styles/home.module.css';
 const OurWork = () => {
     return (
         <section>
-            <div className={styles.text__container}>
-                <h2>Our Work</h2>
-                <p>At Web Cheddar Web Solutions, we're good at making standout websites. Using a mix of creativity, tech know-how, and clear planning, our work clearly shows how we meet the needs of our clients. Dive into our projects and see how we turn ideas into great websites.</p>
+            <div className={styles.our_work__titles}>
+                <h2 className={styles.section_title_01}>Our Work</h2>
+                <h3 className={styles.section_title_02}>From Ideas to Impactful Websites</h3>
+                <p className={styles.section_text}>At Web Cheddar Web Solutions, we're good at making standout websites. Using a mix of creativity, tech know-how, and clear planning, our work clearly shows how we meet the needs of our clients. Dive into our projects and see how we turn ideas into great websites.</p>
             </div>
             
             {/* Cards */}

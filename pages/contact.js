@@ -1,4 +1,4 @@
-import ContactForm from "../components/ContactForm";
+import ContactForm from "../components/contactForm";
 import GoogleMaps from "../components/googleMaps.component";
 import { contactDetails } from "../constants/index"
 
@@ -8,7 +8,13 @@ const Contact = () => {
     return (
         <section>
             <div className={styles.contact_page__container}>
-                <h1 className={styles.contact_page__title}>Contact Us</h1>
+                <div className={styles.contact_page__title}>
+                    <h1 className="section_title_01">Contact</h1>
+                    <h2 className="section_title_02">Get in Touch Us</h2>
+                    <p className="section_text">Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom</p>
+                </div>
+
+                {/* Contact Details */}
                 <div className={styles.contact_page__form_container}>
                     <div className={styles.contact_page__details}>
                         <ul>
@@ -19,6 +25,8 @@ const Contact = () => {
                             ) }
                         </ul>
                     </div>
+
+                    {/* Form */}
                     <div className={styles.contact_page__form}>
                         <ContactForm />
                     </div>

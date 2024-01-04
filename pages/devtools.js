@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import Sidebar from '../components/sidebar.module';
 import ColorPaletteGenerator from '../components/colorPaletteGenerator';
 import GradientGenerator from '../components/gradientGenerator.module';

@@ -11,22 +11,22 @@ export default function Blog({ posts }) {
       <div className={styles.blog_index__container}>
         {posts.map(post => (
           <div key={post.id} className={styles.blog_index__card}>
-             <Link href={`/blog/${post.slug}`}>
-            <div>              
-              {post._embedded['wp:featuredmedia'] && 
-                <Image 
-                  src={post._embedded['wp:featuredmedia'][0].source_url} 
-                  alt={post.title.rendered} 
-                  width={300} 
-                  height={200}
-                />
-              }
-              <div className={styles.blog_index__card_text}>
-                <h2>{parse(post.title.rendered)}</h2>
-                <div>{parse(post.excerpt.rendered).slice(0, 100)}</div>
+            <Link href={`/blog/${post.slug}`}>
+              <div>              
+                {post._embedded['wp:featuredmedia'] && 
+                  <Image 
+                    src={post._embedded['wp:featuredmedia'][0].source_url} 
+                    alt={post.title.rendered} 
+                    width={300} 
+                    height={200}
+                  />
+                }
+                <div className={styles.blog_index__card_text}>
+                  <h2>{parse(post.title.rendered)}</h2>
+                  <div>{parse(post.excerpt.rendered).slice(0, 100)}</div>
+                </div>
               </div>
-            </div>
-          </Link>
+            </Link>
           </div>
         ))}
       </div>

@@ -9,10 +9,10 @@ import { servicesHome } from '../../constants/index';
  const Services = () => {
     return (
         <section>
-            <div>
-                
+            <div className={styles.services_home__titles}>
+                <h2 className={styles.section_title_01}>Services</h2>
+                <h3 className={styles.section_title_02}>Our Services</h3>
             </div>
-
 
             <div className={styles.services_home__container}>
             {servicesHome.map((services) => 
