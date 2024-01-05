@@ -3,9 +3,9 @@ import Image from "next/image";
 import { useRouter } from 'next/router';
  
 import heroImage from '../../assets/images/hero/header.webp';
-import Button from "../button.component";
+import Button from "../Button.component";
 
-import styles from '../../styles/home.module.css';
+import styles from './hero.module.css';
 
 const Hero = () => {
     const router = useRouter()

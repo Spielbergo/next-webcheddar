@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { testimonials } from "../constants";
 
-import styles from "../styles/home.module.css";
+import styles from "../styles/testimonial-slider.module.css";
 
 const TestimonialSlider = () => {
   const settings = {

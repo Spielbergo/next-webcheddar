@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import Sidebar from '../components/sidebar.module';
-import ColorPaletteGenerator from '../components/colorPaletteGenerator';
-import GradientGenerator from '../components/gradientGenerator.module';
+import Sidebar from '../components/Sidebar.component';
+import ColorPaletteGenerator from '../components/devtools/ColorPaletteGenerator';
+import GradientGenerator from '../components/devtools/GradientGenerator.module';
 
 export default function Home() {
   const [selectedSection, setSelectedSection] = useState(null);

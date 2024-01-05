@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import styles from '../styles/contact_form.module.css';
+import styles from '../styles/contact-form.module.css';
 import buttonStyles from '../styles/button.module.css';
 
 export default function ContactForm() {

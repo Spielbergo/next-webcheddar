@@ -1,0 +1,9 @@
+/* About (Why Choose Us) Section */
+.home_about__container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1400px;
+    padding: 125px 15px;
+    margin: auto;
+}

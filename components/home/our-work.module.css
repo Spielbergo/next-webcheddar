@@ -1,0 +1,43 @@
+/* Our Work Section */
+.our_work__titles {
+    max-width: 1130px;
+    margin: auto;
+    padding: 75px 15px 25px;
+}
+
+.cards__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 80%;
+    margin: auto;
+    padding: 0 15px;
+}
+
+.cards__card {
+    display: flex;
+    flex-direction: column;
+    max-width: 360px;
+}
+
+.cards__card img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.cards__text_container {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #333;
+}
+
+.cards__title {
+    font-size: 1.2rem;
+}
+
+@media (prefers-color-scheme: light) {
+    .cards__text_container {
+        background-color: #fff;
+    }
+}

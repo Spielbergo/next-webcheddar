@@ -2,7 +2,7 @@ import Link from 'next/link';
 import parse from 'html-react-parser';
 import Image from 'next/image';
 
-import styles from '../styles/blog_index.module.css'
+import styles from '../styles/blog-index.module.css'
 
 export default function Blog({ posts }) {
   return (

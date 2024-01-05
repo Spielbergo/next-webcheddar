@@ -1,0 +1,40 @@
+.hero__main_image {
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+    opacity: 0.1;
+}
+
+.hero__container {
+    width: 100%;
+    height: 750px;
+    background-image: linear-gradient(to right top, #fd7304, #d55227, #a7392e, #75272c, #441a21, #441a21, #441a21, #441a21, #75272c, #a7392e, #d55227, #fd7304);
+}
+
+.hero__title {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 750px;
+    max-width: 82%;
+    padding: 0 15px;
+}
+
+.hero__h1 {
+    color: var(--primary-orange);
+    margin-bottom: 5px;
+}
+
+.hero__h2 {
+    font-size: 4em;
+    max-width: 76%;
+    margin-bottom: 15px;
+}
+
+.hero__container.button {
+    width: 150px;
+}

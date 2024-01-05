@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { DiAndroid } from "react-icons/di";
 
-import styles from '../../styles/home.module.css';
+import styles from './services.module.css';
 
 import { servicesHome } from '../../constants/index';
 
@@ -10,8 +10,8 @@ import { servicesHome } from '../../constants/index';
     return (
         <section>
             <div className={styles.services_home__titles}>
-                <h2 className={styles.section_title_01}>Services</h2>
-                <h3 className={styles.section_title_02}>Our Services</h3>
+                <h2 className="section_title_01">Services</h2>
+                <h3 className="section_title_02">Our Services</h3>
             </div>
 
             <div className={styles.services_home__container}>

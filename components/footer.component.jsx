@@ -4,8 +4,8 @@ import Link from "next/link";
 import { navigation } from "../constants";
 import { contactDetails } from "../constants";
 
-import ContactForm from './contactForm';
-import SocialIcons from "./socialIcons.component";
+import ContactForm from './ContactForm';
+import SocialIcons from "./SocialIcons.component";
 
 import styles from "../styles/footer.module.css";
 

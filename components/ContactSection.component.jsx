@@ -2,13 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { DiAndroid } from "react-icons/di";
 
-import ContactForm from '../contactForm';
-import { contactDetails } from '../../constants/index';
-import SocialIcons from '../socialIcons.component';
+import ContactForm from './ContactForm';
+import { contactDetails } from '../constants/index';
+import SocialIcons from './SocialIcons.component';
 
-import styles from '../../styles/contact_section.module.css';
+import styles from '../styles/contact-section.module.css';
 
-import { contactSection } from '../../constants/index';
+import { contactSection } from '../constants/index';
 
  const ContactSection = () => {
     return (
@@ -20,7 +20,7 @@ import { contactSection } from '../../constants/index';
                         <h3 className="section_title_02">Get in Touch Us</h3>
                         <p className="section_text">Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom</p>
                     </div>
-                    
+
                     {/* Contact Info */}
                     <div>
                         <ul className="list-none">

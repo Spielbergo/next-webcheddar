@@ -1,8 +1,8 @@
-import ContactForm from "../components/contactForm";
-import GoogleMaps from "../components/googleMaps.component";
+import ContactForm from "../components/ContactForm";
+import GoogleMaps from "../components/GoogleMaps.component";
 import { contactDetails } from "../constants/index"
 
-import styles from "../styles/contact_page.module.css";
+import styles from "../styles/contact-page.module.css";
 
 const Contact = () => {
     return (

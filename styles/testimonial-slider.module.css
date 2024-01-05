@@ -1,0 +1,35 @@
+/* Testimonial Slider */
+.testimonial_slider__container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 125px 15px;
+}
+
+.testimonial_slider__card {
+    display: flex !important; 
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 15px;
+    padding: 20px;
+    background-color: #000;
+    border: 1px solid #999;
+    border-radius: 10px;
+    margin-left: 10px;
+    height: 300px;
+}
+
+.testimonial_slider__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.testimonial_slider__container img {
+    width: 75px;
+    height: 75px;
+    padding: 5px;
+    background-color: #333;
+    border-radius: 50%;
+    border: 1px solid var(--primary-orange);
+    object-fit: contain;
+}
