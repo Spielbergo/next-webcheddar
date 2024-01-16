@@ -5,12 +5,24 @@
 
 .footer__container {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
     /* gap: 50px; */
     max-width: 990px;
     margin: auto;
-    padding: 50px 15px;
+    padding: 75px 15px;
+}
+
+.footer__copyright {
+    padding: 15px;
+    border-top: 1px solid grey;
+}
+
+.footer__logo {
+    object-fit: contain;
+}
+
+.footer__links h2 {
+    color: var(--primary-orange);
 }
 
 @media (prefers-color-scheme: light) {

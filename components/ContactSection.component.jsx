@@ -2,9 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { DiAndroid } from "react-icons/di";
 
-import ContactForm from './ContactForm';
-import { contactDetails } from '../constants/index';
-import SocialIcons from './SocialIcons.component';
+import Address from './Address.conponent';
+import ContactForm from './ContactForm.component';
 
 import styles from '../styles/contact-section.module.css';
 
@@ -22,16 +21,7 @@ import { contactSection } from '../constants/index';
                     </div>
 
                     {/* Contact Info */}
-                    <div>
-                        <ul className="list-none">
-                            {contactDetails.map((contact) => 
-                            <li key={contact.id}>
-                                {contact.detail}
-                            </li>
-                            )}
-                        </ul>
-                        <SocialIcons />
-                    </div>
+                    <Address />
                 </div>
 
                 {/* Form */}

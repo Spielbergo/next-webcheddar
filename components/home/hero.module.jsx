@@ -24,7 +24,7 @@ const Hero = () => {
                 <Image 
                     src={heroImage}
                     className={styles.hero__main_image} 
-                    alt="Hero image code on a screen" 
+                    alt="Hero image - code on a screen wth an orange overlay" 
                     width="1920" 
                     height="1080"
                     priority 

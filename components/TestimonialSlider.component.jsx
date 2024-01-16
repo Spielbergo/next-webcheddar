@@ -1,5 +1,6 @@
 import Slider from "react-slick";
 import Image from "next/image";
+import Link from "next/link";
 
 import { testimonials } from "../constants";
 
@@ -9,7 +10,7 @@ const TestimonialSlider = () => {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -21,7 +22,7 @@ const TestimonialSlider = () => {
       <Slider {...settings} className={styles.testimonial_slider__container}>
         {testimonials.map((testimonial, id) => (
           <div key={id} className={styles.testimonial_slider__card}>
-          <p>{testimonial.text}</p>    
+          <p>{testimonial.text}<Link href={testimonial.url} target="_blank" rel="noopener nofollow noreferrer">...Read more</Link></p>
           <div className={styles.testimonial_slider__content}>        
               <div>                
                 <p>{testimonial.name}</p>

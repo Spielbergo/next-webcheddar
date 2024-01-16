@@ -96,6 +96,7 @@ export default function ContactForm() {
           name="message"
           id="message"
           placeholder="Message"
+          rows="8"
           required
           value={formState.message}
           onChange={handleChange}

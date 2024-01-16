@@ -1,36 +1,109 @@
-.contact_page__container {
-    padding: 75px 15px 125px;
+.header {
+    width: 100%;
 }
 
-.contact_page__title {
-    text-align: center;
-    padding: 75px 0;
-    max-width: 600px;
+.header__main_image {
+    object-fit: cover;
+    opacity: .5;
+}
+
+.contact_page__header_text {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+/* .contact_page__h1 {
+    color: var(--primary-orange);
+    margin-bottom: 5px;
+} */
+
+.contact_page__h1 {
+    font-size: 4em;
+    max-width: 1000px;
     margin: auto;
 }
 
-.contact_page__details {
-    width: 100%;
-    background-color: var(--primary-orange);
-    padding: 50px 50px 50px 150px;
-}
+/* .contact_page__container {
+    padding: 75px 0 0;
+} */
 
-.contact_page__details li {
-    list-style: none;
-    font-size: 2em;
-    font-weight: 600;
+.contact_page__text {
+    margin-bottom: 20px;
 }
 
 .contact_page__form_container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: var(--primary-orange);
+    background-color: #333;
+    text-align: center;
+}
+
+.contact_page__details {
+    width: 100%;
+    padding: 50px 15px;
+}
+
+.contact_page__details li {
+    font-size: 1.1em;
+    font-weight: 600;
 }
 
 .contact_page__form {
     width: 100%;
-    background-color: #333;
-    padding: 50px 150px 50px 100px;
+    padding: 75px 15px;
+    background-color: var(--primary-orange);
+}
+
+.contact_page__form form > div input,
+.contact_page__form form > div textarea {
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 10px;
+    color: #333;
+    background: #fff;
+    outline: 0;
+    border: none;
+    border-radius: 5px;
+    border-bottom: 1px solid #fff;
+}
+
+.contact_page__form form > div label {
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    font-size: 1px;
+    height: 10px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+    color: #333;
+}
+
+.contact_page__form form input::placeholder,
+.contact_page__form form textarea::placeholder {
+    color: #333;
+}
+
+@media screen and (min-width: 1023px) {
+    .contact_page__form_container {
+        flex-wrap: nowrap;
+        text-align: left;
+    }
+
+    .contact_page__details {
+        padding: 50px 50px 50px 150px;
+    }
+    
+    .contact_page__form {
+        padding: 125px 150px 125px 100px;
+    }
 }

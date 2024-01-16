@@ -33,6 +33,7 @@
 }
 
 .cards__title {
+    color: var(--primary-orange);
     font-size: 1.2rem;
 }
 
