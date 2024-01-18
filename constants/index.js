@@ -220,3 +220,31 @@ export const contactDetails = [
         detail: '647-339-9475'
     },
 ]
+
+export const aboutPageDetails = [
+    {
+        id: 'about-page-01',
+        title: 'Lorem Ipsum',
+        subtitle: 'Lorem Ipsum',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        image: '/about/about-us-page-01.webp',
+        alt: 'A Mac laptop with bright neon purple and blue lights'
+    },
+    {
+        id: 'about-page-02',
+        title: 'Lorem Ipsum',
+        subtitle: 'Lorem Ipsum',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        image: '/about/about-us-page-02.webp',
+        alt: 'COmputer screen and latop screen side by side with keyboard in front. Users hands are visible and code is on both screens'
+    },
+    {
+        id: 'about-page-02',
+        title: 'Lorem Ipsum',
+        subtitle: 'Lorem Ipsum',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        image: '/about/about-us-page-02.webp',
+        alt: 'A smaller Mac laptop with neon purple and blue lights'
+    },
+    
+]

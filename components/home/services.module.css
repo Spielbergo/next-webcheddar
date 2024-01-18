@@ -1,6 +1,12 @@
 /* Services Section */
 /* FLEXXXXXXXX */
-/* .services_home__container {
+.services_home__titles {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 15px auto;
+}
+
+.services_home__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -54,10 +60,10 @@
     .services_home__card {
         color: #fff;
     }
-} */
+}
 
 /* Services GRID */
-.services_home__titles {
+/* .services_home__titles {
     max-width: 1200px;
     padding: 0 15px;
     margin: 15px auto;
@@ -67,7 +73,6 @@
     display: flex;
     flex-wrap: wrap;
     flex: 1;
-    /* grid-template-columns: repeat(12,minmax(0,1fr)); */
     justify-content: center;
     gap: 10px;
     max-width: 1200px;
@@ -79,7 +84,6 @@
     display: grid;
     flex: 1;
     align-items: end;
-    /* grid-column: span 4/span 4; */
     grid-template-rows: 150px;
     background-color: #0f0f12;
     background-image: linear-gradient(194deg, transparent 25%, #000 100%), url('http://localhost:3000/_next/image/?url=https%3A%2F%2Fwebcheddar.ca%2Fblog%2Fwp-content%2Fuploads%2F2023%2F10%2Fbest-practices-in-html.webp&w=1920&q=75');
@@ -92,7 +96,6 @@
 
 .services_home__card:nth-child(2),
 .services_home__card:nth-child(6) {
-    /* grid-column: span 8/span 8; */
     flex: 2
 }
 
@@ -125,4 +128,4 @@
     .services_home__card {
         color: #fff;
     }
-}
+} */

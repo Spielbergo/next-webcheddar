@@ -18,8 +18,14 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <section>
-      <Slider {...settings} className={styles.testimonial_slider__container}>
+    <section className={styles.testimonial_slider__section}>
+      <div className={styles.testimonials_slider__titles}>
+          <h2 className="section_title_01">Testimonials</h2>
+          <h3 className="section_title_02">Testimonials</h3>
+          <p className="section_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero, esse voluptates, dolorem voluptate aliquam</p>
+      </div>
+
+      <Slider {...settings} className={`container ${styles.testimonial_slider__container}`}>
         {testimonials.map((testimonial, id) => (
           <div key={id} className={styles.testimonial_slider__card}>
           <p>{testimonial.text}<Link href={testimonial.url} target="_blank" rel="noopener nofollow noreferrer">...Read more</Link></p>
