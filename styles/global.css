@@ -225,6 +225,18 @@ button:hover {
   display: flex;
 }
 
+.related_article__container {
+  margin: 20px 0;
+  font-size: 18px;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  padding: 20px 0;
+}
+
+.related_article__container a {
+  color: var(--primary-orange);
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

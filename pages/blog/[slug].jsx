@@ -27,20 +27,21 @@ export default function Post({ post }) {
         />
       }
 
-      <div className={styles.blog_post__breadcrumbs}>
-          <Link href="/">Home</Link>
-          {' > '}
-          <Link href="/blog">
-          Blog
-          </Link>
-          {' > '}
-          <Link href={`/blog/${post.slug}`}>
-          {parse(post.title.rendered)}
-          </Link>
-        </div>
+      
       </div>
 
       <div className={styles.blog_post__content}>
+        <div className={styles.blog_post__breadcrumbs}>
+            <Link href="/">Home</Link>
+            {' > '}
+            <Link href="/blog">
+            Blog
+            </Link>
+            {' > '}
+            <Link href={`/blog/${post.slug}`}>
+            {parse(post.title.rendered)}
+            </Link>
+        </div>
         <article>
           <h1>{parse(post.title.rendered)}</h1>
           <div>{parse(post.content.rendered)}</div>
