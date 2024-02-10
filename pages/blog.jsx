@@ -60,9 +60,9 @@ export async function getStaticProps() {
   };
 }
 
-export async function getThreeLatestPosts() {
-  const response = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/posts/?_embed&per_page=3');
-  const posts = await response.json();
+// export async function getThreeLatestPosts() {
+//   const response = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/posts/?_embed&per_page=3');
+//   const posts = await response.json();
 
-  return posts;
-}
+//   return posts;
+// }

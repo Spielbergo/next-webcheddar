@@ -36,8 +36,8 @@ const Navigation = () => {
     };
   }, [mobileToggleOpen]);
 
-  const handleMobileToggle = () => {
-    setMobileToggleOpen(prevCheck => !prevCheck);
+  const handleMobileToggle = (close = false) => {
+    setMobileToggleOpen(prevCheck => close ? false : !prevCheck);
   };
 
   return (
@@ -66,13 +66,13 @@ const Navigation = () => {
             <div>
               <ul className={`${styles.main_nav__navLinks} ${mobileToggleOpen ? styles.main_nav__navLinks_visible : ''}`}>
                 {navigation.map((nav) =>                
-                  <li key={nav.id}>
+                  <li key={nav.id} onClick={() => handleMobileToggle(true)}>
                     <Link href={nav.link}>{nav.anchor}</Link>
                   </li>                  
                 )}
                 <span className={styles.main_nav__mobile_links}>
-                  <li><FaPhone /></li>
-                  <li><FaEnvelope /></li>
+                  <li onClick={() => handleMobileToggle(true)}><FaPhone /></li>
+                  <li onClick={() => handleMobileToggle(true)}><FaEnvelope /></li>
                 </span>
               </ul>
             </div>
@@ -82,10 +82,10 @@ const Navigation = () => {
             <div>
               <ul className={styles.main_nav__social_icons}>
               {socialIcons.map((socials) =>
-                <li key={socials.id}><a href={socials.link} target="_blank" rel="noopener nofollow noreferrer"><socials.icon /></a></li>
+                <li key={socials.id}><a href={socials.link} target="_blank" rel="noopener nofollow noreferrer" title={socials.title} aria-label={socials.title} ><socials.icon /></a></li>
               )}   
               {/* Mobile Nav Menu Toggle */}              
-              <li className={styles.main_nav__toggle} onClick={handleMobileToggle}>X</li>                                    
+              <li className={styles.main_nav__toggle} onClick={() => handleMobileToggle()}>{mobileToggleOpen ? 'X' : 'Menu'}</li>                                    
               </ul>                    
             </div>                  
           </div>

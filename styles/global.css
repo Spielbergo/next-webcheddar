@@ -40,6 +40,8 @@
   --card-border-rgb: 131, 134, 135;
 
   --primary-orange: #fd7304;
+  --text-color: #ddd;
+  --title-color: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -219,6 +221,7 @@ button:hover {
   max-width: 800px;
   margin: 10px 0;
   font-size: 16px;
+  color: #ddd;
 }
 
 .social_icons__component {

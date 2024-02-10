@@ -42,16 +42,19 @@ export const socialIcons = [
         id: "facebook",
         icon: FaFacebookF,
         link: 'https://www.facebook.com',
+        title: 'Facebook',
     },
     {
         id: "github",
         icon: FaGithub,
         link: 'https://www.github.com',
+        title: 'GitHub',
     },
     {
         id: "linkedin",
         icon: FaLinkedin,
         link: 'https://www.linkedin.com',
+        title: 'LinkedIn',
     },
 ];
 

@@ -9,7 +9,7 @@ const SocialIcons = () => {
         <div>
             <ul className={`${styles.social_icons__component}`}>   
             {socialIcons.map((socials) =>          
-                <li key={socials.id}><a href={socials.link} target="_blank" rel="noopener nofollow noreferrer"><socials.icon /></a></li>
+                <li key={socials.id}><a href={socials.link} target="_blank" title={socials.title} aria-label={socials.title} rel="noopener nofollow noreferrer"><socials.icon /></a></li>
                 )
             }       
             </ul>

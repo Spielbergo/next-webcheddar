@@ -6,22 +6,25 @@
 }
 
 .hero__container {
+    position: relative; /* Required for absolute positioning of children */
     width: 100%;
     height: 750px;
+    display: flex;
+    justify-content: center; /* Centers child elements horizontally */
+    align-items: center; /* Centers child elements vertically */
     background-image: linear-gradient(to right top, #fd7304, #d55227, #a7392e, #75272c, #441a21, #441a21, #441a21, #441a21, #75272c, #a7392e, #d55227, #fd7304);
 }
 
 .hero__title {
     position: absolute;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    width: 100%;
-    height: 750px;
-    max-width: 900px;
-    padding: 0 15px;
+    left: 50%; /* Start at the half of the container's width */
+    transform: translateX(-50%); /* Center the title div */
+    max-width: 1200px;
+    width: calc(100% - 30px); /* Adjust width considering padding */
+    padding: 0 15px; /* Consistent padding on both sides */
+    box-sizing: border-box; /* Include padding in width calculation */
+    top: 50%; /* Align vertically to center */
+    transform: translate(-50%, -50%); /* Center the title div both horizontally and vertically */
 }
 
 .hero__h1 {
@@ -32,20 +35,21 @@
 
 .hero__h2 {
     font-size: 2em;
-    /* max-width: 76%; */
     margin-bottom: 15px;
 }
 
-.hero__container.button {
-    width: 150px;
-}
-
+/* Responsive adjustments */
 @media screen and (min-width: 1025px) {
-    .hero__h2 {
-        font-size: 2em;
+    .hero__title {
+        padding-left: calc((100% - 1600px) / 2 + 15px); /* Adjust left padding for wider screens */
+        padding-right: 15px; /* Maintain a 15px padding on the right */
+    }
+    
+    .hero__h1 {
+        font-size: 2em; /* Larger text size for larger screens */
     }
 
     .hero__h2 {
-        font-size: 4em;
+        font-size: 4em; /* Larger text size for larger screens */
     }
 }
