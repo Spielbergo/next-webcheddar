@@ -11,7 +11,7 @@ const WhyChooseUs = () => {
                 <div>
                     <Image 
                         src={aboutImage}
-                        className={`${styles.home_about__image} ${styles.shadow}`}
+                        className={`${styles.home_about__image} shadow`}
                         width={640}
                         height={427}
                         alt="Close up of people working in an office."/>

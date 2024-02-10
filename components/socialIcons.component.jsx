@@ -1,4 +1,4 @@
-import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { socialIcons } from "../constants";
 
 import styles from '../styles/social-icons.module.css';
 
@@ -7,10 +7,11 @@ const SocialIcons = () => {
         <>
         {/* Social Icons */}
         <div>
-            <ul className={`${styles.social_icons__component}`}>                    
-                <li><FaFacebookF /></li>
-                <li><FaInstagram /></li>
-                <li><FaLinkedin /></li>                    
+            <ul className={`${styles.social_icons__component}`}>   
+            {socialIcons.map((socials) =>          
+                <li key={socials.id}><a href={socials.link} target="_blank" rel="noopener nofollow noreferrer"><socials.icon /></a></li>
+                )
+            }       
             </ul>
         </div>
         </>

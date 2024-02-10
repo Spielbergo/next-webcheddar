@@ -2,12 +2,26 @@ import Link from 'next/link';
 import parse from 'html-react-parser';
 import Image from 'next/image';
 
+import contactImage from '../assets/images/hero/header.webp';
+
 import styles from '../styles/blog-index.module.css'
 
 export default function Blog({ posts }) {
   return (
     <section className={styles.blog_index__section}>
-      <h1 className={styles.blog_index__title}>Our Blogs</h1>
+        <header className="page_header">
+            <div className="page_header__text">
+                <h1 className="page_header__h1">Our Blog</h1>
+            </div>
+            <Image 
+                src={contactImage}
+                className="page_header__image"
+                alt="Header image - code on a screen wth an orange overlay" 
+                width="1920" 
+                height="400"
+                priority 
+            />   
+      </header>
       <div className={styles.blog_index__container}>
         {posts.map(post => (
           <div key={post.id} className={styles.blog_index__card}>

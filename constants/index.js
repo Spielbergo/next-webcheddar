@@ -1,3 +1,8 @@
+import { MdOutlineWeb, MdEvent, MdOutlineShoppingCart   } from "react-icons/md";
+import { IoSearchCircle, IoConstructOutline } from "react-icons/io5";
+import { TiSocialAtCircular } from "react-icons/ti";
+import { FaFacebookF, FaGithub, FaLinkedin } from "react-icons/fa";
+
 export const navigation = [
     {
         id: "home",
@@ -35,15 +40,18 @@ export const navigation = [
 export const socialIcons = [
     {
         id: "facebook",
-        icon: "FaFacebookF",
+        icon: FaFacebookF,
+        link: 'https://www.facebook.com',
     },
     {
-        id: "instagram",
-        icon: "FaInstagram",
+        id: "github",
+        icon: FaGithub,
+        link: 'https://www.github.com',
     },
     {
         id: "linkedin",
-        icon: "FaLinkedin",
+        icon: FaLinkedin,
+        link: 'https://www.linkedin.com',
     },
 ];
 
@@ -95,42 +103,42 @@ export const clientLogos = [
 export const servicesHome = [
     {
         id: "webdev",
-        image: "/services/coding.png",
+        icon: MdOutlineWeb,
         title: "Website Design and Development",
         text: "We craft unique websites that capture your brand's essence and engage your audience seamlessly.",
         path: "/services",
     },
     {
+        id: "seoservices",
+        icon: IoSearchCircle,
+        title: "Search Engine Optimization",
+        text: "Boost your site's visibility. We make sure people find you easily on popular search engines.",
+        path: "/contact",
+    },
+    {
         id: "webmaint",
-        image: "/services/coding.png",
+        icon: IoConstructOutline ,
         title: "Website Maintenance",
         text: "Keep your site running smoothly. We handle updates, fixes, and ensure everything works as it should.",
         path: "/about",
     },
     {
-        id: "seoservices",
-        image: "/services/coding.png",
-        title: "SEO",
-        text: "Boost your site's visibility. We make sure people find you easily on popular search engines.",
-        path: "/contact",
-    },
-    {
         id: "socialmedia",
-        image: "/services/coding.png",
-        title: "Social Media",
+        icon: TiSocialAtCircular,
+        title: "Social Media Management",
         text: "Engage your audience online. We manage posts, replies, and make sure your brand shines on social.",
         path: "/services",
     },
     {
         id: "ecommerce",
-        image: "/services/coding.png",
+        icon: MdOutlineShoppingCart,
         title: "E-commerce Solutions",
         text: "Sell with confidence online. Our secure, seo optimized and user-friendly shops make buying and selling a breeze.",
         path: "/about",
     },
     {
         id: "special events sites",
-        image: "/services/coding.png",
+        icon: MdEvent,
         title: "Special Event Websites",
         text: "Celebrate big moments digitally. We create standout sites for weddings, reunions, and more.",
         path: "/contact",
@@ -221,30 +229,33 @@ export const contactDetails = [
     },
 ]
 
-export const aboutPageDetails = [
+export const aboutPage = [
     {
         id: 'about-page-01',
-        title: 'Lorem Ipsum',
+        title: 'About',
         subtitle: 'Lorem Ipsum',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         image: '/about/about-us-page-01.webp',
-        alt: 'A Mac laptop with bright neon purple and blue lights'
+        alt: 'A Mac laptop with bright neon purple and blue lights',
+        class: 'shadow'
     },
     {
         id: 'about-page-02',
-        title: 'Lorem Ipsum',
+        title: 'About',
         subtitle: 'Lorem Ipsum',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         image: '/about/about-us-page-02.webp',
-        alt: 'COmputer screen and latop screen side by side with keyboard in front. Users hands are visible and code is on both screens'
+        alt: 'Computer screen and latop screen side by side with keyboard in front. Users hands are visible and code is on both screens',
+        class: 'flex-flip shadow'
     },
     {
-        id: 'about-page-02',
-        title: 'Lorem Ipsum',
+        id: 'about-page-03',
+        title: 'About',
         subtitle: 'Lorem Ipsum',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        image: '/about/about-us-page-02.webp',
-        alt: 'A smaller Mac laptop with neon purple and blue lights'
+        image: '/about/about-us-page-03.webp',
+        alt: 'A smaller Mac laptop with neon purple and blue lights',
+        class: 'shadow'
     },
     
 ]

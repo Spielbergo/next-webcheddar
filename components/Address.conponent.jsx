@@ -3,8 +3,8 @@ import SocialIcons from './SocialIcons.component';
 
 const Address = ({ className = "" }) => {
     return (
-        <address className={className}>
-            <ul className="list-none">
+        <address>
+            <ul>
                 {contactDetails.map((contact) => 
                     <li key={contact.id}>
                         {contact.id === 'contact-email' ? (

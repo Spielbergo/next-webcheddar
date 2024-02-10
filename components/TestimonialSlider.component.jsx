@@ -4,6 +4,9 @@ import Link from "next/link";
 
 import { testimonials } from "../constants";
 
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
 import styles from "../styles/testimonial-slider.module.css";
 
 const TestimonialSlider = () => {

@@ -12,10 +12,13 @@
 
 .blog_post__breadcrumbs {
     position: absolute;
-    bottom: 85px;
+    /* bottom: 85px; */
+    max-width: 1200px;
+    padding: 20px 15px;
+    margin: auto;
     z-index: 100;
     background-color: rgba(0, 0, 0, .5);
-    padding: 20px;
+    
 }
 
 .blog_post__breadcrumbs a:hover {
@@ -25,8 +28,26 @@
 .blog_post__content {
     max-width: 1200px;
     margin: 75px auto;
+    padding: 0 15px;
 }
 
 .blog_post__content p {
     margin-bottom: 10px;
+}
+
+.blog_post__content ul {
+    list-style: disc;
+}
+
+.blog_post__content ol,
+.blog_post__content ul {
+    padding: 10px 0 10px 35px;
+}
+
+
+.related_article__container {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding: 20px 0;
+    margin: 20px 0;
 }

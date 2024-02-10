@@ -1,12 +1,13 @@
-import Image from 'next/image';
+import React from 'react';
 import Link from 'next/link';
-import { DiAndroid } from "react-icons/di";
 
-import styles from './services.module.css';
+import Button from '../Button.component';
 
 import { servicesHome } from '../../constants/index';
 
- const Services = () => {
+import styles from './services.module.css';
+
+const Services = () => {
     return (
         <section>
             <div className={styles.services_home__titles}>
@@ -15,19 +16,24 @@ import { servicesHome } from '../../constants/index';
             </div>
 
             <div className={styles.services_home__container}>
-            {servicesHome.map((services) => 
-                <div key={services.id} className={`${styles.services_home__card} ${styles.shadow}`}>
-                    <Image  
-                        src={services.image}
-                        alt={services.title}
-                        width={250}
-                        height={100}
-                    />
-                    <h2>{services.title}</h2>
-                    <p>{services.text}</p>
-                    {/* <Link href={services.path} className='button'>Read More</Link> */}
-                </div>
-            )}
+                {servicesHome.map((service) => (
+                    <div key={service.id} className={`${styles.services_home__card} ${styles.shadow}`}>
+                        <h2 className='section_title_02'>{service.title}</h2>
+                        <div className={styles.services_home__icon}>
+                            <service.icon />
+                        </div>
+                        <div className={styles.services_home__card_text}>
+                            <p className='section-text'>{service.text}</p>
+                        </div>
+                        {/* <div>
+                            <Button 
+                                variant="default__home" 
+                                onClick={() => router.push('/services')}>
+                                Read More
+                            </Button>
+                        </div> */}
+                    </div>
+                ))}
             </div>
         </section>
     )

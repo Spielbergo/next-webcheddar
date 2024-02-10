@@ -10,7 +10,7 @@ const OurWork = () => {
             <div className={styles.our_work__titles}>
                 <h2 className="section_title_01">Our Work</h2>
                 <h3 className="section_title_02">From Ideas to Impactful Websites</h3>
-                <p className="section_text">At Web Cheddar Web Solutions, we're good at making standout websites. Using a mix of creativity, tech know-how, and clear planning, our work clearly shows how we meet the needs of our clients. Dive into our projects and see how we turn ideas into great websites.</p>
+                <p className="section_text">At Web Cheddar Web Solutions, we're great at making standout websites. Using a mix of creativity, tech know-how, and clear planning, our work clearly shows how we meet the needs of our clients. Dive into our projects and see how we turn ideas into great websites.</p>
             </div>
             
             {/* Cards */}

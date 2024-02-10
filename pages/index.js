@@ -6,11 +6,8 @@ import OurWork from '../components/home/OurWork.module';
 import WhyChooseUs from '../components/home/WhyChooseUs.module';
 import TestimonialSlider from '../components/TestimonialSlider.component';
 
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-
 const Home = ({ posts }) => {
-  return (    
+  return (        
     <>
       <Hero />  
       <Clients />       

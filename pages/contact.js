@@ -1,24 +1,27 @@
 import Image from "next/image";
+
+import globalMeta from '../constants/globalMeta';
+
 import contactImage from '../assets/images/hero/header.webp';
 
 import Address from "../components/Address.conponent";
 import ContactForm from "../components/ContactForm.component";
 import GoogleMaps from "../components/GoogleMaps.component";
 
-import { contactDetails } from "../constants/index"
-
 import styles from "../styles/contact-page.module.css";
 
 const Contact = () => {
+
     return (
         <>
+        
         <header className="header">
-            <div className={styles.contact_page__header_text}>
-                <h1 className={styles.contact_page__h1}>Contact Us</h1>
+            <div className="page_header__text">
+                <h1 className="page_header__h1">Contact Us</h1>
             </div>
             <Image 
                 src={contactImage}
-                className={styles.header__main_image} 
+                className="page_header__image"
                 alt="Header image - code on a screen wth an orange overlay" 
                 width="1920" 
                 height="400"

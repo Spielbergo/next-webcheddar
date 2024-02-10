@@ -1,85 +1,50 @@
 import Image from "next/image";
 
-import aboutImage01 from '../public/about/about-us-page-01.webp';
-import aboutImage02 from '../public/about/about-us-page-02.webp';
-import aboutImage03 from '../public/about/about-us-page-03.webp';
+import aboutHeaderImg from '../assets/images/hero/header.webp'
 
-import Hero from "../components/home/Hero.module";
+import { aboutPage } from '../constants/index';
 import TestimonialSlider from "../components/TestimonialSlider.component";
 
 import styles from '../styles/about-page.module.css';
 
-
 const About = () => {
     return (
         <>
-        <section>
-            <div className={styles.about_page__hero}></div>
-        </section>
+        <header className="header">
+            <div className="page_header__text">
+                <h1 className="page_header__h1">About Web Cheddar</h1>
+            </div>
+            <Image 
+                src={aboutHeaderImg}
+                className="page_header__image"
+                alt="Header image - code on a screen wth an orange overlay" 
+                width="1920" 
+                height="400"
+                priority 
+            />   
+        </header>
 
         <section>
-            <div className={`container ${styles.about_page__container}`}>
-                {/* Image */}
-                <div>
-                    <Image 
-                        src={aboutImage01}
-                        width={500}
-                        height={350}
-                        className="shadow"
-                    />
-                </div>
-                {/* Text */}
-                <div>
-                    <h2 className="section_title_01">About Us</h2>
-                    <h3 className="section_title_02">About Us</h3>
-                    <h2 className="section_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
-                </div>
-                
+            <div className={`flex ${styles.about_page__container}`}>
+                {aboutPage.map((about) => 
+                    <div key={about.id} className={about.class}>
+                        <Image 
+                            src={about.image}
+                            width={500}
+                            height={350}                        
+                            alt={about.alt}
+                        />
+                        {/* Text */}
+                        <div>
+                            <h2 className="section_title_01">{about.title}</h2>
+                            <h3 className="section_title_02">{about.subtitle}</h3>
+                            <p className="section_text">{about.text}</p>
+                        </div>
+                    </div>
+                )}
             </div>
         </section>
 
-        <section>
-            <div className={`container ${styles.about_page__container}`}>
-                {/* Text */}
-                <div>
-                    <h2 className="section_title_01">About Us</h2>
-                    <h3 className="section_title_02">About Us</h3>
-                    <h2 className="section_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
-                </div>
-
-                {/* Image */}
-                <div>
-                    <Image 
-                        src={aboutImage02}
-                        width={500}
-                        height={350}                        
-                        className="shadow"
-                    />
-                </div>
-                
-            </div>
-        </section>
-
-        <section>
-            <div className={`container ${styles.about_page__container}`}>
-                {/* Image */}
-                <div>
-                    <Image 
-                        src={aboutImage03}
-                        width={500}
-                        height={350}
-                        className="shadow"
-                    />
-                </div>
-                {/* Text */}
-                <div>
-                    <h2 className="section_title_01">About Us</h2>
-                    <h3 className="section_title_02">About Us</h3>
-                    <h2 className="section_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
-                </div>
-                
-            </div>
-        </section>
         <TestimonialSlider />
         </>
     )

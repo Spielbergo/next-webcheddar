@@ -1,18 +1,26 @@
-.about_page__hero {
-    background-image: url('../assets/images/hero/header.webp');
-    height: 400px;
+.about_page__container > div {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    padding-top: 75px;
 }
 
-.about_page__container {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    margin: auto;
-    padding: 50px 15px;
-    max-width: 1000px;
+.about_page__container > div:nth-child(2) {
+    flex-direction: column;
 }
 
 .about_page__container img {
     object-fit: cover;
+}
+
+@media screen and (min-width: 1025px) {
+    .about_page__container > div {
+        flex-direction: row;
+    }
+
+    .about_page__container > div:nth-child(2) {
+        flex-direction: row-reverse;
+    }
 }
 
