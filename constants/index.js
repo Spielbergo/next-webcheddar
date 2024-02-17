@@ -210,6 +210,27 @@ export const projectsHome = [
         text: 'Author',
         image: '/projects/rohutton.jpg',
         alt: 'Rosemary Hutton Website Screenshot',
+    },
+    {
+        id: 'project-1',
+        title: 'University of Toronto',
+        text: 'Med Store',
+        image: '/projects/uoft.jpg',
+        alt: 'University of Toronto Med Store Website Screenshot',
+    },
+    {
+        id: 'project-2',
+        title: 'Smash Pets',
+        text: 'Pet Care',
+        image: '/projects/smashpets.jpg',
+        alt: 'Smash Pets  Website Screenshot'
+    },
+    {
+        id: 'project-3',
+        title: 'Rosemary Hutton',
+        text: 'Author',
+        image: '/projects/rohutton.jpg',
+        alt: 'Rosemary Hutton Website Screenshot',
     }
 ]
 
@@ -235,30 +256,38 @@ export const contactDetails = [
 export const aboutPage = [
     {
         id: 'about-page-01',
-        title: 'About',
-        subtitle: 'Lorem Ipsum',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        title: 'Our Start',
+        subtitle: 'Excellence in Web Development Since 2019',
+        text: 'Founded in 2019 by Scott Sutherland, Web Cheddar Web Solutions has established itself as a preeminent web development firm. Our collective of skilled developers, designers, and digital strategists is dedicated to delivering top-tier web solutions. Our diverse client base includes large corporations, educational institutions such as the University of Toronto, upscale restaurants, and real estate agencies.',
         image: '/about/about-us-page-01.webp',
         alt: 'A Mac laptop with bright neon purple and blue lights',
         class: 'shadow'
     },
     {
         id: 'about-page-02',
-        title: 'About',
-        subtitle: 'Lorem Ipsum',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        title: 'What we Do',
+        subtitle: 'Our Specialties',
+        text: 'Web Cheddar Web Solutions excels in transforming digital concepts into functional realities. We specialize in revitalizing existing websites to reflect the latest technological advancements and in converting client-specific designs from formats like PSD or Figma into responsive, dynamic websites. Our portfolio is a testament to our adaptability and expertise in handling a wide array of projects.',
         image: '/about/about-us-page-02.webp',
         alt: 'Computer screen and latop screen side by side with keyboard in front. Users hands are visible and code is on both screens',
         class: 'flex-flip shadow'
     },
     {
         id: 'about-page-03',
-        title: 'About',
-        subtitle: 'Lorem Ipsum',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        title: 'Why Choose Us',
+        subtitle: 'Commitment to Communication and Ongoing Support',
+        text: 'We are distinguished by our rigorous commitment to clear communication and extensive post-launch support. We believe in establishing long-term relationships with our clients, offering continued assistance and guidance post the launch of their websites. Throughout the development process, we engage in transparent and thorough communication, ensuring client satisfaction at every phase.',
         image: '/about/about-us-page-03.webp',
         alt: 'A smaller Mac laptop with neon purple and blue lights',
         class: 'shadow'
     },
-    
+    {
+        id: 'about-page-03',
+        title: 'Why Choose Us',
+        subtitle: 'Competitive Pricing and Timely Completion',
+        text: 'Recognizing the importance of budgetary efficiency and prompt delivery, Web Cheddar Web Solutions is committed to providing high-quality solutions at competitive prices. Our project management strategies are designed to ensure the timely completion of projects, respecting both budgetary needs and deadlines.',
+        image: '/about/about-us-page-03.webp',
+        alt: 'A smaller Mac laptop with neon purple and blue lights',
+        class: 'shadow'
+    },    
 ]

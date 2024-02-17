@@ -42,7 +42,13 @@ const About = () => {
                         </div>
                     </div>
                 )}
+                <div>
+                    <h3>Web Cheddar Web Solutions is more than a web development company; we are a dedicated team committed to delivering superior digital solutions.<br />
+
+                    <strong>We invite you to contact us for unparalleled web development services.</strong></h3>
+                </div>
             </div>
+            
         </section>
 
         <TestimonialSlider />
