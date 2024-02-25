@@ -3,68 +3,96 @@
 
 /* Services GRID */
 .services_home__titles {
-    max-width: 1200px;
-    padding: 0 15px;
-    margin: 15px auto;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 15px auto;
 }
 
 .services_home__container {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1;
-    justify-content: center;
-    gap: 10px;
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 15px 75px;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: center;
+  gap: 10px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 5px 15px 75px;
 }
 
 .services_home__card {
-    display: grid;
-    flex: 1;
-    align-items: end;
-    grid-template-rows: 150px;
-    background-color: #0f0f12;
-    background-image: linear-gradient(194deg, transparent 25%, #000 100%), url('http://localhost:3000/_next/image/?url=https%3A%2F%2Fwebcheddar.ca%2Fblog%2Fwp-content%2Fuploads%2F2023%2F10%2Fbest-practices-in-html.webp&w=1920&q=75');
-    background-size: cover;
-    border: 2px solid var(--primary-orange);
-    width: 100%;
-    min-width: 320px;
-    padding: 20px;
+  display: grid;
+  flex: 1 1;
+  grid-template-rows: 41px;
+  background-color: #333;
+  background: rgb(85,85,85);
+  background: linear-gradient(239deg, rgba(85,85,85,1) 0%, rgba(0,0,0,1) 100%);
+  /* background-image: linear-gradient(194deg, transparent 25%, #000 100%), url(http://localhost:3000/_next/image/?url=https%3A%2F%2Fwebcheddar.ca%2Fblog%2Fwp-content%2Fuploads%2F2023%2F10%2Fbest-practices-in-html.webp&w=1920&q=75); */
+  background-size: cover;
+  /* border: 2px solid var(--primary-orange); */
+  border: 3px solid #333;
+  width: 100%;
+  min-width: 320px;
+  padding: 35px 22px 40px 32px;
+  border-radius: 20px;
+  align-items: center;  
+  transition: all .75s ease-out;
+}
+
+.services_home__card:hover {
+  position: relative;
+  z-index: 100000;
+  flex: 2;
+  scale: 1.2;
+}
+
+.services_home__card:nth-child(2),
+.services_home__card:nth-child(4) {
+  background-image: linear-gradient(194deg, transparent 25%, #000 100%), url('http://localhost:3000/_next/image/?url=https%3A%2F%2Fwebcheddar.ca%2Fblog%2Fwp-content%2Fuploads%2F2023%2F10%2Fbest-practices-in-html.webp&w=1920&q=75');
+  background-position: bottom;
 }
 
 .services_home__card:nth-child(2),
 .services_home__card:nth-child(6) {
-    flex: 2
+  flex: 2
 }
 
 .services_home__card:nth-child(6) {
-    background-image:  linear-gradient(190deg, transparent 25%, #000 100%), url('http://localhost:3000/_next/image/?url=https%3A%2F%2Fwebcheddar.ca%2Fblog%2Fwp-content%2Fuploads%2F2023%2F10%2Fhtml-validation.webp&w=1920&q=75');
-    background-position: bottom;
+  background-image:  linear-gradient(190deg, transparent 25%, #000 100%), url('http://localhost:3000/_next/image/?url=https%3A%2F%2Fwebcheddar.ca%2Fblog%2Fwp-content%2Fuploads%2F2023%2F10%2Fhtml-validation.webp&w=1920&q=75');
+  background-position: bottom;
 }
 
+/* .services_home__card:nth-child(1),
+.services_home__card:nth-child(3),
+.services_home__card:nth-child(5) {
+  background-color: var(--primary-orange);
+} */
 
 .services_home__card img {
-    width: 50px;
-    height: auto;
-    object-fit: contain;
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 50%;
-    background-color: #333;
-    color: var(--primary-orange);
+  width: 50px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #333;
+  color: var(--primary-orange);
+}
+
+.services_home__icon {
+  color: var(--primary-orange);
+  font-size: 2rem;
 }
 
 .services_home__card h2 {
-    font-size: 20px;
+  font-size: 1.6rem;
 }
 
 .services_home__card p {
-    font-size: 14px;
+  font-size: 1rem;
 }
 
 @media (prefers-color-scheme: light) {
-    .services_home__card {
-        color: #fff;
-    }
+  .services_home__card {
+      color: #fff;
+  }
 }

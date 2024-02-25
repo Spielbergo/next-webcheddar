@@ -1,0 +1,15 @@
+.contact_page__header {
+    padding-bottom: 75px;
+}
+
+.services_page__section {
+    padding: 75px 0;
+}
+
+.services_page__section img {
+    border-radius: 15px;
+}
+
+.services_page__services_cards {
+    padding: 50px 15px;
+}

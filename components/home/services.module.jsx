@@ -18,10 +18,11 @@ const Services = () => {
             <div className={styles.services_home__container}>
                 {servicesHome.map((service) => (
                     <div key={service.id} className={`${styles.services_home__card} ${styles.shadow}`}>
-                        <h2 className='section_title_02'>{service.title}</h2>
                         <div className={styles.services_home__icon}>
                             <service.icon />
                         </div>
+                        <h2>{service.title}</h2>
+                        
                         <div className={styles.services_home__card_text}>
                             <p className='section-text'>{service.text}</p>
                         </div>

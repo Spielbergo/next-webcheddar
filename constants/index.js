@@ -1,7 +1,8 @@
 import { MdOutlineWeb, MdEvent, MdOutlineShoppingCart   } from "react-icons/md";
-import { IoSearchCircle, IoConstructOutline } from "react-icons/io5";
+import { IoSearchCircle, IoConstructOutline, IoLogoHtml5, IoLogoCss3, IoLogoJavascript, IoLogoReact, IoLogoWordpress, IoLogoNodejs  } from "react-icons/io5";
 import { TiSocialAtCircular } from "react-icons/ti";
 import { FaFacebookF, FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiNextdotjs, SiPhp } from "react-icons/si";
 
 export const navigation = [
     {
@@ -107,7 +108,7 @@ export const servicesHome = [
     {
         id: "webdev",
         icon: MdOutlineWeb,
-        title: "Website Design and Development",
+        title: "Website Development",
         text: "We craft unique websites that capture your brand's essence and engage your audience seamlessly.",
         path: "/services",
     },
@@ -147,6 +148,57 @@ export const servicesHome = [
         path: "/contact",
     },
 ];
+
+export const techStack = [
+    {
+        id: 'tech-1',
+        icon: IoLogoHtml5,
+        title: 'HTML',
+        color: '#f06529',
+    },
+    {
+        id: 'tech-2',
+        icon: IoLogoCss3,
+        title: 'CSS',
+        color: '#264de4',
+    },
+    {
+        id: 'tech-3',
+        icon: IoLogoJavascript,
+        title: 'JS',
+        color: '#f0db4f',
+    },
+    {
+        id: 'tech-4',
+        icon: IoLogoReact,
+        title: 'React',
+        color: '#7cc5d9',
+    },
+    {
+        id: 'tech-5',
+        icon: SiNextdotjs,
+        title: 'NextJS',
+        color: '#fff',
+    },
+    {
+        id: 'tech-6',
+        icon: IoLogoNodejs,
+        title: 'NodeJS',
+        color: '#68a063',
+    },
+    {
+        id: 'tech-7',
+        icon: IoLogoWordpress,
+        title: 'WordPress',
+        color: '#21759b',
+    },
+    {
+        id: 'tech-8',
+        icon: SiPhp,
+        title: 'PHP',
+        color: '#8993be',
+    },
+]
 
 export const testimonials = [
     // {
@@ -212,21 +264,21 @@ export const projectsHome = [
         alt: 'Rosemary Hutton Website Screenshot',
     },
     {
-        id: 'project-1',
+        id: 'project-4',
         title: 'University of Toronto',
         text: 'Med Store',
         image: '/projects/uoft.jpg',
         alt: 'University of Toronto Med Store Website Screenshot',
     },
     {
-        id: 'project-2',
+        id: 'project-5',
         title: 'Smash Pets',
         text: 'Pet Care',
         image: '/projects/smashpets.jpg',
         alt: 'Smash Pets  Website Screenshot'
     },
     {
-        id: 'project-3',
+        id: 'project-6',
         title: 'Rosemary Hutton',
         text: 'Author',
         image: '/projects/rohutton.jpg',
@@ -290,4 +342,58 @@ export const aboutPage = [
         alt: 'A smaller Mac laptop with neon purple and blue lights',
         class: 'shadow'
     },    
+]
+
+export const servicePageOne = [
+    {
+        id: 'service-page-01',
+        title: 'Web Development',
+        subtitle: 'Figma/Photoshop to Web',
+        text: 'Have a site designed already? We excel in transforming your Figma or Photoshop designs into fully functional, responsive websites. Our team ensures every detail of your original design is meticulously brought to life, preserving the integrity and intent of your creative vision. Whether it is a pixel-perfect replication or a flexible adaptation, we bridge the gap between design and development seamlessly.',
+        alt: 'Lorem Ipsum',
+        class: 'flex flex_nowrap',
+    },
+    {
+        id: 'service-page-02',
+        title: 'Services',
+        subtitle: 'Search Engine Optimization',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed enim. Eu consequat ac felis donec et odio. Arcu non odio euismod lacinia at quis risus sed vulputate. Fringilla est ullamcorper eget nulla.',
+        alt: 'Lorem Ipsum',
+        class: 'flex flex_nowrap flex_flip_row',
+    },
+    {
+        id: 'service-page-03',
+        title: 'Services',
+        subtitle: 'Website Maintenance',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed enim. Eu consequat ac felis donec et odio. Arcu non odio euismod lacinia at quis risus sed vulputate. Fringilla est ullamcorper eget nulla.',
+        alt: 'Lorem Ipsum',
+        class: 'flex flex_nowrap',
+    },
+]
+
+export const servicePageTwo = [
+    {
+        id: 'service-page-04',
+        title: 'Services',
+        subtitle: 'Social Media Management',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed enim. Eu consequat ac felis donec et odio. Arcu non odio euismod lacinia at quis risus sed vulputate. Fringilla est ullamcorper eget nulla.',
+        alt: 'Lorem Ipsum',
+        class: 'flex flex_nowrap flex_flip_row',
+    },
+    {
+        id: 'service-page-05',
+        title: 'Services',
+        subtitle: 'E-Commerce Solutions',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed enim. Eu consequat ac felis donec et odio. Arcu non odio euismod lacinia at quis risus sed vulputate. Fringilla est ullamcorper eget nulla.',
+        alt: 'Lorem Ipsum',
+        class: 'flex flex_nowrap',
+    },
+    {
+        id: 'service-page-06',
+        title: 'Services',
+        subtitle: 'Special Events Websites',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed enim. Eu consequat ac felis donec et odio. Arcu non odio euismod lacinia at quis risus sed vulputate. Fringilla est ullamcorper eget nulla.',
+        alt: 'Lorem Ipsum',
+        class: 'flex flex_nowrap flex_flip_row',
+    },
 ]

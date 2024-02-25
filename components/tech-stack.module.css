@@ -1,0 +1,15 @@
+.tech_stack__container {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    max-width: 1200px;
+}
+
+.tech_stack__container p {
+    font-size: 2.5rem;
+    filter: grayscale();
+}
+
+.tech_stack__container p:hover {
+    filter: none;
+}

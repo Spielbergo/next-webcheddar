@@ -19,7 +19,7 @@ export default function MetaHead ({
     	{/*
         	Fundamental head elements.
     	*/}
-    	<title>{ title } </title>
+    	<title>{ typeof title === 'string' ? title : globalMeta.siteName }</title>
     	<meta name="description" content={description} />
     	<link rel="canonical" href={canonicalUrl} />
     	<meta name="viewport" content="width=device-width, initial-scale=1" />
