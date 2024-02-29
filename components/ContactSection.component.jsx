@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { DiAndroid } from "react-icons/di";
 
-import Address from './Address.conponent';
+import Address from './Address.component';
 import ContactForm from './ContactForm.component';
 
 import styles from '../styles/contact-section.module.css';

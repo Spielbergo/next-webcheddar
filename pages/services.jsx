@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { servicePageOne, servicePageTwo } from '../constants';
 
-import Services from '../components/home/Services.module';
+import Services from '../components/home/Services.component';
 import ServiceText from '../components/ServicesText.component'; 
 import ContactSection from '../components/ContactSection.component';
 import TestimonialSlider from '../components/TestimonialSlider.component';

@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
 
 import Head from '../components/Meta.component';
-import Navigation from "./Navigation.component";
+
 import Footer from "./Footer.component";
+import Navigation from "./Navigation.component";
 
 import globalMeta from '../constants/globalMeta';
 // import schema from '../components/Schema.component';

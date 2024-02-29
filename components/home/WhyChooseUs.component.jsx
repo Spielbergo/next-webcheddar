@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Router from 'next/router';
 
 import aboutImage from '../../assets/images/why-choose-us.webp';
-import Button from "../Button.component";
+import Button from '../Button.component';
 
 import styles from './why-choose-us.module.css';
 

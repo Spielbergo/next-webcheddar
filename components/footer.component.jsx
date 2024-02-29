@@ -4,7 +4,7 @@ import Link from "next/link";
 import { contactDetails, navigation } from "../constants";
 
 import Clients from "./Clients.component";
-import Address from "./Address.conponent";
+import Address from "./Address.component";
 import ContactForm from './ContactForm.component';
 
 import styles from "../styles/footer.module.css";

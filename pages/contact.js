@@ -4,7 +4,7 @@ import globalMeta from '../constants/globalMeta';
 
 import contactImage from '../assets/images/hero/header.webp';
 
-import Address from "../components/Address.conponent";
+import Address from "../components/Address.component";
 import ContactForm from "../components/ContactForm.component";
 import GoogleMaps from "../components/GoogleMaps.component";
 

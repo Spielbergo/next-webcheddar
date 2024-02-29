@@ -1,6 +1,6 @@
-import Hero from './hero.module';
+import Hero from './Hero.component';
 import Clients from '../Clients.component';
-import Services from './Services.module';
+import Services from './Services.component';
 
 export default {
     Hero,
