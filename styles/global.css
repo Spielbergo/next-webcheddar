@@ -102,6 +102,21 @@ body {
     /* padding-top: 75px; */
 }
 
+/* Make sure this comes after the default nprogress.css styles */
+#nprogress .bar {
+  background: var(--primary-orange) !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px var(--primary-orange), 0 0 5px var(--primary-orange) !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: var(--primary-orange) !important;
+  border-left-color: var(--primary-orange) !important;
+}
+
+
 .container {
   max-width: 1200px;
   margin: 0 15px;

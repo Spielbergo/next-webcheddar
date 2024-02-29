@@ -57,7 +57,7 @@ export default function Blog({ initialPosts, totalPages, allCategories }) {
     <section className={styles.blog_index__section}>
       <header className="page_header">
         <div className="page_header__text">
-          <h1 className="page_header__h1">Our Blog</h1>
+          <h1 className="page_header__h1">Web Cheddar Blog</h1>
         </div>
         <Image 
           src={contactImage}
@@ -70,18 +70,19 @@ export default function Blog({ initialPosts, totalPages, allCategories }) {
       </header>
 
       {/* Category Tabs */}
-      <div className={styles.category_tabs}>
+      <div className={styles.blog_index__category_tabs}>
         {categories.map(category => (
           <button
             key={category.id}
-            className={currentCategory === category.id ? styles.active_tab : ''}
+            className={currentCategory === category.id ? styles.blog_index__active_tab : ''}
             onClick={() => handleCategoryChange(category.id)}
           >
             {category.name}
           </button>
         ))}
       </div>
-
+      
+      {/* Cards */}
       <div className={styles.blog_index__container}>
         {isClient && filteredPosts && filteredPosts.length > 0 ? (
           filteredPosts.map(post => (

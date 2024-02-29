@@ -378,7 +378,7 @@ export const servicePageTwo = [
         subtitle: 'Social Media Management',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed enim. Eu consequat ac felis donec et odio. Arcu non odio euismod lacinia at quis risus sed vulputate. Fringilla est ullamcorper eget nulla.',
         alt: 'Lorem Ipsum',
-        class: 'flex flex_nowrap flex_flip_row',
+        class: 'flex flex_nowrap',
     },
     {
         id: 'service-page-05',
@@ -386,7 +386,7 @@ export const servicePageTwo = [
         subtitle: 'E-Commerce Solutions',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed enim. Eu consequat ac felis donec et odio. Arcu non odio euismod lacinia at quis risus sed vulputate. Fringilla est ullamcorper eget nulla.',
         alt: 'Lorem Ipsum',
-        class: 'flex flex_nowrap',
+        class: 'flex flex_nowrap flex_flip_row',
     },
     {
         id: 'service-page-06',
@@ -394,6 +394,6 @@ export const servicePageTwo = [
         subtitle: 'Special Events Websites',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed enim. Eu consequat ac felis donec et odio. Arcu non odio euismod lacinia at quis risus sed vulputate. Fringilla est ullamcorper eget nulla.',
         alt: 'Lorem Ipsum',
-        class: 'flex flex_nowrap flex_flip_row',
+        class: 'flex flex_nowrap',
     },
 ]
