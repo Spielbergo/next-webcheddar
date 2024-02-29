@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import Router from 'next/router';
+
 import aboutImage from '../../assets/images/why-choose-us.webp';
 import Button from "../Button.component";
 
@@ -22,7 +24,7 @@ const WhyChooseUs = () => {
                     <p className="section_text">At Web Cheddar Web Solutions, we do things differently. First, we really listen to you. This way, we make sure your website matches your vision. Next, we use our years of experience to build something special, so you stand out online. Also, we believe in clear communication. You'll always know what's going on with your project. And lastly, our support doesn’t end once your site is live. We're here to help, making sure your website keeps running smoothly. </p>
                     <Button 
                         variant="default__home" 
-                        onClick={() => router.push('/services')}>
+                        onClick={() => Router.push('services')}>
                         Our Services
                     </Button>
                 </div>

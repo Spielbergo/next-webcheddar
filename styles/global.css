@@ -102,7 +102,7 @@ body {
     /* padding-top: 75px; */
 }
 
-/* Make sure this comes after the default nprogress.css styles */
+/* Loader Progress Bar */
 #nprogress .bar {
   background: var(--primary-orange) !important;
 }
@@ -115,7 +115,6 @@ body {
   border-top-color: var(--primary-orange) !important;
   border-left-color: var(--primary-orange) !important;
 }
-
 
 .container {
   max-width: 1200px;

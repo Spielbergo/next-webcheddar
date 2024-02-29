@@ -20,7 +20,6 @@ export default function App({ Component, pageProps }) {
         <>
             <Head>
                 <meta ></meta>
-                {/* Add the favicon, site title, etc. here */}
             </Head>
             <Layout>
                 <Component {...pageProps} />
