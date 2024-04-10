@@ -8,7 +8,8 @@ import Button from "../Button.component";
 import styles from './hero.module.css';
 
 const Hero = () => {
-    const router = useRouter()
+    const Router = useRouter();
+    
     return (
         <section>            
             <div className={styles.hero__container}>
@@ -17,7 +18,7 @@ const Hero = () => {
                     <h2 className={styles.hero__h2}>Quality Digital Services Your Business Needs</h2>
                     <Button 
                         variant="default__home" 
-                        onClick={() => router.push('/services')}>
+                        onClick={() => Router.push('services')}>
                         Our Services
                     </Button>
                 </div>

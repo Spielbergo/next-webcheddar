@@ -42,6 +42,7 @@
   --primary-orange: #fd7304;
   --text-color: #ddd;
   --title-color: #fff;
+  --grey-bg-gradient: linear-gradient(239deg, rgba(85, 85, 85, 1) 0%, rgb(19, 18, 18) 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -167,7 +168,8 @@ button:hover {
 
 .shadow {
   box-shadow:
-    0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0px -1px 1px hsl(0deg 0% 0% / 0.075),
+    /* 0 1px 1px hsl(0deg 0% 0% / 0.075), */
     0 2px 2px hsl(0deg 0% 0% / 0.075),
     0 4px 4px hsl(0deg 0% 0% / 0.075),
     0 8px 8px hsl(0deg 0% 0% / 0.075),
@@ -243,7 +245,7 @@ button:hover {
   max-width: 800px;
   margin: 10px 0;
   font-size: 16px;
-  color: #ddd;
+  color: #333;
 }
 
 .social_icons__component {
@@ -290,6 +292,9 @@ button:hover {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+  .section_text {
+    color: #ddd;
   }
 }
 

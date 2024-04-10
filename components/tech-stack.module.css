@@ -7,7 +7,7 @@
 
 .tech_stack__container p {
     font-size: 2.5rem;
-    filter: grayscale();
+    /* filter: grayscale(); */
 }
 
 .tech_stack__container p:hover {

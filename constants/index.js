@@ -251,10 +251,10 @@ export const projectsHome = [
     },
     {
         id: 'project-2',
-        title: 'Smash Pets',
-        text: 'Pet Care',
-        image: '/projects/smashpets.jpg',
-        alt: 'Smash Pets  Website Screenshot'
+        title: 'Parisella Vincelli Associates',
+        text: 'Consulting Group',
+        image: '/projects/pva.webp',
+        alt: 'PVA Website Screenshot'
     },
     {
         id: 'project-3',
@@ -265,10 +265,10 @@ export const projectsHome = [
     },
     {
         id: 'project-4',
-        title: 'University of Toronto',
-        text: 'Med Store',
-        image: '/projects/uoft.jpg',
-        alt: 'University of Toronto Med Store Website Screenshot',
+        title: 'Organize This',
+        text: 'Oragnizers',
+        image: '/projects/org-this.webp',
+        alt: 'Organize This Website Screenshot',
     },
     {
         id: 'project-5',
@@ -279,10 +279,10 @@ export const projectsHome = [
     },
     {
         id: 'project-6',
-        title: 'Rosemary Hutton',
-        text: 'Author',
-        image: '/projects/rohutton.jpg',
-        alt: 'Rosemary Hutton Website Screenshot',
+        title: 'Bagel Plus',
+        text: 'Local Bakery',
+        image: '/projects/bagelplus.webp',
+        alt: 'Bagel Plus Website Screenshot',
     }
 ]
 
@@ -334,13 +334,13 @@ export const aboutPage = [
         class: 'shadow'
     },
     {
-        id: 'about-page-03',
+        id: 'about-page-04',
         title: 'Why Choose Us',
         subtitle: 'Competitive Pricing and Timely Completion',
         text: 'Recognizing the importance of budgetary efficiency and prompt delivery, Web Cheddar Web Solutions is committed to providing high-quality solutions at competitive prices. Our project management strategies are designed to ensure the timely completion of projects, respecting both budgetary needs and deadlines.',
         image: '/about/about-us-page-03.webp',
         alt: 'A smaller Mac laptop with neon purple and blue lights',
-        class: 'shadow'
+        class: 'flex-flip shadow'
     },    
 ]
 

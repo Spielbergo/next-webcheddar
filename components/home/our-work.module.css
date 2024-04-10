@@ -6,8 +6,10 @@
 }
 
 .cards__container {
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(3, auto);
     justify-content: space-between;
     gap: 15px;
     max-width: 1200px;
@@ -45,6 +47,6 @@
 
 @media screen and (min-width: 1025px) {
     .cards__card {
-        max-width: 360px;
+        max-width: 100%;
     }
 }

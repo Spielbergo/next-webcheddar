@@ -6,25 +6,25 @@
 }
 
 .hero__container {
-    position: relative; /* Required for absolute positioning of children */
+    position: relative; 
     width: 100%;
     height: 750px;
     display: flex;
-    justify-content: center; /* Centers child elements horizontally */
-    align-items: center; /* Centers child elements vertically */
+    justify-content: center;
+    align-items: center; 
     background-image: linear-gradient(to right top, #fd7304, #d55227, #a7392e, #75272c, #441a21, #441a21, #441a21, #441a21, #75272c, #a7392e, #d55227, #fd7304);
 }
 
 .hero__title {
     position: absolute;
-    left: 50%; /* Start at the half of the container's width */
-    transform: translateX(-50%); /* Center the title div */
+    left: 50%; 
+    transform: translateX(-50%);
     max-width: 1200px;
-    width: calc(100% - 30px); /* Adjust width considering padding */
-    padding: 0 15px; /* Consistent padding on both sides */
-    box-sizing: border-box; /* Include padding in width calculation */
-    top: 50%; /* Align vertically to center */
-    transform: translate(-50%, -50%); /* Center the title div both horizontally and vertically */
+    width: calc(100% - 30px);
+    padding: 0 15px;
+    box-sizing: border-box;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .hero__h1 {
@@ -38,18 +38,17 @@
     margin-bottom: 15px;
 }
 
-/* Responsive adjustments */
 @media screen and (min-width: 1025px) {
     .hero__title {
-        padding-left: calc((100% - 1600px) / 2 + 15px); /* Adjust left padding for wider screens */
-        padding-right: 15px; /* Maintain a 15px padding on the right */
+        padding-left: calc((100% - 1600px) / 2 + 15px);
+        padding-right: 15px; 
     }
     
     .hero__h1 {
-        font-size: 1.3em; /* Larger text size for larger screens */
+        font-size: 1.3em; 
     }
 
     .hero__h2 {
-        font-size: 4em; /* Larger text size for larger screens */
+        font-size: 4em;
     }
 }

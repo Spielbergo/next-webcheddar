@@ -35,7 +35,7 @@ const About = () => {
                             alt={about.alt}
                         />
                         {/* Text */}
-                        <div>
+                        <div className={styles.about_page__container_text}>
                             <h2 className="section_title_01">{about.title}</h2>
                             <h3 className="section_title_02">{about.subtitle}</h3>
                             <p className="section_text">{about.text}</p>
