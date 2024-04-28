@@ -92,7 +92,7 @@
     justify-content: center;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
     .main_nav__scrolled {
         background-color: #fff;
         box-shadow:
@@ -106,7 +106,12 @@
     .main_nav__scrolled ul li {
         color: #000;
     }
-}
+    
+    .main_nav__social_icons,
+    .main_nav__navLinks {
+        color: #fff;
+    }
+} */
 
 @media screen and (min-width: 767px) {
     .main_nav__container {

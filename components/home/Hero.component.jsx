@@ -11,7 +11,7 @@ const Hero = () => {
     const Router = useRouter();
     
     return (
-        <section>            
+        <header>            
             <div className={styles.hero__container}>
                 <div className={styles.hero__title}>
                     <h1 className={styles.hero__h1}>Web Cheddar Web Solutions</h1>
@@ -31,7 +31,7 @@ const Hero = () => {
                     priority 
                 />                
             </div>
-        </section>
+        </header>
     )
 }
 

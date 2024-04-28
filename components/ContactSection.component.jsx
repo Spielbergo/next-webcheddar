@@ -17,7 +17,7 @@ import { contactSection } from '../constants/index';
                     <div className={styles.contact_section__text}>
                         <h2 className="section_title_01">Contact</h2>
                         <h3 className="section_title_02">Get in Touch Us</h3>
-                        <p className="section_text">Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom</p>
+                        <p className="section_text">Reach out today to discuss how we can bring your website vision to life.</p>
                     </div>
 
                     {/* Contact Info */}

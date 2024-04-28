@@ -1,0 +1,35 @@
+/* Accessibility Button */
+.color_toggle_button {
+    position: fixed;
+    right: -3px;
+    bottom: 50%;
+    z-index: 1000;
+    background-color: var(--primary-orange);
+    border: none;
+    border-radius: 0;
+    width: 75px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* animation: slideIn 0.5s forwards; */
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateY(100vh);
+    }
+    100% {
+      transform: translateY(calc(100vh - 100px)); 
+    }
+  }
+  
+  @keyframes slideOut {
+    0% {
+      transform: translateY(calc(100vh - 100px)); 
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }

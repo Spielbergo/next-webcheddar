@@ -49,3 +49,9 @@
     border: 1px solid var(--primary-orange);
     object-fit: contain;
 }
+
+@media (prefers-color-scheme: light) {
+    .testimonial_slider__section {
+        color: #fff !important;
+    }    
+}

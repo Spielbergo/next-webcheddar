@@ -25,9 +25,9 @@ const Footer = () => {
                 <div className={styles.footer__image}>
                     <Link href="/">
                         <picture>
-                            <source srcSet={FooterLogoWhite.src} media="(prefers-color-scheme: dark)" />
+                            {/* <source srcSet={FooterLogoWhite.src} media="(prefers-color-scheme: dark)" /> */}
                             <Image 
-                                src={FooterLogoBlack}
+                                src={FooterLogoWhite}
                                 className={styles.footer__logo} 
                                 alt="Web Cheddar Badge logo" 
                                 width="250" 
@@ -58,10 +58,9 @@ const Footer = () => {
                 <div className={styles.footer__links}>
                     <h2>Policies</h2>
                     <ul className="list-none">
-                        <li>Privacy Policy</li>
-                        <li>GDPR</li>
-                        <li>Terms & Conditions</li>
-                        <li>Sitemap</li>
+                        <li><Link href='/privacy-policy'>Privacy Policy</Link></li>
+                        <li><Link href='/gdpr-policy'>GDPR</Link></li>
+                        <li><Link href='/sitemap'>Sitemap</Link></li>
                     </ul>
                 </div>   
 

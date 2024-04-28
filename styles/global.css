@@ -5,7 +5,7 @@
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
-  --foreground-rgb: 0, 0, 0;
+  /* --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
@@ -37,16 +37,16 @@
   --callout-rgb: 238, 240, 241;
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+  --card-border-rgb: 131, 134, 135; */
 
   --primary-orange: #fd7304;
   --text-color: #ddd;
   --title-color: #fff;
   --grey-bg-gradient: linear-gradient(239deg, rgba(85, 85, 85, 1) 0%, rgb(19, 18, 18) 100%);
-}
+/* }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root { */
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
@@ -76,7 +76,7 @@
     --card-rgb: 100, 100, 100;
     --card-border-rgb: 200, 200, 200;
   }
-}
+
 
 * {
   box-sizing: border-box;
@@ -89,7 +89,6 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  
 }
 
 body {
@@ -102,6 +101,15 @@ body {
     rgb(var(--background-start-rgb));
     /* padding-top: 75px; */
 }
+
+/* body[data-theme='dark'] {
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb-dark))
+    )
+    rgb(var(--background-start-rgb-dark));
+} */
 
 /* Loader Progress Bar */
 #nprogress .bar {
@@ -227,7 +235,7 @@ button:hover {
 .page_header__h1 {
   position: relative;
   z-index: 10;
-  font-size: 4em;
+  font-size: 3em;
   max-width: 1000px;
   margin: auto;
 }
@@ -238,14 +246,14 @@ button:hover {
 }
 
 .section_title_02 {
-  font-size: 2.5em;
+  font-size: 2em;
 }
 
 .section_text {
   max-width: 800px;
   margin: 10px 0;
   font-size: 16px;
-  color: #333;
+  /* color: #333; */
 }
 
 .social_icons__component {
@@ -289,20 +297,36 @@ button:hover {
   color: var(--primary-orange);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+
   .section_text {
     color: #ddd;
   }
 }
 
+@media (prefers-color-scheme: light) {
+  .page_header__h1 {
+    color: #fff;
+  }
+
+  .page_header__image {
+    opacity: .9;
+  }
+} */
+
 @media screen and (min-width: 1025px) {
   address {
     text-align: left;
   }
-  .flex-nowrap {
+
+  .flex_nowrap {
     flex-wrap: wrap;
+  }
+
+  .page_header__h1 {
+    font-size: 4em;
   }
 }

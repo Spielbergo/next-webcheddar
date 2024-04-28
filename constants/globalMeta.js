@@ -3,7 +3,7 @@ const globalMeta = {
 	siteUrl: "https://webcheddar.ca",
 	siteLogo: "https://webcheddar.ca/assets/images/logos/web-cheddar-logo-black.png",
 	email: "info@webcheddar.ca",
-	description: "Default site description."
+	description: "Web Cheddar Web Solutions - Prices to Suit all Budgets"
 }
 
 export default globalMeta;

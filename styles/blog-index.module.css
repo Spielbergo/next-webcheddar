@@ -63,8 +63,8 @@
     overflow: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     .blog_index__card {  
         background-color: #333;
     }
-}
+} */

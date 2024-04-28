@@ -12,7 +12,7 @@ const ServicesText = ({ service }) => {
                     <p className="section_text">{service.text}</p>
                 </div>
                 <Image 
-                    src={contactImage}
+                    src={service.image}
                     className="shadow"
                     alt="Header image - code on a screen with an orange overlay" 
                     width="600" 

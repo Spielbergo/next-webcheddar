@@ -34,7 +34,7 @@ const TestimonialSlider = () => {
       <div className={styles.testimonials_slider__titles}>
           <h2 className="section_title_01">Testimonials</h2>
           <h3 className="section_title_02">Testimonials</h3>
-          <p className="section_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero, esse voluptates, dolorem voluptate aliquam</p>
+          <p className="section_text">See what our satisfied clients have to say about their experience working with us.</p>
       </div>
 
       <Slider {...settings} className={`container ${styles.testimonial_slider__container}`}>

@@ -12,6 +12,7 @@
 }
 
 .about_page__container > div:nth-child(5) {
+    padding: 50px 75px;
     text-align: center;
 }
 
@@ -40,9 +41,8 @@
     }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     .about_page__container > div {
         background: var(--grey-bg-gradient);
     }
-  }
-
+} */

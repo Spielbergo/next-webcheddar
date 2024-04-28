@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import Button from '../Button.component';
@@ -19,7 +18,7 @@ const Services = () => {
 
             <div className={styles.services_home__container}>
                 {servicesHome.map((service) => (
-                    <div key={service.id} className={`${styles.services_home__card} ${styles.shadow}`}>
+                    <div key={service.id} className={`${styles.services_home__card} shadow`}>
                         <div className={styles.services_home__icon}>
                             <service.icon />
                         </div>

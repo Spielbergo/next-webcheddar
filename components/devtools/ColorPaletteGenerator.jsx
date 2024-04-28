@@ -122,6 +122,7 @@ export default function ColorPalette() {
   // }
   return (
     <div className="container">
+        <h2>Colour Pallete Generator</h2>
         {/* Color Input Section */}
         <div className="color-input">
             <ChromePicker color={selectedColor} onChangeComplete={handleColorChange} />

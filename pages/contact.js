@@ -42,15 +42,15 @@ const Contact = () => {
                         <div className={styles.contact_page__text}>
                             <h1 className="section_title_01">Contact</h1>
                             <h2 className="section_title_02">Get in Touch</h2>
-                            <p className="section_text">Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom</p>
+                            <p className="section_text">Reach out today to discuss how we can bring your website vision to life.</p>
                         </div>
                         <Address />
                     </div>
 
                     {/* Form */}
                     <div className={styles.contact_page__form}>
-                        <h2 className="section_title_03">Contact</h2>
-                        <p className="section_text">Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem </p>
+                        {/* <h2 className="section_title_03">Contact</h2>
+                        <p className="section_text">Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem </p> */}
                         <ContactForm />
                     </div>
                 </div>

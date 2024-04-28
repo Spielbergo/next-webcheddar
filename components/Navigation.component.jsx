@@ -48,9 +48,9 @@ const Navigation = () => {
           <div>
             <Link href="/">
               <picture>
-                <source srcSet={NavLogoWhite.src} media="(prefers-color-scheme: dark)" />
+                {/* <source srcSet={NavLogoWhite.src} media="(prefers-color-scheme: dark)" /> */}
                 <Image 
-                  src={NavLogoBlack}
+                  src={NavLogoWhite}
                   className={styles.main_nav__logo} 
                   alt="Web Cheddar logo" 
                   width="150" 
@@ -85,7 +85,7 @@ const Navigation = () => {
                 <li key={socials.id}><a href={socials.link} target="_blank" rel="noopener nofollow noreferrer" title={socials.title} aria-label={socials.title} ><socials.icon /></a></li>
               )}   
               {/* Mobile Nav Menu Toggle */}              
-              <li className={styles.main_nav__toggle} onClick={() => handleMobileToggle()}>{mobileToggleOpen ? 'X' : 'Menu'}</li>                                    
+              <li className={styles.main_nav__toggle} onClick={() => handleMobileToggle()}>{mobileToggleOpen ? 'X' : 'M'}</li>                                    
               </ul>                    
             </div>                  
           </div>
