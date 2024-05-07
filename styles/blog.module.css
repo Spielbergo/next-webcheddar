@@ -11,6 +11,7 @@
 .blog_post__blog_title {
     position: absolute;
     top: 40%;
+    left: 10%;
     padding: 20px;
 }
 

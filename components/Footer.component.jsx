@@ -1,16 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { contactDetails, navigation } from "../constants";
+import { navigation, featuredBlogs } from "../constants";
 
 import Clients from "./Clients.component";
 import Address from "./Address.component";
-import ContactForm from './ContactForm.component';
 
 import styles from "../styles/footer.module.css";
 
 import FooterLogoWhite from '../assets/images/logos/web-cheddar-logo-white.png';
-import FooterLogoBlack from '../assets/images/logos/web-cheddar-logo-black.png';
 
 const Footer = () => {
     const date = new Date();
@@ -41,7 +39,7 @@ const Footer = () => {
                     <Address />
                 </div>   
 
-                {/* Links */}
+                {/* Column 1 */}
                 <div className={styles.footer__links}>
                     <h2>Navigate</h2>
                     <ul className="list-none">
@@ -50,37 +48,31 @@ const Footer = () => {
                                 <Link href={nav.link}>{nav.anchor}</Link>
                             </li>  
                         )}
-                        <li>Sitemap</li>
+                        <li><Link href='/sitemap'>Sitemap</Link></li>
                     </ul>
                 </div>    
 
-                {/* Links */}
+                {/* Column 2 */}
                 <div className={styles.footer__links}>
                     <h2>Policies</h2>
                     <ul className="list-none">
                         <li><Link href='/privacy-policy'>Privacy Policy</Link></li>
                         <li><Link href='/gdpr-policy'>GDPR</Link></li>
-                        <li><Link href='/sitemap'>Sitemap</Link></li>
+                        <li><Link href=''>Terms and Conditions</Link></li>
                     </ul>
                 </div>   
 
-                {/* Links */}
+                {/* Column 3 */}
                 <div className={styles.footer__links}>
-                    <h2>Navigate</h2>
+                    <h2>Blogs</h2>
                     <ul className="list-none">
-                        {navigation.map((nav) => 
-                            <li key={nav.id}>
-                                <Link href={nav.link}>{nav.anchor}</Link>
+                        {featuredBlogs.map((blog) => 
+                            <li key={blog.id}>
+                                <Link href={blog.url}>{blog.anchor}</Link>
                             </li>  
                         )}
-                        <li>Sitemap</li>
                     </ul>
                 </div>   
-
-                {/* Contact Form */}
-                {/* <div>
-                    <ContactForm />
-                </div> */}
             </div>
 
             {/* Copyright */}

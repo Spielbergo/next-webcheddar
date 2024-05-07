@@ -8,6 +8,7 @@
 
 .services_page__section img {
     border-radius: 15px;
+    object-fit: cover;
 }
 
 .services_page__services_cards {

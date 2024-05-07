@@ -204,7 +204,7 @@ button:hover {
 }
 
 .flex_nowrap {
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 /* .list-none {
@@ -323,7 +323,7 @@ button:hover {
   }
 
   .flex_nowrap {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 
   .page_header__h1 {

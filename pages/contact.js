@@ -4,6 +4,8 @@ import globalMeta from '../constants/globalMeta';
 
 import contactImage from '../assets/images/hero/header.webp';
 
+import Header from "../components/Header.component";
+import Layout from "../components/Layout";
 import Address from "../components/Address.component";
 import ContactForm from "../components/ContactForm.component";
 import GoogleMaps from "../components/GoogleMaps.component";
@@ -11,11 +13,18 @@ import GoogleMaps from "../components/GoogleMaps.component";
 import styles from "../styles/contact-page.module.css";
 
 const Contact = () => {
+    const header = (
+        <Header 
+          title="Contact" 
+          imageSrc="/header.webp" 
+          alt="Home Header Image" 
+        />
+    );
 
     return (
-        <>
+        <Layout header={header}> 
         
-        <header className="header">
+        {/* <header className="header">
             <div className="page_header__text">
                 <h1 className="page_header__h1">Contact Us</h1>
             </div>
@@ -27,37 +36,32 @@ const Contact = () => {
                 height="400"
                 priority 
             />   
-        </header>
-        <section>
-            <div className={styles.contact_page__container}>
-                {/* <div className={styles.contact_page__title}>
-                    <h1 className="section_title_01">Contact</h1>
-                    <h2 className="section_title_02">Get in Touch Us</h2>
-                    <p className="section_text">Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom</p>
-                </div> */}
+        </header> */}
+            <main>
+                <section>
+                    <div className={styles.contact_page__container}>
 
-                {/* Contact Details */}
-                <div className={styles.contact_page__form_container}>
-                    <div className={styles.contact_page__details}>
-                        <div className={styles.contact_page__text}>
-                            <h1 className="section_title_01">Contact</h1>
-                            <h2 className="section_title_02">Get in Touch</h2>
-                            <p className="section_text">Reach out today to discuss how we can bring your website vision to life.</p>
+                        {/* Contact Details */}
+                        <div className={styles.contact_page__form_container}>
+                            <div className={styles.contact_page__details}>
+                                <div className={styles.contact_page__text}>
+                                    <h1 className="section_title_01">Contact</h1>
+                                    <h2 className="section_title_02">Get in Touch</h2>
+                                    <p className="section_text">Reach out today to discuss how we can bring your website vision to life.</p>
+                                </div>
+                                <Address />
+                            </div>
+        
+                            {/* Form */}
+                            <div className={styles.contact_page__form}>
+                                <ContactForm />
+                            </div>
                         </div>
-                        <Address />
                     </div>
-
-                    {/* Form */}
-                    <div className={styles.contact_page__form}>
-                        {/* <h2 className="section_title_03">Contact</h2>
-                        <p className="section_text">Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem Ipsom Lorem </p> */}
-                        <ContactForm />
-                    </div>
-                </div>
-            </div>
-            <GoogleMaps />
-        </section>
-        </>
+                    <GoogleMaps />
+                </section>
+            </main>
+        </Layout>
     )
 }
 

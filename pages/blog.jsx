@@ -3,7 +3,9 @@ import Link from 'next/link';
 import parse from 'html-react-parser';
 import Image from 'next/image';
 
-import contactImage from '../assets/images/hero/header.webp';
+import Header from '../components/Header.component';
+import Layout from '../components/Layout';
+
 import styles from '../styles/blog-index.module.css';
 
 export default function Blog({ initialPosts, totalPages, allCategories }) {
@@ -39,7 +41,7 @@ export default function Blog({ initialPosts, totalPages, allCategories }) {
     if (currentPage < totalPages) {
       const nextPage = currentPage + 1;
       try {
-        const response = await fetch(`https://www.webcheddar.ca/blog/wp-json/wp/v2/posts?_embed&per_page=40&page=${nextPage}`);
+        const response = await fetch(`https://www.webcheddar.ca/blog/wp-json/wp/v2/posts?_embed&per_page=10&page=${nextPage}`);
         if (!response.ok) {
           throw new Error(`API call failed: ${response.status}`);
         }
@@ -53,66 +55,65 @@ export default function Blog({ initialPosts, totalPages, allCategories }) {
     }
   };
 
-  return (
-    <section className={styles.blog_index__section}>
-      <header className="page_header">
-        <div className="page_header__text">
-          <h1 className="page_header__h1">Web Cheddar Blog</h1>
-        </div>
-        <Image 
-          src={contactImage}
-          className="page_header__image"
-          alt="Header image - code on a screen with an orange overlay" 
-          width="1920" 
-          height="400"
-          priority 
-        />   
-      </header>
+  const header = (
+    <Header 
+      title="Web Cheddar Blog" 
+      imageSrc="/header.webp" 
+      alt="Home Header Image" 
+    />
+  );
 
-      {/* Category Tabs */}
-      <div className={styles.blog_index__category_tabs}>
-        {categories.map(category => (
-          <button
-            key={category.id}
-            className={currentCategory === category.id ? styles.blog_index__active_tab : ''}
-            onClick={() => handleCategoryChange(category.id)}
-          >
-            {category.name}
-          </button>
-        ))}
-      </div>
-      
-      {/* Cards */}
-      <div className={styles.blog_index__container}>
-        {isClient && filteredPosts && filteredPosts.length > 0 ? (
-          filteredPosts.map(post => (
-            <div key={post.id} className={styles.blog_index__card}>
-              <Link href={`/blog/${post.slug}`} passHref>
-                <div>              
-                  {post._embedded['wp:featuredmedia'] && 
-                    <Image 
-                      src={post._embedded['wp:featuredmedia'][0].source_url} 
-                      alt={post.title.rendered} 
-                      width={300} 
-                      height={200}
-                    />
-                  }
-                  <div className={styles.blog_index__card_text}>
-                    <h2>{parse(post.title.rendered)}</h2>
-                    <p>{parse(post.excerpt.rendered)}</p>
+  return (
+    <Layout header={header}> 
+    <main>
+      <section className={styles.blog_index__section}>
+          
+        {/* Category Tabs */}
+        <div className={styles.blog_index__category_tabs}>
+          {categories.map(category => (
+            <button
+              key={category.id}
+              className={currentCategory === category.id ? styles.blog_index__active_tab : ''}
+              onClick={() => handleCategoryChange(category.id)}
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
+        
+        {/* Cards */}
+        <div className={styles.blog_index__container}>
+          {isClient && filteredPosts && filteredPosts.length > 0 ? (
+            filteredPosts.map(post => (
+              <div key={post.id} className={styles.blog_index__card}>
+                <Link href={`/blog/${post.slug}`} passHref>
+                  <div>              
+                    {post._embedded['wp:featuredmedia'] && 
+                      <Image 
+                        src={post._embedded['wp:featuredmedia'][0].source_url} 
+                        alt={post.title.rendered} 
+                        width={300} 
+                        height={200}
+                      />
+                    }
+                    <div className={styles.blog_index__card_text}>
+                      <h2>{parse(post.title.rendered)}</h2>
+                      <p>{parse(post.excerpt.rendered)}</p>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </div>
-          ))
-        ) : (
-          !isClient && <div>Loading posts...</div>
+                </Link>
+              </div>
+            ))
+          ) : (
+            !isClient && <div>Loading posts...</div>
+          )}
+        </div>
+        {isClient && currentPage < totalPages && (
+          <button onClick={loadMorePosts}>Load More</button>
         )}
-      </div>
-      {isClient && currentPage < totalPages && (
-        <button onClick={loadMorePosts}>Load More</button>
-      )}
-    </section>
+      </section>
+    </main>
+    </Layout>
   );
 }
 

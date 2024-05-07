@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
+import Navigation from '../components/Navigation.component';
+import Footer from '../components/Footer.component';
 import NProgress from 'nprogress';
 import Router from 'next/router';
 import '../styles/global.css';
@@ -18,12 +20,12 @@ Router.events.on('routeChangeError', () => NProgress.done());
 export default function App({ Component, pageProps }) {
     return (
         <>
-            <Head>
-                <meta ></meta>
-            </Head>
+            <Head />
+            <Navigation />
             <Layout>
                 <Component {...pageProps} />
             </Layout>
+            <Footer />
         </>
     );
 }

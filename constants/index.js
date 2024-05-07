@@ -180,12 +180,12 @@ export const techStack = [
         title: 'NextJS',
         color: '#fff',
     },
-    {
-        id: 'tech-6',
-        icon: IoLogoNodejs,
-        title: 'NodeJS',
-        color: '#68a063',
-    },
+    // {
+    //     id: 'tech-6',
+    //     icon: IoLogoNodejs,
+    //     title: 'NodeJS',
+    //     color: '#68a063',
+    // },
     {
         id: 'tech-7',
         icon: IoLogoWordpress,
@@ -201,13 +201,6 @@ export const techStack = [
 ]
 
 export const testimonials = [
-    // {
-    //     id: 'testie-1',
-    //     text: "This company is great!",
-    //     name: "John Doe",
-    //     company: "Some Company",
-    //     image: "/logos/clients/bagel-plus.png"
-    // },
     {
         id: 'testie-2',
         text: "Scott and his team absolutely floored us with the mock-ups and examples that he provided. We were sold on day one. The delivery of the final product was done quickly and efficiently.",
@@ -224,13 +217,6 @@ export const testimonials = [
         company: "Parisella Vincelli Associates",
         image: "/logos/clients/pva.png",
     },
-    // {
-    //     id: 'testie-2',
-    //     text: "I highly recommend them!",
-    //     name: "Jane Doe",
-    //     company: "Another Company",
-    //     image: "/logos/clients/yopie.png",
-    // },
     {
         id: 'testie-2',
         text: "Web Cheddar offers a very personable experience. Scott the lead is very tech savy with SOE, content, visuals, and web site development. Overall the experience is worth reaching out to them as their ideas and knowledge are very insightful. I strongly recommend their on line services.",
@@ -239,7 +225,20 @@ export const testimonials = [
         company: "Crocodile Rock",
         image: "/logos/clients/croc-rock.png",
     },
-  ];
+]
+
+export const featuredBlogs = [
+    {
+        id: 'featuredBlog-1',
+        anchor: 'Introduction to HTML',
+        url: '/blog/introduction-to-html/',
+    },
+    {
+        id: 'featuredBlog-2',
+        anchor: 'Introduction to CSS',
+        url: '/blog/introduction-to-css/',
+    }
+]
 
 export const projectsHome = [
     {
@@ -322,13 +321,13 @@ export const aboutPage = [
         text: 'Web Cheddar Web Solutions excels in transforming digital concepts into functional realities. We specialize in revitalizing existing websites to reflect the latest technological advancements and in converting client-specific designs from formats like PSD or Figma into responsive, dynamic websites. Our portfolio is a testament to our adaptability and expertise in handling a wide array of projects.',
         image: '/about/about-us-page-02.webp',
         alt: 'Computer screen and latop screen side by side with keyboard in front. Users hands are visible and code is on both screens',
-        class: 'flex-flip shadow'
+        class: 'shadow'
     },
     {
         id: 'about-page-03',
         title: 'Why Choose Us',
         subtitle: 'Commitment to Communication and Ongoing Support',
-        text: 'We are distinguished by our rigorous commitment to clear communication and extensive post-launch support. We believe in establishing long-term relationships with our clients, offering continued assistance and guidance post the launch of their websites. Throughout the development process, we engage in transparent and thorough communication, ensuring client satisfaction at every phase.',
+        text: 'We are distinguished by our rigorous commitment to clear communication and extensive post-launch support. We believe in establishing long-term relationships with our clients, offering continued assistance and guidance post the launch of their websites. Throughout the development process, we engage in transparent and thorough communication.',
         image: '/about/about-us-page-03.webp',
         alt: 'A smaller Mac laptop with neon purple and blue lights',
         class: 'shadow'
@@ -338,9 +337,9 @@ export const aboutPage = [
         title: 'Why Choose Us',
         subtitle: 'Competitive Pricing and Timely Completion',
         text: 'Recognizing the importance of budgetary efficiency and prompt delivery, Web Cheddar Web Solutions is committed to providing high-quality solutions at competitive prices. Our project management strategies are designed to ensure the timely completion of projects, respecting both budgetary needs and deadlines.',
-        image: '/about/about-us-page-03.webp',
+        image: '/about/about-us-page-04.webp',
         alt: 'A smaller Mac laptop with neon purple and blue lights',
-        class: 'flex-flip shadow'
+        class: 'shadow'
     },    
 ]
 
@@ -350,6 +349,7 @@ export const servicePageOne = [
         title: 'Design & Development',
         subtitle: 'Figma/Photoshop to Web',
         text: 'Have a site designed already? We excel in transforming your Figma or Photoshop designs into fully functional, responsive websites. Our team ensures every detail of your original design is meticulously brought to life, preserving the integrity and intent of your creative vision. Whether it is a pixel-perfect replication or a flexible adaptation, we bridge the gap between design and development seamlessly.',
+        image: '/services/design-and-development.webp',
         alt: 'Design to web services - Photoshop Figma to Web',
         class: 'flex flex_nowrap',
     },
@@ -358,7 +358,7 @@ export const servicePageOne = [
         title: 'Services',
         subtitle: 'Search Engine Optimization',
         text: 'Elevate your online visibility with Web Cheddar Web Solutio\' expert Search Engine Optimization (SEO) services. Our proactive approach ensures that your website ranks higher in search engine results, driving increased traffic and engagement. Through comprehensive keyword research, strategic content optimization, and continuous monitoring, we optimize your digital presence to attract your target audience effectively. Work with us to advance your business to the forefront of search engine rankings, securing sustainable growth and continual success.',
-        image: '/services/social-media-management.webp',
+        image: '/services/search-engine-optimization.webp',
         alt: 'Search Engine Optimization',
         class: 'flex flex_nowrap flex_flip_row',
     },
@@ -367,7 +367,7 @@ export const servicePageOne = [
         title: 'Services',
         subtitle: 'E-Commerce Solutions',
         text: 'Unlock the full potential of your online store with Web Cheddar Web Solutions\' robust e-commerce solutions. Our approach ensures seamless integration, intuitive user experience, and secure payment processing, empowering you to maximize sales and streamline operations. From customizing your storefront to implementing advanced inventory management systems, we tailor our solutions to meet your unique business needs. Trust us to elevate your e-commerce platform, drive revenue growth, and deliver unparalleled customer satisfaction for lasting success in the digital marketplace.',
-        image: '/services/social-media-management.webp',
+        image: '/services/ecommerce.webp',
         alt: 'E-commerce Solutions',
         class: 'flex flex_nowrap',
     },
@@ -379,6 +379,7 @@ export const servicePageTwo = [
         title: 'Services',
         subtitle: 'Special Events Websites',
         text: 'Celebrate life\'s special moments with our bespoke Special Events website services. Whether it\'s a wedding, anniversary, birthday, reunion, or any other memorable occasion, we specialize in crafting customized template sites to perfectly complement your event. Our intuitive designs and user-friendly interfaces ensure that your guests can easily access event details, RSVP, and share memories. From elegant themes for weddings to vibrant designs for birthdays, we create tailored solutions that capture the essence of your special event and leave a lasting impression on your guests. Let us help you make every moment unforgettable with our Special Events website services.',
+        image: '/services/special-events.webp',
         alt: 'Lorem Ipsum',
         class: 'flex flex_nowrap',
     },
@@ -387,6 +388,7 @@ export const servicePageTwo = [
         title: 'Services',
         subtitle: 'Website Maintenance',
         text: 'Keep your website running smoothly with Web Cheddar Web Solutions\' website maintenance services. Our dedicated team ensures that your site stays secure, up-to-date, and optimized for peak performance. From regular backups and security patches to content updates and software upgrades, we handle all aspects of website maintenance so you can focus on growing your business. With our active approach, we identify and resolve issues before they impact your site\'s functionality, providing peace of mind and uninterrupted online presence for your visitors. Trust us to safeguard your website and keep it operating at its best.',
+        image: '/services/website-maintenance.webp',
         alt: 'Lorem Ipsum',
         class: 'flex flex_nowrap flex_flip_row',
     },    

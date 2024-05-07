@@ -7,10 +7,13 @@ import OurWork from '../components/home/OurWork.component';
 import WhyChooseUs from '../components/home/WhyChooseUs.component';
 import TestimonialSlider from '../components/TestimonialSlider.component';
 
+
+
 const Home = ({ posts }) => {
   return (        
     <>
-      <Hero />  
+    <Hero />
+    <main>
       <Clients />       
       <WhyChooseUs />
       <Services />
@@ -18,6 +21,7 @@ const Home = ({ posts }) => {
       <ContactSection />
       <OurWork />      
       <TestimonialSlider />
+    </main>
     </>
   )
 }

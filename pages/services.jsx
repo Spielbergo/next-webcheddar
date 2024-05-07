@@ -3,6 +3,8 @@ import Image from 'next/image';
 
 import { servicePageOne, servicePageTwo } from '../constants';
 
+import Header from '../components/Header.component';
+import Layout from '../components/Layout';
 import Services from '../components/home/Services.component';
 import ServiceText from '../components/ServicesText.component'; 
 import ContactSection from '../components/ContactSection.component';
@@ -12,9 +14,17 @@ import styles from '../styles/services-page.module.css';
 import contactImage from '../assets/images/hero/header.webp';
 
 const ServicesPage = () => {
+    const header = (
+        <Header 
+          title="Services" 
+          imageSrc="/header.webp" 
+          alt="Home Header Image" 
+        />
+    );
+
     return (
-        <>
-            <header className={`"page_header" ${styles.contact_page__header}`}>
+        <Layout header={header}> 
+            {/* <header className="page_header">
                 <div className="page_header__text">
                     <h1 className="page_header__h1">Services</h1>
                 </div>
@@ -26,18 +36,19 @@ const ServicesPage = () => {
                     height="400"
                     priority 
                 />
-            </header>
+            </header> */}
+            <main>
+                <Services />            
 
-            <Services />            
+                {servicePageOne.map(service => <ServiceText key={service.id} service={service} />)}
+                
+                <ContactSection />
+                
+                {servicePageTwo.map(service => <ServiceText key={service.id} service={service} />)}
 
-            {servicePageOne.map(service => <ServiceText key={service.id} service={service} />)}
-            
-            <ContactSection />
-            
-            {servicePageTwo.map(service => <ServiceText key={service.id} service={service} />)}
-
-            <TestimonialSlider />
-        </>
+                <TestimonialSlider />
+            </main>
+        </Layout>
     );
 }
 
