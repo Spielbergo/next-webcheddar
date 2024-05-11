@@ -3,6 +3,7 @@
     height: 750px;
     object-fit: cover;
     opacity: 0.1;
+    z-index: -10;
 }
 
 .hero__container {
@@ -13,6 +14,7 @@
     justify-content: center;
     align-items: center; 
     background-image: linear-gradient(to right top, #fd7304, #d55227, #a7392e, #75272c, #441a21, #441a21, #441a21, #441a21, #75272c, #a7392e, #d55227, #fd7304);
+    z-index: 0;
 }
 
 .hero__title {
@@ -36,6 +38,11 @@
 .hero__h2 {
     font-size: 2em;
     margin-bottom: 15px;
+}
+
+.hero__button_container {
+    display: flex;
+    gap: 15px;
 }
 
 /* @media (prefers-color-scheme: light) {

@@ -1,11 +1,20 @@
+import { Inter } from 'next/font/google'
+ 
 import { useRouter } from "next/router";
+
 import Header from "./Header.component";
 import Head from '../components/Meta.component';
 import Footer from "./Footer.component";
 import Navigation from "./Navigation.component";
 
 import globalMeta from '../constants/globalMeta';
+
 import styles from "../styles/home.module.css";
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export default function Layout({ header, children }) {
   const router = useRouter();

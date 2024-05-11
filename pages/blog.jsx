@@ -65,60 +65,61 @@ export default function Blog({ initialPosts, totalPages, allCategories }) {
 
   return (
     <Layout header={header}> 
-    <main>
-      <section className={styles.blog_index__section}>
+      <main>
+        <section className={styles.blog_index__section}>
+            
+          {/* Category Tabs */}
+          <aside className={styles.blog_index__category_tabs}>
+            <h2 className={styles.blog_index__category_title}>Categories</h2>
+            {categories.map(category => (
+              <button
+                key={category.id}
+                className={currentCategory === category.id ? styles.blog_index__active_tab : ''}
+                onClick={() => handleCategoryChange(category.id)}
+              >
+                {category.name}
+              </button>
+            ))}
+          </aside>
           
-        {/* Category Tabs */}
-        <div className={styles.blog_index__category_tabs}>
-          {categories.map(category => (
-            <button
-              key={category.id}
-              className={currentCategory === category.id ? styles.blog_index__active_tab : ''}
-              onClick={() => handleCategoryChange(category.id)}
-            >
-              {category.name}
-            </button>
-          ))}
-        </div>
-        
-        {/* Cards */}
-        <div className={styles.blog_index__container}>
-          {isClient && filteredPosts && filteredPosts.length > 0 ? (
-            filteredPosts.map(post => (
-              <div key={post.id} className={styles.blog_index__card}>
-                <Link href={`/blog/${post.slug}`} passHref>
-                  <div>              
-                    {post._embedded['wp:featuredmedia'] && 
-                      <Image 
-                        src={post._embedded['wp:featuredmedia'][0].source_url} 
-                        alt={post.title.rendered} 
-                        width={300} 
-                        height={200}
-                      />
-                    }
-                    <div className={styles.blog_index__card_text}>
-                      <h2>{parse(post.title.rendered)}</h2>
-                      <p>{parse(post.excerpt.rendered)}</p>
+          {/* Cards */}
+          <div className={styles.blog_index__container}>
+            {isClient && filteredPosts && filteredPosts.length > 0 ? (
+              filteredPosts.map(post => (
+                <div key={post.id} className={styles.blog_index__card}>
+                  <Link href={`/blog/${post.slug}`} passHref>
+                    <div>              
+                      {post._embedded['wp:featuredmedia'] && 
+                        <Image 
+                          src={post._embedded['wp:featuredmedia'][0].source_url} 
+                          alt={post.title.rendered} 
+                          width={300} 
+                          height={200}
+                        />
+                      }
+                      <div className={styles.blog_index__card_text}>
+                        <h2>{parse(post.title.rendered)}</h2>
+                        <div>{parse(post.excerpt.rendered)}</div>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              </div>
-            ))
-          ) : (
-            !isClient && <div>Loading posts...</div>
+                  </Link>
+                </div>
+              ))
+            ) : (
+              !isClient && <div>Loading posts...</div>
+            )}
+          </div>
+          {isClient && currentPage < totalPages && (
+            <button onClick={loadMorePosts}>Load More</button>
           )}
-        </div>
-        {isClient && currentPage < totalPages && (
-          <button onClick={loadMorePosts}>Load More</button>
-        )}
-      </section>
-    </main>
+        </section>
+      </main>
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  const postsResponse = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/posts?_embed&per_page=100'); // Adjust per_page as needed
+  const postsResponse = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/posts?_embed&per_page=40'); // Adjust per_page as needed
   const initialPosts = await postsResponse.json();
 
   const categoriesResponse = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/categories');

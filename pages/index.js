@@ -7,8 +7,6 @@ import OurWork from '../components/home/OurWork.component';
 import WhyChooseUs from '../components/home/WhyChooseUs.component';
 import TestimonialSlider from '../components/TestimonialSlider.component';
 
-
-
 const Home = ({ posts }) => {
   return (        
     <>

@@ -16,11 +16,18 @@ const Hero = () => {
                 <div className={styles.hero__title}>
                     <h1 className={styles.hero__h1}>Web Cheddar Web Solutions</h1>
                     <h2 className={styles.hero__h2}>Quality Digital Services Your Business Needs</h2>
-                    <Button 
-                        variant="default__home" 
-                        onClick={() => Router.push('services')}>
-                        Our Services
-                    </Button>
+                    <div className={styles.hero__button_container}>
+                        <Button 
+                            variant="default__home" 
+                            onClick={() => Router.push('services')}>
+                            Our Services
+                        </Button>
+                        <Button 
+                            variant="outline" 
+                            onClick={() => Router.push('contact')}>
+                            Get a Quote
+                        </Button>
+                    </div>
                 </div>
                 <Image 
                     src={heroImage}
