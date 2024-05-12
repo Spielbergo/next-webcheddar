@@ -11,6 +11,7 @@ const Hero = () => {
     const Router = useRouter();
     
     return (
+        // Hero
         <header>            
             <div className={styles.hero__container}>
                 <div className={styles.hero__title}>
@@ -33,6 +34,7 @@ const Hero = () => {
                     src={heroImage}
                     className={styles.hero__main_image} 
                     alt="Hero image - code on a screen wth an orange overlay" 
+                    layout="responsive"
                     width="1920" 
                     height="1080"
                     priority 

@@ -5,6 +5,7 @@ import { clientLogos } from '../constants/index';
 
  const Clients = () => {
     return (
+        // Clients Section
         <section>
             <ul className={styles.client_logos__container}>
             {clientLogos.map((client) => 

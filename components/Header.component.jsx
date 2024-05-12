@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 const Header = ({ title, imageSrc, alt }) => {
   return (
+    // Page Header 
     <header className="page_header">
     <div className="page_header__text">
         <h1 className="page_header__h1">{title}</h1>
@@ -14,7 +15,7 @@ const Header = ({ title, imageSrc, alt }) => {
         height="400"
         priority 
     />
-</header>
+    </header>
   );
 };
 

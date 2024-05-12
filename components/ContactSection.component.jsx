@@ -11,6 +11,7 @@ import { contactSection } from '../constants/index';
 
  const ContactSection = () => {
     return (
+        // Contact Section
         <section className={styles.contact_section__section}>
             <div className={styles.contact_section__container}>
                 <div>

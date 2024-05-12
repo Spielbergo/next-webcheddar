@@ -15,6 +15,7 @@ const Footer = () => {
     const year = date.getFullYear();
 
     return (
+        // Footer
         <footer className={styles.footer}>
             <Clients />
             

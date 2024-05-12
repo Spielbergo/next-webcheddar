@@ -54,7 +54,7 @@ export const socialIcons = [
     {
         id: "linkedin",
         icon: FaLinkedin,
-        link: 'https://www.linkedin.com',
+        link: 'https://www.linkedin.com/company/web-cheddar/',
         title: 'LinkedIn',
     },
 ];

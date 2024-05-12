@@ -55,6 +55,7 @@ export default function ContactForm() {
   };
 
   return (
+    // Contact Form
     <form onSubmit={handleSubmit} className={styles.contact_form__form}>
       <div>
         <label htmlFor="firstName">First Name:</label>

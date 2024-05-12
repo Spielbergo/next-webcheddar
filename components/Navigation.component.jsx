@@ -38,6 +38,7 @@ const Navigation = () => {
   };
 
   return (
+    // Navigation 
     <nav ref={navRef} className={`${styles.main_nav__nav} ${scrolled ? styles.main_nav__scrolled : ''}`}>
       <div className={`${styles.main_nav__container} ${scrolled ? styles.main_container__scrolled : ''}`}>
         {/* Nav Logo */}
