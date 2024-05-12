@@ -6,6 +6,14 @@
     border-radius: 10px;
 }
 
+.sitemap__container h2 {
+    margin-bottom: 10px;
+}
+
 .sitemap__container ul:nth-child(2) {
     margin-bottom: 20px;
+}
+
+.sitemap__container ul li {
+    margin-bottom: 5px;
 }

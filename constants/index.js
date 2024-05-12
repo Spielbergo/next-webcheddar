@@ -77,12 +77,6 @@ export const clientLogos = [
         title: "Moonrays",
         image: "/logos/clients/moonrays-logo-black.png",
         alt: "Moonrays Logo",
-    },    
-    {
-        id: "bagelplus",
-        title: "Bagel Plus",
-        image: "/logos/clients/bagel-plus.png",
-        alt: "Bagel Logo",
     },
     {
         id: "yopie",
@@ -101,6 +95,12 @@ export const clientLogos = [
         title: "Organize This",
         image: "/logos/clients/organize-this.png",
         alt: "Organize This Logo",
+    },   
+    {
+        id: "bagelplus",
+        title: "Bagel Plus",
+        image: "/logos/clients/bagel-plus.png",
+        alt: "Bagel Logo",
     },
 ];
 

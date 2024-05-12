@@ -4,12 +4,17 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     /* max-width: 1200px; */
     margin: auto;
     padding: 25px 15px;
     background-color: #222;
     list-style: none;
+}
+
+.client_logos__container li:last-child {
+    position: relative;
+    right: 0;
 }
 
 .client_logos__logo img {
@@ -19,4 +24,10 @@
 
 .client_logos__logo img:hover {
     filter: grayscale(0);
+}
+
+@media screen and (min-width: 768px) {
+    .client_logos__container li:last-child {
+        right: 35px;
+    }
 }

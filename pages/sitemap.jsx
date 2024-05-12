@@ -6,7 +6,7 @@ import Header from '../components/Header.component';
 
 import styles from '../styles/sitemap.module.css'
 
-const Sitemap = ({ pages }) => {
+const Sitemap = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
@@ -72,19 +72,18 @@ const Sitemap = ({ pages }) => {
   );
 };
 
-export default Sitemap;
-
-export async function getServerSideProps() {
-    try {
-      const response = await fetch('/api/pages');
-      if (!response.ok) {
-        throw new Error('Failed to fetch pages');
-      }
-      const pages = await response.json();
-      return { props: { pages } };
-    } catch (error) {
-      console.error('Error fetching pages:', error);
-      return { props: { pages: [] } }; // Return empty array in case of error
-    }
-  }
+// export async function getServerSideProps() {
+//     try {
+//       const response = await fetch('/api/pages');
+//       if (!response.ok) {
+//         throw new Error('Failed to fetch pages');
+//       }
+//       const pages = await response.json();
+//       return { props: { pages } };
+//     } catch (error) {
+//       console.error('Error fetching pages:', error);
+//       return { props: { pages: [] } }; 
+//     }
+//   }
   
+  export default Sitemap;
