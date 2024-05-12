@@ -1,0 +1,11 @@
+.sitemap__container {
+    max-width: 900px;
+    margin: 75px auto;
+    padding: 75px;
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.sitemap__container ul:nth-child(2) {
+    margin-bottom: 20px;
+}
