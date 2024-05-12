@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { useRouter } from 'next/router';
  
-import heroImage from '../../assets/images/hero/header.webp';
+import heroImage from '../../public/header.webp';
 import Button from "../Button.component";
 
 import styles from './hero.module.css';
@@ -34,9 +34,10 @@ const Hero = () => {
                     src={heroImage}
                     className={styles.hero__main_image} 
                     alt="Hero image - code on a screen wth an orange overlay" 
-                    layout="responsive"
-                    width="1920" 
-                    height="1080"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    // width="1920" 
+                    // height="1080"
                     priority 
                 />                
             </div>
