@@ -1,25 +1,43 @@
-/* Client Logos */
-/* FLEXXXXXXXX */
+.client_section {
+    overflow: hidden; /* Hide the overflow to make the animation seamless */
+    background-color: #222;
+    padding: 25px 0;
+}
+
+.client_logos__marquee {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
 .client_logos__container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
-    /* max-width: 1200px; */
-    margin: auto;
-    padding: 25px 15px;
-    background-color: #222;
+    align-items: center;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .client_logos__container li:last-child {
-    position: relative;
-    right: 0;
+    margin: 0;
+}
+
+.client_logos__container_duplicate {
+    display: none; 
+}
+
+.client_logos__logo {
+    margin: 0 30px; 
 }
 
 .client_logos__logo img {
     object-fit: contain;
     filter: grayscale(1);
+    transition: filter 0.3s ease;
 }
 
 .client_logos__logo img:hover {
@@ -27,7 +45,26 @@
 }
 
 @media screen and (min-width: 768px) {
-    .client_logos__container li:last-child {
-        right: 35px;
+    .client_logos__logo img {
+        max-width: 85%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .client_logos__container {
+        animation: marquee 20s linear infinite; 
+    }
+
+    .client_logos__container_duplicate {
+        display: flex;
+    }
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0%);
+        }
+        to {
+            transform: translateX(-50%);
+        }
     }
 }
