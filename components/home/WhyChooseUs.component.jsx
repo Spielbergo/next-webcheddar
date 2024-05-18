@@ -21,12 +21,19 @@ const WhyChooseUs = () => {
                 <div>
                     <h2 className="section_title_01">Why Choose Us</h2>
                     <h3 className="section_title_02">Transforming Your Ideas into Exceptional Digital Experiences</h3>
-                    <p className="section_text">At Web Cheddar Web Solutions, we do things differently. First, we really listen to you. This way, we make sure your website matches your vision. Next, we use our years of experience to build something special, so you stand out online. Also, we believe in clear communication. You'll always know what's going on with your project. And lastly, our support doesn’t end once your site is live. We're here to help, making sure your website keeps running smoothly. </p>
-                    <Button 
-                        variant="default__home" 
-                        onClick={() => Router.push('services')}>
-                        Our Services
-                    </Button>
+                    <p className="section_text">At Web Cheddar Web Solutions, we do things differently. We really listen to you. This way, we make sure your website matches your vision. We use our years of experience to build something special, so you stand out online. We believe in clear communication. You'll always know what's going on with your project. Our support doesn’t end once your site is live. We're here to help, making sure your website keeps running smoothly. </p>
+                    <div className={styles.home_about__buttons}>
+                        <Button 
+                            variant="default__home" 
+                            onClick={() => Router.push('services')}>
+                            Our Services
+                        </Button>
+                        <Button 
+                            variant="outline" 
+                            onClick={() => Router.push('#ourProjects')}>
+                            Our Projects
+                        </Button>
+                    </div>
                 </div>
             </div>
         </section>

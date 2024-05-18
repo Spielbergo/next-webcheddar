@@ -13,6 +13,11 @@
     object-fit: cover;
 }
 
+.home_about__buttons {
+    display: flex;
+    gap: 10px;
+}
+
 @media screen and (min-width: 1025px) {
     .home_about__container {
         flex-wrap: nowrap;

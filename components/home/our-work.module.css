@@ -24,6 +24,15 @@
     border-radius: 10px;
 }
 
+.cards__card a {
+    transition: all .75s ease-out;
+}
+
+.cards__card a:hover {
+    color: #fff;
+    scale: 1.15;
+}
+
 .cards__card img {
     object-fit: cover;
     width: 100%;
