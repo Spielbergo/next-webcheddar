@@ -52,6 +52,7 @@
 
 .blog_post__content pre code {
     color: #fff;
+    white-space: pre-wrap;
 }
 
 .blog_post__content a:hover {
