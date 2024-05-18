@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { projectsHome } from '../../constants';
 
@@ -17,16 +18,18 @@ const OurWork = () => {
             <div className={styles.cards__container}>
                 {projectsHome.map((project) =>                 
                     <div key={project.id} className={`${styles.cards__card} shadow`}>
-                        <Image  
-                            src={project.image}
-                            alt={project.alt}
-                            width={250}
-                            height={250}
-                        />
-                        <div className={styles.cards__text_container}>
-                            <h2 className={styles.cards__title}>{project.title}</h2>
-                            <p>{project.text}</p>
-                        </div>
+                        <Link href={project.url} target="_blank">
+                            <Image  
+                                src={project.image}
+                                alt={project.alt}
+                                width={250}
+                                height={250}
+                            />
+                            <div className={styles.cards__text_container}>
+                                <h2 className={styles.cards__title}>{project.title}</h2>
+                                <p>{project.text}</p>
+                            </div>
+                        </Link>
                     </div>
                 )}
             </div>

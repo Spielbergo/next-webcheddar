@@ -247,13 +247,15 @@ export const projectsHome = [
         text: 'Med Store',
         image: '/projects/uoft.jpg',
         alt: 'University of Toronto Med Store Website Screenshot',
+        url: 'https://medprint.webcheddar.ca',
     },
     {
         id: 'project-2',
         title: 'Parisella Vincelli Associates',
         text: 'Consulting Group',
         image: '/projects/pva.webp',
-        alt: 'PVA Website Screenshot'
+        alt: 'PVA Website Screenshot',
+        url: 'https://www.pva.ca',
     },
     {
         id: 'project-3',
@@ -261,6 +263,7 @@ export const projectsHome = [
         text: 'Author',
         image: '/projects/rohutton.jpg',
         alt: 'Rosemary Hutton Website Screenshot',
+        url: 'https://www.rohutton.com',
     },
     {
         id: 'project-4',
@@ -268,13 +271,15 @@ export const projectsHome = [
         text: 'Oragnizers',
         image: '/projects/org-this.webp',
         alt: 'Organize This Website Screenshot',
+        url: 'https://www.organizethisto.ca/',
     },
     {
         id: 'project-5',
         title: 'Smash Pets',
         text: 'Pet Care',
         image: '/projects/smashpets.jpg',
-        alt: 'Smash Pets  Website Screenshot'
+        alt: 'Smash Pets  Website Screenshot',
+        url: 'https://smashpets.webcheddar.ca',
     },
     {
         id: 'project-6',
@@ -282,6 +287,7 @@ export const projectsHome = [
         text: 'Local Bakery',
         image: '/projects/bagelplus.webp',
         alt: 'Bagel Plus Website Screenshot',
+        url: 'https://bagelplus.ca/',
     }
 ]
 
