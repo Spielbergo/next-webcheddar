@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Head from "next/head";
 import Header from "../components/Header.component";
 import Layout from "../components/Layout";
 import { aboutPage } from '../constants/index';
@@ -15,7 +16,10 @@ const About = () => {
     );
 
     return (
+        <>
+
         <Layout header={header}> 
+        
             <main>
                 <section>
                     <div className={`flex ${styles.about_page__container}`}>
@@ -44,6 +48,7 @@ const About = () => {
                 <TestimonialSlider />
             </main>
         </Layout>
+        </>
     )
 }
 

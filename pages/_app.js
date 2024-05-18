@@ -20,7 +20,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
 export default function App({ Component, pageProps }) {
     return (
         <>
-            <Head />
+            {/* <Head /> */}
             <Navigation />
             <Layout>
                 <Component {...pageProps} />

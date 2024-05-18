@@ -1,5 +1,5 @@
 const globalMeta = {
-	siteName: "Web Chheddar Web Solutions",
+	siteName: "Web Chheddar Web Solutions TEST",
 	siteUrl: "https://webcheddar.ca",
 	siteLogo: "https://webcheddar.ca/assets/images/logos/web-cheddar-logo-black.png",
 	email: "info@webcheddar.ca",

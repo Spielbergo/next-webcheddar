@@ -59,7 +59,7 @@ export default function Layout({ header, children, includeHead = true }) {
           canonicalUrl = { canonicalUrl }
           structuredData = { structuredLd }
           title="Web Cheddar Web Solutions - webcheddar.ca"
-          description="NextJs Head, a reliable guide for how to use it and what it's really for."
+          description="TEEESSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSST"
           ogType="website"
         />
       )}

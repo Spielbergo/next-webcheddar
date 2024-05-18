@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import parse from 'html-react-parser';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -44,6 +45,14 @@ export default function Post({ post, hasTOC }) {
           strategy="lazyOnload"
         />
       )}
+
+      {/* Populate the head with dynamic data */}
+      <Head>
+        <title>TESTICLES TEST</title>
+        <meta name="description" content="NOOOOOOPE TEST 2"></meta>
+        <meta property="og:site_name" content="TESTICLES TEST 2"></meta>
+        {/* Add any other meta tags, link tags, etc. here */}
+      </Head>
 
       <div className={styles.blog_post__container}>        
         <div className={styles.blog_post__image_container}>
