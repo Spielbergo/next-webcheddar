@@ -17,7 +17,6 @@ const ServicesText = ({ service }) => {
                     alt="Header image - code on a screen with an orange overlay" 
                     width="600" 
                     height="400"
-                    priority 
                 />
             </div>
         </section>
