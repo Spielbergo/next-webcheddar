@@ -17,7 +17,6 @@ const About = () => {
 
     return (
         <>
-
         <Layout header={header}> 
         
             <main>

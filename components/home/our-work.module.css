@@ -20,7 +20,7 @@
 .cards__card {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    /* max-width: 400px; */
     border-radius: 10px;
 }
 

@@ -48,15 +48,17 @@ export default function Post({ post, hasTOC }) {
 
       {/* Populate the head with dynamic data */}
       <Head>
-        <title>TESTICLES TEST</title>
-        <meta name="description" content="NOOOOOOPE TEST 2"></meta>
-        <meta property="og:site_name" content="TESTICLES TEST 2"></meta>
+        <title>{post.title.rendered}</title>
+        <meta name="description" content={post.excerpt.rendered}></meta>
+        <meta property="og:description" content={post.excerpt.rendered}></meta>
+        <meta property="og:site_name" content={post.title.rendered}></meta>
         {/* Add any other meta tags, link tags, etc. here */}
       </Head>
 
       <div className={styles.blog_post__container}>        
         <div className={styles.blog_post__image_container}>
           <h1 className={styles.blog_post__blog_title}>{parse(post.title.rendered)}</h1>
+          <div className={styles.blog_post__overlay}></div>
           {post._embedded?.['wp:featuredmedia'] && (
             <Image
               src={post._embedded['wp:featuredmedia'][0].source_url}

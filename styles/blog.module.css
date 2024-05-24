@@ -15,10 +15,23 @@
     top: 40%;
     left: 10%;
     padding: 20px;
+    z-index: 10;
 }
 
 .blog_post__main_img {
     object-fit: cover;
+}
+
+.blog_post__overlay {
+    position: absolute;
+    background-color: rgba(0,0,0, .5);
+}
+
+.blog_post__overlay,
+.blog_post__main_img {
+    width: 100%;
+    height: 100vh;
+    max-height: 600px;
 }
 
 .blog_post__content {

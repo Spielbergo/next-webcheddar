@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-
+import Header from './Header.component';
 import globalMeta from '../constants/globalMeta';
+
+
 
 export default function MetaHead ({
 	title = globalMeta.siteName,
