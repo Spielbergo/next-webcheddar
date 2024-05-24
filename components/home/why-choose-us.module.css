@@ -5,7 +5,7 @@
     align-items: center;
     gap: 50px;
     max-width: 1400px;
-    padding: 125px 15px;
+    padding: 75px 15px;
     margin: auto;
 }
 
@@ -21,6 +21,7 @@
 @media screen and (min-width: 1025px) {
     .home_about__container {
         flex-wrap: nowrap;
+        padding: 125px 15px;
     }
 }
  @media screen and (max-width: 768px) {

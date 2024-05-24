@@ -66,7 +66,7 @@ export default function Post({ post, hasTOC }) {
               className={styles.blog_post__main_img}
               width={1920}
               height={550}
-              loading='eager'
+              priority
             />
           )}          
         </div>

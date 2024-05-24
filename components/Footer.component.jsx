@@ -31,7 +31,6 @@ const Footer = () => {
                                 alt="Web Cheddar Badge logo" 
                                 width="250" 
                                 height="75"
-                                priority 
                             />                  
                         </picture>
                     </Link>
