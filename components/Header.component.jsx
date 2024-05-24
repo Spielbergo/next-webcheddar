@@ -10,9 +10,9 @@ const Header = ({ title, imageSrc, alt }) => {
     <Image 
         src={imageSrc}
         className="page_header__image"
-        alt={alt} 
-        width="1920" 
-        height="400"
+        alt={alt}         
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         priority 
     />
     </header>
