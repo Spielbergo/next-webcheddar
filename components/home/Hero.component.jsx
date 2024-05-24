@@ -36,8 +36,6 @@ const Hero = () => {
                     alt="Hero image - code on a screen wth an orange overlay" 
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    // width="1920" 
-                    // height="1080"
                     priority 
                 />                
             </div>

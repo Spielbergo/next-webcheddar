@@ -237,7 +237,9 @@ button:hover {
   width: 100%;
 }
 
-.page_header__image {
+.page_header__image {  
+  position: relative !important;
+  height: 365px !important;
   object-fit: cover;
   opacity: .5;
   /* border-top: 75px solid #000;
@@ -348,6 +350,10 @@ button:hover {
 
   .flex_nowrap {
     flex-wrap: nowrap;
+  }
+
+  .page_header__image {
+    height: 400px !important;
   }
 
   .page_header__h1 {
