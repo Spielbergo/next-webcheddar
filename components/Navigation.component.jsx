@@ -4,7 +4,7 @@ import Router from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaEnvelope } from 'react-icons/fa';
-import { navigation, socialIcons } from '../constants';
+import { navigation, socialIcons } from '../data';
 import styles from '../styles/navigation.module.css';
 import Socials from '../components/SocialIcons.component';
 import Button from './Button.component';

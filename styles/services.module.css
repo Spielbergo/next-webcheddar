@@ -1,0 +1,42 @@
+/* styles/service.module.css */
+.service__container {
+    /* Your styles here */
+  }
+  
+  .service__image_container {
+    position: relative;
+  }
+  
+  .service__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.5rem;
+  }
+  
+  .service__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .service__main_img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .service__content {
+    padding: 20px;
+  }
+  
+  .service__breadcrumbs {
+    margin-bottom: 20px;
+  }
+  
+  /* Add more styles as needed */
+  

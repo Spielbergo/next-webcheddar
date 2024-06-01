@@ -1,6 +1,6 @@
 import styles from './tech-stack.module.css';
 
-import { techStack } from '../constants';
+import { techStack } from '../data';
 
  const TechStack = () => {
     return (

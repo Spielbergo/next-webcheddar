@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import Button from '../Button.component';
 
-import { servicesHome } from '../../constants/index';
+import { servicesHome } from '../../data/index';
 
 import styles from './services.module.css';
 

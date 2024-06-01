@@ -1,7 +1,7 @@
 // ServicesPage.component.jsx
 import Image from 'next/image';
 
-import { servicePageOne, servicePageTwo } from '../constants';
+import { servicePageOne, servicePageTwo } from '../data';
 
 import Header from '../components/Header.component';
 import Layout from '../components/Layout';

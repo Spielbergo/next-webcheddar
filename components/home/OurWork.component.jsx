@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { projectsHome } from '../../constants';
+import { projectsHome } from '../../data';
 
 import styles from './our-work.module.css';
 

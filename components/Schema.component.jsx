@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-import globalMeta from "../constants/globalMeta";
+import globalMeta from "../data/globalMeta";
 
 const Schema = () => {
     const router = useRouter;

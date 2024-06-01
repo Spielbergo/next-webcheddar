@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { navigation, featuredBlogs } from "../constants";
+import { navigation, featuredBlogs } from "../data";
 
 import Clients from "./Clients.component";
 import Address from "./Address.component";

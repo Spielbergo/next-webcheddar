@@ -4,7 +4,7 @@ import Header from "./Header.component";
 import Head from '../components/Meta.component';
 import Footer from "./Footer.component";
 import Navigation from "./Navigation.component";
-import globalMeta from '../constants/globalMeta';
+import globalMeta from '../data/globalMeta';
 import styles from "../styles/home.module.css";
 
 const inter = Inter({
@@ -12,7 +12,7 @@ const inter = Inter({
   display: 'swap',
 })
 
-export default function Layout({ header, children, includeHead = true }) {
+export default function Layout({ header, children, includeHead = false }) {
   const router = useRouter();
   const canonicalUrl = `${globalMeta.siteUrl}${router.asPath}`;
 
@@ -48,7 +48,7 @@ export default function Layout({ header, children, includeHead = true }) {
     "sameAs": [ 
       "http://www.facebook.com/webcheddar",
       "https://www.linkedin.com/company/web-cheddar/",
- ]}
+  ]}
 
   );
 

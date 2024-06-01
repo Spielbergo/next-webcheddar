@@ -1,7 +1,7 @@
-import { MdOutlineWeb, MdEvent, MdOutlineShoppingCart   } from "react-icons/md";
-import { IoSearchCircle, IoConstructOutline, IoLogoHtml5, IoLogoCss3, IoLogoJavascript, IoLogoReact, IoLogoWordpress, IoLogoNodejs  } from "react-icons/io5";
+import { MdOutlineWeb, MdEvent, MdOutlineShoppingCart, MdEmail } from "react-icons/md";
+import { IoSearchCircle, IoConstructOutline, IoLogoHtml5, IoLogoCss3, IoLogoJavascript, IoLogoReact, IoLogoWordpress } from "react-icons/io5";
 import { TiSocialAtCircular } from "react-icons/ti";
-import { FaFacebookF, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaFacebookF, FaGithub, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
 import { SiNextdotjs, SiPhp } from "react-icons/si";
 
 export const navigation = [
@@ -19,6 +19,7 @@ export const navigation = [
         id: "services",
         anchor: 'Services',
         link: '/services',
+        subLinks: [], 
     },
     // {
     //     id: "tools",
@@ -298,15 +299,13 @@ export const contactDetails = [
     },
     {   
         id: 'contact-city',
-        detail: 'Toronto, Ontario'
+        detail: 'Toronto, Ontario',
+        icon: FaMapMarkerAlt
     },
     {
         id: 'contact-email',
-        detail: 'info@webcheddar.ca'
-    },
-    {   
-        id: 'contact-phone',
-        detail: '647-339-9475'
+        detail: 'info@webcheddar.ca',
+        icon: MdEmail
     },
 ]
 

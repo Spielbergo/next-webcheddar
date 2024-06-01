@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import Image from "next/image";
 import Link from "next/link";
 
-import { testimonials } from "../constants";
+import { testimonials } from "../data";
 
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";

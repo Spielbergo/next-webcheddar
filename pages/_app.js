@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from '../components/Meta.component'
 import Layout from '../components/Layout';
 import Navigation from '../components/Navigation.component';
 import Footer from '../components/Footer.component';
@@ -20,7 +20,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
 export default function App({ Component, pageProps }) {
     return (
         <>
-            {/* <Head /> */}
+            <Head />
             <Navigation />
             <Layout>
                 <Component {...pageProps} />

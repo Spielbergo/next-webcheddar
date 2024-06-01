@@ -1,4 +1,4 @@
-import { socialIcons } from "../constants";
+import { socialIcons } from "../data";
 
 import styles from '../styles/social-icons.module.css';
 

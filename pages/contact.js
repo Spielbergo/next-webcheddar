@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import globalMeta from '../constants/globalMeta';
+import globalMeta from '../data/globalMeta';
 
 import contactImage from '../assets/images/hero/header.webp';
 

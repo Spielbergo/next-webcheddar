@@ -7,7 +7,7 @@ import ContactForm from './ContactForm.component';
 
 import styles from '../styles/contact-section.module.css';
 
-import { contactSection } from '../constants/index';
+import { contactSection } from '../data/index';
 
  const ContactSection = () => {
     return (

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styles from '../styles/clients.module.css';
-import { clientLogos } from '../constants/index';
+import { clientLogos } from '../data/index';
 
 const Clients = () => {
     return (

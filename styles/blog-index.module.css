@@ -51,6 +51,7 @@
     /* margin: auto; */
     /* padding: 0 15px 100px; */
     max-width: 1120px;
+    height: auto;
 }
 
 .blog_index__card {

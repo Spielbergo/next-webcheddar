@@ -1,9 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Header from './Header.component';
-import globalMeta from '../constants/globalMeta';
-
-
+import globalMeta from '../data/globalMeta';
 
 export default function MetaHead ({
 	title = globalMeta.siteName,
@@ -15,6 +13,42 @@ export default function MetaHead ({
 }) {
 	const router = useRouter();
 	const canonicalUrl = `${globalMeta.siteUrl}${router.asPath}`;
+
+	const structuredLd = JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		"name": "Web Cheddar - Websites - Social Media",
+		"legalName" : "Web Cheddar - Websites - Social Media",
+		"url": `${globalMeta.siteUrl}${router.asPath}`,
+		"logo": `${globalMeta.siteUrl}/public/web-cheddar-logo-white.png"`,
+		"foundingDate": "2019",
+		"founders": [
+		{
+		  "@type": "Person",
+		  "name": "Scott Sutherland"
+		},
+		{
+		"@type": "Person",
+		  "name": ""
+		} ],
+		"address": {
+		  "@type": "PostalAddress",
+		  "addressLocality": "Toronto",
+		  "addressRegion": "ON",
+		  "postalCode": "M6J 3S8",
+		  "addressCountry": "CA"
+		},
+		"contactPoint": {
+		  "@type": "ContactPoint",
+		  "contactType": "customer support",
+		  "email": "info@webcheddar.ca"
+		},
+		"sameAs": [ 
+		  "http://www.facebook.com/webcheddar",
+		  "https://www.linkedin.com/company/web-cheddar/",
+	  ]}
+	
+	  );
 	
   return (
 	<Head>
@@ -34,9 +68,14 @@ export default function MetaHead ({
     	<meta property="og:url" content={canonicalUrl} />
  
     	{/* Structured data. */}
-    	<script
+    	{/* <script
             type="application/ld+json"
         	dangerouslySetInnerHTML={{__html: structuredData}}
+        	key="item-jsonld"
+    	/> */}
+		<script
+            type="application/ld+json"
+        	content={structuredLd}
         	key="item-jsonld"
     	/>
     	{ children }

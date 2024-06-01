@@ -1,4 +1,4 @@
-import { contactDetails } from '../constants/index';
+import { contactDetails } from '../data/index';
 import SocialIcons from './SocialIcons.component';
 
 const Address = ({ className = "" }) => {
