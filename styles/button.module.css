@@ -28,7 +28,6 @@
     font-size: 1em;
     font-weight: 600;
     border: 2px solid var(--primary-orange);
-
 }
 
 .outline {
@@ -41,6 +40,16 @@
     border: 2px solid #fff;
     background-color: transparent;
     cursor: pointer;
+}
+
+.get_a_quote {
+    background-image: linear-gradient(135deg, #e56100, #ffa366, #fd7304); /* Starting darker, brightening, and then not darkening again */
+    color: white;
+    width: inherit;
+    margin: 10px 0;
+    font-size: .9em;
+    font-weight: 600;
+    border: 2px solid var(--primary-orange);
 }
 
 .outline:hover,

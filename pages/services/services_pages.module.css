@@ -1,0 +1,15 @@
+.services_pages__container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px 15px 75px;
+    margin: auto;
+}
+
+.service__breadcrumbs a:hover,
+.service__breadcrumbs span {
+    color: var(--primary-orange);
+}
+
+.services_pages__section {
+    padding: 20px 0 0;
+}

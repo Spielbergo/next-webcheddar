@@ -9,6 +9,7 @@ import styles from '../styles/navigation.module.css';
 import Socials from '../components/SocialIcons.component';
 import NavLogoWhite from '../assets/images/logos/web-cheddar-logo-white.png';
 import NavLogoBlack from '../assets/images/logos/web-cheddar-logo-black.png';
+import Button from './Button.component';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -88,6 +89,7 @@ const Navigation = () => {
                     onClick={() => setMobileToggleOpen(false)}>
                   <Link href={nav.link} className={router.pathname === nav.link ? styles.active : ''}>{nav.anchor}</Link>
                   {nav.subLinks && nav.subLinks.length > 0 && (
+                    // --->>> main_nav__sublinks_visible is not set - delete if not needed  <<<---
                     <ul className={`${styles.main_nav__subLinks} shadow ${subLinkToggleOpen ? styles.main_nav__sublinks_visible : ''}`}>
                       {nav.subLinks.map(subLink => (
                         <li key={subLink.id}>
@@ -100,6 +102,7 @@ const Navigation = () => {
               ))}
               <span className={styles.main_nav__mobile_links}>
                 <li><Socials /></li>
+                
               </span>
             </ul>
           </div>
@@ -107,8 +110,16 @@ const Navigation = () => {
           <ul className={styles.main_nav__social_icons}>
             {socialIcons.map((socials) => (
               <li key={socials.id}>
-                <Link href={socials.link} target="_blank" rel="noopener nofollow noreferrer" title={socials.title} aria-label={socials.title} className={styles.main_nav__social_icons_false}><socials.icon /></Link></li>
+                <Link href={socials.link} target="_blank" rel="noopener nofollow noreferrer" title={socials.title} aria-label={socials.title} className={styles.main_nav__social_icons_false}><socials.icon /></Link>
+              </li>
             ))}
+              <li>
+                  <Button
+                      variant="get_a_quote" 
+                      onClick={() => router.push('/contact')}>
+                      Get a Quote
+                  </Button>
+                </li>
             <li className={styles.main_nav__toggle} onClick={handleMobileToggle}>
               <div className={styles.hamburger}>
                 <div className={`${styles.bar} ${mobileToggleOpen ? styles.bar1_open : ''}`}></div>
