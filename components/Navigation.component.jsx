@@ -82,13 +82,13 @@ const Navigation = () => {
           <div>
             <ul className={`${styles.main_nav__navLinks} ${mobileToggleOpen ? styles.main_nav__navLinks_visible : ''}`}>
               {navItems.map((nav) => (
-                <li key={nav.id} className={styles.subLinks__parent} 
+                <li key={nav.id} className={styles.main_nav__subLinks__parent} 
                     onMouseEnter={nav.id === 'services' ? handleSubLinkToggleEnter : null}
                     onMouseLeave={nav.id === 'services' ? handleSubLinkToggleLeave : null}
                     onClick={() => setMobileToggleOpen(false)}>
                   <Link href={nav.link} className={router.pathname === nav.link ? styles.active : ''}>{nav.anchor}</Link>
                   {nav.subLinks && nav.subLinks.length > 0 && (
-                    <ul className={`${styles.subLinks} ${subLinkToggleOpen ? styles.main_nav__sublinks_visible : ''}`}>
+                    <ul className={`${styles.main_nav__subLinks} shadow ${subLinkToggleOpen ? styles.main_nav__sublinks_visible : ''}`}>
                       {nav.subLinks.map(subLink => (
                         <li key={subLink.id}>
                           <Link href={subLink.link} className={router.pathname === subLink.link ? styles.active : ''}>{subLink.anchor}</Link>
