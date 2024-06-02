@@ -18,8 +18,9 @@ export const navigation = [
     {
         id: "services",
         anchor: 'Services',
-        link: '/services',
+        link: '',
         subLinks: [], 
+        subLink_class: 'subLinks__parent',
     },
     // {
     //     id: "tools",

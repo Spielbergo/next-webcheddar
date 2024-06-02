@@ -22,7 +22,7 @@ const services = [
       title: 'UI/UX Design',
       description: 'We craft beautiful and intuitive designs that offer a great user experience.',
       content: '<p>Our UI/UX design services include creating user-friendly interfaces...</p>',
-      image: '/images/ui-ux-design.jpg'
+      image: '/header.webp'
     },
     // Add more services as needed
   ];
