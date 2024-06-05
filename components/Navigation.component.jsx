@@ -101,8 +101,7 @@ const Navigation = () => {
                 </li>
               ))}
               <span className={styles.main_nav__mobile_links}>
-                <li><Socials /></li>
-                
+                <li><Socials /></li>                
               </span>
             </ul>
           </div>

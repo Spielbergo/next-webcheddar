@@ -6,7 +6,7 @@
     margin: 75px auto;
     padding: 75px 115px;
     text-align: center;
-    background-color: #333;
+    background-color: var(--primary-bg-color);
     border-radius: 10px;
 }
 

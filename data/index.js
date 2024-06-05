@@ -30,7 +30,6 @@ export const navigation = [
     {
         id: "blog",
         anchor: 'Blog',
-        // link: 'https://www.webcheddar.ca/blog',
         link: '/blog',
     },
     {

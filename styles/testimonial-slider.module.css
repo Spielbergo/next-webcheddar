@@ -25,7 +25,7 @@
     width: 97% !important;
     height: 300px;
     padding: 20px 30px;
-    background-color: #333;
+    background-color: var(--primary-bg-color);
     border-radius: 10px;    
 }
 
@@ -44,9 +44,9 @@
     width: 75px;
     height: 75px;
     padding: 5px;
-    background-color: #333;
+    background-color: var(--primary-bg-color);
     border-radius: 50%;
-    border: 1px solid var(--primary-orange);
+    border: 1px solid var(--primary-color);
     object-fit: contain;
 }
 

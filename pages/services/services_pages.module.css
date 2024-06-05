@@ -7,7 +7,7 @@
 
 .service__breadcrumbs a:hover,
 .service__breadcrumbs span {
-    color: var(--primary-orange);
+    color: var(--primary-color);
 }
 
 .services_pages__section {

@@ -42,12 +42,12 @@
 .cards__text_container {
     width: 100%;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: var(--primary-bg-color);
     border-radius: 0 0 10px 10px;
 }
 
 .cards__title {
-    color: var(--primary-orange);
+    color: var(--primary-color);
     font-size: 1.2rem;
 }
 

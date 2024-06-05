@@ -56,13 +56,11 @@ const Sitemap = () => {
                     <li><Link href="/Blogs">Blogs</Link></li>
                     <li><Link href="/Contact">Contact</Link></li>
                 </ul>
-                <h2>WordPress Blog Posts</h2>
+                <h2>Blog Posts</h2>
                 <ul>
                     {blogs.map((blog, index) => (
                     <li key={index}>
-                        <Link href={`/blog/${blog.slug}`}>
-                        {blog.title.rendered}
-                        </Link>
+                        <Link href={`/blog/${blog.slug}`}>{blog.title.rendered}</Link>
                     </li>
                     ))}
                 </ul>

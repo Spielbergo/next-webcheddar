@@ -15,7 +15,7 @@
   }
   
   .main_nav__scrolled {
-    background-color: #333;
+    background-color: var(--primary-bg-color);
     box-shadow:
       0 1px 1px hsla(0, 87%, 49%, 0.075),
       0 2px 2px hsl(0deg 0% 0% / 0.075),
@@ -44,7 +44,7 @@
   .main_nav__navLinks_visible {
     top: 103%;
     right: 0;
-    background: #333;  
+    background: var(--primary-bg-color);  
     padding: 45px 0 25px;  
     text-align: center;
     visibility: visible;
@@ -52,7 +52,7 @@
   }
   
   .main_nav__container_grey {
-    background-color: #333;
+    background-color: var(--primary-bg-color);
   }
   
   .main_nav__links_container {
@@ -78,7 +78,7 @@
   }
   
   .main_nav__navLinks a.active {
-    color: var(--primary-orange);
+    color: var(--primary-color);
   }
   
   .main_nav__navLinks a::after {
@@ -87,7 +87,7 @@
     width: 0;
     height: 2px;
     display: block;
-    background: var(--primary-orange);
+    background: var(--primary-color);
     transition: width 0.4s ease, left 0.4s ease;
     left: 50%;
     bottom: -5px;
@@ -139,7 +139,7 @@
 }
   
   .main_nav__social_icons li:hover {
-    color: var(--primary-orange);
+    color: var(--primary-color);
     cursor: pointer;
   }
   

@@ -44,7 +44,7 @@ const TestimonialSlider = () => {
           <div className={styles.testimonial_slider__content}>        
               <div>                
                 <p>{testimonial.name}</p>
-                <p style={{color: 'var(--primary-orange)' }}>{testimonial.company}</p>
+                <p style={{color: 'var(--primary-color)' }}>{testimonial.company}</p>
                 <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
               </div>
               {testimonial.image && (

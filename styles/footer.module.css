@@ -1,6 +1,6 @@
 .footer {
     position: relative;
-    background-color: #333;
+    background-color: var(--primary-bg-color);
 }
 
 .footer__container {
@@ -29,7 +29,7 @@
 }
 
 .footer__links h2 {
-    color: var(--primary-orange);
+    color: var(--primary-color);
 }
 
 @media (prefers-color-scheme: light) {

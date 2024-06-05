@@ -39,7 +39,8 @@
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135; */
 
-  --primary-orange: #fd7304;
+  --primary-color: #fd7304;
+  --primary-bg-color: #333;
   --text-color: #ddd;
   --title-color: #fff;
   --grey-bg-gradient: linear-gradient(239deg, rgba(85, 85, 85, 1) 0%, rgb(19, 18, 18) 100%);
@@ -120,7 +121,7 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #333;
+  background: var(--primary-bg-color);
 }
 
 /* Handle */
@@ -130,21 +131,21 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-orange);
+  background: var(--primary-color);
 }
 
 /* Loader Progress Bar */
 #nprogress .bar {
-  background: var(--primary-orange) !important;
+  background: var(--primary-color) !important;
 }
 
 #nprogress .peg {
-  box-shadow: 0 0 10px var(--primary-orange), 0 0 5px var(--primary-orange) !important;
+  box-shadow: 0 0 10px var(--primary-color), 0 0 5px var(--primary-color) !important;
 }
 
 #nprogress .spinner-icon {
-  border-top-color: var(--primary-orange) !important;
-  border-left-color: var(--primary-orange) !important;
+  border-top-color: var(--primary-color) !important;
+  border-left-color: var(--primary-color) !important;
 }
 
 .container {
@@ -163,7 +164,7 @@ a {
 }
 
 a:hover {
-  color: var(--primary-orange);
+  color: var(--primary-color);
 }
 
 ul {
@@ -174,7 +175,7 @@ ul {
 button {
   position: relative;
   padding: 10px 20px;
-  background-color: var(--primary-orange);
+  background-color: var(--primary-color);
   border-radius: 5px;
   z-index: 10;
   cursor: pointer;
@@ -268,7 +269,7 @@ button:hover {
 
 .section_title_01 {
   font-size: 1em;
-  color: var(--primary-orange);
+  color: var(--primary-color);
 }
 
 .section_title_02 {
@@ -279,7 +280,7 @@ button:hover {
   max-width: 800px;
   margin: 10px 0;
   font-size: 16px;
-  /* color: #333; */
+  /* color: var(--primary-bg-color); */
 }
 
 .social_icons__component {
@@ -320,7 +321,7 @@ button:hover {
 }
 
 .related_article__container a {
-  color: var(--primary-orange);
+  color: var(--primary-color);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -353,7 +354,7 @@ button:hover {
 }
 
 .subLinks__parent ul li {
-  background-color: #333;
+  background-color: var(--primary-bg-color);
 } */
 
 @media screen and (min-width: 1025px) {

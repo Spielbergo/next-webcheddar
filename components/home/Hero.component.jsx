@@ -15,7 +15,7 @@ const Hero = () => {
         <header>            
             <div className={styles.hero__container}>
                 <div className={styles.hero__title}>
-                    <h1 className={styles.hero__h1}>Web Cheddar Web Solutions</h1>
+                    <h1 className={styles.hero__h1}>Web Cheddar - Websites - Social Media</h1>
                     <h2 className={styles.hero__h2}>Quality Digital Services Your Business Needs</h2>
                     <div className={styles.hero__button_container}>
                         <Button 
