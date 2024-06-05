@@ -33,7 +33,7 @@ export default function ServicePage({ service }) {
 
   const header = (
     <Header 
-      title={service.title} 
+      title='' 
       imageSrc={service.hero} 
       alt={service.hero_alt}
     />
@@ -42,10 +42,10 @@ export default function ServicePage({ service }) {
   return (
     <Layout header={header}> 
       <Head>
-        <title>{service.title}</title>
+        <title>''</title>
         <meta name="description" content={service.description}></meta>
         <meta property="og:description" content={service.description}></meta>
-        <meta property="og:site_name" content={service.title}></meta>
+        <meta property="og:site_name" content=''></meta>
       </Head>
       <main>
         <div className={styles.services_pages__container}>
@@ -54,7 +54,7 @@ export default function ServicePage({ service }) {
             {' > '}
             <Link href="/services">Services</Link>
             {' > '}
-            <span>{service.title}</span>
+            <span>''</span>
           </div>
 
           <section>
@@ -67,7 +67,7 @@ export default function ServicePage({ service }) {
                 height={550}
               />
               <div>
-                <h2>{service.title}</h2>
+                <h2>''</h2>
                 <div>{parse(service.content)}</div>
               </div>
             </div>
