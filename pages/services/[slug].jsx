@@ -8,7 +8,7 @@ import parse from 'html-react-parser';
 import Link from 'next/link';
 import Image from 'next/image';
 import services from '../../data/services';
-import styles from './services_pages.module.css';
+import styles from '../../styles/services_pages.module.css';
 
 export default function ServicePage({ service }) {
   const router = useRouter();
