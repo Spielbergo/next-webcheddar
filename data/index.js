@@ -9,11 +9,15 @@ export const navigation = [
         id: "home",
         anchor: 'Home',
         link: '/',
+        subLinks: [], 
+        subLink_class: 'subLinks__parent',
     },
     {
         id: "about",
         anchor: 'About',
         link: '/about',
+        subLinks: [], 
+        subLink_class: 'subLinks__parent',
     },
     {
         id: "services",
@@ -31,11 +35,15 @@ export const navigation = [
         id: "blog",
         anchor: 'Blog',
         link: '/blog',
+        subLinks: [], 
+        subLink_class: 'subLinks__parent',
     },
     {
         id: "contact",
         anchor: 'Contact',
         link: '/contact',
+        subLinks: [], 
+        subLink_class: 'subLinks__parent',
     },
 ];
 
