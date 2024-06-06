@@ -10,6 +10,30 @@ import Image from 'next/image';
 import services from '../../data/services';
 import styles from '../../styles/services_pages.module.css';
 
+
+export async function getStaticPaths() {
+    const paths = services.map(service => ({
+      params: { slug: service.slug },
+    }));
+  
+    console.log('Generated paths:', paths);
+  
+    return { paths, fallback: true };
+  }
+  
+  export async function getStaticProps({ params }) {
+    console.log('Generating page for slug:', params.slug);
+    const service = services.find(service => service.slug === params.slug) || null;
+  
+    if (!service) {
+      console.error('Service not found for slug:', params.slug);
+    } else {
+      console.log('Found service:', service);
+    }
+  
+    return { props: { service }, revalidate: 60 };
+  }
+
 export default function ServicePage({ service }) {
   const router = useRouter();
 
@@ -78,25 +102,3 @@ export default function ServicePage({ service }) {
   );
 }
 
-export async function getStaticPaths() {
-  const paths = services.map(service => ({
-    params: { slug: service.slug },
-  }));
-
-  console.log('Generated paths:', paths);
-
-  return { paths, fallback: true };
-}
-
-export async function getStaticProps({ params }) {
-  console.log('Generating page for slug:', params.slug);
-  const service = services.find(service => service.slug === params.slug) || null;
-
-  if (!service) {
-    console.error('Service not found for slug:', params.slug);
-  } else {
-    console.log('Found service:', service);
-  }
-
-  return { props: { service }, revalidate: 60 };
-}
