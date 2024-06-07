@@ -22,7 +22,7 @@ export default function ServicePage({ service }) {
     return <div>Service not found</div>;
   }
 
-  // Additional validation for required fields
+  // Additional validation
   const requiredFields = ['title', 'description', 'hero', 'hero_alt', 'image_1', 'image_1_alt', 'content'];
   for (const field of requiredFields) {
     if (!service[field]) {
@@ -94,9 +94,19 @@ export async function getStaticProps({ params }) {
 
   if (!service) {
     console.error('Service not found for slug:', params.slug);
-  } else {
-    console.log('Found service:', service);
+    return { notFound: true };
   }
+
+  // Check for missing fields
+  const requiredFields = ['title', 'description', 'hero', 'hero_alt', 'image_1', 'image_1_alt', 'content'];
+  const missingFields = requiredFields.filter(field => !service[field]);
+
+  if (missingFields.length > 0) {
+    console.error(`Service for slug ${params.slug} is missing required fields: ${missingFields.join(', ')}`);
+    return { notFound: true };
+  }
+
+  console.log('Found service:', service);
 
   return { props: { service }, revalidate: 60 };
 }
