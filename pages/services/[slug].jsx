@@ -10,30 +10,6 @@ import Image from 'next/image';
 import services from '../../data/services';
 import styles from '../../styles/services_pages.module.css';
 
-
-export async function getStaticPaths() {
-    const paths = services.map(service => ({
-      params: { slug: service.slug },
-    }));
-  
-    console.log('Generated paths:', paths);
-  
-    return { paths, fallback: true };
-  }
-  
-  export async function getStaticProps({ params }) {
-    console.log('Generating page for slug:', params.slug);
-    const service = services.find(service => service.slug === params.slug) || null;
-  
-    if (!service) {
-      console.error('Service not found for slug:', params.slug);
-    } else {
-      console.log('Found service:', service);
-    }
-  
-    return { props: { service }, revalidate: 60 };
-  }
-
 export default function ServicePage({ service }) {
   const router = useRouter();
 
@@ -46,7 +22,7 @@ export default function ServicePage({ service }) {
     return <div>Service not found</div>;
   }
 
-  // Additional validation
+  // Additional validation for required fields
   const requiredFields = ['title', 'description', 'hero', 'hero_alt', 'image_1', 'image_1_alt', 'content'];
   for (const field of requiredFields) {
     if (!service[field]) {
@@ -67,9 +43,9 @@ export default function ServicePage({ service }) {
     <Layout header={header}> 
       <Head>
         <title>{service.title}</title>
-        <meta name="description" content={service.description}></meta>
-        <meta property="og:description" content={service.description}></meta>
-        <meta property="og:site_name" content={service.title}></meta>
+        <meta name="description" content={service.description} />
+        <meta property="og:description" content={service.description} />
+        <meta property="og:site_name" content={service.title} />
       </Head>
       <main>
         <div className={styles.services_pages__container}>
@@ -102,3 +78,25 @@ export default function ServicePage({ service }) {
   );
 }
 
+export async function getStaticPaths() {
+  const paths = services.map(service => ({
+    params: { slug: service.slug },
+  }));
+
+  console.log('Generated paths:', paths);
+
+  return { paths, fallback: true };
+}
+
+export async function getStaticProps({ params }) {
+  console.log('Generating page for slug:', params.slug);
+  const service = services.find(service => service.slug === params.slug) || null;
+
+  if (!service) {
+    console.error('Service not found for slug:', params.slug);
+  } else {
+    console.log('Found service:', service);
+  }
+
+  return { props: { service }, revalidate: 60 };
+}
