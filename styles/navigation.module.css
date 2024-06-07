@@ -1,4 +1,4 @@
-  .main_nav__nav {
+.main_nav__nav {
     position: fixed;
     top: 0;
     width: 100%;
@@ -39,6 +39,7 @@
     z-index: 10000;
     visibility: hidden;
     list-style: none;
+    transition: max-height 0.3s ease-in-out;
   }
   
   .main_nav__navLinks_visible {
@@ -110,33 +111,29 @@
   .main_nav__navLinks span li {
     padding-top: 0;
   }
-
-/* Hide sublinks by default */
-.main_nav__subLinks {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    top: 100%;
-    /* left: 0; */
-    background: #444;
-    /* padding: 15px 0; */
-    text-align: center;
-    z-index: 100;
-    transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
   
-.main_nav__subLinks__parent:hover .main_nav__subLinks {
-    visibility: visible;
-    opacity: 1;
-}
-
-.main_nav__subLinks__parent li {
+  /* Hide sublinks by default */
+  .main_nav__subLinks {
+    position: relative;
+    top: 20px;
+    max-height: 0;
+    overflow: hidden;
+    background: #444;
+    text-align: center;
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  .main_nav__sublinks_visible {
+    max-height: 500px; /* Adjust this value based on the maximum height of your submenu */
+  }
+  
+  .main_nav__subLinks__parent li {
     border-bottom: 2px solid #000;
-}
-
-.main_nav__subLinks__parent li:last-child {
+  }
+  
+  .main_nav__subLinks__parent li:last-child {
     border-bottom: none;
-}
+  }
   
   .main_nav__social_icons li:hover {
     color: var(--primary-color);
@@ -156,7 +153,7 @@
   .main_nav__social_icons_false {
     display: none;
   }
-
+  
   .main_nav__social_icons button {
     display: none;
   }
@@ -197,9 +194,11 @@
       padding: 1px 0 10px;
       margin: auto;
     }
-
-    .main_nav__subLinks {        
-        text-align: left;
+  
+    .main_nav__subLinks {  
+      position: absolute;  
+      top: 50px;
+      text-align: left;
     }
   
     .main_nav__navLinks {
@@ -225,13 +224,12 @@
       display: block;
       color: #fff;
     }
-
+  
     .main_nav__social_icons button {
-        display: block;
-      }
+      display: block;
+    }
   
     .main_nav__mobile_links .shadow {
       box-shadow: 0;
     }
   }
-  

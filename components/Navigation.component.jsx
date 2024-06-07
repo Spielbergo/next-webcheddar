@@ -42,12 +42,12 @@ const Navigation = () => {
     setMobileToggleOpen(prevState => !prevState);
   };
 
-  const handleSubLinkToggleEnter = () => {
-    setSubLinkToggleOpen(true);
+  const handleSubLinkToggle = () => {
+    setSubLinkToggleOpen(prevState => !prevState);
   };
 
-  const handleSubLinkToggleLeave = () => {
-    setSubLinkToggleOpen(false);
+  const handleCloseMobileNav = () => {
+    setMobileToggleOpen(false);
   };
 
   // Clone the navigation array to avoid modifying the original data
@@ -62,6 +62,10 @@ const Navigation = () => {
     anchor: service.title,
     link: `/services/${service.slug}`, // Ensure the link points to the correct path
   }));
+
+  const handleSubLinkClick = () => {
+    setSubLinkToggleOpen(false); // Close the submenu when a submenu item is clicked
+  };
 
   return (
     <nav ref={navRef} className={`${styles.main_nav__nav} ${scrolled ? styles.main_nav__scrolled : ''} ${mobileToggleOpen ? styles.main_nav__container_grey : ''}`}>
@@ -84,16 +88,19 @@ const Navigation = () => {
             <ul className={`${styles.main_nav__navLinks} ${mobileToggleOpen ? styles.main_nav__navLinks_visible : ''}`}>
               {navItems.map((nav) => (
                 <li key={nav.id} className={styles.main_nav__subLinks__parent} 
-                    onMouseEnter={nav.id === 'services' ? handleSubLinkToggleEnter : null}
-                    onMouseLeave={nav.id === 'services' ? handleSubLinkToggleLeave : null}
-                    onClick={() => setMobileToggleOpen(false)}>
-                  <Link href={nav.link} className={router.pathname === nav.link ? styles.active : ''}>{nav.anchor}</Link>
+                    onMouseEnter={nav.id === 'services' ? handleSubLinkToggle : null}
+                    onMouseLeave={nav.id === 'services' ? handleSubLinkToggle : null}
+                    onClick={nav.id === 'services' ? handleSubLinkToggle : handleCloseMobileNav}>
+                  {nav.id === 'services' ? (
+                    <span className={styles.nav_item}>{nav.anchor}</span>
+                  ) : (
+                    <Link href={nav.link} className={router.pathname === nav.link ? styles.active : ''} onClick={handleCloseMobileNav}>{nav.anchor}</Link>
+                  )}
                   {nav.subLinks && nav.subLinks.length > 0 && (
-                    // --->>> main_nav__sublinks_visible is not set - delete if not needed  <<<---
-                    <ul className={`${styles.main_nav__subLinks} shadow ${subLinkToggleOpen ? styles.main_nav__sublinks_visible : ''}`}>
+                    <ul className={`${styles.main_nav__subLinks} ${subLinkToggleOpen && nav.id === 'services' ? styles.main_nav__sublinks_visible : ''}`}>
                       {nav.subLinks.map(subLink => (
                         <li key={subLink.id}>
-                          <Link href={subLink.link} className={router.pathname === subLink.link ? styles.active : ''}>{subLink.anchor}</Link>
+                          <Link href={subLink.link} className={router.pathname === subLink.link ? styles.active : ''} onClick={handleSubLinkClick}>{subLink.anchor}</Link>
                         </li>
                       ))}
                     </ul>
