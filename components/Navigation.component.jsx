@@ -64,6 +64,7 @@ const Navigation = () => {
   }));
 
   const handleSubLinkClick = () => {
+    setMobileToggleOpen(false); // Close the mobile menu
     setSubLinkToggleOpen(false); // Close the submenu when a submenu item is clicked
   };
 
@@ -97,14 +98,14 @@ const Navigation = () => {
                     <Link href={nav.link} className={router.pathname === nav.link ? styles.active : ''} onClick={handleCloseMobileNav}>{nav.anchor}</Link>
                   )}
                   {nav.subLinks && nav.subLinks.length > 0 && (
-                    <ul className={`${styles.main_nav__subLinks} ${subLinkToggleOpen && nav.id === 'services' ? styles.main_nav__sublinks_visible : ''}`}>
-                      {nav.subLinks.map(subLink => (
-                        <li key={subLink.id}>
-                          <Link href={subLink.link} className={router.pathname === subLink.link ? styles.active : ''} onClick={handleSubLinkClick}>{subLink.anchor}</Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  <ul className={`${styles.main_nav__subLinks} shadow ${subLinkToggleOpen ? styles.main_nav__sublinks_visible : ''}`}>
+                    {nav.subLinks.map(subLink => (
+                      <li key={subLink.id} onClick={handleSubLinkClick}>
+                        <Link href={subLink.link} className={router.pathname === subLink.link ? styles.active : ''}>{subLink.anchor}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 </li>
               ))}
               <span className={styles.main_nav__mobile_links}>
