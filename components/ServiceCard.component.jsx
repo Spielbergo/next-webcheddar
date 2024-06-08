@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Image from 'next/image';
-import styles from './home/services.module.css'; // Make sure this path is correct
+import styles from './home/services.module.css'; 
 
 const cardVariants = {
   initial: {

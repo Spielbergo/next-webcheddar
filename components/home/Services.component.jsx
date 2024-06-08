@@ -3,7 +3,8 @@ import { useRouter } from 'next/router';
 
 import Button from '../Button.component';
 
-import { servicesHome } from '../../data/index';
+// import { servicesHome } from '../../data/index';
+import services from '../../data/services';
 
 import styles from './services.module.css';
 
@@ -17,23 +18,17 @@ const Services = () => {
             </div>
 
             <div className={styles.services_home__container}>
-                {servicesHome.map((service) => (
+                {services.map((service) => (
                     <div key={service.id} className={`${styles.services_home__card} shadow`}>
                         <div className={styles.services_home__icon}>
                             <service.icon />
+                            {/* {services.icon} */}
                         </div>
                         <h2>{service.title}</h2>
                         
                         <div className={styles.services_home__card_text}>
-                            <p className='section-text'>{service.text}</p>
+                            <p className='section-text'>{service.description}</p>
                         </div>
-                        {/* <div>
-                            <Button 
-                                variant="default__home" 
-                                onClick={() => Router.push('services')}>
-                                Read More
-                            </Button>
-                        </div> */}
                     </div>
                 ))}
             </div>

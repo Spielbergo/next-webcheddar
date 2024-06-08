@@ -4,6 +4,9 @@ import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
 import Head from 'next/head';
 import Header from '../../components/Header.component';
+import Services from '../../components/home/Services.component';
+import Contact from '../../components/ContactSection.component';
+import TestimonialSlider from '../../components/TestimonialSlider.component';
 import parse from 'html-react-parser';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -72,7 +75,39 @@ export default function ServicePage({ service }) {
               </div>
             </div>
           </section>
+
+          <section>
+            <div className={`${styles.services_pages__section} flex flex_nowrap`}>
+                <div>
+                    <h2>{service.title}</h2>
+                    <div>{parse(service.content2)}</div>
+                </div>
+                <Image
+                    src={service.image_2}
+                    alt={service.image_2_alt}
+                    className={styles.service__main_img}
+                    width={768}
+                    height={550}
+                />              
+            </div>
+          </section>
+
+          {service.features && (
+            <section className={styles.features_section}>
+              <h3>Key Features</h3>
+              <ul>
+                {service.features.map((feature, index) => (
+                  <li key={index}>{feature}</li>
+                ))}
+              </ul>
+            </section>
+          )}
+        
         </div>
+        <TestimonialSlider />
+        
+        <Services />
+        <Contact />
       </main>
     </Layout>
   );
@@ -96,17 +131,6 @@ export async function getStaticProps({ params }) {
     console.error('Service not found for slug:', params.slug);
     return { notFound: true };
   }
-
-  // Check for missing fields
-  const requiredFields = ['title', 'description', 'hero', 'hero_alt', 'image_1', 'image_1_alt', 'content'];
-  const missingFields = requiredFields.filter(field => !service[field]);
-
-  if (missingFields.length > 0) {
-    console.error(`Service for slug ${params.slug} is missing required fields: ${missingFields.join(', ')}`);
-    return { notFound: true };
-  }
-
-  console.log('Found service:', service);
 
   return { props: { service }, revalidate: 60 };
 }

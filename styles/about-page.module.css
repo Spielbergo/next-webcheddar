@@ -37,7 +37,7 @@
         flex-direction: row-reverse;
     }
 
-    .about_page__container > div:nth-child(5) {
+    /* .about_page__container > div:nth-child(5) {
         padding: 50px 75px;
     }
 
@@ -52,7 +52,7 @@
 
     .about_page__container > div {
         border-radius: 175px;
-    }
+    } */
 }
 
 @media screen and (max-width: 1025px) {
