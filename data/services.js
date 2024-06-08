@@ -1,14 +1,9 @@
-import { MdOutlineWeb, MdEvent, MdOutlineShoppingCart, MdEmail } from "react-icons/md";
-import { IoSearchCircle, IoConstructOutline, IoLogoHtml5, IoLogoCss3, IoLogoJavascript, IoLogoReact, IoLogoWordpress } from "react-icons/io5";
-import { TiSocialAtCircular } from "react-icons/ti";
-import { FaFacebookF, FaGithub, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
-import { SiNextdotjs, SiPhp } from "react-icons/si";
-
 const services = [
   {
     id: 1,
     slug: 'web-development',
-    icon: MdOutlineWeb,
+    path: '/services/web-development',
+    icon: 'MdOutlineWeb',
     title: 'Web Development',
     description: 'We provide top-notch web development services using the latest technologies.',
     hero: '/services/design-and-development.webp',
@@ -31,7 +26,8 @@ const services = [
   {
     id: 2,
     slug: 'search-engine-optimization',
-    icon: IoSearchCircle,
+    path: '/services/search-engine-optimization',
+    icon: 'IoSearchCircle',
     title: 'Search Engine Optimization',
     description: 'Our Search Engine Optimization services ensure a seamless experience across platforms.',
     hero: '/services/search-engine-optimization.webp',
@@ -52,7 +48,8 @@ const services = [
   {
     id: 3,
     slug: 'website-maintenance',
-    icon: IoConstructOutline,
+    path: '/services/website-maintenance',
+    icon: 'IoConstructOutline',
     title: 'Website Maintenance',
     description: 'Keep your site running smoothly. We handle updates, fixes, and ensure everything works as it should.',
     content: 'Our Website Maintenance services include creating user-friendly interfaces...',
@@ -73,7 +70,8 @@ const services = [
   {
     id: 4,
     slug: 'social-media-management',
-    icon: TiSocialAtCircular,
+    path: '/services/social-media-management',
+    icon: 'TiSocialAtCircular',
     title: 'Social Media Management',
     description: 'Engage your audience online. We manage posts, replies, and make sure your brand shines on social',
     content: 'Our UI/UX design services include creating user-friendly interfaces...',
@@ -94,7 +92,8 @@ const services = [
   {
     id: 5,
     slug: 'e-commerce-solutions',
-    icon: MdOutlineShoppingCart,
+    path: '/services/e-commerce-solutions',
+    icon: 'MdOutlineShoppingCart',
     title: 'E-commerce Solutions',
     description: 'Sell with confidence online. Our secure, seo optimized and user-friendly shops make buying and selling a breeze.',
     content: 'Our UI/UX design services include creating user-friendly interfaces...',
@@ -115,7 +114,8 @@ const services = [
   {
     id: 6,
     slug: 'special-event-websites',
-    icon: MdEvent,
+    path: '/services/special-event-websites',
+    icon: 'MdEvent',
     title: 'Special Event Websites',
     description: 'Celebrate big moments digitally. We create standout sites for weddings, reunions, and more.',
     content: 'Our UI/UX design services include creating user-friendly interfaces...',
