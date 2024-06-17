@@ -1,6 +1,6 @@
 import { socialIcons } from "../data";
 
-import styles from '../styles/social-icons.module.css';
+import styles from './social-icons.module.css';
 
 const SocialIcons = () => {
     return (

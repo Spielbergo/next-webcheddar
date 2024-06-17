@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '../styles/clients.module.css';
+import styles from './clients.module.css';
 import { clientLogos } from '../data/index';
 
 const Clients = () => {

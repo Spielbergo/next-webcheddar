@@ -113,51 +113,6 @@ export const clientLogos = [
     },
 ];
 
-// export const servicesHome = [
-//     {
-//         id: "webdev",
-//         icon: MdOutlineWeb,
-//         title: "Website Development",
-//         text: "We craft unique websites that capture your brand's essence and engage your audience seamlessly.",
-//         path: "/services",
-//     },
-//     {
-//         id: "seoservices",
-//         icon: IoSearchCircle,
-//         title: "Search Engine Optimization",
-//         text: "Boost your site's visibility. We make sure people find you easily on popular search engines.",
-//         path: "/contact",
-//     },
-//     {
-//         id: "webmaint",
-//         icon: IoConstructOutline ,
-//         title: "Website Maintenance",
-//         text: "Keep your site running smoothly. We handle updates, fixes, and ensure everything works as it should.",
-//         path: "/about",
-//     },
-//     {
-//         id: "socialmedia",
-//         icon: TiSocialAtCircular,
-//         title: "Social Media Management",
-//         text: "Engage your audience online. We manage posts, replies, and make sure your brand shines on social.",
-//         path: "/services",
-//     },
-//     {
-//         id: "ecommerce",
-//         icon: MdOutlineShoppingCart,
-//         title: "E-commerce Solutions",
-//         text: "Sell with confidence online. Our secure, seo optimized and user-friendly shops make buying and selling a breeze.",
-//         path: "/about",
-//     },
-//     {
-//         id: "special events sites",
-//         icon: MdEvent,
-//         title: "Special Event Websites",
-//         text: "Celebrate big moments digitally. We create standout sites for weddings, reunions, and more.",
-//         path: "/contact",
-//     },
-// ];
-
 export const techStack = [
     {
         id: 'tech-1',

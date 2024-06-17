@@ -102,6 +102,12 @@ body {
     )
     rgb(var(--background-start-rgb));
     /* padding-top: 75px; */
+    
+}
+
+.slick-next:before, .slick-prev:before{
+  font-family: Inter, Verdana, Geneva, Tahoma, sans-serif !important;
+  font-display: swap;
 }
 
 /* body[data-theme='dark'] {
@@ -243,7 +249,7 @@ button:hover {
   position: relative !important;
   height: 365px !important;
   object-fit: cover;
-  opacity: .5;
+  opacity: .7;
   /* border-top: 75px solid #000;
   border-bottom: 75px solid #000; */
 }

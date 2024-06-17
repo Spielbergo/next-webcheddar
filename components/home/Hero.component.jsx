@@ -18,16 +18,20 @@ const Hero = () => {
                     <h1 className={styles.hero__h1}>Web Cheddar - Websites - Social Media</h1>
                     <h2 className={styles.hero__h2}>Quality Digital Services Your Business Needs</h2>
                     <div className={styles.hero__button_container}>
-                        <Button 
-                            variant="default__home" 
-                            onClick={() => Router.push('services')}>
-                            Our Services
-                        </Button>
-                        <Button 
-                            variant="outline" 
-                            onClick={() => Router.push('contact')}>
-                            Get a Quote
-                        </Button>
+                        <div>
+                            <Button 
+                                variant="default__home" 
+                                onClick={() => Router.push('services')}>
+                                Our Services
+                            </Button>
+                        </div>  
+                        <div>
+                            <Button 
+                                variant="outline" 
+                                onClick={() => Router.push('contact')}>
+                                Get a Quote
+                            </Button>
+                        </div>
                     </div>
                 </div>
                 <Image 

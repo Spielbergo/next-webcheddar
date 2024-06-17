@@ -7,7 +7,7 @@ import { testimonials } from "../data";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-import styles from "../styles/testimonial-slider.module.css";
+import styles from "./testimonial-slider.module.css";
 
 const TestimonialSlider = () => {
   const settings = {

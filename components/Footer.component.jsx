@@ -6,7 +6,7 @@ import { navigation, featuredBlogs } from "../data";
 import Clients from "./Clients.component";
 import Address from "./Address.component";
 
-import styles from "../styles/footer.module.css";
+import styles from "./footer.module.css";
 
 import FooterLogoWhite from '../assets/images/logos/web-cheddar-logo-white.png';
 

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
 
-import styles from '../../styles/blog.module.css';
+import styles from '../../styles/blog-page.module.css';
 
 export default function Post({ post, hasTOC }) {
   const [isTOCVisible, setTOCVisible] = useState(false);
@@ -48,9 +48,9 @@ export default function Post({ post, hasTOC }) {
 
       {/* Populate the head with dynamic data */}
       <Head>
-        <title>{post.title.rendered}</title>
-        <meta name="description" content={post.excerpt.rendered}></meta>
-        <meta property="og:description" content={post.excerpt.rendered}></meta>
+        <title>{post.yoast_head_json.title}</title>
+        <meta name="description" content={post.yoast_head_json.og_description}></meta>
+        <meta property="og:description" content={post.yoast_head_json.og_description}></meta>
         <meta property="og:site_name" content={post.title.rendered}></meta>
         {/* Add any other meta tags, link tags, etc. here */}
       </Head>

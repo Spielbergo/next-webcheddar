@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Layout from '../components/Layout';
 import Header from '../components/Header.component';
 
-import styles from '../styles/sitemap.module.css'
+import styles from '../styles/sitemap-page.module.css'
 
 const Sitemap = () => {
   const [blogs, setBlogs] = useState([]);

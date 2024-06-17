@@ -1,4 +1,4 @@
-import styles from '../styles/button.module.css';
+import styles from './button.module.css';
 
 const Button = ({ children, variant = 'default', onClick, ...props }) => {
   return (

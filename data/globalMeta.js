@@ -1,9 +1,9 @@
 const globalMeta = {
-	siteName: "Web Chheddar Web Solutions TEST",
+	siteName: "Web Cheddar Web Solutions",
 	siteUrl: "https://webcheddar.ca",
-	siteLogo: "https://webcheddar.ca/assets/images/logos/web-cheddar-logo-black.png",
+	siteLogo: "/logos/logo-light.webp",
 	email: "info@webcheddar.ca",
-	description: "Web Cheddar Web Solutions - Prices to Suit all Budgets"
+	// description: [],
 }
 
 export default globalMeta;

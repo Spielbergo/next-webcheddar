@@ -13,3 +13,11 @@
 .services_pages__section {
     padding: 20px 0 0;
 }
+
+.services_features__items {
+    display: flex;
+}
+
+.services_features__items li {
+    text-align: center;
+}

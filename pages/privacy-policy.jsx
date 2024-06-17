@@ -2,7 +2,7 @@ import Header from '../components/Header.component';
 import Layout from '../components/Layout';
 import Link from 'next/link';
 
-import styles from '../styles/privacy-policy.module.css'
+import styles from '../styles/privacy-policy-page.module.css'
 
 const header = (
     <Header 

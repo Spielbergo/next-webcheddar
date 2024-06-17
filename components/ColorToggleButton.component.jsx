@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { FaSun, FaMoon } from 'react-icons/fa'; // Import icons from react-icons
 
-import styles from '../styles/color-toggle-button.module.css';
+import styles from './color-toggle-button.module.css';
 
 const ColorToggleButton = () => {
   const [darkMode, setDarkMode] = useState(false);

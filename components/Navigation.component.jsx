@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { FaEnvelope } from 'react-icons/fa';
 import { navigation, socialIcons } from '../data'; // Importing navigation and socialIcons data
 import services from '../data/services'; // Importing services data
-import styles from '../styles/navigation.module.css';
+import styles from './navigation.module.css';
 import Socials from '../components/SocialIcons.component';
-import NavLogoWhite from '../assets/images/logos/web-cheddar-logo-white.png';
-import NavLogoBlack from '../assets/images/logos/web-cheddar-logo-black.png';
+import NavLogoWhite from '../public/logos/logo-light.png';
+import NavLogoBlack from '../public/logos/logo-dark.png';
 import Button from './Button.component';
 
 const Navigation = () => {

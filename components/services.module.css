@@ -1,6 +1,3 @@
-/* Services Section */
-
-
 /* Services GRID */
 .services_home__titles {
   max-width: 1200px;
@@ -46,19 +43,18 @@
   /* flex: 2; */
   /* scale: 1.2; */
   color: var(--primary-color);
-  cursor: pointer;
 }
 
 .services_home__card p {
   color: #fff;
 }
 .services_home__card:nth-child(2) {
-  background-image: linear-gradient(194deg, transparent 25%, #000 100%), url('../../public/services/search-engine-optimization.webp');
+  background-image: linear-gradient(194deg, transparent 25%, #000 100%), url('../public/services/search-engine-optimization.webp');
   background-position: bottom;
 }
 
 .services_home__card:nth-child(4) {
-  background-image: linear-gradient(194deg, transparent 25%, #000 100%), url('../../public/services/social-media-management.webp');
+  background-image: linear-gradient(194deg, transparent 25%, #000 100%), url('../public/services/social-media-management.webp');
   background-position: bottom;
 }
 
@@ -68,7 +64,7 @@
 }
 
 .services_home__card:nth-child(6) {
-  background-image:  linear-gradient(190deg, transparent 25%, #000 100%), url('../../public/services/special-events.webp');
+  background-image:  linear-gradient(190deg, transparent 25%, #000 100%), url('../public/services/special-events.webp');
   background-position: bottom;
 }
 

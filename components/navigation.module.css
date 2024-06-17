@@ -5,6 +5,7 @@
     z-index: 100000;
     height: 75px;
     transition: .5s ease-in-out;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, .7) 10%, transparent);
   }
   
   .main_nav__container {
@@ -12,9 +13,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    
   }
   
   .main_nav__scrolled {
+    background-image: none;
     background-color: var(--primary-bg-color);
     box-shadow:
       0 1px 1px hsla(0, 87%, 49%, 0.075),

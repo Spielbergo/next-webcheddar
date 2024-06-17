@@ -1,17 +1,16 @@
-// pages/services/[slug].jsx
 import React from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
 import Head from 'next/head';
 import Header from '../../components/Header.component';
-import Services from '../../components/home/Services.component';
+import Services from '../../components/Services.component'
 import Contact from '../../components/ContactSection.component';
 import TestimonialSlider from '../../components/TestimonialSlider.component';
 import parse from 'html-react-parser';
 import Link from 'next/link';
 import Image from 'next/image';
 import services from '../../data/services';
-import styles from '../../styles/services_pages.module.css';
+import styles from '../../styles/services-pages.module.css';
 
 export default function ServicePage({ service }) {
   const router = useRouter();
@@ -21,18 +20,18 @@ export default function ServicePage({ service }) {
   }
 
   if (!service) {
-    console.error('Service not found');
+    // console.error('Service not found');
     return <div>Service not found</div>;
   }
 
   // Additional validation
-  const requiredFields = ['title', 'description', 'hero', 'hero_alt', 'image_1', 'image_1_alt', 'content'];
-  for (const field of requiredFields) {
-    if (!service[field]) {
-      console.error(`Service is missing required field: ${field}`);
-      return <div>Service data is incomplete</div>;
-    }
-  }
+//   const requiredFields = ['title', 'description', 'hero', 'hero_alt', 'image_1', 'image_1_alt', 'content'];
+//   for (const field of requiredFields) {
+//     if (!service[field]) {
+//       console.error(`Service is missing required field: ${field}`);
+//       return <div>Service data is incomplete</div>;
+//     }
+//   }
 
   const header = (
     <Header 
@@ -93,9 +92,9 @@ export default function ServicePage({ service }) {
           </section>
 
           {service.features && (
-            <section className={styles.features_section}>
+            <section className={styles.services_features__section}>
               <h3>Key Features</h3>
-              <ul>
+              <ul className={styles.services_features__items}>
                 {service.features.map((feature, index) => (
                   <li key={index}>{feature}</li>
                 ))}
@@ -118,17 +117,17 @@ export async function getStaticPaths() {
     params: { slug: service.slug },
   }));
 
-  console.log('Generated paths:', paths);
+  // console.log('Generated paths:', paths);
 
   return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params }) {
-  console.log('Generating page for slug:', params.slug);
+  // console.log('Generating page for slug:', params.slug);
   const service = services.find(service => service.slug === params.slug) || null;
 
   if (!service) {
-    console.error('Service not found for slug:', params.slug);
+    // console.error('Service not found for slug:', params.slug);
     return { notFound: true };
   }
 

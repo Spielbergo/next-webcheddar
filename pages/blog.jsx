@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Header from '../components/Header.component';
 import Layout from '../components/Layout';
 
-import styles from '../styles/blog-index.module.css';
+import styles from '../styles/blog-index-page.module.css';
 
 export default function Blog({ initialPosts, totalPages, allCategories }) {
   const [posts, setPosts] = useState(initialPosts);

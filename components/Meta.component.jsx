@@ -1,13 +1,13 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import Header from './Header.component';
+
 import globalMeta from '../data/globalMeta';
 
 export default function MetaHead ({
 	title = globalMeta.siteName,
-	description = globalMeta.description,
-	ogType,
-	ogImgUrl = globalMeta.siteLogo,
+	// description = globalMeta.description,
+	ogType = 'website',
+	ogImgUrl = `${globalMeta.siteUrl}${globalMeta.siteLogo}`,
 	structuredData,
 	children
 }) {
@@ -20,7 +20,7 @@ export default function MetaHead ({
 		"name": "Web Cheddar - Websites - Social Media",
 		"legalName" : "Web Cheddar - Websites - Social Media",
 		"url": `${globalMeta.siteUrl}${router.asPath}`,
-		"logo": `${globalMeta.siteUrl}/public/web-cheddar-logo-white.png"`,
+		"logo": `${globalMeta.siteUrl}${globalMeta.siteLogo}`,
 		"foundingDate": "2019",
 		"founders": [
 		{
@@ -54,7 +54,7 @@ export default function MetaHead ({
 	<Head>
     	{/* Fundamental head elements. */}
     	<title>{ typeof title === 'string' ? title : globalMeta.siteName }</title>
-    	<meta name="description" content={description} />
+    	{/* <meta name="description" content={description} /> */}
     	<link rel="canonical" href={canonicalUrl} />
     	<meta name="viewport" content="width=device-width, initial-scale=1" />
     	<link rel="icon" href="/favicon.ico" />
@@ -63,7 +63,7 @@ export default function MetaHead ({
     	<meta property="og:locale" content="en_CA" />
     	<meta property="og:site_name" content={globalMeta.siteName} />
     	<meta property="og:type" content={ogType} />
-    	<meta property="og:description" content={description} />
+    	{/* <meta property="og:description" content={description} /> */}
     	<meta property="og:image" content={ogImgUrl} />
     	<meta property="og:url" content={canonicalUrl} />
  

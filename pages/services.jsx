@@ -5,7 +5,7 @@ import { servicePageOne, servicePageTwo } from '../data';
 
 import Header from '../components/Header.component';
 import Layout from '../components/Layout';
-import Services from '../components/home/Services.component';
+import Services from '../components/Services.component';
 import ServiceText from '../components/ServicesText.component'; 
 import ContactSection from '../components/ContactSection.component';
 import TestimonialSlider from '../components/TestimonialSlider.component';

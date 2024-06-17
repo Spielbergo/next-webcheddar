@@ -26,3 +26,7 @@
 .contact_form__form textarea::placeholder {
     color: #fff;
 }
+
+.contact_form__form button {
+    width: 100%;
+}

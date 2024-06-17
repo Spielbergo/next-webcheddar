@@ -5,7 +5,7 @@ import { DiAndroid } from "react-icons/di";
 import Address from './Address.component';
 import ContactForm from './ContactForm.component';
 
-import styles from '../styles/contact-section.module.css';
+import styles from './contact-section.module.css';
 
 import { contactSection } from '../data/index';
 

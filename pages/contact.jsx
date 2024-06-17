@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import globalMeta from '../data/globalMeta';
 
-import contactImage from '../assets/images/hero/header.webp';
+import contactImage from '../public/header.webp';
 
 import Header from "../components/Header.component";
 import Layout from "../components/Layout";

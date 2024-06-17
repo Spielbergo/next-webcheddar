@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import Button from '../Button.component';
-import services from '../../data/services';
+import Button from './Button.component';
+import services from '../data/services';
 
 import styles from './services.module.css';
 
@@ -33,17 +33,16 @@ const Services = () => {
                 {services.map((service) => {
                     const IconComponent = iconComponents[service.icon];
                     return (
-                        <div key={service.id} className={`${styles.services_home__card} shadow`}>
+                        <div key={service.id} className={`${styles.services_home__card} shadow`}>                            
+                            <div className={styles.services_home__icon}>
+                                {IconComponent && <IconComponent />}
+                            </div>
                             <Link href={service.path}>
-                                <div className={styles.services_home__icon}>
-                                    {IconComponent && <IconComponent />}
-                                </div>
                                 <h2>{service.title}</h2>
-                                
-                                <div className={styles.services_home__card_text}>
-                                    <p className='section-text'>{service.description}</p>
-                                </div>
                             </Link>
+                            <div className={styles.services_home__card_text}>
+                                <p className='section-text'>{service.description}</p>
+                            </div>
                         </div>
                     );
                 })}
