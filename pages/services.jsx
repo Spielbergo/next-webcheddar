@@ -11,7 +11,7 @@ import ContactSection from '../components/ContactSection.component';
 import TestimonialSlider from '../components/TestimonialSlider.component';
 
 import styles from '../styles/services-page.module.css';
-import contactImage from '../assets/images/hero/header.webp';
+// import contactImage from '../assets/images/hero/header.webp';
 
 const ServicesPage = () => {
     const header = (

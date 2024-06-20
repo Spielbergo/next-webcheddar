@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
 import Link from 'next/link';
 import parse from 'html-react-parser';
 import Image from 'next/image';
@@ -8,13 +9,14 @@ import Layout from '../components/Layout';
 
 import styles from '../styles/blog-index-page.module.css';
 
-export default function Blog({ initialPosts, totalPages, allCategories }) {
+export default function Blog({ initialPosts, totalPages, allCategories, error }) {
   const [posts, setPosts] = useState(initialPosts);
   const [categories, setCategories] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState(initialPosts);
   const [currentCategory, setCurrentCategory] = useState('All');
   const [currentPage, setCurrentPage] = useState(1);
   const [isClient, setIsClient] = useState(false);
+  const [loadError, setLoadError] = useState(null);
 
   useEffect(() => {
     setIsClient(true);
@@ -51,6 +53,7 @@ export default function Blog({ initialPosts, totalPages, allCategories }) {
         setCurrentPage(nextPage);
       } catch (error) {
         console.error('Error fetching more posts:', error);
+        setLoadError('Failed to load more posts.');
       }
     }
   };
@@ -63,7 +66,18 @@ export default function Blog({ initialPosts, totalPages, allCategories }) {
     />
   );
 
+  if (error) {
+    return <div className='error_messge__loading'>Error loading blogs: {error.message}</div>;
+  }
+
   return (
+    <>
+    <Head>
+      <title>Blog Index Page - Web Cheddar Web Solutions</title>
+      <meta name="description" content='TEST'></meta>
+      <meta property="og:description" content='TEST2'></meta>
+    </Head>
+
     <Layout header={header}> 
       <main>
         <section className={styles.blog_index__section}>
@@ -108,6 +122,8 @@ export default function Blog({ initialPosts, totalPages, allCategories }) {
             ) : (
               !isClient && <div>Loading posts...</div>
             )}
+            {isClient && filteredPosts.length === 0 && <div>No posts found.</div>}
+            {loadError && <div>{loadError}</div>}
           </div>
           {isClient && currentPage < totalPages && (
             <button onClick={loadMorePosts}>Load More</button>
@@ -115,22 +131,41 @@ export default function Blog({ initialPosts, totalPages, allCategories }) {
         </section>
       </main>
     </Layout>
+    </>
   );
 }
 
 export async function getStaticProps() {
-  const postsResponse = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/posts?_embed&per_page=40'); // Adjust per_page as needed
-  const initialPosts = await postsResponse.json();
+  try {
+    const postsResponse = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/posts?_embed&per_page=40');
+    if (!postsResponse.ok) {
+      throw new Error(`Failed to fetch posts: ${postsResponse.status}`);
+    }
+    const initialPosts = await postsResponse.json();
 
-  const categoriesResponse = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/categories');
-  const allCategories = await categoriesResponse.json();
+    const categoriesResponse = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/categories');
+    if (!categoriesResponse.ok) {
+      throw new Error(`Failed to fetch categories: ${categoriesResponse.status}`);
+    }
+    const allCategories = await categoriesResponse.json();
 
-  return {
-    props: {
-      initialPosts,
-      allCategories,
-      totalPages: Math.ceil(initialPosts.length / 40), // Adjust according to your pagination logic
-    },
-    revalidate: 86400, // 24 hours
-  };
+    return {
+      props: {
+        initialPosts,
+        allCategories,
+        totalPages: Math.ceil(initialPosts.length / 40),
+      },
+      revalidate: 86400, // 24 hours
+    };
+  } catch (error) {
+    console.error('Error in getStaticProps:', error);
+    return {
+      props: {
+        initialPosts: [],
+        allCategories: [],
+        totalPages: 0,
+        error: { message: 'Failed to fetch data.' },
+      },
+    };
+  }
 }

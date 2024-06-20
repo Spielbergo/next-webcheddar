@@ -12,9 +12,9 @@ const inter = Inter ({
   display: 'swap',
 })
 
-export default function Layout({ header, children, includeHead = false }) {
-  const router = useRouter();
-  const canonicalUrl = `${globalMeta.siteUrl}${router.asPath}`;
+export default function Layout({ header, children }) {
+  // const router = useRouter();
+  
 
   // const structuredLd = JSON.stringify({
   //   "@context": "https://schema.org",
@@ -54,15 +54,7 @@ export default function Layout({ header, children, includeHead = false }) {
 
   return (
     <>
-      {includeHead && (
-        <Head
-          // canonicalUrl = { canonicalUrl }
-          // structuredData = { structuredLd }
-          // title="Web Cheddar Web Solutions - webcheddar.ca"
-          // description="TEEESSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSST"
-          // ogType="website"
-        />
-      )}
+      
       {/* <Navigation /> */}
       {header}
       {children}

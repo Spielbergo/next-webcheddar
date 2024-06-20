@@ -364,6 +364,14 @@ button:hover {
   background-color: var(--primary-bg-color);
 } */
 
+.error_messge__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70vh;
+}
+
 @media screen and (min-width: 1025px) {
   address {
     text-align: left;

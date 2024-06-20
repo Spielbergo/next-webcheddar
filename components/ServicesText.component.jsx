@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styles from '../styles/services-page.module.css';
-import contactImage from '../assets/images/hero/header.webp';
+// import contactImage from '../assets/images/hero/header.webp';
 
 const ServicesText = ({ service }) => {
     return (

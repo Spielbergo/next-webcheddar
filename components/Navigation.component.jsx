@@ -26,6 +26,7 @@ const Navigation = () => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target) && mobileToggleOpen) {
         setMobileToggleOpen(false);
+        setSubLinkToggleOpen(false);
       }
     };
 
@@ -40,6 +41,7 @@ const Navigation = () => {
 
   const handleMobileToggle = () => {
     setMobileToggleOpen(prevState => !prevState);
+    if (subLinkToggleOpen) setSubLinkToggleOpen(false); // Close submenu if open
   };
 
   const handleSubLinkToggle = () => {
@@ -48,6 +50,7 @@ const Navigation = () => {
 
   const handleCloseMobileNav = () => {
     setMobileToggleOpen(false);
+    setSubLinkToggleOpen(false);
   };
 
   // Clone the navigation array to avoid modifying the original data
@@ -55,7 +58,7 @@ const Navigation = () => {
 
   // Find the services item in the navigation array
   const servicesNavItem = navItems.find(item => item.id === 'services');
-  
+
   // Populate subLinks dynamically from services
   servicesNavItem.subLinks = services.map(service => ({
     id: service.slug,
@@ -72,15 +75,15 @@ const Navigation = () => {
     <nav ref={navRef} className={`${styles.main_nav__nav} ${scrolled ? styles.main_nav__scrolled : ''} ${mobileToggleOpen ? styles.main_nav__container_grey : ''}`}>
       <div className={`${styles.main_nav__container} ${scrolled ? styles.main_container__scrolled : ''}`}>
         <div>
-          <Link href="/">            
-              <Image
-                src={NavLogoWhite}
-                className={styles.main_nav__logo}
-                alt="Web Cheddar logo"
-                width="150"
-                height="50"
-                priority
-              />
+          <Link href="/">
+            <Image
+              src={NavLogoWhite}
+              className={styles.main_nav__logo}
+              alt="Web Cheddar logo"
+              width="150"
+              height="50"
+              priority
+            />
           </Link>
         </div>
 
@@ -88,9 +91,9 @@ const Navigation = () => {
           <div>
             <ul className={`${styles.main_nav__navLinks} ${mobileToggleOpen ? styles.main_nav__navLinks_visible : ''}`}>
               {navItems.map((nav) => (
-                <li key={nav.id} className={styles.main_nav__subLinks__parent} 
-                    onMouseEnter={nav.id === 'services' ? handleSubLinkToggle : null}
-                    onMouseLeave={nav.id === 'services' ? handleSubLinkToggle : null}
+                <li key={nav.id} className={styles.main_nav__subLinks__parent}
+                    onMouseEnter={nav.id === 'services' ? () => setSubLinkToggleOpen(true) : null}
+                    onMouseLeave={nav.id === 'services' ? () => setSubLinkToggleOpen(false) : null}
                     onClick={nav.id === 'services' ? handleSubLinkToggle : handleCloseMobileNav}>
                   {nav.id === 'services' ? (
                     <span className={styles.nav_item}>{nav.anchor}</span>
@@ -98,35 +101,35 @@ const Navigation = () => {
                     <Link href={nav.link} className={router.pathname === nav.link ? styles.active : ''} onClick={handleCloseMobileNav}>{nav.anchor}</Link>
                   )}
                   {nav.subLinks && nav.subLinks.length > 0 && (
-                  <ul className={`${styles.main_nav__subLinks} shadow ${subLinkToggleOpen ? styles.main_nav__sublinks_visible : ''}`}>
-                    {nav.subLinks.map(subLink => (
-                      <li key={subLink.id} onClick={handleSubLinkClick}>
-                        <Link href={subLink.link} className={router.pathname === subLink.link ? styles.active : ''}>{subLink.anchor}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                    <ul className={`${styles.main_nav__subLinks} shadow ${subLinkToggleOpen ? styles.main_nav__sublinks_visible : ''}`}>
+                      {nav.subLinks.map(subLink => (
+                        <li key={subLink.id} onClick={handleSubLinkClick}>
+                          <Link href={subLink.link} className={router.pathname === subLink.link ? styles.active : ''}>{subLink.anchor}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
               <span className={styles.main_nav__mobile_links}>
-                <li><Socials /></li>                
+                <li><Socials /></li>
               </span>
             </ul>
           </div>
-        
+
           <ul className={styles.main_nav__social_icons}>
             {socialIcons.map((socials) => (
               <li key={socials.id}>
                 <Link href={socials.link} target="_blank" rel="noopener nofollow noreferrer" title={socials.title} aria-label={socials.title} className={styles.main_nav__social_icons_false}><socials.icon /></Link>
               </li>
             ))}
-              <li>
-                  <Button
-                      variant="get_a_quote" 
-                      onClick={() => router.push('/contact')}>
-                      Get a Quote
-                  </Button>
-                </li>
+            <li>
+              <Button
+                variant="get_a_quote"
+                onClick={() => router.push('/contact')}>
+                Get a Quote
+              </Button>
+            </li>
             <li className={styles.main_nav__toggle} onClick={handleMobileToggle}>
               <div className={styles.hamburger}>
                 <div className={`${styles.bar} ${mobileToggleOpen ? styles.bar1_open : ''}`}></div>

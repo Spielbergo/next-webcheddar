@@ -17,6 +17,12 @@ const About = () => {
 
     return (
         <>
+        <Head>
+            <title>About Us - Web Cheddar Web Solutions</title>
+            <meta name="description" content='TEST'></meta>
+            <meta property="og:description" content='TEST2'></meta>
+        </Head>
+
         <Layout header={header}>         
             <main>
                 <section>

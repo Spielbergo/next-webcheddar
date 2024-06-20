@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import Hero from '../components/home/Hero.component';
 import Clients from '../components/Clients.component';
 import Services from '../components/Services.component';
@@ -10,6 +12,12 @@ import TestimonialSlider from '../components/TestimonialSlider.component';
 const Home = ({ posts }) => {
   return (        
     <>
+    <Head>
+        <meta name="description" content='TEST'></meta>
+        <meta property="og:description" content='TEST2'></meta>
+        {/* <meta property="og:site_name" content='Blog'></meta> */}
+        {/* Add any other meta tags, link tags, etc. here */}
+    </Head>
     <Hero />
     <main>
       <Clients />       

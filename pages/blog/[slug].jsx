@@ -8,7 +8,7 @@ import Script from 'next/script';
 
 import styles from '../../styles/blog-page.module.css';
 
-export default function Post({ post, hasTOC }) {
+export default function Post({ post, hasTOC, error }) {
   const [isTOCVisible, setTOCVisible] = useState(false);
   const contentRef = useRef(null);
   const router = useRouter();
@@ -30,11 +30,15 @@ export default function Post({ post, hasTOC }) {
   };
 
   if (router.isFallback) {
-    return <div className='blog_loader'>Loading...</div>;
+    return <div className='error_messge__loading'>Loading...</div>;
+  }
+
+  if (error) {
+    return <div className='error_messge__loading'>Error loading post: {error.message}</div>;
   }
 
   if (!post) {
-    return <div>Loading post...</div>;
+    return <div className='error_messge__loading'>Post not found.</div>;
   }
 
   return (
@@ -48,21 +52,21 @@ export default function Post({ post, hasTOC }) {
 
       {/* Populate the head with dynamic data */}
       <Head>
-        <title>{post.yoast_head_json.title}</title>
-        <meta name="description" content={post.yoast_head_json.og_description}></meta>
-        <meta property="og:description" content={post.yoast_head_json.og_description}></meta>
-        <meta property="og:site_name" content={post.title.rendered}></meta>
+        <title>{post.yoast_head_json.title || 'Blog Post'}</title>
+        <meta name="description" content={post.yoast_head_json.og_description || ''}></meta>
+        <meta property="og:description" content={post.yoast_head_json.og_description || ''}></meta>
+        <meta property="og:title" content={post.title.rendered || 'Blog'}></meta>
         {/* Add any other meta tags, link tags, etc. here */}
       </Head>
 
       <div className={styles.blog_post__container}>        
         <div className={styles.blog_post__image_container}>
-          <h1 className={styles.blog_post__blog_title}>{parse(post.title.rendered)}</h1>
+          <h1 className={styles.blog_post__blog_title}>{parse(post.title?.rendered || 'Untitled')}</h1>
           <div className={styles.blog_post__overlay}></div>
           {post._embedded?.['wp:featuredmedia'] && (
             <Image
               src={post._embedded['wp:featuredmedia'][0].source_url}
-              alt={post.title.rendered}
+              alt={post.title?.rendered || 'Featured Image'}
               className={styles.blog_post__main_img}
               width={1920}
               height={550}
@@ -77,7 +81,7 @@ export default function Post({ post, hasTOC }) {
             {' > '}
             <Link href="/blog">Blog</Link>
             {' > '}
-            <span>{parse(post.title.rendered)}</span>
+            <span>{parse(post.title?.rendered || 'Untitled')}</span>
           </div>
 
           {hasTOC && (
@@ -87,7 +91,7 @@ export default function Post({ post, hasTOC }) {
           )}
 
           <article ref={contentRef}>
-            <div>{parse(post.content.rendered)}</div>
+            <div>{parse(post.content?.rendered || 'No content available')}</div>
           </article>
         </div>
       </div>
@@ -96,22 +100,32 @@ export default function Post({ post, hasTOC }) {
 }
 
 export async function getStaticPaths() {
-  const response = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/posts?_embed');
-  const posts = await response.json();
+  try {
+    const response = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/posts?_embed');
+    const posts = await response.json();
 
-  const paths = posts.map((post) => ({
-    params: { slug: post.slug },
-  }));
+    const paths = posts.map((post) => ({
+      params: { slug: post.slug },
+    }));
 
-  return { paths, fallback: true };
+    return { paths, fallback: true };
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    return { paths: [], fallback: true };
+  }
 }
 
 export async function getStaticProps({ params }) {
-  const response = await fetch(`https://www.webcheddar.ca/blog/wp-json/wp/v2/posts?_embed&slug=${params.slug}`);
-  const posts = await response.json();
-  const post = posts[0] || null;
+  try {
+    const response = await fetch(`https://www.webcheddar.ca/blog/wp-json/wp/v2/posts?_embed&slug=${params.slug}`);
+    const posts = await response.json();
+    const post = posts[0] || null;
 
-  const hasTOC = post?.content?.rendered?.includes('class="blog_post__toc"');
+    const hasTOC = post?.content?.rendered?.includes('class="blog_post__toc"');
 
-  return { props: { post, hasTOC }, revalidate: 60 };
+    return { props: { post, hasTOC }, revalidate: 60 };
+  } catch (error) {
+    console.error('Error fetching post:', error);
+    return { props: { post: null, hasTOC: false, error: { message: 'Failed to fetch post data.' } }, revalidate: 60 };
+  }
 }

@@ -8,7 +8,7 @@ export default function MetaHead ({
 	// description = globalMeta.description,
 	ogType = 'website',
 	ogImgUrl = `${globalMeta.siteUrl}${globalMeta.siteLogo}`,
-	structuredData,
+	// structuredData,
 	children
 }) {
 	const router = useRouter();
@@ -17,31 +17,26 @@ export default function MetaHead ({
 	const structuredLd = JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "Organization",
-		"name": "Web Cheddar - Websites - Social Media",
-		"legalName" : "Web Cheddar - Websites - Social Media",
+		"name": `${globalMeta.siteName}`,
+		"legalName" : `${globalMeta.siteLegalName}`,
 		"url": `${globalMeta.siteUrl}${router.asPath}`,
 		"logo": `${globalMeta.siteUrl}${globalMeta.siteLogo}`,
-		"foundingDate": "2019",
-		"founders": [
-		{
+		"foundingDate": `${globalMeta.siteFoundingDate}`,
+		"founders": {
 		  "@type": "Person",
-		  "name": "Scott Sutherland"
+		  "name": `${globalMeta.siteOwner}`
 		},
-		{
-		"@type": "Person",
-		  "name": ""
-		} ],
 		"address": {
 		  "@type": "PostalAddress",
-		  "addressLocality": "Toronto",
-		  "addressRegion": "ON",
-		  "postalCode": "M6J 3S8",
-		  "addressCountry": "CA"
+		  "addressLocality": `${globalMeta.addressCity}`,
+		  "addressRegion": `${globalMeta.addressRegion}`,
+		  "postalCode": `${globalMeta.postalCode}`,
+		  "addressCountry": `${globalMeta.addressCountry}`
 		},
 		"contactPoint": {
 		  "@type": "ContactPoint",
 		  "contactType": "customer support",
-		  "email": "info@webcheddar.ca"
+		  "email": `${globalMeta.supportEmail}`
 		},
 		"sameAs": [ 
 		  "http://www.facebook.com/webcheddar",
@@ -57,13 +52,13 @@ export default function MetaHead ({
     	{/* <meta name="description" content={description} /> */}
     	<link rel="canonical" href={canonicalUrl} />
     	<meta name="viewport" content="width=device-width, initial-scale=1" />
-    	<link rel="icon" href="/favicon.ico" />
- 
-    	{/*	Open graph meta tags. */}
+    	<link rel="icon" href="/favicon.ico" /> 
+    	
+		{/*	Open graph meta tags. */}
     	<meta property="og:locale" content="en_CA" />
     	<meta property="og:site_name" content={globalMeta.siteName} />
-    	<meta property="og:type" content={ogType} />
-    	{/* <meta property="og:description" content={description} /> */}
+    	<meta property="og:type" content={ogType} />    	
+		{/* <meta property="og:description" content={description} /> */}
     	<meta property="og:image" content={ogImgUrl} />
     	<meta property="og:url" content={canonicalUrl} />
  
