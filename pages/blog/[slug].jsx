@@ -6,6 +6,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
 
+import globalMeta from '../../data/globalMeta';
+
 import styles from '../../styles/blog-page.module.css';
 
 export default function Post({ post, hasTOC, error }) {
@@ -14,6 +16,37 @@ export default function Post({ post, hasTOC, error }) {
   const router = useRouter();
 
   const includesCodePen = post?.content?.rendered?.includes('class="codepen"');
+
+  const structuredLd = JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		"name": `${globalMeta.siteName}`,
+		"legalName" : `${globalMeta.siteLegalName}`,
+		"url": `${globalMeta.siteUrl}${router.asPath}`,
+		"logo": `${globalMeta.siteUrl}${globalMeta.siteLogo}`,
+		"foundingDate": `${globalMeta.siteFoundingDate}`,
+		"founders": {
+		  "@type": "Person",
+		  "name": `${globalMeta.siteOwner}`
+		},
+		"address": {
+		  "@type": "PostalAddress",
+		  "addressLocality": `${globalMeta.addressCity}`,
+		  "addressRegion": `${globalMeta.addressRegion}`,
+		  "postalCode": `${globalMeta.postalCode}`,
+		  "addressCountry": `${globalMeta.addressCountry}`
+		},
+		"contactPoint": {
+		  "@type": "ContactPoint",
+		  "contactType": "customer support",
+		  "email": `${globalMeta.supportEmail}`
+		},
+		"sameAs": [ 
+		  "http://www.facebook.com/webcheddar",
+		  "https://www.linkedin.com/company/web-cheddar/",
+	  ]}
+	
+	  );
 
   useEffect(() => {
     const toc = contentRef.current?.querySelector('.blog_post__toc');
@@ -50,13 +83,34 @@ export default function Post({ post, hasTOC, error }) {
         />
       )}
 
-      {/* Populate the head with dynamic data */}
       <Head>
+        <meta name="robots" content={`
+            ${post.yoast_head_json.robots.index}
+            ${post.yoast_head_json.robots.follow}
+            // Fix these 3 below - undefined error _ are - in Postman
+            // ${post.yoast_head_json.robots.max_snippet}
+            // ${post.yoast_head_json.robots.max_image_preview}
+            // ${post.yoast_head_json.robots.max_video_preview}
+          `}>
+        </meta>
         <title>{post.yoast_head_json.title || 'Blog Post'}</title>
-        <meta name="description" content={post.yoast_head_json.og_description || ''}></meta>
+        <meta name="description" content={post.yoast_head_json.description || ''}></meta>
+        <meta name="author" content={post.yoast_head_json.author || ''}></meta>
+        <meta name="article:modified_time" content={post.yoast_head_json.article_published_time || ''}></meta>
         <meta property="og:description" content={post.yoast_head_json.og_description || ''}></meta>
-        <meta property="og:title" content={post.title.rendered || 'Blog'}></meta>
-        {/* Add any other meta tags, link tags, etc. here */}
+        <meta property="og:title" content={post.yoast_head_json.og_image.og_title || ''}></meta>
+        <meta property="og:locale" content={post.yoast_head_json.og_image.locale || ''}></meta>
+        <meta property="og:type" content={post.yoast_head_json.og_image.og_type || ''}></meta>
+        <meta property="og:image" content={post.yoast_head_json.og_image.url || ''}></meta>
+        <meta property="og:image:width" content={post.yoast_head_json.og_image.width || ''}></meta>
+        <meta property="og:image:height" content={post.yoast_head_json.og_image.height || ''}></meta>
+        <meta property="og:image:type" content={post.yoast_head_json.og_image.type || ''}></meta>
+        {/* Schema */}
+        <script
+            type="application/ld+json"
+        	  content={structuredLd}
+        	  key="item-jsonld"
+    	  />
       </Head>
 
       <div className={styles.blog_post__container}>        

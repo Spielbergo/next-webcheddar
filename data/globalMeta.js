@@ -1,6 +1,6 @@
 const globalMeta = {
 	siteName: "Web Cheddar Web Solutions",
-	siteLegalName: "Web Cheddar - Websites - Social Media", // LEgal company name - should match GMB
+	siteLegalName: "Web Cheddar - Websites - Social Media", // Legal company name - should match GMB
 	siteUrl: "https://webcheddar.ca",
 	siteLogo: "/logos/logo-light.webp",
 	siteFoundingDate: "2019",
