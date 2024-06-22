@@ -18,35 +18,34 @@ export default function Post({ post, hasTOC, error }) {
   const includesCodePen = post?.content?.rendered?.includes('class="codepen"');
 
   const structuredLd = JSON.stringify({
-		"@context": "https://schema.org",
-		"@type": "Organization",
-		"name": `${globalMeta.siteName}`,
-		"legalName" : `${globalMeta.siteLegalName}`,
-		"url": `${globalMeta.siteUrl}${router.asPath}`,
-		"logo": `${globalMeta.siteUrl}${globalMeta.siteLogo}`,
-		"foundingDate": `${globalMeta.siteFoundingDate}`,
-		"founders": {
-		  "@type": "Person",
-		  "name": `${globalMeta.siteOwner}`
-		},
-		"address": {
-		  "@type": "PostalAddress",
-		  "addressLocality": `${globalMeta.addressCity}`,
-		  "addressRegion": `${globalMeta.addressRegion}`,
-		  "postalCode": `${globalMeta.postalCode}`,
-		  "addressCountry": `${globalMeta.addressCountry}`
-		},
-		"contactPoint": {
-		  "@type": "ContactPoint",
-		  "contactType": "customer support",
-		  "email": `${globalMeta.supportEmail}`
-		},
-		"sameAs": [ 
-		  "http://www.facebook.com/webcheddar",
-		  "https://www.linkedin.com/company/web-cheddar/",
-	  ]}
-	
-	  );
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": `${globalMeta.siteName}`,
+    "legalName" : `${globalMeta.siteLegalName}`,
+    "url": `${globalMeta.siteUrl}${router.asPath}`,
+    "logo": `${globalMeta.siteUrl}${globalMeta.siteLogo}`,
+    "foundingDate": `${globalMeta.siteFoundingDate}`,
+    "founders": {
+      "@type": "Person",
+      "name": `${globalMeta.siteOwner}`
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": `${globalMeta.addressCity}`,
+      "addressRegion": `${globalMeta.addressRegion}`,
+      "postalCode": `${globalMeta.postalCode}`,
+      "addressCountry": `${globalMeta.addressCountry}`
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": `${globalMeta.supportEmail}`
+    },
+    "sameAs": [
+      "http://www.facebook.com/webcheddar",
+      "https://www.linkedin.com/company/web-cheddar/",
+    ]}
+  );
 
   useEffect(() => {
     const toc = contentRef.current?.querySelector('.blog_post__toc');
@@ -63,16 +62,24 @@ export default function Post({ post, hasTOC, error }) {
   };
 
   if (router.isFallback) {
-    return <div className='error_messge__loading'>Loading...</div>;
+    return <div className='error_message__loading'>Loading...</div>;
   }
 
   if (error) {
-    return <div className='error_messge__loading'>Error loading post: {error.message}</div>;
+    return <div className='error_message__loading'>Error loading post: {error.message}</div>;
   }
 
   if (!post) {
-    return <div className='error_messge__loading'>Post not found.</div>;
+    return <div className='error_message__loading'>Post not found.</div>;
   }
+
+  const ogImage = post.yoast_head_json?.og_image?.[0] || {};
+
+  const robotsMetaTags = [
+    { name: 'robots', content: `max-snippet:-1` },
+    { name: 'robots', content: `max-image-preview:large` },
+    { name: 'robots', content: `max-video-preview:-1` },
+  ];
 
   return (
     <>
@@ -84,33 +91,28 @@ export default function Post({ post, hasTOC, error }) {
       )}
 
       <Head>
-        <meta name="robots" content={`
-            ${post.yoast_head_json.robots.index}
-            ${post.yoast_head_json.robots.follow}
-            // Fix these 3 below - undefined error _ are - in Postman
-            // ${post.yoast_head_json.robots.max_snippet}
-            // ${post.yoast_head_json.robots.max_image_preview}
-            // ${post.yoast_head_json.robots.max_video_preview}
-          `}>
-        </meta>
+        <meta name="robots" content={`${post.yoast_head_json.robots.index} ${post.yoast_head_json.robots.follow}`}></meta>
+        {robotsMetaTags.map((tag, index) => (
+          <meta key={index} name={tag.name} content={tag.content} />
+        ))}
         <title>{post.yoast_head_json.title || 'Blog Post'}</title>
-        <meta name="description" content={post.yoast_head_json.description || ''}></meta>
-        <meta name="author" content={post.yoast_head_json.author || ''}></meta>
-        <meta name="article:modified_time" content={post.yoast_head_json.article_published_time || ''}></meta>
-        <meta property="og:description" content={post.yoast_head_json.og_description || ''}></meta>
-        <meta property="og:title" content={post.yoast_head_json.og_image.og_title || ''}></meta>
-        <meta property="og:locale" content={post.yoast_head_json.og_image.locale || ''}></meta>
-        <meta property="og:type" content={post.yoast_head_json.og_image.og_type || ''}></meta>
-        <meta property="og:image" content={post.yoast_head_json.og_image.url || ''}></meta>
-        <meta property="og:image:width" content={post.yoast_head_json.og_image.width || ''}></meta>
-        <meta property="og:image:height" content={post.yoast_head_json.og_image.height || ''}></meta>
-        <meta property="og:image:type" content={post.yoast_head_json.og_image.type || ''}></meta>
+        <meta name="description" content={post.yoast_head_json.description}></meta>
+        <meta name="author" content={post.yoast_head_json.author}></meta>
+        <meta name="article:modified_time" content={post.yoast_head_json.article_published_time}></meta>
+        <meta property="og:description" content={post.yoast_head_json.og_description}></meta>
+        <meta property="og:title" content={post.yoast_head_json.og_title}></meta>
+        <meta property="og:locale" content={post.yoast_head_json.locale}></meta>
+        <meta property="og:type" content={post.yoast_head_json.og_type}></meta>
+        <meta property="og:image" content={ogImage.url}></meta>
+        <meta property="og:image:width" content={ogImage.width}></meta>
+        <meta property="og:image:height" content={ogImage.height}></meta>
+        <meta property="og:image:type" content={ogImage.type}></meta>
         {/* Schema */}
         <script
-            type="application/ld+json"
-        	  content={structuredLd}
-        	  key="item-jsonld"
-    	  />
+          type="application/ld+json"
+          content={structuredLd}
+          key="item-jsonld"
+        />
       </Head>
 
       <div className={styles.blog_post__container}>        
