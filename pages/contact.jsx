@@ -5,7 +5,7 @@ import globalMeta from '../data/globalMeta';
 
 import contactImage from '../public/header.webp';
 
-import Header from "../components/Header.component";
+import FeaturedImage from "../components/FeaturedImage.component";
 import Layout from "../components/Layout";
 import Address from "../components/Address.component";
 import ContactForm from "../components/ContactForm.component";
@@ -14,8 +14,8 @@ import GoogleMaps from "../components/GoogleMaps.component";
 import styles from "../styles/contact-page.module.css";
 
 const Contact = () => {
-    const header = (
-        <Header 
+    const featuredImage = (
+        <FeaturedImage 
           title="Contact" 
           imageSrc="/header.webp" 
           alt="Home Header Image" 
@@ -30,7 +30,7 @@ const Contact = () => {
                 <meta property="og:description" content='TEST2'></meta>
             </Head>
 
-            <Layout header={header}> 
+            <Layout featuredImage={featuredImage}> 
             
             {/* <header className="header">
                 <div className="page_header__text">

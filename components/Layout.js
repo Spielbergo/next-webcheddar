@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google'
 import { useRouter } from "next/router";
-import Header from "./Header.component";
+import FeaturedImage from "./FeaturedImage.component";
 import Head from '../components/Meta.component';
 import Footer from "./Footer.component";
 import Navigation from "./Navigation.component";
@@ -12,7 +12,7 @@ const inter = Inter ({
   display: 'swap',
 })
 
-export default function Layout({ header, children }) {
+export default function Layout({ featuredImage, children }) {
   // const router = useRouter();
   
 
@@ -56,7 +56,7 @@ export default function Layout({ header, children }) {
     <>
       
       {/* <Navigation /> */}
-      {header}
+      {featuredImage}
       {children}
       {/* <Footer /> */}
     </>

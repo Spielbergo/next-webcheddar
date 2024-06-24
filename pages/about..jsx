@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Head from "next/head";
-import Header from "../components/Header.component";
+import FeaturedImage from "../components/FeaturedImage.component";
 import Layout from "../components/Layout";
 import { aboutPage } from '../data/index';
 import TestimonialSlider from "../components/TestimonialSlider.component";
 import styles from '../styles/about-page.module.css';
 
 const About = () => {
-    const header = (
-        <Header 
+    const featuredImage = (
+        <FeaturedImage 
           title="About Us" 
           imageSrc="/header.webp" 
           alt="Home Header Image" 
@@ -19,11 +19,12 @@ const About = () => {
         <>
         <Head>
             <title>About Us - Web Cheddar Web Solutions</title>
-            <meta name="description" content='TEST'></meta>
+            <meta name="description" content='TEST ABOUT'></meta>
             <meta property="og:description" content='TEST2'></meta>
+            <meta property="og:site_name" content='TEST2 SITENAME'></meta>
         </Head>
 
-        <Layout header={header}>         
+        <Layout featuredImage={featuredImage}>         
             <main>
                 <section>
                     <div className={`flex ${styles.about_page__container}`}>

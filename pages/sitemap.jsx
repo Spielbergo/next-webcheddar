@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 import Layout from '../components/Layout';
-import Header from '../components/Header.component';
+import Header from '../components/FeaturedImage.component';
 
 import styles from '../styles/sitemap-page.module.css'
 

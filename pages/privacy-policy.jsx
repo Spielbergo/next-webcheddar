@@ -1,4 +1,4 @@
-import Header from '../components/Header.component';
+import Header from '../components/FeaturedImage.component';
 import Layout from '../components/Layout';
 import Link from 'next/link';
 

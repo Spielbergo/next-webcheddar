@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { servicePageOne, servicePageTwo } from '../data';
 
-import Header from '../components/Header.component';
+import Header from '../components/FeaturedImage.component';
 import Layout from '../components/Layout';
 import Services from '../components/Services.component';
 import ServiceText from '../components/ServicesText.component'; 

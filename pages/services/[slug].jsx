@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
 import Head from 'next/head';
-import Header from '../../components/Header.component';
+import FeaturedImage from '../../components/FeaturedImage.component';
 import Services from '../../components/Services.component';
 import Contact from '../../components/ContactSection.component';
 import TestimonialSlider from '../../components/TestimonialSlider.component';
@@ -32,8 +32,8 @@ export default function ServicePage({ service }) {
     }
   }
 
-  const header = (
-    <Header 
+  const featuredImage = (
+    <FeaturedImage 
       title={service.title} 
       imageSrc={service.hero} 
       alt={service.hero_alt}
@@ -41,7 +41,7 @@ export default function ServicePage({ service }) {
   );
 
   return (
-    <Layout header={header}> 
+    <Layout featuredImage={featuredImage}> 
       <Head>
         <title>{service.title}</title>
         <meta name="description" content={service.description} />

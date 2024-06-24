@@ -4,7 +4,7 @@ import Link from 'next/link';
 import parse from 'html-react-parser';
 import Image from 'next/image';
 
-import Header from '../components/Header.component';
+import FeaturedImage from '../components/FeaturedImage.component';
 import Layout from '../components/Layout';
 
 import styles from '../styles/blog-index-page.module.css';
@@ -58,8 +58,8 @@ export default function Blog({ initialPosts, totalPages, allCategories, error })
     }
   };
 
-  const header = (
-    <Header 
+  const featuredImage = (
+    <FeaturedImage 
       title="Web Cheddar Blog" 
       imageSrc="/header.webp" 
       alt="Home Header Image" 
@@ -78,7 +78,7 @@ export default function Blog({ initialPosts, totalPages, allCategories, error })
       <meta property="og:description" content='TEST2'></meta>
     </Head>
 
-    <Layout header={header}> 
+    <Layout featuredImage={featuredImage}> 
       <main>
         <section className={styles.blog_index__section}>
             
