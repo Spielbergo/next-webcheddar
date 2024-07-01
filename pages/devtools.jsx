@@ -6,7 +6,7 @@ import Sidebar from '../components/Sidebar.component';
 import ColorPaletteGenerator from '../components/devtools/ColorPaletteGenerator';
 import GradientGenerator from '../components/devtools/GradientGenerator.module';
 
-import contactImage from '../assets/images/hero/header.webp';
+import contactImage from '../public/header.webp';
 
 export default function Home() {
   const [selectedSection, setSelectedSection] = useState(null);
