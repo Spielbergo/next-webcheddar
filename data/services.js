@@ -3,13 +3,13 @@ const services = [
     id: 1,
     slug: 'web-development',
     path: '/services/web-development',
-    icon: 'MdOutlineWeb',
+    icon: 'MdOutlineQueryStats',
     title: 'Web Development',
     description: 'We provide top-notch web development services using the latest technologies.',
     hero: '/services/design-and-development.webp',
     hero_alt: 'Web Development',
-    image_1: '/header.webp',
-    image_1_alt: 'Nuthin yet',
+    image_1: '/services/web-development.webp',
+    image_1_alt: 'Web Development Vector - Cartoon of user at a computer with various buttons above him showing diferent coding symbols',
     image_2: '/header.webp',
     image_2_alt: 'Nuthin yet',
     content: 'Our web development services are designed to bring your vision to life with precision and expertise. Whether you need a custom-built website or want to transform your existing Figma or Photoshop designs into a fully functional site, we\'ve got you covered. Our development process ensures your website is not only visually stunning but also optimized for search engines and fully responsive across all devices.',
@@ -17,10 +17,14 @@ const services = [
     features: [
       'Custom website design',
       'Development from Figma/Photoshop files',
-      'SEO integration',
       'Responsive design',
       'E-commerce platforms',
-      'CMS integration'
+    ],
+    stats: [
+      '76% of users leave a poorly designed website because it "lacks credibility."',
+      '80% of people say the most important characteristic of a website is ease of use.',
+      '57% of internet users say they won’t recommend a business with a poorly designed mobile site.',
+      '53% of mobile users will leave a site if it takes longer than 3 seconds to load.',
     ]
   },
   {
@@ -42,7 +46,13 @@ const services = [
       'Keyword research',
       'On-page optimization',
       'Link building',
-      'Performance tracking'
+      'Performance tracking',
+    ],
+    stats: [
+      '76% of users leave a poorly designed website because it "lacks credibility."',
+      '80% of people say the most important characteristic of a website is ease of use.',
+      '57% of internet users say they won’t recommend a business with a poorly designed mobile site.',
+      '53% of mobile users will leave a site if it takes longer than 3 seconds to load.',
     ]
   },
   {
@@ -65,6 +75,12 @@ const services = [
       'Security monitoring',
       'Backup solutions',
       'Technical support'
+    ],
+    stats: [
+      '76% of users leave a poorly designed website because it "lacks credibility."',
+      '80% of people say the most important characteristic of a website is ease of use.',
+      '57% of internet users say they won’t recommend a business with a poorly designed mobile site.',
+      '53% of mobile users will leave a site if it takes longer than 3 seconds to load.',
     ]
   },
   {
@@ -87,6 +103,12 @@ const services = [
       'Account management',
       'Engagement strategies',
       'Analytics reporting'
+    ],
+    stats: [
+      '76% of users leave a poorly designed website because it "lacks credibility."',
+      '80% of people say the most important characteristic of a website is ease of use.',
+      '57% of internet users say they won’t recommend a business with a poorly designed mobile site.',
+      '53% of mobile users will leave a site if it takes longer than 3 seconds to load.',
     ]
   },
   {
@@ -109,6 +131,12 @@ const services = [
       'Payment gateway integration',
       'Product management',
       'Sales analytics'
+    ],
+    stats: [
+      '76% of users leave a poorly designed website because it "lacks credibility."',
+      '80% of people say the most important characteristic of a website is ease of use.',
+      '57% of internet users say they won’t recommend a business with a poorly designed mobile site.',
+      '53% of mobile users will leave a site if it takes longer than 3 seconds to load.',
     ]
   },
   {
@@ -131,9 +159,14 @@ const services = [
       'RSVP management',
       'Event scheduling',
       'Multimedia integration'
+    ],
+    stats: [
+      '76% of users leave a poorly designed website because it "lacks credibility."',
+      '80% of people say the most important characteristic of a website is ease of use.',
+      '57% of internet users say they won’t recommend a business with a poorly designed mobile site.',
+      '53% of mobile users will leave a site if it takes longer than 3 seconds to load.',
     ]
   },
-  // Add more services as needed
 ];
 
 export default services;

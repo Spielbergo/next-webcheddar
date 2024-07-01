@@ -33,7 +33,7 @@ const TestimonialSlider = () => {
     <section className={styles.testimonial_slider__section}>
       <div className={styles.testimonials_slider__titles}>
           <h2 className="section_title_01">Testimonials</h2>
-          <h3 className="section_title_02">Testimonials</h3>
+          <h3 className="section_title_02">Google Reviews</h3>
           <p className="section_text">See what our satisfied clients have to say about their experience working with us.</p>
       </div>
 

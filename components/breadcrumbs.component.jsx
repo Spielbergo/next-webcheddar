@@ -5,7 +5,7 @@ const Breadcrumbs = ({pageCategoryUrl, pageCategoryTitle, currentPage}) => {
         <div className="breadcrumbs_container">
             <Link href="/">Home</Link>
             {' > '}
-            <Link href="/services">{pageCategoryTitle}</Link>
+            <Link href={pageCategoryUrl}>{pageCategoryTitle}</Link>
             {' > '}
             <span>{currentPage}</span>
           </div>

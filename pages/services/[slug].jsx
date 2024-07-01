@@ -1,16 +1,34 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import Layout from '../../components/Layout';
+import Link from 'next/link';
+import Image from 'next/image';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+
+import parse from 'html-react-parser';
+
+import Layout from '../../components/Layout';
 import FeaturedImage from '../../components/FeaturedImage.component';
+import TechStack from '../../components/TechStack.component';
 import Services from '../../components/Services.component';
 import Contact from '../../components/ContactSection.component';
 import TestimonialSlider from '../../components/TestimonialSlider.component';
-import parse from 'html-react-parser';
-import Link from 'next/link';
-import Image from 'next/image';
+
 import services from '../../data/services';
+
+import { MdOutlineWeb, MdEvent, MdOutlineShoppingCart, MdOutlineQueryStats } from "react-icons/md";
+import { IoSearchCircle, IoConstructOutline } from "react-icons/io5";
+import { TiSocialAtCircular } from "react-icons/ti";
+
 import styles from '../../styles/services-pages.module.css';
+
+const iconComponents = {
+  MdOutlineWeb: MdOutlineWeb,
+  MdOutlineQueryStats: MdOutlineQueryStats,
+  IoSearchCircle: IoSearchCircle,
+  IoConstructOutline: IoConstructOutline,
+  TiSocialAtCircular: TiSocialAtCircular,
+  MdOutlineShoppingCart: MdOutlineShoppingCart,
+  MdEvent: MdEvent
+};
 
 export default function ServicePage({ service }) {
   const router = useRouter();
@@ -57,53 +75,85 @@ export default function ServicePage({ service }) {
             {' > '}
             <span>{service.title}</span>
           </div>
-
-          <section>
-            <div className={`${styles.services_pages__section} flex flex_nowrap`}>
-              <Image
-                src={service.image_1}
-                alt={service.image_1_alt}
-                className={styles.service__main_img}
-                width={768}
-                height={550}
-              />
-              <div>
-                <h2>{service.title}</h2>
-                <div>{parse(service.content)}</div>
-              </div>
+          <div>
+            <div>
+              <section>
+                <div className={`${styles.services_pages__section} flex flex_nowrap`}>
+                  <Image
+                    src={service.image_1}
+                    alt={service.image_1_alt}
+                    className={styles.service__main_img}
+                    width={550}
+                    height={547}
+                  />
+                  <div>
+                    <h2 className='section_title_01'>Why Choose Us For</h2>
+                    <h3 className='section_title_02'>{service.title}</h3>
+                    <div>{parse(service.content)}</div>
+                    {service.features && (
+                    <section className={styles.services_features__section}>
+                      <h3>Key Features</h3>
+                      <ul className={styles.services_features__items}>
+                        {service.features.map((feature, index) => (
+                          <li key={`${service.id}_feature_${index}`}>{feature}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+                  </div>
+                </div>
+              </section>
             </div>
-          </section>
+            <div>
+              {/* Stats Section */}
+              <section>
+                <div className={styles.services_pages_stats}>
+                  {service.stats.map((stat, index) => {
+                    const IconComponent = iconComponents[service.icon];
+                    return (
+                      <ul key={`${service.id}_${index}`}>     
+                        <li>{IconComponent && <IconComponent />}{stat}</li>                            
+                      </ul>
+                    );
+                  })}
+                </div>
+              </section>
 
-          <section>
-            <div className={`${styles.services_pages__section} flex flex_nowrap`}>
-              <div>
-                <h2>{service.title}</h2>
-                <div>{parse(service.content2)}</div>
-              </div>
-              <Image
-                src={service.image_2}
-                alt={service.image_2_alt}
-                className={styles.service__main_img}
-                width={768}
-                height={550}
-              />
+              <TechStack style={{ margin: '75px 0 0' }} />
+              
+              <Contact style={{ margin: '75px 0' }} />
+              
+              <section>
+                <div className={`${styles.services_pages__section} flex flex_nowrap`}>
+                  <div>
+                    <h2>{service.title}</h2>
+                    <div>{parse(service.content2)}</div>
+                  </div>
+                  <Image
+                    src={service.image_2}
+                    alt={service.image_2_alt}
+                    className={styles.service__main_img}
+                    width={768}
+                    height={550}
+                  />
+                </div>
+              </section>
+
+              {service.features && (
+                <section className={styles.services_features__section}>
+                  <h3>Key Features</h3>
+                  <ul className={styles.services_features__items}>
+                    {service.features.map((feature, index) => (
+                      <li key={`${service.id}_feature_${index}`}>{feature}</li>
+                    ))}
+                  </ul>
+                </section>
+              )}
             </div>
-          </section>
-
-          {service.features && (
-            <section className={styles.services_features__section}>
-              <h3>Key Features</h3>
-              <ul className={styles.services_features__items}>
-                {service.features.map((feature, index) => (
-                  <li key={index}>{feature}</li>
-                ))}
-              </ul>
-            </section>
-          )}
+          </div>
         </div>
         <TestimonialSlider />
         <Services />
-        <Contact />
       </main>
     </Layout>
   );

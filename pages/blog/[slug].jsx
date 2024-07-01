@@ -53,7 +53,7 @@ export default function Post({ post, hasTOC, error }) {
       toc.style.visibility = isTOCVisible ? 'visible' : 'hidden';
       toc.style.maxHeight = isTOCVisible ? '1000px' : '0'; // Adjust as needed
       toc.style.overflow = 'hidden';
-      toc.style.transition = 'visibility 0.3s, max-height 0.3s ease-in-out';
+      toc.style.transition = 'visibility 0.3s, max-height 0.4s ease-in-out';
     }
   }, [isTOCVisible]);
 

@@ -9,10 +9,10 @@ import styles from './contact-section.module.css';
 
 import { contactSection } from '../data/index';
 
- const ContactSection = () => {
+ const ContactSection = ({ style }) => {
     return (
         // Contact Section
-        <section className={styles.contact_section__section}>
+        <section className={styles.contact_section__section} style={style}>
             <div className={styles.contact_section__container}>
                 <div>
                     <div className={styles.contact_section__text}>

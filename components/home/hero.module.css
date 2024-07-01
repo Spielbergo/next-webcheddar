@@ -21,8 +21,10 @@
     position: absolute;
     left: 50%; 
     transform: translateX(-50%);
-    max-width: 1200px;
-    width: calc(100% - 30px);
+    /* max-width: 1200px;
+    width: calc(100% - 30px); */
+    width: 100%;
+    max-width: 90%;
     padding: 0 15px;
     box-sizing: border-box;
     top: 50%;
@@ -62,6 +64,7 @@
     }
 
     .hero__h2 {
+        max-width: 60%;
         font-size: 4em;
     }
 }

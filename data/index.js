@@ -1,8 +1,8 @@
 import { MdOutlineWeb, MdEvent, MdOutlineShoppingCart, MdEmail } from "react-icons/md";
 import { IoSearchCircle, IoConstructOutline, IoLogoHtml5, IoLogoCss3, IoLogoJavascript, IoLogoReact, IoLogoWordpress } from "react-icons/io5";
 import { TiSocialAtCircular } from "react-icons/ti";
-import { FaFacebookF, FaGithub, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
-import { SiNextdotjs, SiPhp } from "react-icons/si";
+import { FaFacebookF, FaGithub, FaLinkedin, FaMapMarkerAlt, FaShopify } from "react-icons/fa";
+import { SiNextdotjs, SiPhp, SiWoocommerce  } from "react-icons/si";
 
 export const navigation = [
     {
@@ -115,52 +115,64 @@ export const clientLogos = [
 
 export const techStack = [
     {
-        id: 'tech-1',
+        id: 'tech1',
         icon: IoLogoHtml5,
         title: 'HTML',
         color: '#f06529',
     },
     {
-        id: 'tech-2',
+        id: 'tech2',
         icon: IoLogoCss3,
         title: 'CSS',
         color: '#264de4',
     },
     {
-        id: 'tech-3',
+        id: 'tech3',
         icon: IoLogoJavascript,
-        title: 'JS',
+        title: 'JavaScript',
         color: '#f0db4f',
     },
     {
-        id: 'tech-4',
+        id: 'tech4',
         icon: IoLogoReact,
         title: 'React',
         color: '#7cc5d9',
     },
     {
-        id: 'tech-5',
+        id: 'tech5',
         icon: SiNextdotjs,
         title: 'NextJS',
         color: '#fff',
     },
     // {
-    //     id: 'tech-6',
+    //     id: 'tech6',
     //     icon: IoLogoNodejs,
     //     title: 'NodeJS',
     //     color: '#68a063',
     // },
     {
-        id: 'tech-7',
+        id: 'tech7',
         icon: IoLogoWordpress,
         title: 'WordPress',
         color: '#21759b',
     },
     {
-        id: 'tech-8',
+        id: 'tech8',
         icon: SiPhp,
         title: 'PHP',
         color: '#8993be',
+    },
+    {
+        id: 'tech9',
+        icon: FaShopify,
+        title: 'Shopify',
+        color: 'green',
+    },
+    {
+        id: 'tech10',
+        icon: SiWoocommerce,
+        title: 'WooCommerce',
+        color: 'purple',
     },
 ]
 

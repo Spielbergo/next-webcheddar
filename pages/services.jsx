@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { servicePageOne, servicePageTwo } from '../data';
 
-import Header from '../components/FeaturedImage.component';
+import FeaturedImage from '../components/FeaturedImage.component';
 import Layout from '../components/Layout';
 import Services from '../components/Services.component';
 import ServiceText from '../components/ServicesText.component'; 
@@ -14,8 +14,8 @@ import styles from '../styles/services-page.module.css';
 // import contactImage from '../assets/images/hero/header.webp';
 
 const ServicesPage = () => {
-    const header = (
-        <Header 
+    const featuredImage = (
+        <FeaturedImage 
           title="Services" 
           imageSrc="/header.webp" 
           alt="Home Header Image" 
@@ -23,7 +23,7 @@ const ServicesPage = () => {
     );
 
     return (
-        <Layout header={header}> 
+        <Layout featuredImage={featuredImage}> 
             {/* <header className="page_header">
                 <div className="page_header__text">
                     <h1 className="page_header__h1">Services</h1>
