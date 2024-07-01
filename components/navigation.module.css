@@ -75,6 +75,10 @@
   text-decoration: none;
 }
 
+.main_nav__subLinks__parent a {
+  padding: 20px 40px;
+}
+
 .main_nav__navLinks a.active {
   color: var(--primary-color);
 }
@@ -210,6 +214,10 @@
   .main_nav__navLinks li {
     font-size: 1rem;
     background-color: transparent;
+  }
+
+  .main_nav__subLinks__parent a {
+    padding: 0;
   }
 
   .main_nav__mobile_links,
