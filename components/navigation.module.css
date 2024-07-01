@@ -76,7 +76,7 @@
 }
 
 .main_nav__subLinks__parent a {
-  padding: 20px 40px;
+  margin: 20px 40px;
 }
 
 .main_nav__navLinks a.active {
@@ -217,7 +217,7 @@
   }
 
   .main_nav__subLinks__parent a {
-    padding: 0;
+    margin: 0;
   }
 
   .main_nav__mobile_links,
