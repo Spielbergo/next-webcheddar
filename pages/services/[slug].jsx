@@ -9,6 +9,7 @@ import Layout from '../../components/Layout';
 import FeaturedImage from '../../components/FeaturedImage.component';
 import TechStack from '../../components/TechStack.component';
 import Services from '../../components/Services.component';
+import RandomTestimonial from '../../components/RandomTestimonial';
 import Contact from '../../components/ContactSection.component';
 import TestimonialSlider from '../../components/TestimonialSlider.component';
 
@@ -17,6 +18,7 @@ import services from '../../data/services';
 import { MdOutlineWeb, MdEvent, MdOutlineShoppingCart, MdOutlineQueryStats } from "react-icons/md";
 import { IoSearchCircle, IoConstructOutline } from "react-icons/io5";
 import { TiSocialAtCircular } from "react-icons/ti";
+import { FaCircleCheck } from "react-icons/fa6";
 
 import styles from '../../styles/services-pages.module.css';
 
@@ -95,7 +97,10 @@ export default function ServicePage({ service }) {
                       <h3>Key Features</h3>
                       <ul className={styles.services_features__items}>
                         {service.features.map((feature, index) => (
-                          <li key={`${service.id}_feature_${index}`}>{feature}</li>
+                          <li key={`${service.id}_feature_${index}`}>
+                            <FaCircleCheck />
+                            {feature}
+                          </li>
                         ))}
                       </ul>
                     </section>
@@ -119,41 +124,37 @@ export default function ServicePage({ service }) {
                 </div>
               </section>
 
+              <RandomTestimonial />
+
               <TechStack style={{ margin: '75px 0 0' }} />
               
               <Contact style={{ margin: '75px 0' }} />
               
               <section>
-                <div className={`${styles.services_pages__section} flex flex_nowrap`}>
+                <div className={`${styles.services_pages__section} flex flex_nowrap flex_flip`}>
                   <div>
-                    <h2>{service.title}</h2>
+                  <h2 className='section_title_01'>More info</h2>
+                  <h3 className='section_title_02'>{service.title2}</h3>
                     <div>{parse(service.content2)}</div>
                   </div>
                   <Image
                     src={service.image_2}
                     alt={service.image_2_alt}
                     className={styles.service__main_img}
-                    width={768}
-                    height={550}
+                    width={300}
+                    height={300}
                   />
                 </div>
+                <div className={styles.service__pages_blockquote}>
+                  <p>{service.blockquote}</p>
+                  <p>{service.blockquoteAuthor}</p>
+                </div>
               </section>
-
-              {service.features && (
-                <section className={styles.services_features__section}>
-                  <h3>Key Features</h3>
-                  <ul className={styles.services_features__items}>
-                    {service.features.map((feature, index) => (
-                      <li key={`${service.id}_feature_${index}`}>{feature}</li>
-                    ))}
-                  </ul>
-                </section>
-              )}
             </div>
           </div>
         </div>
-        <TestimonialSlider />
         <Services />
+        <TestimonialSlider />
       </main>
     </Layout>
   );

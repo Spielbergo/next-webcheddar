@@ -24,7 +24,7 @@ const Home = ({ posts }) => {
       <WhyChooseUs />
       <Services />
       <TechStack />
-      <ContactSection />
+      <ContactSection style={{ margin: '65px 0 35px' }} />
       <OurWork />      
       <TestimonialSlider />
     </main>

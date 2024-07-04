@@ -388,4 +388,8 @@ button:hover {
   .page_header__h1 {
     font-size: 4em;
   }
+
+  .flex_flip {
+    flex-direction: row;
+  }
 }

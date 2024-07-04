@@ -178,7 +178,7 @@ export const techStack = [
 
 export const testimonials = [
     {
-        id: 'testie-2',
+        id: 'testimonial-1',
         text: "Scott and his team absolutely floored us with the mock-ups and examples that he provided. We were sold on day one. The delivery of the final product was done quickly and efficiently.",
         url: 'https://www.google.com/maps?cid=1528680845624186791',
         name: "Craig Hayden",
@@ -186,7 +186,7 @@ export const testimonials = [
         image: "/logos/clients/uoft-logo-2.webp",
     },
     {
-        id: 'testie-2',
+        id: 'testimonial-2',
         text: "Scott is a professional who takes his work seriously. He is diligent and trustworthy. Our website was a large project with many intricacies, and Scott was very open and flexible in delivering a beautiful website that our organization is now very proud of! I would definitely recommend his services.",
         url: 'https://www.google.com/maps?cid=1528680845624186791',        
         name: "Alexandra Vincelli",
@@ -194,7 +194,7 @@ export const testimonials = [
         image: "/logos/clients/pva.png",
     },
     {
-        id: 'testie-2',
+        id: 'testimonial-3',
         text: "Web Cheddar offers a very personable experience. Scott the lead is very tech savy with SOE, content, visuals, and web site development. Overall the experience is worth reaching out to them as their ideas and knowledge are very insightful. I strongly recommend their on line services.",
         url: 'https://www.google.com/maps?cid=1528680845624186791',
         name: "Barry McLeod",
