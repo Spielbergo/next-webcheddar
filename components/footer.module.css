@@ -28,7 +28,15 @@
     margin-top: 25px;
 }
 
+.footer__links a {
+    padding: 10px 5px;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
 .footer__links h2 {
+    margin-bottom: 4px;
     color: var(--primary-color);
 }
 
@@ -50,4 +58,11 @@
     .footer__links {
         margin-top: 10px;
     }
+
+    .footer__links a {
+        padding: 0;
+        line-height: 23px;
+        font-size: 16px;
+        font-weight: 400;
+    }    
 }
