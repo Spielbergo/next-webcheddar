@@ -13,6 +13,7 @@ const Clients = () => {
                             <Image
                                 src={client.image}
                                 alt={client.alt}
+                                aria-label={client.alt}
                                 width={125}
                                 height={50}
                             />
@@ -26,6 +27,7 @@ const Clients = () => {
                             <Image
                                 src={client.image}
                                 alt={client.alt}
+                                aria-label={client.alt}
                                 width={125}
                                 height={50}
                             />

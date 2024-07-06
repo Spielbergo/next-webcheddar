@@ -52,6 +52,7 @@ const TestimonialSlider = () => {
               <Image
                 src={testimonial.image}
                 alt={testimonial.name}
+                aria-label={`${testimonial.name} logo or headshot`}
                 width={80}
                 height={100}
               />

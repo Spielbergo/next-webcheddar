@@ -80,6 +80,7 @@ const Navigation = () => {
               src={NavLogoWhite}
               className={styles.main_nav__logo}
               alt="Web Cheddar logo"
+              aria-label="Web Cheddar logo"
               width="150"
               height="50"
               priority

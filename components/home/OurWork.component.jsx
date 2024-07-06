@@ -22,6 +22,7 @@ const OurWork = () => {
                             <Image  
                                 src={project.image}
                                 alt={project.alt}
+                                aria-label={project.alt}
                                 width={250}
                                 height={250}
                             />

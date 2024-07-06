@@ -12,6 +12,7 @@ const About = () => {
           title="About Us" 
           imageSrc="/header.webp" 
           alt="Home Header Image" 
+          aria-label="Home Header Image"
         />
     );
 

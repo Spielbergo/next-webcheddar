@@ -19,6 +19,7 @@ const ServicesPage = () => {
           title="Services" 
           imageSrc="/header.webp" 
           alt="Home Header Image" 
+          aria-label="Home Header Image"
         />
     );
 

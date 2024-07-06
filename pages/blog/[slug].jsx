@@ -123,6 +123,7 @@ export default function Post({ post, hasTOC, error }) {
             <Image
               src={post._embedded['wp:featuredmedia'][0].source_url}
               alt={post.title?.rendered || 'Featured Image'}
+              aria-label={post.title?.rendered || 'Featured Image'}
               className={styles.blog_post__main_img}
               width={1920}
               height={550}

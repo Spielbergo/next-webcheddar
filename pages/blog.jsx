@@ -107,6 +107,7 @@ export default function Blog({ initialPosts, totalPages, allCategories, error })
                         <Image 
                           src={post._embedded['wp:featuredmedia'][0].source_url} 
                           alt={post.title.rendered} 
+                          aria-label={post.title.rendered}
                           width={300} 
                           height={200}
                         />

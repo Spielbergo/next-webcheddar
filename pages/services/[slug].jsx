@@ -84,6 +84,7 @@ export default function ServicePage({ service }) {
                   <Image
                     src={service.image_1}
                     alt={service.image_1_alt}
+                    aria-label={service.image_1.alt}
                     className={styles.service__main_img}
                     width={550}
                     height={547}
@@ -140,6 +141,7 @@ export default function ServicePage({ service }) {
                   <Image
                     src={service.image_2}
                     alt={service.image_2_alt}
+                    aria-label={service.image_2.alt}
                     className={styles.service__main_img}
                     width={300}
                     height={300}

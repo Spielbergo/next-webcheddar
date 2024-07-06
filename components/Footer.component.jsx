@@ -28,7 +28,8 @@ const Footer = () => {
                             <Image 
                                 src={FooterLogoWhite}
                                 className={styles.footer__logo} 
-                                alt="Web Cheddar Badge logo" 
+                                alt="Web Cheddar logo" 
+                                aria-label="Web Cheddar logo"
                                 width="250" 
                                 height="75"
                             />                  

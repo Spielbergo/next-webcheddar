@@ -16,7 +16,9 @@ const WhyChooseUs = () => {
                         className={`${styles.home_about__image} shadow`}
                         width={640}
                         height={427}
-                        alt="Close up of people working in an office."/>
+                        alt="Close up of people working in an office."
+                        aria-label="Close up of people working in an office."
+                    />
                 </div>
                 <div>
                     <h2 className="section_title_01">Why Choose Us</h2>

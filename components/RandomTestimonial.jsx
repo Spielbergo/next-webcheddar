@@ -15,7 +15,7 @@ const RandomTestimonial = () => {
 
     return (
         <div className={styles.testimonial}>
-            <img src={testimonial.image} alt={testimonial.company} />
+            <img src={testimonial.image} alt={testimonial.company} aria-label={`${testimonial.company} logo`} />
             <p>{testimonial.text}</p>
             <a href={testimonial.url} target="_blank" rel="noopener noreferrer">
                 {testimonial.name}, {testimonial.company}

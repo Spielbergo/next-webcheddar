@@ -3,7 +3,7 @@ const services = [
     id: 1,
     slug: 'web-development',
     path: '/services/web-development',
-    icon: 'MdOutlineQueryStats',
+    icon: 'IoCodeSlashSharp',
     title: 'Web Development',
     title2: 'Responsive Mobile First Designs',
     description: 'We provide top-notch web development services using the latest technologies.',
@@ -16,9 +16,9 @@ const services = [
     content: 'Our web development services are designed to bring your vision to life with precision and expertise. Whether you need a custom-built website or want to transform your existing Figma or Photoshop designs into a fully functional site, we\'ve got you covered. Our development process ensures your website is not only visually stunning but also optimized for search engines and fully responsive across all devices.',
     content2: 'At Web Cheddar, we prioritize responsive mobile-first designs to ensure your website performs flawlessly on any device. As mobile usage continues to skyrocket, it’s crucial to provide an exceptional user experience on smartphones and tablets. We craft each design with a mobile-first approach, seamlessly scaling up to larger screens. This method not only enhances accessibility but also boosts SEO rankings.',
     features: [
-      'Custom website design',
+      'Meets all Web Content Accessibility Guidelines (WCAG)',
       'Development from Figma/Photoshop files',
-      'Responsive design',
+      'Responsive mobile first designs',
       'E-commerce platforms',
     ],
     stats: [

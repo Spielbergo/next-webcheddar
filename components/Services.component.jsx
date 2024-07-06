@@ -7,11 +7,12 @@ import services from '../data/services';
 
 import styles from './services.module.css';
 
-import { MdOutlineWeb, MdEvent, MdOutlineShoppingCart } from "react-icons/md";
-import { IoSearchCircle, IoConstructOutline } from "react-icons/io5";
+import { MdOutlineWeb, MdEvent, MdOutlineShoppingCart, MdOutlineQueryStats } from "react-icons/md";
+import { IoSearchCircle, IoConstructOutline, IoCodeSlashSharp  } from "react-icons/io5";
 import { TiSocialAtCircular } from "react-icons/ti";
 
 const iconComponents = {
+    IoCodeSlashSharp: IoCodeSlashSharp,
     MdOutlineWeb: MdOutlineWeb,
     IoSearchCircle: IoSearchCircle,
     IoConstructOutline: IoConstructOutline,
