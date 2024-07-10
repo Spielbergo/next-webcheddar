@@ -1,29 +1,29 @@
 .main_nav__nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100000;
-    height: 75px;
-    transition: .5s ease-in-out;
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, .7) 10%, transparent);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  height: 75px;
+  transition: .5s ease-in-out;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, .7) 10%, transparent);
 }
 
 .main_nav__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
 .main_nav__scrolled {
-    background-image: none;
-    background-color: var(--primary-bg-color);
-    box-shadow: 0 1px 1px hsla(0, 87%, 49%, 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075), 0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+  background-image: none;
+  background-color: var(--primary-bg-color);
+  box-shadow: 0 1px 1px hsla(0, 87%, 49%, 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075), 0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
 }
 
 .main_nav__logo {
-    width: 100%;
-    object-fit: contain;
+  width: 100%;
+  object-fit: contain;
 }
 
 .main_nav__navLinks {
@@ -33,7 +33,7 @@
   top: 0;
   width: 100%;
   padding: 0;
-  z-index: 10000;
+  z-index: 100;
   visibility: hidden;
   list-style: none;
   transition: max-height 0.3s ease-in-out;
@@ -42,8 +42,8 @@
 .main_nav__navLinks_visible {
   top: 103%;
   right: 0;
-  background: var(--primary-bg-color);  
-  padding: 45px 0 25px;  
+  background: var(--primary-bg-color);
+  padding: 45px 0 25px;
   text-align: center;
   visibility: visible;
   transition: .5s ease-in-out;
@@ -102,7 +102,7 @@
 }
 
 .main_nav__navLinks a:hover {
-  color: #fff; 
+  color: #fff;
 }
 
 .main_nav__navLinks span ul {
@@ -135,6 +135,34 @@
 
 .main_nav__subLinks__parent li:last-child {
   border-bottom: none;
+}
+
+.main_nav__subLinks a {
+  position: relative;
+  color: #fff; /* Default color */
+  text-decoration: none;
+  overflow: hidden; /* Ensure the sliding effect stays within bounds */
+}
+
+.main_nav__subLinks a::before {
+  content: attr(data-hover); /* Uses the same text as the link */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--primary-color);
+  transition: transform 0.9s ease;
+  transform: translateX(-100%); /* Start off-screen */
+  white-space: nowrap;
+}
+
+.main_nav__subLinks a:hover::before {
+  transform: translateX(0); /* Slide in on hover */
+}
+
+.main_nav__subLinks a:hover {
+  color: var(--primary-color); /* Keeps the text color primary after hover */
 }
 
 .main_nav__social_icons li:hover {
@@ -192,50 +220,50 @@
 
 @media screen and (min-width: 767px) {
   .main_nav__container {
-    max-width: 90%;
-    padding: 1px 0 10px;
-    margin: auto;
+      max-width: 90%;
+      padding: 1px 0 10px;
+      margin: auto;
   }
 
-  .main_nav__subLinks {  
-    position: absolute;  
-    top: 50px;
-    text-align: left;
+  .main_nav__subLinks {
+      position: absolute;
+      top: 50px;
+      text-align: left;
   }
 
   .main_nav__navLinks {
-    flex-direction: row;
-    justify-content: space-around;
-    position: relative;
-    top: -1px;
-    padding-right: 10px;
-    visibility: visible;
+      flex-direction: row;
+      justify-content: space-around;
+      position: relative;
+      top: -1px;
+      padding-right: 10px;
+      visibility: visible;
   }
 
   .main_nav__navLinks li {
-    font-size: 1rem;
-    background-color: transparent;
+      font-size: 1rem;
+      background-color: transparent;
   }
 
   .main_nav__subLinks__parent a {
-    padding: 0;
+      padding: 0;
   }
 
   .main_nav__mobile_links,
   .main_nav__toggle {
-    display: none;
+      display: none;
   }
 
   .main_nav__social_icons_false {
-    display: block;
-    color: #fff;
+      display: block;
+      color: #fff;
   }
 
   .main_nav__social_icons button {
-    display: block;
+      display: block;
   }
 
   .main_nav__mobile_links .shadow {
-    box-shadow: 0;
+      box-shadow: 0;
   }
 }

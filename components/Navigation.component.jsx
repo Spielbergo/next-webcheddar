@@ -14,7 +14,7 @@ import Button from './Button.component';
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileToggleOpen, setMobileToggleOpen] = useState(false);
-  const [subLinkToggleOpen, setSubLinkToggleOpen] = useState(false);
+  const [subLinkToggleOpen, setSubLinkToggleOpen] = useState(true);
   const navRef = useRef();
   const router = useRouter();
 
@@ -105,7 +105,9 @@ const Navigation = () => {
                     <ul className={`${styles.main_nav__subLinks} shadow ${subLinkToggleOpen ? styles.main_nav__sublinks_visible : ''}`}>
                       {nav.subLinks.map(subLink => (
                         <li key={subLink.id} onClick={handleSubLinkClick}>
-                          <Link href={subLink.link} className={router.pathname === subLink.link ? styles.active : ''}>{subLink.anchor}</Link>
+                          <Link href={subLink.link} className={router.pathname === subLink.link ? styles.active : ''}>
+                            <span data-hover={subLink.anchor}>{subLink.anchor}</span>
+                          </Link>
                         </li>
                       ))}
                     </ul>

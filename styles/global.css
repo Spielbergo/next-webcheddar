@@ -184,7 +184,7 @@ button {
   color: #fff;
   background-color: var(--primary-color);
   border-radius: 5px;
-  z-index: 10;
+  z-index: 1;
   cursor: pointer;
 }
 
@@ -293,6 +293,85 @@ button:hover {
 .social_icons__component {
   display: flex;
 }
+
+/* ANIMATIONS */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+.slide-up {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.slide-up.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.slide-right {
+  transform: translateX(-20px);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.slide-right.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slide-left {
+  transform: translateX(20px);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.slide-left.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.fade-right {
+  transform: translateX(-20px);
+  opacity: 0;
+  transition: transform 1s ease-in;
+}
+
+.fade-right.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.fade-left {
+  transform: translateX(20px);
+  opacity: 0;
+  transition: transform 1s ease-in;
+}
+
+.fade-left.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Delays */
+.delay-1 {
+  transition-delay: 0.5s;
+}
+
+.delay-2 {
+  transition-delay: 1s;
+}
+
+.delay-3 {
+  transition-delay: 1.5s;
+}
+/* Animations End */
 
 /* BLOGS */
 .blog_post__toc {

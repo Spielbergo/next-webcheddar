@@ -7,7 +7,7 @@
     transition: background-position 1.5s ease;
     background-size: 300% 300%;
     position: relative;
-    z-index: 1000;   
+    z-index: 1;   
     transition: all .75s ease-out; 
 }
 

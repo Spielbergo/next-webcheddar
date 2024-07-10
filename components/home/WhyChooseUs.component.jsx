@@ -13,7 +13,7 @@ const WhyChooseUs = () => {
                 <div>
                     <Image 
                         src={aboutImage}
-                        className={`${styles.home_about__image} shadow`}
+                        className={`${styles.home_about__image} shadow fade-in`}
                         width={640}
                         height={427}
                         alt="Close up of people working in an office."
@@ -21,20 +21,24 @@ const WhyChooseUs = () => {
                     />
                 </div>
                 <div>
-                    <h2 className="section_title_01">Why Choose Us</h2>
-                    <h3 className="section_title_02">Transforming Your Ideas into Exceptional Digital Experiences</h3>
-                    <p className="section_text">At Web Cheddar Web Solutions, we do things differently. We really listen to you. This way, we make sure your website matches your vision. We use our years of experience to build something special, so you stand out online. We believe in clear communication. You'll always know what's going on with your project. Our support doesn’t end once your site is live. We're here to help, making sure your website keeps running smoothly. </p>
+                    <h2 className="section_title_01 slide-right">Why Choose Us</h2>
+                    <h3 className="section_title_02 fade-left">Transforming Your Ideas into Exceptional Digital Experiences</h3>
+                    <p className="section_text fade-in delay-1">At Web Cheddar Web Solutions, we do things differently. We really listen to you. This way, we make sure your website matches your vision. We use our years of experience to build something special, so you stand out online. We believe in clear communication. You'll always know what's going on with your project. Our support doesn’t end once your site is live. We're here to help, making sure your website keeps running smoothly. </p>
                     <div className={styles.home_about__buttons}>
-                        <Button 
-                            variant="default__home" 
-                            onClick={() => Router.push('services')}>
-                            Our Services
-                        </Button>
-                        <Button 
-                            variant="outline" 
-                            onClick={() => Router.push('#ourProjects')}>
-                            Our Projects
-                        </Button>
+                        <div className='slide-up delay-2'>
+                            <Button 
+                                variant="default__home" 
+                                onClick={() => Router.push('services')}>
+                                Our Services
+                            </Button>
+                        </div>
+                        <div  className='slide-up delay-3'>
+                            <Button 
+                                variant="outline" 
+                                onClick={() => Router.push('#ourProjects')}>
+                                Our Projects
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>

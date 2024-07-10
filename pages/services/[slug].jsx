@@ -40,7 +40,7 @@ export default function ServicePage({ service }) {
   }
 
   if (!service) {
-    return <div className='error_messge__loading'>Could not load data: Service not found</div>;
+    return <div className='error_messge__loading'>Could not load data: Service data not found</div>;
   }
 
   // Additional validation
@@ -92,7 +92,7 @@ export default function ServicePage({ service }) {
                   <div>
                     <h2 className='section_title_01'>Why Choose Us For</h2>
                     <h3 className='section_title_02'>{service.title}</h3>
-                    <div>{parse(service.content)}</div>
+                    <p className='section_text'>{parse(service.content)}</p>
                     {service.features && (
                     <section className={styles.services_features__section}>
                       <h3>Key Features</h3>
@@ -115,7 +115,7 @@ export default function ServicePage({ service }) {
               <section>
                 <div className={styles.services_pages_stats}>
                   {service.stats.map((stat, index) => {
-                    const IconComponent = iconComponents[service.icon];
+                    const IconComponent = iconComponents[service.statsIcon];
                     return (
                       <ul key={`${service.id}_${index}`}>     
                         <li>{IconComponent && <IconComponent />}{stat}</li>                            
@@ -134,9 +134,9 @@ export default function ServicePage({ service }) {
               <section>
                 <div className={`${styles.services_pages__section} flex flex_nowrap flex_flip`}>
                   <div>
-                  <h2 className='section_title_01'>More info</h2>
-                  <h3 className='section_title_02'>{service.title2}</h3>
-                    <div>{parse(service.content2)}</div>
+                    <h2 className='section_title_01'>More info</h2>
+                    <h3 className='section_title_02'>{service.title2}</h3>
+                    <p className='section_text'>{parse(service.content2)}</p>
                   </div>
                   <Image
                     src={service.image_2}

@@ -84,7 +84,7 @@ export const clientLogos = [
     {
         id: "moonrays",
         title: "Moonrays",
-        image: "/logos/clients/moonrays-logo-black.png",
+        image: "/logos/clients/moonrays-logo-white.webp",
         alt: "Moonrays Logo",
     },
     {
