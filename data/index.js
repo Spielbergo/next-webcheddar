@@ -70,6 +70,18 @@ export const socialIcons = [
 
 export const clientLogos = [
     {
+        id: "yopie",
+        title: "Yopie",
+        image: "/logos/clients/yopie.png",
+        alt: "Yopie Logo",
+    },    
+    {    
+        id: "crocrock",
+        title: "Crocodile Rock",
+        image: "/logos/clients/croc-rock.png",
+        alt: "Crocodile Rock Logo",
+    },
+    {
         id: "uoft",
         title: "University of Toronto",
         image: "/logos/clients/uoft-logo-2.webp",
@@ -86,18 +98,6 @@ export const clientLogos = [
         title: "Moonrays",
         image: "/logos/clients/moonrays-logo-white.webp",
         alt: "Moonrays Logo",
-    },
-    {
-        id: "yopie",
-        title: "Yopie",
-        image: "/logos/clients/yopie.png",
-        alt: "Yopie Logo",
-    },    
-    {    
-        id: "crocrock",
-        title: "Crocodile Rock",
-        image: "/logos/clients/croc-rock.png",
-        alt: "Crocodile Rock Logo",
     },
     {    
         id: "orgthis",
@@ -219,6 +219,7 @@ export const featuredBlogs = [
 export const projectsHome = [
     {
         id: 'project-1',
+        class: 'slide-right',
         title: 'University of Toronto',
         text: 'Med Store',
         image: '/projects/uoft.jpg',
@@ -227,6 +228,7 @@ export const projectsHome = [
     },
     {
         id: 'project-2',
+        class: 'slide-up delay-1',
         title: 'Parisella Vincelli Associates',
         text: 'Consulting Group',
         image: '/projects/pva.webp',
@@ -235,6 +237,7 @@ export const projectsHome = [
     },
     {
         id: 'project-3',
+        class: 'slide-left delay-2',
         title: 'Rosemary Hutton',
         text: 'Author',
         image: '/projects/rohutton.jpg',
@@ -243,6 +246,7 @@ export const projectsHome = [
     },
     {
         id: 'project-4',
+        class: 'slide-right',
         title: 'Organize This',
         text: 'Oragnizers',
         image: '/projects/org-this.webp',
@@ -251,6 +255,7 @@ export const projectsHome = [
     },
     {
         id: 'project-5',
+        class: 'slide-up delay-1',
         title: 'Smash Pets',
         text: 'Pet Care',
         image: '/projects/smashpets.jpg',
@@ -259,6 +264,7 @@ export const projectsHome = [
     },
     {
         id: 'project-6',
+        class: 'slide-left delay-2',
         title: 'Bagel Plus',
         text: 'Local Bakery',
         image: '/projects/bagelplus.webp',

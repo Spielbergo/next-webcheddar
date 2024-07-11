@@ -18,14 +18,14 @@ const Hero = () => {
                     <h1 className={`${styles.hero__h1} slide-up`}>Web Cheddar - Websites - Social Media</h1>
                     <h2 className={`${styles.hero__h2} fade-in`}>Quality Digital Services Your Business Needs</h2>
                     <div className={styles.hero__button_container}>
-                        <div>
+                        <div className='slide-up delay-1'>
                             <Button 
                                 variant="default__home" 
                                 onClick={() => Router.push('services')}>
                                 Our Services
                             </Button>
                         </div>  
-                        <div>
+                        <div className='slide-up delay-2'>
                             <Button 
                                 variant="outline" 
                                 onClick={() => Router.push('contact')}>

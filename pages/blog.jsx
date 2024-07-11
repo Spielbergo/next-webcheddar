@@ -61,7 +61,7 @@ export default function Blog({ initialPosts, totalPages, allCategories, error })
   const featuredImage = (
     <FeaturedImage 
       title="Web Cheddar Blog" 
-      imageSrc="/header.webp" 
+      imageSrc="/blog-hero.webp" 
       alt="Home Header Image" 
     />
   );

@@ -34,7 +34,7 @@ const Services = () => {
                 {services.map((service) => {
                     const IconComponent = iconComponents[service.icon];
                     return (
-                        <div key={service.id} className={`${styles.services_home__card} shadow`}>                            
+                        <div key={service.id} className={`${styles.services_home__card} ${service.class} shadow`}>                            
                             <div className={styles.services_home__icon}>
                                 {IconComponent && <IconComponent />}
                             </div>

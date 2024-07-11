@@ -17,7 +17,7 @@ const Contact = () => {
     const featuredImage = (
         <FeaturedImage 
           title="Contact" 
-          imageSrc="/header.webp" 
+          imageSrc="/contact-page-hero.webp" 
           alt="Home Header Image" 
         />
     );

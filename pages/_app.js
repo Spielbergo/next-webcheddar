@@ -24,6 +24,10 @@ export default function App({ Component, pageProps }) {
     const router = useRouter();
 
     const applyAnimations = () => {
+        const elementsToAnimate = document.querySelectorAll('.fade-in, .slide-up, .slide-right, .slide-left, .fade-right, .fade-left, .slide-down, .fade-down');
+
+        elementsToAnimate.forEach(el => el.classList.remove('visible'));
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -32,7 +36,6 @@ export default function App({ Component, pageProps }) {
             });
         });
 
-        const elementsToAnimate = document.querySelectorAll('.fade-in, .slide-up, .slide-right, .slide-left, .fade-right, .fade-left');
         elementsToAnimate.forEach(el => observer.observe(el));
 
         return () => {

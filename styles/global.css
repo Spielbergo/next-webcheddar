@@ -295,6 +295,7 @@ button:hover {
 }
 
 /* ANIMATIONS */
+/* styles/global.css */
 .fade-in {
   opacity: 0;
   transition: opacity 1s ease-in;
@@ -359,6 +360,28 @@ button:hover {
   opacity: 1;
 }
 
+.slide-down {
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.slide-down.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.fade-down {
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 1s ease-in;
+}
+
+.fade-down.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 /* Delays */
 .delay-1 {
   transition-delay: 0.5s;
@@ -371,6 +394,7 @@ button:hover {
 .delay-3 {
   transition-delay: 1.5s;
 }
+
 /* Animations End */
 
 /* BLOGS */

@@ -85,7 +85,7 @@ export default function ServicePage({ service }) {
                     src={service.image_1}
                     alt={service.image_1_alt}
                     aria-label={service.image_1.alt}
-                    className={styles.service__main_img}
+                    className={`${styles.service__main_img} fade-in`}
                     width={550}
                     height={547}
                   />
@@ -98,7 +98,7 @@ export default function ServicePage({ service }) {
                       <h3>Key Features</h3>
                       <ul className={styles.services_features__items}>
                         {service.features.map((feature, index) => (
-                          <li key={`${service.id}_feature_${index}`}>
+                          <li key={`${service.id}_feature_${index}`} className={`slide-right delay-${index}`}>
                             <FaCircleCheck />
                             {feature}
                           </li>
@@ -118,7 +118,7 @@ export default function ServicePage({ service }) {
                     const IconComponent = iconComponents[service.statsIcon];
                     return (
                       <ul key={`${service.id}_${index}`}>     
-                        <li>{IconComponent && <IconComponent />}{stat}</li>                            
+                        <li className={`slide-down delay-${index}`}>{IconComponent && <IconComponent />}{stat}</li>                            
                       </ul>
                     );
                   })}

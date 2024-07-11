@@ -38,8 +38,8 @@
 }
 
 .services_home__card:hover {
-  position: relative;
-  z-index: 1000;
+  /* position: relative;
+  z-index: 1000; */
   /* flex: 2; */
   /* scale: 1.2; */
   color: var(--primary-color);

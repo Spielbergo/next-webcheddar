@@ -17,7 +17,7 @@ const OurWork = () => {
             {/* Cards */}
             <div className={styles.cards__container}>
                 {projectsHome.map((project) =>                 
-                    <div key={project.id} className={`${styles.cards__card} shadow`}>
+                    <div key={project.id} className={`${styles.cards__card} ${project.class} shadow`}>
                         <Link href={project.url} target="_blank">
                             <Image  
                                 src={project.image}

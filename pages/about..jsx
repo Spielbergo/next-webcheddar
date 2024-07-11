@@ -10,7 +10,7 @@ const About = () => {
     const featuredImage = (
         <FeaturedImage 
           title="About Us" 
-          imageSrc="/header.webp" 
+          imageSrc="/about/about-us-page-hero.webp" 
           alt="Home Header Image" 
           aria-label="Home Header Image"
         />
