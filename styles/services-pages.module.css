@@ -1,7 +1,7 @@
 
 .services_pages__section {
     justify-content: flex-start;
-    padding: 75px 0 50px;
+    padding: 75px 0 0;
 }
 
 .services_pages__container {
@@ -88,10 +88,17 @@
     font-size: 1em;
 }
 
-.service__pages_blockquote {
+.service__pages_quote {
     max-width: 900px;
     margin: auto;
     text-align: center;
+}
+
+.service__pages_quote p:nth-child(1) {
+    padding-top: 75px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 18px;
 }
 
 @media screen and (min-width: 768px) {

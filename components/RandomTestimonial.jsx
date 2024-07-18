@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { testimonials } from '../data/index';
 
@@ -16,11 +17,17 @@ const RandomTestimonial = () => {
     if (!testimonial) return null; 
 
     return (
-        <div className={styles.testimonial}>
-            <div className={styles.testimonial_img__container}>
-                <img src={testimonial.image} alt={`${testimonial.company} logo`} aria-label={`${testimonial.company} logo`} />
+        <div className={`${styles.random_testimonial} fade-in`}>
+            <div className={styles.random_testimonial_img__container}>
+                <Image 
+                    src={testimonial.image} 
+                    alt={`${testimonial.company} logo`} 
+                    aria-label={`${testimonial.company} logo`} 
+                    width={250}
+                    height={100}
+                />
             </div>
-            <q>{testimonial.text}</q>
+            <blockquote className={styles.random_testimonial_quote}>{testimonial.text}</blockquote>
             <Link href={testimonial.url} target="_blank" rel="noopener noreferrer">
                 {testimonial.name}, {testimonial.company}
             </Link>

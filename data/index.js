@@ -114,24 +114,24 @@ export const clientLogos = [
 ];
 
 export const techStack = [
-    {
-        id: 'tech1',
-        icon: IoLogoHtml5,
-        title: 'HTML',
-        color: '#f06529',
-    },
-    {
-        id: 'tech2',
-        icon: IoLogoCss3,
-        title: 'CSS',
-        color: '#264de4',
-    },
-    {
-        id: 'tech3',
-        icon: IoLogoJavascript,
-        title: 'JavaScript',
-        color: '#f0db4f',
-    },
+    // {
+    //     id: 'tech1',
+    //     icon: IoLogoHtml5,
+    //     title: 'HTML',
+    //     color: '#f06529',
+    // },
+    // {
+    //     id: 'tech2',
+    //     icon: IoLogoCss3,
+    //     title: 'CSS',
+    //     color: '#264de4',
+    // },
+    // {
+    //     id: 'tech3',
+    //     icon: IoLogoJavascript,
+    //     title: 'JavaScript',
+    //     color: '#f0db4f',
+    // },
     {
         id: 'tech4',
         icon: IoLogoReact,

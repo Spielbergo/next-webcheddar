@@ -1,4 +1,4 @@
-.testimonial {
+.random_testimonial {
     /* border: 1px solid #ddd; */
     padding: 20px;
     margin: 20px auto;
@@ -8,23 +8,24 @@
     /* background-color: var(--primary-bg-color); */
 }
 
-.testimonial_img__container {
+.random_testimonial_img__container {
     border-radius: 50%;
 }
 
-.testimonial img {
+.random_testimonial img {
     max-width: 200px;
     border-radius: 10px;
     margin-bottom: 15px;
 }
 
-.testimonial q {
+.random_testimonial_quote {
     display: flex;
     font-size: 1.1em;
     font-weight: 400;
 }
 
-.testimonial q::before {
+.random_testimonial_quote:before {
+    content: open-quote;
     position: relative;
     top: -27px;
     left: 33px;
@@ -33,11 +34,7 @@
     font-size: 4.8em;
 }
 
-.testimonial q::after {
-    display: none;
-}
-
-.testimonial a {
+.random_testimonial a {
     color: var(--primary-color);
     font-size: 1.1em;
     font-weight: 400;

@@ -14,7 +14,7 @@ import Button from './Button.component';
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileToggleOpen, setMobileToggleOpen] = useState(false);
-  const [subLinkToggleOpen, setSubLinkToggleOpen] = useState(true);
+  const [subLinkToggleOpen, setSubLinkToggleOpen] = useState(false);
   const navRef = useRef();
   const router = useRouter();
 

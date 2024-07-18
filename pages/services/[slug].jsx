@@ -90,7 +90,7 @@ export default function ServicePage({ service }) {
                     height={547}
                   />
                   <div>
-                    <h2 className='section_title_01'>Why Choose Us For</h2>
+                    <h2 className='section_title_01'>Why Choose Us</h2>
                     <h3 className='section_title_02'>{service.title}</h3>
                     <p className='section_text'>{parse(service.content)}</p>
                     {service.features && (
@@ -135,8 +135,8 @@ export default function ServicePage({ service }) {
                 <div className={`${styles.services_pages__section} flex flex_nowrap flex_flip`}>
                   <div>
                     <h2 className='section_title_01'>More info</h2>
-                    <h3 className='section_title_02'>{service.title2}</h3>
-                    <p className='section_text'>{parse(service.content2)}</p>
+                    <h3 className='section_title_02'>{service.title_2}</h3>
+                    <p className='section_text'>{parse(service.content_2)}</p>
                   </div>
                   <Image
                     src={service.image_2}
@@ -147,9 +147,9 @@ export default function ServicePage({ service }) {
                     height={300}
                   />
                 </div>
-                <div className={styles.service__pages_blockquote}>
-                  <p>{service.blockquote}</p>
-                  <p>{service.blockquoteAuthor}</p>
+                <div className={styles.service__pages_quote}>
+                  <p>{service.quote}</p>
+                  <p>{service.quoteAuthor}</p>
                 </div>
               </section>
             </div>
