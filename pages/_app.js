@@ -1,6 +1,7 @@
 // pages/_app.js
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { ModalProvider } from '../contexts/ModalContext';
 import Head from '../components/Meta.component';
 import Layout from '../components/Layout';
 import Navigation from '../components/Navigation.component';
@@ -58,11 +59,14 @@ export default function App({ Component, pageProps }) {
     return (
         <>
             <Head />
-            <Navigation />
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
-            <Footer />
+            <ModalProvider>
+                <Navigation />
+                <Layout>
+                    
+                        <Component {...pageProps} />                    
+                </Layout>                
+                <Footer />
+            </ModalProvider>
         </>
     );
 }

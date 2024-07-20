@@ -9,16 +9,19 @@ import styles from './navigation.module.css';
 import Socials from '../components/SocialIcons.component';
 import NavLogoWhite from '../public/logos/logo-light.png';
 import NavLogoBlack from '../public/logos/logo-dark.png';
+
+import ContactForm from './ContactForm.component';
 import Button from './Button.component';
 import Modal from './Modal.component'; // Import the Modal component
+import { useModal } from '../contexts/ModalContext'; // Import the modal context
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileToggleOpen, setMobileToggleOpen] = useState(false);
   const [subLinkToggleOpen, setSubLinkToggleOpen] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false); // State for controlling modal visibility
   const navRef = useRef();
   const router = useRouter();
+  const { openModal } = useModal(); // Get the openModal function from context
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,14 +74,6 @@ const Navigation = () => {
   const handleSubLinkClick = () => {
     setMobileToggleOpen(false); // Close the mobile menu
     setSubLinkToggleOpen(false); // Close the submenu when a submenu item is clicked
-  };
-
-  const openModal = () => {
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
   };
 
   return (
@@ -139,7 +134,7 @@ const Navigation = () => {
             <li>
               <Button
                 variant="get_a_quote"
-                onClick={openModal}>
+                onClick={() => openModal('getAQuote')}>
                 Get a Quote
               </Button>
             </li>
@@ -154,10 +149,11 @@ const Navigation = () => {
         </div>
       </div>
 
-      <Modal show={modalOpen} onClose={closeModal}>
+      <Modal modalName="getAQuote">
         <h2>Get a Quote</h2>
         <p>Please fill out the form below to get a quote.</p>
-        {/* Your form or additional modal content goes here */}
+        <br />
+        <ContactForm />
       </Modal>
     </nav>
   );

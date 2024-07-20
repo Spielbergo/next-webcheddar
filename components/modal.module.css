@@ -15,7 +15,7 @@
   }
   
   .modalContent {
-    background: #fff;
+    background: var(--grey-bg-gradient);
     padding: 20px;
     border-radius: 8px;
     max-width: 500px;
@@ -33,6 +33,7 @@
     border: none;
     font-size: 20px;
     cursor: pointer;
+    color: var(--primary-color);
   }
   
   @keyframes fadeIn {

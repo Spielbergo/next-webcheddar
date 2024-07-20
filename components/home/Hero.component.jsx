@@ -1,14 +1,11 @@
 import Image from "next/image";
-
-import { useRouter } from 'next/router';
- 
 import heroImage from '../../public/header.webp';
 import Button from "../Button.component";
-
 import styles from './hero.module.css';
+import { useModal } from '../../contexts/ModalContext'; // Import the modal context
 
 const Hero = () => {
-    const Router = useRouter();
+    const { openModal } = useModal(); // Get the openModal function from context
     
     return (
         // Hero
@@ -28,7 +25,7 @@ const Hero = () => {
                         <div className='slide-up delay-2'>
                             <Button 
                                 variant="outline" 
-                                onClick={() => Router.push('contact')}>
+                                onClick={() => openModal('getAQuote')}>
                                 Get a Quote
                             </Button>
                         </div>

@@ -1,32 +1,24 @@
-// components/Modal.component.js
-import { useEffect, useState } from 'react';
-import styles from './Modal.module.css';
+import { useEffect } from 'react';
+import styles from './modal.module.css';
+import { useModal } from '../contexts/ModalContext';
 
-const Modal = ({ show, onClose, children }) => {
-  const [closing, setClosing] = useState(false);
+const Modal = ({ modalName, children }) => {
+  const { modals, closeModal } = useModal();
 
   useEffect(() => {
-    if (show) {
+    if (modals[modalName]) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
     }
-  }, [show]);
+  }, [modals, modalName]);
 
-  const handleClose = () => {
-    setClosing(true);
-    setTimeout(() => {
-      setClosing(false);
-      onClose();
-    }, 300); // Duration of the fadeOut animation
-  };
-
-  if (!show && !closing) return null;
+  if (!modals[modalName]) return null;
 
   return (
-    <div className={`${styles.modalOverlay} ${closing ? styles.fadeOut : ''}`} onClick={handleClose}>
-      <div className={`${styles.modalContent} ${closing ? styles.slideOut : ''}`} onClick={(e) => e.stopPropagation()}>
-        <button className={styles.closeButton} onClick={handleClose}>X</button>
+    <div className={styles.modalOverlay} onClick={() => closeModal(modalName)}>
+      <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+        <button className={styles.closeButton} onClick={() => closeModal(modalName)}>X</button>
         {children}
       </div>
     </div>
