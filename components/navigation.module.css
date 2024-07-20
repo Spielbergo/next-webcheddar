@@ -75,9 +75,10 @@
   text-decoration: none;
 }
 
-.main_nav__subLinks__parent a {
+.main_nav__subLinks__parent a,
+.main_nav__subLinks__parent span {
   display: block;
-  padding: 20px 40px;
+  padding: 5px 40px;
 }
 
 .main_nav__navLinks a.active {
@@ -245,7 +246,8 @@
       background-color: transparent;
   }
 
-  .main_nav__subLinks__parent a {
+  .main_nav__subLinks__parent a,
+  .main_nav__subLinks__parent span {
       padding: 0;
   }
 

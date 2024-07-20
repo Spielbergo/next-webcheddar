@@ -13,6 +13,7 @@
 
 .services_pages__container img {
     width: 100%;
+    max-width: 650px;
     object-fit: contain;
 }
 

@@ -17,7 +17,7 @@ const RandomTestimonial = () => {
     if (!testimonial) return null; 
 
     return (
-        <div className={`${styles.random_testimonial} fade-in`}>
+        <div className={`${styles.random_testimonial}`}>
             <div className={styles.random_testimonial_img__container}>
                 <Image 
                     src={testimonial.image} 

@@ -10,11 +10,13 @@ import Socials from '../components/SocialIcons.component';
 import NavLogoWhite from '../public/logos/logo-light.png';
 import NavLogoBlack from '../public/logos/logo-dark.png';
 import Button from './Button.component';
+import Modal from './Modal.component'; // Import the Modal component
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileToggleOpen, setMobileToggleOpen] = useState(false);
   const [subLinkToggleOpen, setSubLinkToggleOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false); // State for controlling modal visibility
   const navRef = useRef();
   const router = useRouter();
 
@@ -69,6 +71,14 @@ const Navigation = () => {
   const handleSubLinkClick = () => {
     setMobileToggleOpen(false); // Close the mobile menu
     setSubLinkToggleOpen(false); // Close the submenu when a submenu item is clicked
+  };
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
   };
 
   return (
@@ -129,7 +139,7 @@ const Navigation = () => {
             <li>
               <Button
                 variant="get_a_quote"
-                onClick={() => router.push('/contact')}>
+                onClick={openModal}>
                 Get a Quote
               </Button>
             </li>
@@ -143,6 +153,12 @@ const Navigation = () => {
           </ul>
         </div>
       </div>
+
+      <Modal show={modalOpen} onClose={closeModal}>
+        <h2>Get a Quote</h2>
+        <p>Please fill out the form below to get a quote.</p>
+        {/* Your form or additional modal content goes here */}
+      </Modal>
     </nav>
   );
 };

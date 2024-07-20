@@ -43,7 +43,7 @@
 
   --primary-color: #fd7304;
   --primary-bg-color: #333;
-  --text-color: #ddd;
+  --text-color: #dcdada;
   --title-color: #fff;
   --grey-bg-gradient: linear-gradient(239deg, rgba(85, 85, 85, 1) 0%, rgb(19, 18, 18) 100%);
 /* }
@@ -278,7 +278,7 @@ button:hover {
 }
 
 .section_title_01 {
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   font-size: 1em;
   color: var(--primary-color);
 }
@@ -292,7 +292,7 @@ button:hover {
   margin: 10px 0;
   font-size: 16px;
   /* color: var(--primary-bg-color); */
-  color: #dcdada;
+  color: var(--text-color);
 }
 
 .social_icons__component {

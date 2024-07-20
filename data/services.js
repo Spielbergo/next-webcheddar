@@ -144,9 +144,9 @@ const services = [
     content_2: 'Our e-commerce solutions are tailored to meet the unique needs of your business. We understand the intricacies of online retail and offer comprehensive services to ensure your store runs smoothly. Our team provides end-to-end support, from setting up your store and integrating payment gateways to managing your products and tracking sales performance. We focus on creating a seamless user experience, optimizing the checkout process, and implementing effective marketing strategies to drive traffic and increase conversions. Our solutions are scalable, allowing your e-commerce platform to grow with your business. With our expertise, you can focus on your products while we handle the technical aspects of your online store.',
     hero: '/services/ecommerce.webp',
     hero_alt: 'E-commerce Solutions',
-    image_1: '/services/ecommerce-vector.webp',
+    image_1: '/services/e-commerce.svg',
     image_1_alt: 'Nuthin yet',
-    image_2: '/services/ecommerce-vector.webp',
+    image_2: '/services/e-commerce.svg',
     image_2_alt: 'Nuthin yet',
     features: [
       'Online store setup',
