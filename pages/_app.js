@@ -1,5 +1,5 @@
 // pages/_app.js
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { ModalProvider } from '../contexts/ModalContext';
 import Head from '../components/Meta.component';
@@ -9,8 +9,6 @@ import Footer from '../components/Footer.component';
 import NProgress from 'nprogress';
 import Router from 'next/router';
 import '../styles/global.css';
-
-// Import the nprogress styles, or create a custom style in your global.css
 import 'nprogress/nprogress.css';
 
 // NProgress options
@@ -23,6 +21,32 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 export default function App({ Component, pageProps }) {
     const router = useRouter();
+    const [transitionStage, setTransitionStage] = useState('fade-out');
+
+    const handleRouteChangeStart = () => {
+        setTransitionStage('fade-out');
+    };
+
+    const handleRouteChangeComplete = () => {
+        setTransitionStage('fade-in');
+        applyAnimations();
+    };
+
+    useEffect(() => {
+        applyAnimations();
+
+        router.events.on('routeChangeStart', handleRouteChangeStart);
+        router.events.on('routeChangeComplete', handleRouteChangeComplete);
+
+        return () => {
+            router.events.off('routeChangeStart', handleRouteChangeStart);
+            router.events.off('routeChangeComplete', handleRouteChangeComplete);
+        };
+    }, [router.events]);
+
+    useEffect(() => {
+        setTransitionStage('fade-in');
+    }, []);
 
     const applyAnimations = () => {
         const elementsToAnimate = document.querySelectorAll('.fade-in, .slide-up, .slide-right, .slide-left, .fade-right, .fade-left, .slide-down, .fade-down');
@@ -44,27 +68,16 @@ export default function App({ Component, pageProps }) {
         };
     };
 
-    useEffect(() => {
-        applyAnimations();
-
-        // Apply animations on route change
-        router.events.on('routeChangeComplete', applyAnimations);
-
-        // Cleanup event listener on unmount
-        return () => {
-            router.events.off('routeChangeComplete', applyAnimations);
-        };
-    }, [router.events]);
-
     return (
         <>
             <Head />
             <ModalProvider>
                 <Navigation />
-                <Layout>
-                    
-                        <Component {...pageProps} />                    
-                </Layout>                
+                <div className={`page-transition ${transitionStage}`}>
+                    <Layout>
+                        <Component {...pageProps} />
+                    </Layout>
+                </div>
                 <Footer />
             </ModalProvider>
         </>

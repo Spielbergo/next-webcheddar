@@ -25,26 +25,12 @@ const Contact = () => {
     return (
         <>
             <Head>
-                <title>Contact Page - Web Cheddar Web Solutions</title>
+                <title>Contact Page - Web Cheddar Web Solutions TEST</title>
                 <meta name="description" content='TEST'></meta>
                 <meta property="og:description" content='TEST2'></meta>
             </Head>
 
             <Layout featuredImage={featuredImage}> 
-            
-            {/* <header className="header">
-                <div className="page_header__text">
-                    <h1 className="page_header__h1">Contact Us</h1>
-                </div>
-                <Image 
-                    src={contactImage}
-                    className="page_header__image"
-                    alt="Header image - code on a screen wth an orange overlay" 
-                    width="1920" 
-                    height="400"
-                    priority 
-                />   
-            </header> */}
                 <main>
                     <section>
                         <div className={styles.contact_page__container}>

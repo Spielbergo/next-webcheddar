@@ -299,8 +299,22 @@ button:hover {
   display: flex;
 }
 
-/* ANIMATIONS */
-/* styles/global.css */
+/* === ANIMATION === */
+/* Page Transitions */
+.page-transition {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+
+.page-transition.fade-out {
+  opacity: 0;
+}
+
+.page-transition.fade-in {
+  opacity: 1;
+}
+
+/* Fades and Slides */
 .fade-in {
   opacity: 0;
   transition: opacity 1s ease-in;

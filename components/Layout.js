@@ -54,11 +54,8 @@ export default function Layout({ featuredImage, children }) {
 
   return (
     <>
-      
-      {/* <Navigation /> */}
       {featuredImage}
       {children}
-      {/* <Footer /> */}
     </>
   );
 }
