@@ -43,7 +43,7 @@
   top: 103%;
   right: 0;
   background: var(--primary-bg-color);
-  padding: 45px 0 25px;
+  padding: 45px 0 25px 25px;
   text-align: center;
   visibility: visible;
   transition: .5s ease-in-out;
@@ -60,6 +60,8 @@
 }
 
 .main_nav__navLinks li {
+  display: flex;
+  align-items: flex-start;
   padding: 15px;
   margin: 5px 0;
   font-size: 1.3rem;
@@ -78,7 +80,7 @@
 .main_nav__subLinks__parent a,
 .main_nav__subLinks__parent span {
   display: block;
-  padding: 5px 40px;
+  /* padding: 5px 40px; */
 }
 
 .main_nav__navLinks a.active {
@@ -128,6 +130,15 @@
 
 .main_nav__sublinks_visible {
   max-height: 500px; /* Adjust this value based on the maximum height of your submenu */
+  overflow: scroll;
+}
+
+.main_nav__back_button span {
+  margin-left: 10px;
+}
+
+.main_nav__back_button svg {
+  color: var(--primary-color);
 }
 
 .main_nav__subLinks__parent li {
@@ -191,7 +202,7 @@
 
 .main_nav__mobile_links {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .hamburger {
@@ -221,7 +232,7 @@
 
 @media screen and (min-width: 767px) {
   .main_nav__container {
-      max-width: 90%;
+      max-width: 95%;
       padding: 1px 0 10px;
       margin: auto;
   }
@@ -235,6 +246,7 @@
   .main_nav__navLinks {
       flex-direction: row;
       justify-content: space-around;
+      align-items: center;
       position: relative;
       top: -1px;
       padding-right: 10px;
@@ -244,6 +256,10 @@
   .main_nav__navLinks li {
       font-size: 1rem;
       background-color: transparent;
+  }
+
+  .main_nav__back_button span {
+    display: none;
   }
 
   .main_nav__subLinks__parent a,
