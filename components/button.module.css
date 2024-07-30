@@ -45,7 +45,7 @@
 .get_a_quote {
     background-image: linear-gradient(135deg, #e56100, #ffa366, #fd7304); /* Starting darker, brightening, and then not darkening again */
     color: white;
-    width: 125px;
+    /* width: 125px; */
     margin: 10px 0;
     font-size: .9em;
     font-weight: 600;
