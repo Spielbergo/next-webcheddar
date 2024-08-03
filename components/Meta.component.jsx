@@ -35,7 +35,7 @@ export default function MetaHead ({
 		},
 		"contactPoint": {
 		  "@type": "ContactPoint",
-		  "contactType": "customer support",
+		  "contactType": `${globalMeta.contactType}`,
 		  "email": `${globalMeta.supportEmail}`
 		},
 		"sameAs": [ 
@@ -63,16 +63,16 @@ export default function MetaHead ({
     	<meta property="og:url" content={canonicalUrl} />
  
     	{/* Structured data. */}
-    	{/* <script
+    	<script
             type="application/ld+json"
-        	dangerouslySetInnerHTML={{__html: structuredData}}
+        	dangerouslySetInnerHTML={{__html: structuredLd}}
         	key="item-jsonld"
-    	/> */}
-		<script
+    	/>
+		{/* <script
             type="application/ld+json"
         	content={structuredLd}
         	key="item-jsonld"
-    	/>
+    	/> */}
     	{ children }
 	</Head>
   )

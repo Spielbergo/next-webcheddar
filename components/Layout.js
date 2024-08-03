@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import FeaturedImage from "./FeaturedImage.component";
 import Head from '../components/Meta.component';
 import Footer from "./Footer.component";
-import Navigation from "./Navigation.component";
+import Navigation from "./NavigationMobile.component";
 import globalMeta from '../data/globalMeta';
 import styles from "../styles/homepage.module.css";
 

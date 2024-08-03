@@ -1,10 +1,10 @@
-// pages/_app.js
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { ModalProvider } from '../contexts/ModalContext';
 import Head from '../components/Meta.component';
 import Layout from '../components/Layout';
 import Navigation from '../components/Navigation.component';
+import NavigationMobile from '../components/NavigationMobile.component';
 import Footer from '../components/Footer.component';
 import NProgress from 'nprogress';
 import Router from 'next/router';
@@ -22,6 +22,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
 export default function App({ Component, pageProps }) {
     const router = useRouter();
     const [transitionStage, setTransitionStage] = useState('fade-out');
+    const [isMobile, setIsMobile] = useState(false);
 
     const handleRouteChangeStart = () => {
         setTransitionStage('fade-out');
@@ -31,6 +32,16 @@ export default function App({ Component, pageProps }) {
         setTransitionStage('fade-in');
         applyAnimations();
     };
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 1024);
+        };
+
+        window.addEventListener('resize', handleResize);
+        handleResize(); // Initial check
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     useEffect(() => {
         applyAnimations();
@@ -72,7 +83,7 @@ export default function App({ Component, pageProps }) {
         <>
             <Head />
             <ModalProvider>
-                <Navigation />
+                {isMobile ? <NavigationMobile /> : <Navigation />}
                 <div className={`page-transition ${transitionStage}`}>
                     <Layout>
                         <Component {...pageProps} />

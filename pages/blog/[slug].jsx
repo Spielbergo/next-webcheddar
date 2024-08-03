@@ -31,14 +31,14 @@ export default function Post({ post, hasTOC, error }) {
     },
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": `${globalMeta.addressCity}`,
+      "addressLocality": `${globalMeta.addressLocality}`,
       "addressRegion": `${globalMeta.addressRegion}`,
       "postalCode": `${globalMeta.postalCode}`,
       "addressCountry": `${globalMeta.addressCountry}`
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "contactType": "customer support",
+      "contactType": `${globalMeta.contactType}`,
       "email": `${globalMeta.supportEmail}`
     },
     "sameAs": [
@@ -110,14 +110,23 @@ export default function Post({ post, hasTOC, error }) {
         {/* Schema */}
         <script
           type="application/ld+json"
-          content={structuredLd}
-          key="item-jsonld"
-        />
+        	dangerouslySetInnerHTML={{__html: structuredLd}}
+        	key="item-jsonld"
+    	  />
       </Head>
 
       <div className={styles.blog_post__container}>        
         <div className={styles.blog_post__image_container}>
-          <h1 className={styles.blog_post__blog_title}>{parse(post.title?.rendered || 'Untitled')}</h1>
+          <div className={styles.blog_post__blog_title_container}>
+            <div><h1 className={styles.blog_post__blog_title}>{parse(post.title?.rendered || 'Untitled')}</h1></div>
+            <div className={styles.blog_post__breadcrumbs}>
+              <Link href="/">Home</Link>
+              {' > '}
+              <Link href="/blog">Blog</Link>
+              {' > '}
+              <span>{parse(post.title?.rendered || 'Untitled')}</span>
+            </div>
+          </div>
           <div className={styles.blog_post__overlay}></div>
           {post._embedded?.['wp:featuredmedia'] && (
             <Image
@@ -132,14 +141,7 @@ export default function Post({ post, hasTOC, error }) {
           )}          
         </div>
 
-        <div className={styles.blog_post__content}>
-          <div className={styles.blog_post__breadcrumbs}>
-            <Link href="/">Home</Link>
-            {' > '}
-            <Link href="/blog">Blog</Link>
-            {' > '}
-            <span>{parse(post.title?.rendered || 'Untitled')}</span>
-          </div>
+        <div className={styles.blog_post__content}>      
 
           {hasTOC && (
             <button onClick={toggleTOC}>
@@ -148,6 +150,9 @@ export default function Post({ post, hasTOC, error }) {
           )}
 
           <article ref={contentRef}>
+            <div>
+              <h2>Published by: Scott Sutherland</h2>
+            </div>
             <div>{parse(post.content?.rendered || 'No content available')}</div>
           </article>
         </div>
