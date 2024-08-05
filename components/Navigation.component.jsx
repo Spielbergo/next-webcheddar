@@ -112,10 +112,13 @@ const Navigation = () => {
       </div>
 
       <Modal modalName="getAQuote">
-        <h2>Get a Quote</h2>
-        <p>Please fill out the form below to get a quote.</p>
-        <br />
-        <ContactForm />
+        <div>
+            <h2>Get a Quote</h2>
+            <p>Please fill out the form below to get a quote.</p>
+            <br />
+            <ContactForm />
+        </div>
+        
       </Modal>
     </nav>
   );

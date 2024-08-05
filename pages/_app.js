@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Router from 'next/router';
+
 import { ModalProvider } from '../contexts/ModalContext';
+
 import Head from '../components/Meta.component';
 import Layout from '../components/Layout';
 import Navigation from '../components/Navigation.component';
 import NavigationMobile from '../components/NavigationMobile.component';
 import Footer from '../components/Footer.component';
+
 import NProgress from 'nprogress';
-import Router from 'next/router';
+
 import '../styles/global.css';
 import 'nprogress/nprogress.css';
 

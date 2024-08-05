@@ -1,9 +1,4 @@
-import Image from "next/image";
 import Head from "next/head";
-
-import globalMeta from '../data/globalMeta';
-
-import contactImage from '../public/header.webp';
 
 import FeaturedImage from "../components/FeaturedImage.component";
 import Layout from "../components/Layout";
@@ -18,16 +13,16 @@ const Contact = () => {
         <FeaturedImage 
           title="Contact" 
           imageSrc="/contact-page-hero.webp" 
-          alt="Home Header Image" 
+          alt="Contact Page - Row of p;f school country mail boxes" 
         />
     );
 
     return (
         <>
             <Head>
-                <title>Contact Page - Web Cheddar Web Solutions TEST</title>
-                <meta name="description" content='TEST'></meta>
-                <meta property="og:description" content='TEST2'></meta>
+                <title>Contact - Web Cheddar - Websites - Social Media</title>
+                <meta name="description" content='Contact - Web Cheddar - Websites - Social Media for top-notch web design services. Reach out to our friendly team for inquiries or support.'></meta>
+                <meta property="og:description" content='Contact - Web Cheddar - Websites - Social Media for top-notch web design services. Reach out to our friendly team for inquiries or support.'></meta>
             </Head>
 
             <Layout featuredImage={featuredImage}> 

@@ -30,7 +30,7 @@
 
 .cards__card a:hover {
     color: #fff;
-    scale: 1.15;
+    /* scale: 1.15; */
 }
 
 .cards__card img {

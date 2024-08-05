@@ -18,7 +18,7 @@ const RandomTestimonial = () => {
 
     return (
         <div className={`${styles.random_testimonial}`}>
-            <div className={styles.random_testimonial_img__container}>
+            {/* <div className={styles.random_testimonial_img__container}>
                 <Image 
                     src={testimonial.image} 
                     alt={`${testimonial.company} logo`} 
@@ -26,7 +26,7 @@ const RandomTestimonial = () => {
                     width={250}
                     height={100}
                 />
-            </div>
+            </div> */}
             <blockquote className={styles.random_testimonial_quote}>{testimonial.text}</blockquote>
             <Link href={testimonial.url} target="_blank" rel="noopener noreferrer">
                 {testimonial.name}, {testimonial.company}

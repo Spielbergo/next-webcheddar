@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import parse from 'html-react-parser';
 import Image from 'next/image';
+
+import parse from 'html-react-parser';
 
 import FeaturedImage from '../components/FeaturedImage.component';
 import Layout from '../components/Layout';
@@ -62,7 +63,7 @@ export default function Blog({ initialPosts, totalPages, allCategories, error })
     <FeaturedImage 
       title="Web Cheddar Blog" 
       imageSrc="/blog-hero.webp" 
-      alt="Home Header Image" 
+      alt="Web Cheddar Blog index page - Old type writer with the words: 'Something Worth Reading' on the paper" 
     />
   );
 
@@ -73,9 +74,9 @@ export default function Blog({ initialPosts, totalPages, allCategories, error })
   return (
     <>
     <Head>
-      <title>Blog Index Page - Web Cheddar Web Solutions</title>
-      <meta name="description" content='TEST'></meta>
-      <meta property="og:description" content='TEST2'></meta>
+        <title>Web CHeddar Blog - Web Cheddar - Websites - Social Media</title>
+        <meta name="description" content='Web Cheddar Blog - Web Cheddar Websites - Social Media 🧀 Read the latest articles on web design trends, tips, and industry news.'></meta>
+        <meta property="og:description" content='Web Cheddar Blog - Web Cheddar Websites - Social Media 🧀 Read the latest articles on web design trends, tips, and industry news.'></meta>
     </Head>
 
     <Layout featuredImage={featuredImage}> 

@@ -1,9 +1,12 @@
 import Image from "next/image";
 import Head from "next/head";
+
+import { aboutPage } from '../data/index';
+
 import FeaturedImage from "../components/FeaturedImage.component";
 import Layout from "../components/Layout";
-import { aboutPage } from '../data/index';
 import TestimonialSlider from "../components/TestimonialSlider.component";
+
 import styles from '../styles/about-page.module.css';
 
 const About = () => {
@@ -12,16 +15,16 @@ const About = () => {
           title="About Us" 
           imageSrc="/about/about-us-page-hero.webp" 
           alt="Home Header Image" 
-          aria-label="Home Header Image"
+          aria-label="About Us Page - Dark image with 2 computer screens 1 with code."
         />
     );
 
     return (
         <>
         <Head>
-            <title>About Us - Web Cheddar Web Solutions</title>
-            <meta name="description" content='TEST ABOUT'></meta>
-            <meta property="og:description" content='TEST2'></meta>
+            <title>About Us - Web Cheddar - Websites - Social Media</title>
+            <meta name="description" content='About Us - Web Cheddar Websites - Social Media 🧀 Learn about our mission, values, and the talented team that brings your vision to life.'></meta>
+            <meta property="og:description" content='About Us - Web Cheddar Websites - Social Media 🧀 Learn about our mission, values, and the talented team that brings your vision to life.'></meta>
             <meta property="og:site_name" content='TEST2 SITENAME'></meta>
         </Head>
 

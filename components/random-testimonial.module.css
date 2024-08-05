@@ -1,6 +1,6 @@
 .random_testimonial {
     /* border: 1px solid #ddd; */
-    padding: 20px;
+    padding: 125px 20px 20px 20px;
     margin: 20px auto;
     max-width: 800px;;
     text-align: center;
@@ -20,7 +20,7 @@
 
 .random_testimonial_quote {
     display: flex;
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: 400;
 }
 

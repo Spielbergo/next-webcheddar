@@ -13,10 +13,8 @@ const Home = ({ posts }) => {
   return (        
     <>
     <Head>
-        <meta name="description" content='TEST'></meta>
-        <meta property="og:description" content='TEST2'></meta>
-        {/* <meta property="og:site_name" content='Blog'></meta> */}
-        {/* Add any other meta tags, link tags, etc. here */}
+        <meta name="description" content='Web Cheddar - Websites - Social Media 🧀 Expert web design services for businesses of all sizes. Enhance your online presence.'></meta>
+        <meta property="og:description" content='Web Cheddar - Websites - Social Media 🧀 Expert web design services for businesses of all sizes. Enhance your online presence.'></meta>
     </Head>
     <Hero />
     <main>

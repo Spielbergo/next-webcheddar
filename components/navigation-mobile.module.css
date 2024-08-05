@@ -239,7 +239,7 @@
   transform: rotate(45deg) translate(-8px, -7px);
 }
 
-@media screen and (min-width: 767px) {
+/* @media screen and (min-width: 767px) {
   .main_nav__container {
       max-width: 95%;
       padding: 1px 0 10px;
@@ -293,4 +293,4 @@
   .main_nav__mobile_links .shadow {
       box-shadow: 0;
   }
-}
+} */

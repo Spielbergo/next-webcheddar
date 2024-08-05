@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import parse from 'html-react-parser';
 import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
+
+
+import parse from 'html-react-parser';
 
 import globalMeta from '../../data/globalMeta';
 

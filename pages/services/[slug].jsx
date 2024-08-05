@@ -125,7 +125,7 @@ export default function ServicePage({ service }) {
                 </div>
               </section>
 
-              <RandomTestimonial />
+              <RandomTestimonial style={{ padding_top: '75px' }} />
 
               <TechStack style={{ margin: '75px 0 0' }} />
               
