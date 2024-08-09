@@ -312,7 +312,7 @@ export const aboutPage = [
     {
         id: 'about-page-03',
         title: 'Why Choose Us',
-        subtitle: 'Commitment to Communication and Ongoing Support',
+        subtitle: 'Communication and Ongoing Support',
         text: 'We are distinguished by our rigorous commitment to clear communication and extensive post-launch support. We believe in establishing long-term relationships with our clients, offering continued assistance and guidance post the launch of their websites. Throughout the development process, we engage in transparent and thorough communication.',
         image: '/about/about-us-page-03.webp',
         alt: 'A smaller Mac laptop with neon purple and blue lights',

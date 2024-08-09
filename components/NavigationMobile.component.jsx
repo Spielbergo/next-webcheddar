@@ -50,7 +50,7 @@ const Navigation = () => {
     setMobileToggleOpen(prevState => !prevState);
     if (subLinkToggleOpen) setSubLinkToggleOpen(false);
     setActiveSubmenu(null);
-  };
+  };  
 
   const handleSubLinkToggle = (submenuId) => {
     setSubLinkToggleOpen(prevState => !prevState);

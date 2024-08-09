@@ -4,6 +4,8 @@
     height: auto;
     margin-top: 125px;
     object-fit: cover;
+    overflow-y: hidden;
+    padding-left: 15px;
 }
 
 .testimonials_slider__titles {

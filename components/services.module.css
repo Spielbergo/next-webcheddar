@@ -1,6 +1,5 @@
 /* Services GRID */
 .services_home__titles {
-  max-width: 1200px;
   padding: 0 15px;
   margin: 15px auto;
 }
@@ -10,10 +9,14 @@
   flex-wrap: wrap;
   flex: 1;
   justify-content: center;
-  /* gap: 10px; */
-  max-width: 1200px;
+  /* gap: 10px; */  
   margin: auto;
   padding: 5px 15px 75px;
+}
+
+.services_home__titles,
+.services_home__container {
+  max-width: var(--container-width-small);
 }
 
 .services_home__card {
@@ -129,6 +132,6 @@
 
 @media screen and (min-width: 768px) {
   .services_home__card {
-    min-height: 0;
+    min-height: 300px;
   }
 }

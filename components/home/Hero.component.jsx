@@ -1,8 +1,12 @@
 import Image from "next/image";
-import heroImage from '../../public/header.webp';
+import heroImage from '../../public/home/hero-bg-wave-2.webp';
+// import heroImage from '../../public/header.webp';
+
+import { useModal } from '../../contexts/ModalContext';
+
 import Button from "../Button.component";
+
 import styles from './hero.module.css';
-import { useModal } from '../../contexts/ModalContext'; // Import the modal context
 
 const Hero = () => {
     const { openModal } = useModal(); // Get the openModal function from context

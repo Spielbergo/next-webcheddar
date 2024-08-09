@@ -105,7 +105,7 @@ export default function ContactForm() {
           onChange={handleChange}
         />
       </div>
-      <Button className={buttonStyles.default} type="submit" disabled={isSubmitting}>
+      <Button className={buttonStyles.default__flat} type="submit" disabled={isSubmitting}>
         {isSubmitting ? 'Submitting...' : 'Submit'}
       </Button>
       {error && <p style={{ color: 'red' }}>{error}</p>}

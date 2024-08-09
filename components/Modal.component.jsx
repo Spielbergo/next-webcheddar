@@ -1,8 +1,11 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
 
-import styles from './modal.module.css';
 import { useModal } from '../contexts/ModalContext';
+
+import { IoMdCloseCircleOutline } from "react-icons/io";
+
+import styles from './modal.module.css';
 
 const Modal = ({ modalName, children }) => {
   const { modals, closeModal } = useModal();
@@ -24,19 +27,17 @@ const Modal = ({ modalName, children }) => {
             <Image
             src='/contact-us.webp'
             className={styles.modal__container_image}
-            alt="Get a Quote - Conact ymbols on a dark blue bg"
-            aria-label="Get a Quote - Conact ymbols on a dark blue bg"
+            alt="Get a Quote - Conact symbols on a dark blue bg"
+            aria-label="Get a Quote - Conact symbols on a dark blue bg"
             width="370"
             height="520"
-            priority
             />
         </div>
         <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-          <button className={styles.closeButton} onClick={() => closeModal(modalName)}>X</button>
+          <button className={styles.closeButton} onClick={() => closeModal(modalName)}><IoMdCloseCircleOutline /></button>
           {children}
         </div>
       </div>
-
     </div>
   );
 };

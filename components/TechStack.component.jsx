@@ -7,9 +7,9 @@ import { techStack } from '../data';
  const TechStack = () => {
     return (
         <section className={styles.tech_stack__section}>
-            <div className='flex flex_nowrap fade-right'>
-                <div>
-                    <h2 className="section_title_01 slide-right">How We Work</h2>
+            <div className='flex flex_flip flex_nowrap fade-right'>
+                <div className={styles.tech_stack__container}>
+                    <h2 className="section_title_01 fade-right">How We Work</h2>
                     <h3 className="section_title_02 fade-left">Our Technology Stack</h3>
                     <p className="section_text fade-in delay-1">At Web Cheddar, we leverage a robust and versatile technology stack to deliver exceptional web solutions. Our expertise spans a variety of coding languages and platforms to ensure we meet all your digital needs.</p>
 
@@ -27,8 +27,8 @@ import { techStack } from '../data';
                 <div className='fade-left delay-1'>
                     <Image 
                         src="/home/tech-stack.webp"
-                        className={`shadow fade-in`}
-                        width={540}
+                        className={`${styles.tech_stack__image} shadow fade-in`}
+                        width={440}
                         height={327}
                         alt="Close up of people working in an office."
                         aria-label="Close up of people working in an office."

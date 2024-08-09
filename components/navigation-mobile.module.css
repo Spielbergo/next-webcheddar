@@ -17,7 +17,8 @@
 
 .main_nav__scrolled {
   background-image: none;
-  background-color: var(--primary-bg-color);
+  /* background-color: var(--primary-bg-color); */
+  background-color: #222;
   box-shadow: 0 1px 1px hsla(0, 87%, 49%, 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075), 0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
 }
 
@@ -71,9 +72,17 @@
   border: none;
 }
 
+.main_nav__navLinks span {
+  width: 100%;
+  border-bottom: 0 !important;
+  text-align: left;
+}
+
 .main_nav__navLinks a {
   position: relative;
-  color: #fff; /* Default color */
+  width: 100%;
+  color: #fff;
+  text-align: left;
   text-decoration: none;
 }
 
@@ -129,7 +138,7 @@
   overflow: hidden;
   background: #444;
   text-align: center;
-  transition: max-height 0.3s ease-in-out;
+  transition: max-height 0.8s ease-in-out;
 }
 
 .main_nav__sublinks_visible {

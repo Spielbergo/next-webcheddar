@@ -1,6 +1,6 @@
 :root {
   --container-width-small: 1200px;
-  --container-width-large: 1600px;
+  --container-width-large: 1400px;
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -219,10 +219,11 @@ button:hover {
 .flex {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 50px;
-  max-width: 1200px;
+  /* max-width: 1200px; */
+  max-width: var(--container-width-large);
   padding: 0 15px;
   margin: auto;
 }

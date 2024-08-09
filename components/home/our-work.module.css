@@ -1,6 +1,4 @@
-/* Our Work Section */
 .our_work__titles {
-    max-width: 1200px;
     margin: auto;
     padding: 0 15px 25px;
 }
@@ -12,9 +10,13 @@
     grid-template-columns: 1fr;
     justify-content: space-between;
     gap: 15px;
-    max-width: 1200px;
     margin: auto;
     padding: 0 15px;
+}
+
+.our_work__titles,
+.cards__container {
+    max-width: var(--container-width-small);
 }
 
 .cards__card {

@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 50px;
-    max-width: 1400px;
+    max-width: var(--container-width-large);
     padding: 75px 15px;
     margin: auto;
 }
