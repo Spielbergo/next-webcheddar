@@ -1,3 +1,4 @@
+// Below is sloppy....clean it up
 import Header from '../components/FeaturedImage.component';
 import Layout from '../components/Layout';
 import Link from 'next/link';
@@ -41,8 +42,9 @@ const PrivacyPolicy = () => {
                             Toronto, Ontario
                         </p>
                         <br />
-                        
-                            
+                    </div>
+                    <div className={styles.terms_privacy__items_container}>
+                    <div>        
                         <h3>Purpose</h3>
                         <p>The purpose of this privacy policy (this "Privacy Policy") is to inform users of our Site of the following:
                         </p>
@@ -73,8 +75,10 @@ const PrivacyPolicy = () => {
                             our Site.
                         </p>
                         <div>
-                            
-                            
+                    </div>
+                    </div>
+                    <div>
+                    <div>
                             <h3>Consent</h3>
                             <p>By using our Site users agree that they consent to:</p>
                             <ul>
@@ -91,15 +95,16 @@ const PrivacyPolicy = () => {
                             </li>
                             </ul>
                         </div>
-                        
-                            
+                    </div>
+                    <div>                            
                             <h3>Personal Data We Collect</h3>
                             <p>We only collect data that helps us achieve the purpose set out in this
                             Privacy Policy. We will not collect any additional data beyond the data
                             listed below without notifying you first.
                             <br />
                         </p>
-                        
+                    </div>
+                    <div>
                             <h3>Data Collected Automatically</h3>
                             <br />
                             <p>When you visit and use our Site, we may automatically collect and store
@@ -118,7 +123,8 @@ const PrivacyPolicy = () => {
                             <br />
                             </li>
                         </ul>
-                        
+                    </div>
+                    <div>
                             <h3>Data Collected in a Non-Automatic Way</h3>
                             <br />
                             <p>We may also collect the following data when you perform certain
@@ -144,8 +150,8 @@ const PrivacyPolicy = () => {
                             <br />
                             </li>
                         </ul>
-                        
-                            
+                    </div>
+                    <div>                            
                             <h3>How We Use Personal Data</h3>
                             <p>Data collected on our Site will only be used for the purposes specified
                             in this Privacy Policy or indicated on the relevant pages of our Site.
@@ -168,8 +174,8 @@ const PrivacyPolicy = () => {
                             <br />
                             </li>
                         </ul>
-                        
-                            
+                    </div>
+                    <div>      
                             <h3>Who We Share Personal Data With</h3>
                             <h3>Employees</h3>
                             <br />
@@ -177,7 +183,9 @@ const PrivacyPolicy = () => {
                             reasonably needs access to user data to achieve the purposes set out in
                             this Privacy Policy.</p>
                         <div>
-                            
+                    </div>
+                    <div>   
+                    <div> 
                             <h3>Other Disclosures</h3>
                             <br />
                             <p>We will not sell or share your data with other third parties, except
@@ -209,8 +217,9 @@ const PrivacyPolicy = () => {
                             policies and practices.
                             </p>
                         </div>
-                        
-                            
+                    </div>    
+                    </div>
+                    <div>
                             <h3>How Long We Store Personal Data</h3>
                             <p>User data will be stored until the purpose the data was collected for
                             has been achieved.
@@ -218,8 +227,8 @@ const PrivacyPolicy = () => {
                             <br />
                             You will be notified if your data is kept for longer than this period.
                         </p>
-                        
-                            
+                    </div>
+                    <div>                    
                             <h3>How We Protect Your Personal Data</h3>
                             <p>In order to protect your security, we use the strongest available
                             browser encryption and store all of our data on servers in secure
@@ -234,21 +243,20 @@ const PrivacyPolicy = () => {
                             are unable to guarantee the security of user data beyond what is
                             reasonably practical.
                         </p>
-                        <div>
-                           
-                            
-                                <h3>Children</h3>
+                        </div>
+                    <div>                               
+                        <h3>Children</h3>
                             <p>We do not knowingly collect or use personal data from children under
                             13 years of age. If we learn that we have collected personal data from
                             a child under 13 years of age, the personal data will be deleted as
                             soon as possible. If a child under 13 years of age has provided us
                             with personal data their parent or guardian may contact our privacy
-                            officer.</p>
-                        </div>
-                        
-                            
-                            <h3>How to Access, Modify, Delete, or Challenge the Data Collected</h3>
-                            <p>If you would like to know if we have collected your personal data, how
+                            officer.</p>                        
+                    </div>
+                    
+                    <div>                         
+                        <h3>How to Access, Modify, Delete, or Challenge the Data Collected</h3>
+                        <p>If you would like to know if we have collected your personal data, how
                             we have used your personal data, if we have disclosed your personal data
                             and to who we disclosed your personal data, or if you would like your
                             data to be deleted or modified in any way, please contact our privacy
@@ -263,8 +271,10 @@ const PrivacyPolicy = () => {
                             <br />
                         </p>
                         <br />
+                     </div>
+                    
+                    
                         <div>
-                            
                                 <h3>Do Not Track Notice</h3>
                                 <p>Do Not Track ("DNT") is a privacy preference that you can set in
                             certain web browsers. We do not track the users of our Site over time
@@ -272,8 +282,9 @@ const PrivacyPolicy = () => {
                             browser-initiated DNT signals.
                             </p>
                         </div>
-                        <div>
-                            
+<div>
+                    <div>
+                        
                                 <h3>Cookie Policy</h3>
                             <p>A cookie is a small file, stored on a user's hard drive by a
                             website. Its purpose is to collect data relating to the user's
@@ -315,8 +326,9 @@ const PrivacyPolicy = () => {
                             </li>
                             </ul>
                         </div>
-                        
-                            
+                    </div>
+                    
+                        <div>                      
                             <h3>Modifications</h3>
                             <p>This Privacy Policy may be amended from time to time in order to
                             maintain compliance with the law and to reflect any changes to our data
@@ -326,8 +338,12 @@ const PrivacyPolicy = () => {
                             notified of any updates. If necessary, we may notify users by email of
                             changes to this Privacy Policy.
                         </p>
-                        
+
+                        </div>
+
                             
+                </div>
+                <div>
                             <h3>Contact Information</h3>
                             <p>If you have any questions, concerns or complaints, you can contact our
                             privacy officer, Web Chadder, at:
@@ -337,8 +353,10 @@ const PrivacyPolicy = () => {
                             <br />
                             Toronto, Ontario
                         </p>
-                    </div>                    
-                </div>
+
+                            </div>
+                </div>                    
+                
             </section>
         </Layout>
         

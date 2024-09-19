@@ -53,6 +53,14 @@ const Sitemap = () => {
                     <li><Link href="/">Homepage</Link></li>
                     <li><Link href="/About">About</Link></li>
                     <li><Link href="/Services">Services</Link></li>
+                    <ul className={styles.sitemap__sub_list}>
+                      <li><Link href="/services/web-design-development/">Web Design & Development</Link></li>
+                      <li><Link href="/services/search-engine-optimization/">Search Engine Optimization</Link></li>
+                      <li><Link href="/services/website-maintenance/">Website Maintenance</Link></li>
+                      <li><Link href="/ervices/social-media-management/">Social Media Management</Link></li>
+                      <li><Link href="/services/e-commerce-solutions/">E-commerce Solutions</Link></li>
+                      <li><Link href="/services/special-event-websites/">Special Event Websites</Link></li>
+                    </ul>
                     <li><Link href="/Blogs">Blogs</Link></li>
                     <li><Link href="/Contact">Contact</Link></li>
                 </ul>

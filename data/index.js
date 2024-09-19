@@ -51,13 +51,13 @@ export const socialIcons = [
     {
         id: "facebook",
         icon: FaFacebookF,
-        link: 'https://www.facebook.com',
+        link: 'https://www.facebook.co/webcheddar',
         title: 'Facebook',
     },
     {
         id: "github",
         icon: FaGithub,
-        link: 'https://www.github.com',
+        link: 'https://github.com/Spielbergo',
         title: 'GitHub',
     },
     {

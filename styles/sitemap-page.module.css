@@ -17,3 +17,7 @@
 .sitemap__container ul li {
     margin-bottom: 5px;
 }
+
+.sitemap__sub_list {
+    margin-left: 20px;
+}

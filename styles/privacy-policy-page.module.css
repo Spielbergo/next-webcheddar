@@ -1,16 +1,32 @@
 .privacy_policy__container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     max-width: 1200px;
     width: 100%;
     margin: 75px auto;
     padding: 75px 115px;
     text-align: center;
-    background-color: var(--primary-bg-color);
     border-radius: 10px;
 }
 
 .privacy_policy__container h3 {
     margin-top: 10px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
+}
+
+.terms_privacy__items_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.terms_privacy__items_container > div {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    padding: 20px 40px;
+    background-color: var(--primary-bg-color);
+    border: 1px solid grey;
+    border-radius: 15px;    
 }
