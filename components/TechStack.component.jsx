@@ -28,8 +28,8 @@ import { techStack } from '../data';
                     <Image 
                         src="/home/tech-stack.webp"
                         className={`${styles.tech_stack__image} shadow fade-in`}
-                        width={440}
-                        height={327}
+                        width={540}
+                        height={427}
                         alt="Close up of people working in an office."
                         aria-label="Close up of people working in an office."
                     />

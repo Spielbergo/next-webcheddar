@@ -223,9 +223,13 @@ button:hover {
   align-items: center;
   gap: 50px;
   /* max-width: 1200px; */
-  max-width: var(--container-width-large);
+  max-width: var(--container-width-small);
   padding: 0 15px;
   margin: auto;
+}
+
+.flex_large {
+  max-width: var(--container-width-large);
 }
 
 .flex_flip {
@@ -238,6 +242,10 @@ button:hover {
 
 .flex_nowrap {
   flex-wrap: wrap;
+}
+
+.padding_95 {
+  padding: 95px;
 }
 
 /* .list-none {
@@ -292,6 +300,7 @@ button:hover {
   max-width: 800px;
   margin: 10px 0;
   font-size: 1.1em;
+  line-height: 1.35;
   /* color: var(--primary-bg-color); */
   color: var(--text-color);
 }

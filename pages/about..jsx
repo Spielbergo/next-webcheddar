@@ -31,7 +31,7 @@ const About = () => {
         <Layout featuredImage={featuredImage}>         
             <main>
                 <section>
-                    <div className={`flex ${styles.about_page__container}`}>
+                    <div className={`flex flex_large ${styles.about_page__container}`}>
                         {aboutPage.map((about) => 
                             <div key={about.id} className={about.class}>
                                 <Image 

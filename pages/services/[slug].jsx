@@ -85,7 +85,7 @@ export default function ServicePage({ service }) {
                     src={service.image_1}
                     alt={service.image_1_alt}
                     aria-label={service.image_1.alt}
-                    className={`${styles.service__main_img} fade-in`}
+                    className={`${styles.service__main_img} ${service.padding_1} fade-in`}
                     width={550}
                     height={547}
                   />
