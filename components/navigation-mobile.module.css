@@ -31,7 +31,7 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 0;
+  top: 163%;
   width: 100%;
   padding: 0;
   z-index: 100;
@@ -47,7 +47,7 @@
   padding: 45px 0 25px 25px;
   text-align: center;
   visibility: visible;
-  transition: .5s ease-in-out;
+  transition: .3s ease-in-out;
 }
 
 .main_nav__container_grey {
