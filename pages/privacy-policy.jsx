@@ -1,21 +1,24 @@
 // Below is sloppy....clean it up
-import Header from '../components/FeaturedImage.component';
-import Layout from '../components/Layout';
+
 import Link from 'next/link';
+
+import Layout from '../components/Layout';
+import FeaturedImage from "../components/FeaturedImage.component";
 
 import styles from '../styles/privacy-policy-page.module.css'
 
-const header = (
-    <Header 
-      title="Privacy Policy" 
-      imageSrc="/header.webp" 
-      alt="Privacy Policy Header Image" 
-    />
-  );
-
 const PrivacyPolicy = () => {
+    const featuredImage = (
+        <FeaturedImage 
+          title="Privacy Policy" 
+          imageSrc="/privacy-policy.webp" 
+          alt="Privacy Policy - Blue background with a glowing blue lock on the right with particles" 
+          aria-label="Privacy Policy - Blue background with a glowing blue lock on the right with particles"
+        />
+    );
+
     return (
-        <Layout header={header}> 
+        <Layout featuredImage={featuredImage}> 
             <section className={styles.privacy_policy__section}>
                 <div className={styles.privacy_policy__container}>                    
                     <div>
@@ -24,7 +27,7 @@ const PrivacyPolicy = () => {
                         </div>
                         
                         <p>
-                            <strong>www.webcheddar.ca</strong>
+                            <strong>webcheddar.ca</strong>
                         </p>
                         <p>
                             Type of website: Company Blog
@@ -32,7 +35,7 @@ const PrivacyPolicy = () => {
                             Effective date: 10th day of May, 2024
                         </p>
                         <p>
-                            www.webcheddar.ca (the "Site") is owned and operated by Web Cheddar -
+                            webcheddar.ca (the "Site") is owned and operated by <br />Web Cheddar -
                             Websites - Social Media. 
                             <br />
                             They can be contacted at: <br />
@@ -106,7 +109,6 @@ const PrivacyPolicy = () => {
                     </div>
                     <div>
                             <h3>Data Collected Automatically</h3>
-                            <br />
                             <p>When you visit and use our Site, we may automatically collect and store
                             the following information:</p>
                         <ul>
@@ -126,7 +128,7 @@ const PrivacyPolicy = () => {
                     </div>
                     <div>
                             <h3>Data Collected in a Non-Automatic Way</h3>
-                            <br />
+                            
                             <p>We may also collect the following data when you perform certain
                             functions on our Site:</p>
                         <ul>
@@ -177,17 +179,17 @@ const PrivacyPolicy = () => {
                     </div>
                     <div>      
                             <h3>Who We Share Personal Data With</h3>
-                            <h3>Employees</h3>
-                            <br />
+                            <h4>Employees</h4>
+                        
                             <p>We may disclose user data to any member of our organization who
                             reasonably needs access to user data to achieve the purposes set out in
                             this Privacy Policy.</p>
-                        <div>
+                
                     </div>
                     <div>   
-                    <div> 
+                    
                             <h3>Other Disclosures</h3>
-                            <br />
+                           
                             <p>We will not sell or share your data with other third parties, except
                             in the following case:</p>
                             <ul>
@@ -217,14 +219,15 @@ const PrivacyPolicy = () => {
                             policies and practices.
                             </p>
                         </div>
-                    </div>    
-                    </div>
+
+                      
+                    
                     <div>
                             <h3>How Long We Store Personal Data</h3>
                             <p>User data will be stored until the purpose the data was collected for
                             has been achieved.
                             <br />
-                            <br />
+                            
                             You will be notified if your data is kept for longer than this period.
                         </p>
                     </div>
@@ -299,18 +302,18 @@ const PrivacyPolicy = () => {
                                 <h3>
                                 <span>Analytical cookies</span>
                                 </h3>
-                                <br />
+                               
                                 Analytical cookies allow us to improve the design and functionality
                                 of our Site by collecting data on how you access our Site, for
                                 example data on the content you access, how long you stay on our
                                 Site, etc; and
-                                <br />
+                              
                             </li>
                             <li>
                                 <h3>
                                 <span>Third-Party Cookies</span>
                                 </h3>
-                                <br />
+                              
                                 Third-party cookies are created by a website other than ours. We may
                                 use third-party cookies to achieve the following purposes:
                                 <br />
@@ -348,7 +351,7 @@ const PrivacyPolicy = () => {
                             <p>If you have any questions, concerns or complaints, you can contact our
                             privacy officer, Web Chadder, at:
                             <br />
-                            <br />
+                       
                             <Link href="mailto:info@webcheddar.ca">info@webcheddar.ca</Link>
                             <br />
                             Toronto, Ontario

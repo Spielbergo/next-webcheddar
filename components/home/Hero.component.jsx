@@ -1,3 +1,4 @@
+import Router from "next/router";
 import Image from "next/image";
 import heroImage from '../../public/home/hero-bg-wave-2.webp';
 // import heroImage from '../../public/header.webp';
@@ -41,7 +42,7 @@ const Hero = () => {
                     alt="Hero image - code on a screen wth an orange overlay" 
                     aria-label="Hero image - code on a screen wth an orange overlay" 
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"
                     priority 
                 />                
             </div>
