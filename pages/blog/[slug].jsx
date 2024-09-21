@@ -4,12 +4,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
-
-
 import parse from 'html-react-parser';
-
 import globalMeta from '../../data/globalMeta';
-
 import styles from '../../styles/blog-page.module.css';
 
 export default function Post({ post, hasTOC, error }) {
@@ -19,155 +15,88 @@ export default function Post({ post, hasTOC, error }) {
 
   const includesCodePen = post?.content?.rendered?.includes('class="codepen"');
 
-  const structuredLd = JSON.stringify({
+  const structuredLd = post?.yoast_head_json?.schema ? {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": `${post.yoast_head_json.schema['@graph'][0]['@type']}`,
-        "@id": `${post.yoast_head_json.schema['@graph'][0]['@id']}`,
-        "isPartOf": {
-          "@id": `${post.yoast_head_json.schema['@graph'][0].isPartOf['@id']}`
-        },
-        "author": {
-          "name": `${post.yoast_head_json.schema['@graph'][0].author.name}`,
-          "@id": `${post.yoast_head_json.schema['@graph'][0].author['@id']}`
-        },
-        "headline": `${post.title.rendered}`,
-        "datePublished": `${post.date}`,
-        "dateModified": `${post.modified}`,
-        "mainEntityOfPage": {
-          "@id": `${post.yoast_head_json.schema['@graph'][0].mainEntityOfPage['@id']}`
-        },
-        "wordCount": `${post.word_count}`,
-        "commentCount": `${post.comment_count}`,
-        "publisher": {
-          "@id": `${post.yoast_head_json.schema['@graph'][0].publisher['@id']}`
-        },
-        "image": {
-          "@id": `${post.yoast_head_json.schema['@graph'][0].image['@id']}`
-        },
-        "thumbnailUrl": `${post.yoast_head_json.schema['@graph'][0].thumbnailUrl}`,
-        "articleSection": [
-          `${post.yoast_head_json.schema['@graph'][0].articleSection.join(', ')}`
-        ],
-        "inLanguage": `${post.yoast_head_json.schema['@graph'][0].inLanguage}`,
-        "potentialAction": post.yoast_head_json.schema['@graph'][0].potentialAction.map(action => ({
-          "@type": action['@type'],
-          "name": action.name,
-          "target": action.target
-        }))
-      },
-      {
         "@type": "WebPage",
-        "@id": `${post.yoast_head_json.schema['@graph'][1]['@id']}`,
-        "url": `${post.yoast_head_json.schema['@graph'][1].url}`,
-        "name": `${post.yoast_head_json.schema['@graph'][1].name}`,
+        "@id": post.yoast_head_json.schema['@graph']?.[0]?.['@id'] || "",
+        "url": post.yoast_head_json.schema['@graph']?.[0]?.url || "",
+        "name": post.title || "Default Title",
         "isPartOf": {
-          "@id": `${post.yoast_head_json.schema['@graph'][1].isPartOf['@id']}`
+          "@id": post.yoast_head_json.schema['@graph']?.[0]?.isPartOf?.["@id"] || ""
         },
         "primaryImageOfPage": {
-          "@id": `${post.yoast_head_json.schema['@graph'][1].primaryImageOfPage['@id']}`
+          "@id": post.yoast_head_json.schema['@graph']?.[0]?.primaryImageOfPage?.["@id"] || ""
         },
-        "image": {
-          "@id": `${post.yoast_head_json.schema['@graph'][1].image['@id']}`
-        },
-        "thumbnailUrl": `${post.yoast_head_json.schema['@graph'][1].thumbnailUrl}`,
-        "datePublished": `${post.date}`,
-        "dateModified": `${post.modified}`,
-        "description": `${post.yoast_head_json.schema['@graph'][1].description}`,
+        "datePublished": post.yoast_head_json.schema['@graph']?.[0]?.datePublished || "",
+        "dateModified": post.yoast_head_json.schema['@graph']?.[0]?.dateModified || "",
         "breadcrumb": {
-          "@id": `${post.yoast_head_json.schema['@graph'][1].breadcrumb['@id']}`
+          "@id": post.yoast_head_json.schema['@graph']?.[0]?.breadcrumb?.["@id"] || ""
         },
-        "inLanguage": `${post.yoast_head_json.schema['@graph'][1].inLanguage}`,
-        "potentialAction": post.yoast_head_json.schema['@graph'][1].potentialAction.map(action => ({
-          "@type": action['@type'],
-          "target": action.target
-        }))
-      },
-      {
-        "@type": "ImageObject",
-        "inLanguage": `${post.yoast_head_json.schema['@graph'][2].inLanguage}`,
-        "@id": `${post.yoast_head_json.schema['@graph'][2]['@id']}`,
-        "url": `${post.yoast_head_json.schema['@graph'][2].url}`,
-        "contentUrl": `${post.yoast_head_json.schema['@graph'][2].contentUrl}`,
-        "width": `${post.yoast_head_json.schema['@graph'][2].width}`,
-        "height": `${post.yoast_head_json.schema['@graph'][2].height}`,
-        "caption": `${post.yoast_head_json.schema['@graph'][2].caption}`
+        "inLanguage": post.yoast_head_json.schema['@graph']?.[0]?.inLanguage || "en-US",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": post.yoast_head_json.schema['@graph']?.[0]?.potentialAction?.[0]?.target?.urlTemplate || ""
+            }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
-        "@id": `${post.yoast_head_json.schema['@graph'][3]['@id']}`,
-        "itemListElement": post.yoast_head_json.schema['@graph'][3].itemListElement.map(item => ({
-          "@type": item['@type'],
-          "position": item.position,
-          "name": item.name,
-          "item": item.item
-        }))
+        "@id": post.yoast_head_json.schema['@graph']?.[1]?.['@id'] || "",
+        "itemListElement": post.yoast_head_json.schema['@graph']?.[1]?.itemListElement?.map((item, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "item": {
+            "@id": item.item?.["@id"] || "",
+            "name": item.item?.name || `Breadcrumb ${index + 1}`
+          }
+        })) || []
       },
       {
-        "@type": "WebSite",
-        "@id": `${post.yoast_head_json.schema['@graph'][4]['@id']}`,
-        "url": `${post.yoast_head_json.schema['@graph'][4].url}`,
-        "name": `${post.yoast_head_json.schema['@graph'][4].name}`,
-        "description": `${post.yoast_head_json.schema['@graph'][4].description}`,
-        "publisher": {
-          "@id": `${post.yoast_head_json.schema['@graph'][4].publisher['@id']}`
+        "@type": "Article",
+        "@id": post.yoast_head_json.schema['@graph']?.[2]?.['@id'] || "",
+        "isPartOf": {
+          "@id": post.yoast_head_json.schema['@graph']?.[2]?.isPartOf?.["@id"] || ""
         },
-        "potentialAction": post.yoast_head_json.schema['@graph'][4].potentialAction.map(action => ({
-          "@type": action['@type'],
-          "target": {
-            "@type": action.target['@type'],
-            "urlTemplate": action.target.urlTemplate
-          },
-          "query-input": action['query-input']
-        })),
-        "inLanguage": `${post.yoast_head_json.schema['@graph'][4].inLanguage}`
-      },
-      {
-        "@type": "Organization",
-        "@id": `${post.yoast_head_json.schema['@graph'][5]['@id']}`,
-        "name": `${post.yoast_head_json.schema['@graph'][5].name}`,
-        "url": `${post.yoast_head_json.schema['@graph'][5].url}`,
-        "logo": {
-          "@type": `${post.yoast_head_json.schema['@graph'][5].logo['@type']}`,
-          "inLanguage": `${post.yoast_head_json.schema['@graph'][5].logo.inLanguage}`,
-          "@id": `${post.yoast_head_json.schema['@graph'][5].logo['@id']}`,
-          "url": `${post.yoast_head_json.schema['@graph'][5].logo.url}`,
-          "contentUrl": `${post.yoast_head_json.schema['@graph'][5].logo.contentUrl}`,
-          "width": `${post.yoast_head_json.schema['@graph'][5].logo.width}`,
-          "height": `${post.yoast_head_json.schema['@graph'][5].logo.height}`,
-          "caption": `${post.yoast_head_json.schema['@graph'][5].logo.caption}`
+        "author": {
+          "@id": post.yoast_head_json.schema['@graph']?.[2]?.author?.["@id"] || ""
+        },
+        "headline": post.title || "Default Article Title",
+        "datePublished": post.yoast_head_json.schema['@graph']?.[2]?.datePublished || "",
+        "dateModified": post.yoast_head_json.schema['@graph']?.[2]?.dateModified || "",
+        "mainEntityOfPage": {
+          "@id": post.yoast_head_json.schema['@graph']?.[2]?.mainEntityOfPage?.["@id"] || ""
         },
         "image": {
-          "@id": `${post.yoast_head_json.schema['@graph'][5].image['@id']}`
-        }
-      },
-      {
-        "@type": "Person",
-        "@id": `${post.yoast_head_json.schema['@graph'][6]['@id']}`,
-        "name": `${post.yoast_head_json.schema['@graph'][6].name}`,
-        "image": {
-          "@type": `${post.yoast_head_json.schema['@graph'][6].image['@type']}`,
-          "inLanguage": `${post.yoast_head_json.schema['@graph'][6].image.inLanguage}`,
-          "@id": `${post.yoast_head_json.schema['@graph'][6].image['@id']}`,
-          "url": `${post.yoast_head_json.schema['@graph'][6].image.url}`,
-          "contentUrl": `${post.yoast_head_json.schema['@graph'][6].image.contentUrl}`,
-          "caption": `${post.yoast_head_json.schema['@graph'][6].image.caption}`
+          "@id": post.yoast_head_json.schema['@graph']?.[2]?.image?.["@id"] || ""
         },
-        "sameAs": post.yoast_head_json.schema['@graph'][6].sameAs.map(same => same),
-        "url": `${post.yoast_head_json.schema['@graph'][6].url}`
+        "articleSection": post.yoast_head_json.schema['@graph']?.[2]?.articleSection?.join(", ") || "",
+        "inLanguage": post.yoast_head_json.schema['@graph']?.[2]?.inLanguage || "en-US",
+        "potentialAction": [
+          {
+            "@type": "CommentAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": post.yoast_head_json.schema['@graph']?.[2]?.potentialAction?.[0]?.target?.urlTemplate || ""
+            }
+          }
+        ]
       }
     ]
-  });
-  
+  } : null;
 
   useEffect(() => {
-    const toc = contentRef.current?.querySelector('.blog_post__toc');
-    if (toc) {
-      toc.style.visibility = isTOCVisible ? 'visible' : 'hidden';
-      toc.style.maxHeight = isTOCVisible ? '1000px' : '0'; // Adjust as needed
-      toc.style.overflow = 'hidden';
-      toc.style.transition = 'visibility 0.3s, max-height 0.4s ease-in-out';
+    if (contentRef.current) {
+      const toc = contentRef.current.querySelector('.blog_post__toc');
+      if (toc) {
+        toc.style.visibility = isTOCVisible ? 'visible' : 'hidden';
+        toc.style.maxHeight = isTOCVisible ? '1000px' : '0';
+      }
     }
   }, [isTOCVisible]);
 
@@ -221,12 +150,15 @@ export default function Post({ post, hasTOC, error }) {
         <meta property="og:image:width" content={ogImage.width}></meta>
         <meta property="og:image:height" content={ogImage.height}></meta>
         <meta property="og:image:type" content={ogImage.type}></meta>
+        
         {/* Schema */}
-        <script
-          type="application/ld+json"
-        	dangerouslySetInnerHTML={{__html: structuredLd}}
-        	key="item-jsonld"
-    	  />
+        {structuredLd && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredLd) }}
+            key="item-jsonld"
+          />
+        )}
       </Head>
 
       <div className={styles.blog_post__container}>        
@@ -256,7 +188,6 @@ export default function Post({ post, hasTOC, error }) {
         </div>
 
         <div className={styles.blog_post__content}>      
-
           {hasTOC && (
             <button onClick={toggleTOC}>
               {isTOCVisible ? 'Hide Table of Contents' : 'Show Table of Contents'}
@@ -275,9 +206,10 @@ export default function Post({ post, hasTOC, error }) {
   );
 }
 
+
 export async function getStaticPaths() {
   try {
-    const response = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/posts?_embed');
+    const response = await fetch('https://blog.webcheddar.ca/wp-json/wp/v2/posts?_embed');
     const posts = await response.json();
 
     const paths = posts.map((post) => ({
@@ -293,7 +225,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   try {
-    const response = await fetch(`https://www.webcheddar.ca/blog/wp-json/wp/v2/posts?_embed&slug=${params.slug}`);
+    const response = await fetch(`https://blog.webcheddar.ca/wp-json/wp/v2/posts?_embed&slug=${params.slug}`);
     const posts = await response.json();
     const post = posts[0] || null;
 

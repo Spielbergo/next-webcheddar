@@ -44,7 +44,7 @@ export default function Blog({ initialPosts, totalPages, allCategories, error })
     if (currentPage < totalPages) {
       const nextPage = currentPage + 1;
       try {
-        const response = await fetch(`https://www.webcheddar.ca/blog/wp-json/wp/v2/posts?_embed&per_page=10&page=${nextPage}`);
+        const response = await fetch(`https://blog.webcheddar.ca/wp-json/wp/v2/posts?_embed&per_page=10&page=${nextPage}`);
         if (!response.ok) {
           throw new Error(`API call failed: ${response.status}`);
         }
@@ -139,13 +139,13 @@ export default function Blog({ initialPosts, totalPages, allCategories, error })
 
 export async function getStaticProps() {
   try {
-    const postsResponse = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/posts?_embed&per_page=40');
+    const postsResponse = await fetch('https://blog.webcheddar.ca/wp-json/wp/v2/posts?_embed&per_page=40');
     if (!postsResponse.ok) {
       throw new Error(`Failed to fetch posts: ${postsResponse.status}`);
     }
     const initialPosts = await postsResponse.json();
 
-    const categoriesResponse = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/categories');
+    const categoriesResponse = await fetch('https://blog.webcheddar.ca/wp-json/wp/v2/categories');
     if (!categoriesResponse.ok) {
       throw new Error(`Failed to fetch categories: ${categoriesResponse.status}`);
     }

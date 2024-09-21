@@ -5,7 +5,7 @@ const nextConfig = {
     defaultLocale: "en",
   },
   images: {
-    domains: ['shop.webcheddar.ca', 'webcheddar.ca'],
+    domains: ['blog.webcheddar.ca', 'webcheddar.ca'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     path: '/_next/image',
