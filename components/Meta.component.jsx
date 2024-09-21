@@ -16,7 +16,7 @@ export default function MetaHead ({
 
 	const structuredLd = JSON.stringify({
 		"@context": "https://schema.org",
-		"@graph":[{"@type":"WebPage",
+		"@type":[{"@type":"WebPage",
         "@id":`${globalMeta.siteUrl}${router.asPath}`,
         "url":`${globalMeta.siteUrl}${router.asPath}`,
         "name":`${globalMeta.siteName}`,
@@ -49,6 +49,7 @@ export default function MetaHead ({
 		  "postalCode": `${globalMeta.postalCode}`,
 		  "addressCountry": `${globalMeta.addressCountry}`
 		},
+		"inLanguage":"en-CA",
 		"contactPoint": {
 		  "@type": "ContactPoint",
 		  "contactType": `${globalMeta.contactType}`,
