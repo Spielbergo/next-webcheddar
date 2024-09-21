@@ -21,33 +21,145 @@ export default function Post({ post, hasTOC, error }) {
 
   const structuredLd = JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": `${globalMeta.siteName}`,
-    "legalName" : `${globalMeta.siteLegalName}`,
-    "url": `${globalMeta.siteUrl}${router.asPath}`,
-    "logo": `${globalMeta.siteUrl}${globalMeta.siteLogo}`,
-    "foundingDate": `${globalMeta.siteFoundingDate}`,
-    "founders": {
-      "@type": "Person",
-      "name": `${globalMeta.siteOwner}`
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": `${globalMeta.addressLocality}`,
-      "addressRegion": `${globalMeta.addressRegion}`,
-      "postalCode": `${globalMeta.postalCode}`,
-      "addressCountry": `${globalMeta.addressCountry}`
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": `${globalMeta.contactType}`,
-      "email": `${globalMeta.supportEmail}`
-    },
-    "sameAs": [
-      "http://www.facebook.com/webcheddar",
-      "https://www.linkedin.com/company/web-cheddar/",
-    ]}
-  );
+    "@graph": [
+      {
+        "@type": `${post.yoast_head_json.schema['@graph'][0]['@type']}`,
+        "@id": `${post.yoast_head_json.schema['@graph'][0]['@id']}`,
+        "isPartOf": {
+          "@id": `${post.yoast_head_json.schema['@graph'][0].isPartOf['@id']}`
+        },
+        "author": {
+          "name": `${post.yoast_head_json.schema['@graph'][0].author.name}`,
+          "@id": `${post.yoast_head_json.schema['@graph'][0].author['@id']}`
+        },
+        "headline": `${post.title.rendered}`,
+        "datePublished": `${post.date}`,
+        "dateModified": `${post.modified}`,
+        "mainEntityOfPage": {
+          "@id": `${post.yoast_head_json.schema['@graph'][0].mainEntityOfPage['@id']}`
+        },
+        "wordCount": `${post.word_count}`,
+        "commentCount": `${post.comment_count}`,
+        "publisher": {
+          "@id": `${post.yoast_head_json.schema['@graph'][0].publisher['@id']}`
+        },
+        "image": {
+          "@id": `${post.yoast_head_json.schema['@graph'][0].image['@id']}`
+        },
+        "thumbnailUrl": `${post.yoast_head_json.schema['@graph'][0].thumbnailUrl}`,
+        "articleSection": [
+          `${post.yoast_head_json.schema['@graph'][0].articleSection.join(', ')}`
+        ],
+        "inLanguage": `${post.yoast_head_json.schema['@graph'][0].inLanguage}`,
+        "potentialAction": post.yoast_head_json.schema['@graph'][0].potentialAction.map(action => ({
+          "@type": action['@type'],
+          "name": action.name,
+          "target": action.target
+        }))
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${post.yoast_head_json.schema['@graph'][1]['@id']}`,
+        "url": `${post.yoast_head_json.schema['@graph'][1].url}`,
+        "name": `${post.yoast_head_json.schema['@graph'][1].name}`,
+        "isPartOf": {
+          "@id": `${post.yoast_head_json.schema['@graph'][1].isPartOf['@id']}`
+        },
+        "primaryImageOfPage": {
+          "@id": `${post.yoast_head_json.schema['@graph'][1].primaryImageOfPage['@id']}`
+        },
+        "image": {
+          "@id": `${post.yoast_head_json.schema['@graph'][1].image['@id']}`
+        },
+        "thumbnailUrl": `${post.yoast_head_json.schema['@graph'][1].thumbnailUrl}`,
+        "datePublished": `${post.date}`,
+        "dateModified": `${post.modified}`,
+        "description": `${post.yoast_head_json.schema['@graph'][1].description}`,
+        "breadcrumb": {
+          "@id": `${post.yoast_head_json.schema['@graph'][1].breadcrumb['@id']}`
+        },
+        "inLanguage": `${post.yoast_head_json.schema['@graph'][1].inLanguage}`,
+        "potentialAction": post.yoast_head_json.schema['@graph'][1].potentialAction.map(action => ({
+          "@type": action['@type'],
+          "target": action.target
+        }))
+      },
+      {
+        "@type": "ImageObject",
+        "inLanguage": `${post.yoast_head_json.schema['@graph'][2].inLanguage}`,
+        "@id": `${post.yoast_head_json.schema['@graph'][2]['@id']}`,
+        "url": `${post.yoast_head_json.schema['@graph'][2].url}`,
+        "contentUrl": `${post.yoast_head_json.schema['@graph'][2].contentUrl}`,
+        "width": `${post.yoast_head_json.schema['@graph'][2].width}`,
+        "height": `${post.yoast_head_json.schema['@graph'][2].height}`,
+        "caption": `${post.yoast_head_json.schema['@graph'][2].caption}`
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${post.yoast_head_json.schema['@graph'][3]['@id']}`,
+        "itemListElement": post.yoast_head_json.schema['@graph'][3].itemListElement.map(item => ({
+          "@type": item['@type'],
+          "position": item.position,
+          "name": item.name,
+          "item": item.item
+        }))
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${post.yoast_head_json.schema['@graph'][4]['@id']}`,
+        "url": `${post.yoast_head_json.schema['@graph'][4].url}`,
+        "name": `${post.yoast_head_json.schema['@graph'][4].name}`,
+        "description": `${post.yoast_head_json.schema['@graph'][4].description}`,
+        "publisher": {
+          "@id": `${post.yoast_head_json.schema['@graph'][4].publisher['@id']}`
+        },
+        "potentialAction": post.yoast_head_json.schema['@graph'][4].potentialAction.map(action => ({
+          "@type": action['@type'],
+          "target": {
+            "@type": action.target['@type'],
+            "urlTemplate": action.target.urlTemplate
+          },
+          "query-input": action['query-input']
+        })),
+        "inLanguage": `${post.yoast_head_json.schema['@graph'][4].inLanguage}`
+      },
+      {
+        "@type": "Organization",
+        "@id": `${post.yoast_head_json.schema['@graph'][5]['@id']}`,
+        "name": `${post.yoast_head_json.schema['@graph'][5].name}`,
+        "url": `${post.yoast_head_json.schema['@graph'][5].url}`,
+        "logo": {
+          "@type": `${post.yoast_head_json.schema['@graph'][5].logo['@type']}`,
+          "inLanguage": `${post.yoast_head_json.schema['@graph'][5].logo.inLanguage}`,
+          "@id": `${post.yoast_head_json.schema['@graph'][5].logo['@id']}`,
+          "url": `${post.yoast_head_json.schema['@graph'][5].logo.url}`,
+          "contentUrl": `${post.yoast_head_json.schema['@graph'][5].logo.contentUrl}`,
+          "width": `${post.yoast_head_json.schema['@graph'][5].logo.width}`,
+          "height": `${post.yoast_head_json.schema['@graph'][5].logo.height}`,
+          "caption": `${post.yoast_head_json.schema['@graph'][5].logo.caption}`
+        },
+        "image": {
+          "@id": `${post.yoast_head_json.schema['@graph'][5].image['@id']}`
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": `${post.yoast_head_json.schema['@graph'][6]['@id']}`,
+        "name": `${post.yoast_head_json.schema['@graph'][6].name}`,
+        "image": {
+          "@type": `${post.yoast_head_json.schema['@graph'][6].image['@type']}`,
+          "inLanguage": `${post.yoast_head_json.schema['@graph'][6].image.inLanguage}`,
+          "@id": `${post.yoast_head_json.schema['@graph'][6].image['@id']}`,
+          "url": `${post.yoast_head_json.schema['@graph'][6].image.url}`,
+          "contentUrl": `${post.yoast_head_json.schema['@graph'][6].image.contentUrl}`,
+          "caption": `${post.yoast_head_json.schema['@graph'][6].image.caption}`
+        },
+        "sameAs": post.yoast_head_json.schema['@graph'][6].sameAs.map(same => same),
+        "url": `${post.yoast_head_json.schema['@graph'][6].url}`
+      }
+    ]
+  });
+  
 
   useEffect(() => {
     const toc = contentRef.current?.querySelector('.blog_post__toc');
