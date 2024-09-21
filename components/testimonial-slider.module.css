@@ -4,7 +4,7 @@
     height: auto;
     margin-top: 125px;
     object-fit: cover;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     padding-left: 15px;
 }
 

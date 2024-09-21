@@ -254,6 +254,7 @@ button:hover {
 
 .page_header {
   width: 100%;
+  padding-bottom: 75px;
 }
 
 .page_header__image {  

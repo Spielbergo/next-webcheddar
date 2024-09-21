@@ -58,8 +58,8 @@ const Footer = () => {
                     <h2>Policies</h2>
                     <ul className="list-none">
                         <li><Link href='/privacy-policy'>Privacy Policy</Link></li>
-                        <li><Link href='/gdpr-policy'>GDPR</Link></li>
-                        <li><Link href=''>Terms and Conditions</Link></li>
+                        {/* <li><Link href='/gdpr-policy'>GDPR</Link></li>
+                        <li><Link href=''>Terms and Conditions</Link></li> */}
                     </ul>
                 </div>   
 

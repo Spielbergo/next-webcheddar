@@ -21,7 +21,7 @@ const PrivacyPolicy = () => {
         <Layout featuredImage={featuredImage}> 
             <section className={styles.privacy_policy__section}>
                 <div className={styles.privacy_policy__container}>                    
-                    <div>
+                    <div className={styles.privacy_policy__title_container}>
                         <div>
                             <h2>Website Privacy Policy</h2>                            
                         </div>
@@ -346,20 +346,17 @@ const PrivacyPolicy = () => {
 
                             
                 </div>
-                <div>
-                            <h3>Contact Information</h3>
-                            <p>If you have any questions, concerns or complaints, you can contact our
-                            privacy officer, Web Chadder, at:
-                            <br />
-                       
-                            <Link href="mailto:info@webcheddar.ca">info@webcheddar.ca</Link>
-                            <br />
-                            Toronto, Ontario
+                    <div className={styles.privacy_policy__contact_container}>
+                        <h3>Contact Information</h3>
+                        <p>If you have any questions, concerns or complaints, you can contact our
+                                privacy officer, Web Chadder, at:
+                                <br />
+                                <Link href="mailto:info@webcheddar.ca">info@webcheddar.ca</Link>
+                                <br />
+                                Toronto, Ontario
                         </p>
-
-                            </div>
+                    </div>
                 </div>                    
-                
             </section>
         </Layout>
         

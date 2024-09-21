@@ -16,7 +16,7 @@ export default function MetaHead ({
 
 	const structuredLd = JSON.stringify({
 		"@context": "https://schema.org",
-		"@type": "Organization",
+		"@type": "WebPage",
 		"name": `${globalMeta.siteName}`,
 		"legalName" : `${globalMeta.siteLegalName}`,
 		"url": `${globalMeta.siteUrl}${router.asPath}`,
