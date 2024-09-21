@@ -19,73 +19,142 @@ export default function Post({ post, hasTOC, error }) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebPage",
+        "@type": "Article",
         "@id": post.yoast_head_json.schema['@graph']?.[0]?.['@id'] || "",
-        "url": post.yoast_head_json.schema['@graph']?.[0]?.url || "",
-        "name": post.title || "Default Title",
         "isPartOf": {
           "@id": post.yoast_head_json.schema['@graph']?.[0]?.isPartOf?.["@id"] || ""
         },
-        "primaryImageOfPage": {
-          "@id": post.yoast_head_json.schema['@graph']?.[0]?.primaryImageOfPage?.["@id"] || ""
+        "author": {
+          "name": post.yoast_head_json.schema['@graph']?.[0]?.author?.name || "Default Author",
+          "@id": post.yoast_head_json.schema['@graph']?.[0]?.author?.["@id"] || ""
         },
+        "headline": post.title || "Default Title",
         "datePublished": post.yoast_head_json.schema['@graph']?.[0]?.datePublished || "",
         "dateModified": post.yoast_head_json.schema['@graph']?.[0]?.dateModified || "",
-        "breadcrumb": {
-          "@id": post.yoast_head_json.schema['@graph']?.[0]?.breadcrumb?.["@id"] || ""
+        "mainEntityOfPage": {
+          "@id": post.yoast_head_json.schema['@graph']?.[0]?.mainEntityOfPage?.["@id"] || ""
         },
+        "wordCount": post.yoast_head_json.schema['@graph']?.[0]?.wordCount || 0,
+        "commentCount": post.yoast_head_json.schema['@graph']?.[0]?.commentCount || 0,
+        "publisher": {
+          "@id": post.yoast_head_json.schema['@graph']?.[0]?.publisher?.["@id"] || ""
+        },
+        "image": {
+          "@id": post.yoast_head_json.schema['@graph']?.[0]?.image?.["@id"] || ""
+        },
+        "thumbnailUrl": post.yoast_head_json.schema['@graph']?.[0]?.thumbnailUrl || "",
+        "articleSection": post.yoast_head_json.schema['@graph']?.[0]?.articleSection?.join(", ") || "",
         "inLanguage": post.yoast_head_json.schema['@graph']?.[0]?.inLanguage || "en-US",
         "potentialAction": [
           {
-            "@type": "ReadAction",
-            "target": {
-              "@type": "EntryPoint",
-              "urlTemplate": post.yoast_head_json.schema['@graph']?.[0]?.potentialAction?.[0]?.target?.urlTemplate || ""
-            }
+            "@type": "CommentAction",
+            "name": "Comment",
+            "target": post.yoast_head_json.schema['@graph']?.[0]?.potentialAction?.[0]?.target || []
           }
         ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": post.yoast_head_json.schema['@graph']?.[1]?.['@id'] || "",
+        "url": post.yoast_head_json.schema['@graph']?.[1]?.url || "",
+        "name": post.yoast_head_json.schema['@graph']?.[1]?.name || "Default WebPage Title",
+        "isPartOf": {
+          "@id": post.yoast_head_json.schema['@graph']?.[1]?.isPartOf?.["@id"] || ""
+        },
+        "primaryImageOfPage": {
+          "@id": post.yoast_head_json.schema['@graph']?.[1]?.primaryImageOfPage?.["@id"] || ""
+        },
+        "image": {
+          "@id": post.yoast_head_json.schema['@graph']?.[1]?.image?.["@id"] || ""
+        },
+        "thumbnailUrl": post.yoast_head_json.schema['@graph']?.[1]?.thumbnailUrl || "",
+        "datePublished": post.yoast_head_json.schema['@graph']?.[1]?.datePublished || "",
+        "dateModified": post.yoast_head_json.schema['@graph']?.[1]?.dateModified || "",
+        "description": post.yoast_head_json.schema['@graph']?.[1]?.description || "",
+        "breadcrumb": {
+          "@id": post.yoast_head_json.schema['@graph']?.[1]?.breadcrumb?.["@id"] || ""
+        },
+        "inLanguage": post.yoast_head_json.schema['@graph']?.[1]?.inLanguage || "en-US",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": post.yoast_head_json.schema['@graph']?.[1]?.potentialAction?.[0]?.target || []
+          }
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "@id": post.yoast_head_json.schema['@graph']?.[2]?.['@id'] || "",
+        "url": post.yoast_head_json.schema['@graph']?.[2]?.url || "",
+        "contentUrl": post.yoast_head_json.schema['@graph']?.[2]?.contentUrl || "",
+        "width": post.yoast_head_json.schema['@graph']?.[2]?.width || 0,
+        "height": post.yoast_head_json.schema['@graph']?.[2]?.height || 0,
+        "caption": post.yoast_head_json.schema['@graph']?.[2]?.caption || ""
       },
       {
         "@type": "BreadcrumbList",
-        "@id": post.yoast_head_json.schema['@graph']?.[1]?.['@id'] || "",
-        "itemListElement": post.yoast_head_json.schema['@graph']?.[1]?.itemListElement?.map((item, index) => ({
+        "@id": post.yoast_head_json.schema['@graph']?.[3]?.['@id'] || "",
+        "itemListElement": (post.yoast_head_json.schema['@graph']?.[3]?.itemListElement || []).map((item, index) => ({
           "@type": "ListItem",
-          "position": index + 1,
-          "item": {
-            "@id": item.item?.["@id"] || "",
-            "name": item.item?.name || `Breadcrumb ${index + 1}`
-          }
-        })) || []
+          "position": item.position || index + 1,
+          "name": item.name || `Breadcrumb ${index + 1}`,
+          "item": item.item || ""
+        }))
       },
       {
-        "@type": "Article",
-        "@id": post.yoast_head_json.schema['@graph']?.[2]?.['@id'] || "",
-        "isPartOf": {
-          "@id": post.yoast_head_json.schema['@graph']?.[2]?.isPartOf?.["@id"] || ""
+        "@type": "WebSite",
+        "@id": post.yoast_head_json.schema['@graph']?.[4]?.['@id'] || "",
+        "url": post.yoast_head_json.schema['@graph']?.[4]?.url || "",
+        "name": post.yoast_head_json.schema['@graph']?.[4]?.name || "Default Website Name",
+        "description": post.yoast_head_json.schema['@graph']?.[4]?.description || "",
+        "publisher": {
+          "@id": post.yoast_head_json.schema['@graph']?.[4]?.publisher?.["@id"] || ""
         },
-        "author": {
-          "@id": post.yoast_head_json.schema['@graph']?.[2]?.author?.["@id"] || ""
-        },
-        "headline": post.title || "Default Article Title",
-        "datePublished": post.yoast_head_json.schema['@graph']?.[2]?.datePublished || "",
-        "dateModified": post.yoast_head_json.schema['@graph']?.[2]?.dateModified || "",
-        "mainEntityOfPage": {
-          "@id": post.yoast_head_json.schema['@graph']?.[2]?.mainEntityOfPage?.["@id"] || ""
-        },
-        "image": {
-          "@id": post.yoast_head_json.schema['@graph']?.[2]?.image?.["@id"] || ""
-        },
-        "articleSection": post.yoast_head_json.schema['@graph']?.[2]?.articleSection?.join(", ") || "",
-        "inLanguage": post.yoast_head_json.schema['@graph']?.[2]?.inLanguage || "en-US",
         "potentialAction": [
           {
-            "@type": "CommentAction",
+            "@type": "SearchAction",
             "target": {
               "@type": "EntryPoint",
-              "urlTemplate": post.yoast_head_json.schema['@graph']?.[2]?.potentialAction?.[0]?.target?.urlTemplate || ""
-            }
+              "urlTemplate": post.yoast_head_json.schema['@graph']?.[4]?.potentialAction?.[0]?.target?.urlTemplate || ""
+            },
+            "query-input": post.yoast_head_json.schema['@graph']?.[4]?.potentialAction?.[0]?.["query-input"] || {}
           }
-        ]
+        ],
+        "inLanguage": post.yoast_head_json.schema['@graph']?.[4]?.inLanguage || "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": post.yoast_head_json.schema['@graph']?.[5]?.['@id'] || "",
+        "name": post.yoast_head_json.schema['@graph']?.[5]?.name || "Default Organization Name",
+        "url": post.yoast_head_json.schema['@graph']?.[5]?.url || "",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": post.yoast_head_json.schema['@graph']?.[5]?.logo?.["@id"] || "",
+          "url": post.yoast_head_json.schema['@graph']?.[5]?.logo?.url || "",
+          "contentUrl": post.yoast_head_json.schema['@graph']?.[5]?.logo?.contentUrl || "",
+          "width": post.yoast_head_json.schema['@graph']?.[5]?.logo?.width || 0,
+          "height": post.yoast_head_json.schema['@graph']?.[5]?.logo?.height || 0,
+          "caption": post.yoast_head_json.schema['@graph']?.[5]?.logo?.caption || ""
+        },
+        "image": {
+          "@id": post.yoast_head_json.schema['@graph']?.[5]?.image?.["@id"] || ""
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": post.yoast_head_json.schema['@graph']?.[6]?.['@id'] || "",
+        "name": post.yoast_head_json.schema['@graph']?.[6]?.name || "Default Person Name",
+        "image": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": post.yoast_head_json.schema['@graph']?.[6]?.image?.["@id"] || "",
+          "url": post.yoast_head_json.schema['@graph']?.[6]?.image?.url || "",
+          "contentUrl": post.yoast_head_json.schema['@graph']?.[6]?.image?.contentUrl || "",
+          "caption": post.yoast_head_json.schema['@graph']?.[6]?.image?.caption || ""
+        },
+        "sameAs": post.yoast_head_json.schema['@graph']?.[6]?.sameAs || [],
+        "url": post.yoast_head_json.schema['@graph']?.[6]?.url || ""
       }
     ]
   } : null;
