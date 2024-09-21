@@ -21,7 +21,7 @@ export default function Post({ post, hasTOC, error }) {
 
   const structuredLd = JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": "Organization",
     "name": `${globalMeta.siteName}`,
     "legalName" : `${globalMeta.siteLegalName}`,
     "url": `${globalMeta.siteUrl}${router.asPath}`,

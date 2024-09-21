@@ -16,7 +16,23 @@ export default function MetaHead ({
 
 	const structuredLd = JSON.stringify({
 		"@context": "https://schema.org",
-		"@type": "WebPage",
+		"@graph":[{"@type":"WebPage",
+        "@id":`${globalMeta.siteUrl}${router.asPath}`,
+        "url":`${globalMeta.siteUrl}${router.asPath}`,
+        "name":`${globalMeta.siteName}`,
+        "isPartOf":{"@id":"https://webcheddar.ca/#website"},
+        "about":{"@id":"https://webcheddar.ca/#organization"},
+        "primaryImageOfPage":{"@id":"https://webcheddar.ca/#primaryimage"},
+        "image":{"@id":"https://webcheddar.ca/#primaryimage"},
+        "thumbnailUrl":"https://webcheddar.ca/wp-content/uploads/2024/08/the-5-best-mascara-for-2024.jpg",
+        "datePublished":"2020-12-12T00:09:05+00:00","dateModified":"2024-09-18T10:35:41+00:00",
+        "description":`${globalMeta.description}`,
+        "breadcrumb":{"@id":"https://webcheddar.ca/#breadcrumb"},
+        "inLanguage":"en-CA",
+        "potentialAction":[{"@type":"ReadAction",
+        "target":[`${globalMeta.siteUrl}${router.asPath}`]}]}],
+		
+		"@type": "Organization",
 		"name": `${globalMeta.siteName}`,
 		"legalName" : `${globalMeta.siteLegalName}`,
 		"url": `${globalMeta.siteUrl}${router.asPath}`,
@@ -36,7 +52,7 @@ export default function MetaHead ({
 		"contactPoint": {
 		  "@type": "ContactPoint",
 		  "contactType": `${globalMeta.contactType}`,
-		  "email": `${globalMeta.supportEmail}`
+		  "email": `${globalMeta.supportEmail}-TEST`
 		},
 		"sameAs": [ 
 		  "http://www.facebook.com/webcheddar",

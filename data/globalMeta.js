@@ -3,7 +3,7 @@ const globalMeta = {
 	siteLegalName: 'Web Cheddar - Websites - Social Media', // Legal company name - should match GMB
 	siteUrl: 'https://webcheddar.ca',
 	siteLogo: '/logos/logo-light.webp',
-	siteFoundingDate: '2019',
+	siteFoundingDate: '2019-02-17',
 	siteOwner: 'Scott Sutherland',
 	contactType: 'Information and Support',
 	email: 'info@webcheddar.ca', // Main Email Address
