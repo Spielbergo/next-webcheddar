@@ -165,7 +165,7 @@ export default function Post({ post, hasTOC, error }) {
 
 export async function getStaticPaths() {
   try {
-    const response = await fetch('https://blog.webcheddar.ca/blog/wp-json/wp/v2/posts?_embed');
+    const response = await fetch('https://blog.webcheddar.ca/wp-json/wp/v2/posts?_embed');
     const posts = await response.json();
 
     const paths = posts.map((post) => ({
@@ -181,7 +181,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   try {
-    const response = await fetch(`https://blog.webcheddar.ca/blog/wp-json/wp/v2/posts?_embed&slug=${params.slug}`);
+    const response = await fetch(`https://blog.webcheddar.ca/wp-json/wp/v2/posts?_embed&slug=${params.slug}`);
     const posts = await response.json();
     const post = posts[0] || null;
 
