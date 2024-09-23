@@ -30,6 +30,11 @@
     }    
 } */
 
+.contact_section__section button {
+    font-size: 1.3em;
+    background-color: #fd7304d9;
+}
+
 @media screen and (min-width: 1025px) {
     .contact_section__container {
         flex-wrap: nowrap;

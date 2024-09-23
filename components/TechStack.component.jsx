@@ -30,8 +30,8 @@ import { techStack } from '../data';
                         className={`${styles.tech_stack__image} shadow fade-in`}
                         width={540}
                         height={427}
-                        alt="Close up of people working in an office."
-                        aria-label="Close up of people working in an office."
+                        alt="Computer user facing the camera with glowing text overlayed saying Web Development."
+                        aria-label="Computer user facing the camera with glowing text overlayed saying Web Development."
                     />
                 </div>
             </div>
