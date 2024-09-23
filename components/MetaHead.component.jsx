@@ -1,14 +1,14 @@
 import Head from 'next/head';
+import Script from 'next/script';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 import globalMeta from '../data/globalMeta';
 
 export default function MetaHead ({
 	title = globalMeta.siteName,
-	// description = globalMeta.description,
 	ogType = 'website',
 	ogImgUrl = `${globalMeta.siteUrl}${globalMeta.siteLogo}`,
-	// structuredData,
 	children
 }) {
 	const router = useRouter();
@@ -37,44 +37,57 @@ export default function MetaHead ({
 		"contactPoint": {
 		  "@type": "ContactPoint",
 		  "contactType": `${globalMeta.contactType}`,
-		  "email": `${globalMeta.supportEmail}-TEST`
+		  "email": `${globalMeta.supportEmail}`
 		},
 		"sameAs": [ 
 		  "http://www.facebook.com/webcheddar",
-		  "https://www.linkedin.com/company/web-cheddar/",
+		  "https://www.linkedin.com/company/web-cheddar/"
 	  ]}
+	);
+
+	const GA_TRACKING_ID = 'G-3YRS631DZE';
 	
-	  );
-	
+	useEffect(() => {
+		const handleRouteChange = (url) => {
+			window.gtag('config', GA_TRACKING_ID, {
+				page_path: url,
+			});
+		};
+		router.events.on('routeChangeComplete', handleRouteChange);
+		return () => {
+			router.events.off('routeChangeComplete', handleRouteChange);
+		};
+	}, [router.events]);
+
   return (
 	<Head>
-    	{/* Fundamental head elements. */}
-    	<title>{ typeof title === 'string' ? title : globalMeta.siteName }</title>
-    	{/* <meta name="description" content={description} /> */}
+		{/* Google Analytics Script */}
+		<Script
+			strategy="afterInteractive"
+			src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+			onLoad={() => {
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', GA_TRACKING_ID, {
+					page_path: window.location.pathname,
+				});
+			}}
+		/>
+    	<title>{ title }</title>
     	<link rel="canonical" href={canonicalUrl} />
     	<meta name="viewport" content="width=device-width, initial-scale=1" />
-    	<link rel="icon" href="/favicon.ico" /> 
-    	
-		{/*	Open graph meta tags. */}
+    	<link rel="icon" href="/favicon.ico" />
     	<meta property="og:locale" content="en_CA" />
     	<meta property="og:site_name" content={globalMeta.siteName} />
-    	<meta property="og:type" content={ogType} />    	
-		{/* <meta property="og:description" content={description} /> */}
+    	<meta property="og:type" content={ogType} />
     	<meta property="og:image" content={ogImgUrl} />
     	<meta property="og:url" content={canonicalUrl} />
- 
-    	{/* Structured data. */}
     	<script
             type="application/ld+json"
-        	dangerouslySetInnerHTML={{__html: structuredLd}}
-        	key="item-jsonld"
+        	dangerouslySetInnerHTML={{ __html: structuredLd }}
     	/>
-		{/* <script
-            type="application/ld+json"
-        	content={structuredLd}
-        	key="item-jsonld"
-    	/> */}
     	{ children }
 	</Head>
-  )
+  );
 }

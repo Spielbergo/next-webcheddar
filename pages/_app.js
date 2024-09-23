@@ -4,7 +4,7 @@ import Router from 'next/router';
 
 import { ModalProvider } from '../contexts/ModalContext';
 
-import Head from '../components/Meta.component';
+import MetaHead from '../components/MetaHead.component';
 import Layout from '../components/Layout';
 import Navigation from '../components/Navigation.component';
 import NavigationMobile from '../components/NavigationMobile.component';
@@ -85,7 +85,7 @@ export default function App({ Component, pageProps }) {
 
     return (
         <>
-            <Head />
+            <MetaHead />
             <ModalProvider>
                 {isMobile ? <NavigationMobile /> : <Navigation />}
                 <div className={`page-transition ${transitionStage}`}>

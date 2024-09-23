@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google'
 import { useRouter } from "next/router";
 import FeaturedImage from "./FeaturedImage.component";
-import Head from '../components/Meta.component';
+import Head from './MetaHead.component';
 import Footer from "./Footer.component";
 import Navigation from "./NavigationMobile.component";
 import globalMeta from '../data/globalMeta';
