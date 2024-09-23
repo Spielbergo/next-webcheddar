@@ -5,29 +5,26 @@ export default async function handler(req, res) {
     return res.status(405).end();
   }
 
-  // Destructure the form data
   const { firstName, lastName, email, message } = req.body;
 
-  // Create a transporter object using the default SMTP transport
+  // Create a transporter object using environment variables
   const transporter = nodemailer.createTransport({
-    host: 'your-smtp-server.com', // Replace with your SMTP server
-    port: 587,
-    secure: false, // true for 465, false for other ports
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    secure: true,
     auth: {
-      user: 'your-username', // Replace with your email username
-      pass: 'your-password', // Replace with your email password
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
     },
   });
 
-  // Define the email data
   const mailData = {
-    from: 'your-email@example.com', // Sender address
-    to: 'recipient@example.com', // List of recipients
+    from: process.env.SMTP_USER, // Ensure this matches your SMTP user
+    to: `${email}`, 
     subject: `Contact from ${firstName} ${lastName}`,
     text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nMessage: ${message}`,
   };
 
-  // Send the email
   try {
     await transporter.sendMail(mailData);
     res.status(200).json({ status: 'success' });
