@@ -44,7 +44,7 @@ export default function MetaHead ({
 		  "https://www.linkedin.com/company/web-cheddar/"
 	  ]}
 	);
-
+	
 	const GA_TRACKING_ID = 'G-3YRS631DZE';
 	
 	useEffect(() => {
