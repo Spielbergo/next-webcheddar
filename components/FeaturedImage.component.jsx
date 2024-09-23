@@ -1,10 +1,21 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
-const FeaturedImage = ({ title, imageSrc, alt }) => {
+import styles from '../components/services.module.css';
+
+
+const FeaturedImage = ({ title, imageSrc, alt, service }) => {
   return (
     <header className="page_header">
       <div className="page_header__text">
           <h1 className="page_header__h1">{title}</h1>
+          <div className={styles.service__breadcrumbs}>
+            <Link href="/">Home</Link>
+            {' > '}
+            <Link href="/services">Services</Link>
+            {' > '}
+            <span>{title}</span>
+          </div>
       </div>
       <Image 
           src={imageSrc}
