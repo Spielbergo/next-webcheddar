@@ -45,24 +45,24 @@ export default function MetaHead ({
 	  ]}
 	);
 	
-	const GA_TRACKING_ID = 'G-3YRS631DZE';
+	// const GA_TRACKING_ID = 'G-3YRS631DZE';
 	
-	useEffect(() => {
-		const handleRouteChange = (url) => {
-			window.gtag('config', GA_TRACKING_ID, {
-				page_path: url,
-			});
-		};
-		router.events.on('routeChangeComplete', handleRouteChange);
-		return () => {
-			router.events.off('routeChangeComplete', handleRouteChange);
-		};
-	}, [router.events]);
+	// useEffect(() => {
+	// 	const handleRouteChange = (url) => {
+	// 		window.gtag('config', GA_TRACKING_ID, {
+	// 			page_path: url,
+	// 		});
+	// 	};
+	// 	router.events.on('routeChangeComplete', handleRouteChange);
+	// 	return () => {
+	// 		router.events.off('routeChangeComplete', handleRouteChange);
+	// 	};
+	// }, [router.events]);
 
   return (
 	<Head>
 		{/* Google Analytics Script */}
-		<Script
+		{/* <Script
 			strategy="afterInteractive"
 			src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
 			onLoad={() => {
@@ -73,7 +73,7 @@ export default function MetaHead ({
 					page_path: window.location.pathname,
 				});
 			}}
-		/>
+		/> */}
     	<title>{ title }</title>
     	<link rel="canonical" href={canonicalUrl} />
     	<meta name="viewport" content="width=device-width, initial-scale=1" />
