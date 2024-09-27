@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Router from 'next/router';
+import Script from 'next/script'; // Import Script for Google Analytics
 
 import { ModalProvider } from '../contexts/ModalContext';
 
@@ -23,6 +24,9 @@ Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
+// Google Analytics Tracking ID
+const GA_TRACKING_ID = 'G-3YRS631DZE'; // Replace with your actual tracking ID
+
 export default function App({ Component, pageProps }) {
     const router = useRouter();
     const [transitionStage, setTransitionStage] = useState('fade-out');
@@ -32,9 +36,14 @@ export default function App({ Component, pageProps }) {
         setTransitionStage('fade-out');
     };
 
-    const handleRouteChangeComplete = () => {
+    const handleRouteChangeComplete = (url) => {
         setTransitionStage('fade-in');
         applyAnimations();
+
+        // Track pageview with Google Analytics
+        window.gtag('config', GA_TRACKING_ID, {
+            page_path: url,
+        });
     };
 
     useEffect(() => {
@@ -85,6 +94,22 @@ export default function App({ Component, pageProps }) {
 
     return (
         <>
+            {/* Google Analytics Script */}
+            <Script
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+                strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+                {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_TRACKING_ID}', {
+                    page_path: window.location.pathname,
+                  });
+                `}
+            </Script>
+
             <MetaHead />
             <ModalProvider>
                 {isMobile ? <NavigationMobile /> : <Navigation />}
