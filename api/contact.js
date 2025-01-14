@@ -16,6 +16,8 @@ export default async function handler(req, res) {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,
     },
+    debug: true, // Enable debugging
+    logger: true, // Log SMTP communication
   });
 
   const mailData = {
