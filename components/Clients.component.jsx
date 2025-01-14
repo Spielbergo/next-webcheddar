@@ -4,7 +4,6 @@ import { clientLogos } from '../data/index';
 
 const Clients = () => {
     return (
-        // Clients Section
         <section className={styles.client_section}>
             <div className={styles.client_logos__marquee}>
                 <ul className={styles.client_logos__container}>

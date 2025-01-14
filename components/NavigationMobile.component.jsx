@@ -1,19 +1,24 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaEnvelope } from 'react-icons/fa';
-import { BsXCircle } from 'react-icons/bs';
+
+import { useModal } from '../contexts/ModalContext';
+
 import { navigation, socialIcons } from '../data';
 import services from '../data/services';
-import styles from './navigation-mobile.module.css';
+
 import Socials from './SocialIcons.component';
-import NavLogoWhite from '../public/logos/logo-light.png';
-import NavLogoBlack from '../public/logos/logo-dark.png';
 import ContactForm from './ContactForm.component';
 import Button from './Button.component';
 import Modal from './Modal.component';
-import { useModal } from '../contexts/ModalContext';
+
+import { BsXCircle } from 'react-icons/bs';
+
+import styles from './navigation-mobile.module.css';
+
+import NavLogoWhite from '../public/logos/logo-light.png';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);

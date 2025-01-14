@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
-import styles from './tech-stack.module.css';
-
 import { techStack } from '../data';
 
- const TechStack = () => {
+import styles from './tech-stack.module.css';
+
+const TechStack = () => {
     return (
         <section className={styles.tech_stack__section}>
             <div className='flex flex_flip flex_nowrap fade-right'>

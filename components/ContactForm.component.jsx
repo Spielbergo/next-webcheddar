@@ -20,7 +20,6 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      // You can replace this URL with your server endpoint
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

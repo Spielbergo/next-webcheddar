@@ -3,7 +3,6 @@ import SocialIcons from './SocialIcons.component';
 
 const Address = ({ className = "" }) => {
     return (
-        // Address Component
         <address>
             <ul>
                 {contactDetails.map((contact) => 

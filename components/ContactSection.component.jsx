@@ -1,17 +1,10 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { DiAndroid } from "react-icons/di";
-
 import Address from './Address.component';
 import ContactForm from './ContactForm.component';
 
 import styles from './contact-section.module.css';
 
-import { contactSection } from '../data/index';
-
  const ContactSection = ({ style }) => {
     return (
-        // Contact Section
         <section className={styles.contact_section__section} style={style}>
             <div className={styles.contact_section__container}>
                 <div>

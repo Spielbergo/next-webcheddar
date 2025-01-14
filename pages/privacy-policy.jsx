@@ -349,11 +349,11 @@ const PrivacyPolicy = () => {
                     <div className={styles.privacy_policy__contact_container}>
                         <h3>Contact Information</h3>
                         <p>If you have any questions, concerns or complaints, you can contact our
-                                privacy officer, Web Chadder, at:
-                                <br />
-                                <Link href="mailto:info@webcheddar.ca">info@webcheddar.ca</Link>
-                                <br />
-                                Toronto, Ontario
+                            privacy officer at:
+                            <br />
+                            <Link href="mailto:info@webcheddar.ca">info@webcheddar.ca</Link>
+                            <br />
+                            Toronto, Ontario
                         </p>
                     </div>
                 </div>                    

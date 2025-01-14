@@ -1,10 +1,6 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
-import styles from '../components/services.module.css';
-
-
-const FeaturedImage = ({ title, imageSrc, alt, service }) => {
+const FeaturedImage = ({ title, imageSrc, alt }) => {
   return (
     <header className="page_header">
       <div className="page_header__text">
@@ -23,7 +19,7 @@ const FeaturedImage = ({ title, imageSrc, alt, service }) => {
           alt={alt}    
           aria-label={alt}     
           fill
-          sizes="(max-width: 1920px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 1920px) 100vw, (max-width: 1200px) 50vw, 100vw"
           priority 
       />
     </header>

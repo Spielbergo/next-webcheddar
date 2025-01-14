@@ -505,6 +505,12 @@ button:hover {
   height: 100vh;
 }
 
+@media screen and (max-width: 1025px) {
+  main {
+    overflow: hidden;
+  }
+}
+
 @media screen and (min-width: 1025px) {
   address {
     text-align: left;

@@ -4,7 +4,6 @@ import Head from "next/head";
 import { aboutPage } from '../data/index';
 
 import FeaturedImage from "../components/FeaturedImage.component";
-import globalMeta from "../data/globalMeta";
 import Layout from "../components/Layout";
 import TestimonialSlider from "../components/TestimonialSlider.component";
 

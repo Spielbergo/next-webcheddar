@@ -1,5 +1,5 @@
 .client_section {
-    overflow: hidden; /* Hide the overflow to make the animation seamless */
+    overflow: hidden;
     background-color: #222;
     padding: 25px 0;
 }

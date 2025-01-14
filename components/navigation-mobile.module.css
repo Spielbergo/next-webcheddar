@@ -142,7 +142,7 @@
 }
 
 .main_nav__sublinks_visible {
-  max-height: 500px; /* Adjust this value based on the maximum height of your submenu */
+  max-height: 500px;
   overflow: scroll;
 }
 
@@ -166,14 +166,14 @@
 .main_nav__subLinks__parent span,
 .main_nav__subLinks a {
   position: relative;
-  color: #fff; /* Default color */
+  color: #fff;
   text-decoration: none;
-  overflow: hidden; /* Ensure the sliding effect stays within bounds */
+  overflow: hidden;
 }
 
 .main_nav__subLinks__parent span::before,
 .main_nav__subLinks a::before {
-  content: attr(data-hover); /* Uses the same text as the link */
+  content: attr(data-hover);
   position: absolute;
   top: 0;
   left: 0;
@@ -247,59 +247,3 @@
 .bar3_open {
   transform: rotate(45deg) translate(-8px, -7px);
 }
-
-/* @media screen and (min-width: 767px) {
-  .main_nav__container {
-      max-width: 95%;
-      padding: 1px 0 10px;
-      margin: auto;
-  }
-
-  .main_nav__subLinks {
-      position: absolute;
-      top: 50px;
-      text-align: left;
-  }
-
-  .main_nav__navLinks {
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-      position: relative;
-      top: -1px;
-      padding-right: 10px;
-      visibility: visible;
-  }
-
-  .main_nav__navLinks li {
-      font-size: 1rem;
-      background-color: transparent;
-  }
-
-  .main_nav__back_button span {
-    display: none;
-  }
-
-  .main_nav__subLinks__parent a,
-  .main_nav__subLinks__parent span {
-      padding: 0;
-  }
-
-  .main_nav__mobile_links,
-  .main_nav__toggle {
-      display: none;
-  }
-
-  .main_nav__social_icons_false {
-      display: block;
-      color: #fff;
-  }
-
-  .main_nav__social_icons button {
-      display: block;
-  }
-
-  .main_nav__mobile_links .shadow {
-      box-shadow: 0;
-  }
-} */

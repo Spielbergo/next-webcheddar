@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 import Layout from '../components/Layout';
-import Header from '../components/FeaturedImage.component';
+import FeaturedImage from '../components/FeaturedImage.component';
 
 import styles from '../styles/sitemap-page.module.css'
 
@@ -27,8 +27,8 @@ const Sitemap = () => {
     fetchBlogs();
   }, []);
 
-  const header = (
-    <Header 
+  const featuredImage = (
+    <FeaturedImage 
       title="Sitemap" 
       imageSrc="/header.webp" 
       alt="Sitemap Header Image" 
@@ -36,7 +36,7 @@ const Sitemap = () => {
   );
 
   return (
-    <Layout header={header}> 
+    <Layout featuredImage={featuredImage}> 
         <section>
             <div className={styles.sitemap__container}>
                 <h2>Pages</h2>
@@ -51,8 +51,8 @@ const Sitemap = () => {
                 </ul> */}
                 <ul>
                     <li><Link href="/">Homepage</Link></li>
-                    <li><Link href="/About">About</Link></li>
-                    <li><Link href="/Services">Services</Link></li>
+                    <li><Link href="/about">About</Link></li>
+                    <li><Link href="/services">Services</Link></li>
                     <ul className={styles.sitemap__sub_list}>
                       <li><Link href="/services/web-design-development/">Web Design & Development</Link></li>
                       <li><Link href="/services/search-engine-optimization/">Search Engine Optimization</Link></li>
@@ -61,8 +61,8 @@ const Sitemap = () => {
                       <li><Link href="/services/e-commerce-solutions/">E-commerce Solutions</Link></li>
                       <li><Link href="/services/special-event-websites/">Special Event Websites</Link></li>
                     </ul>
-                    <li><Link href="/Blogs">Blogs</Link></li>
-                    <li><Link href="/Contact">Contact</Link></li>
+                    <li><Link href="/blog">Blogs</Link></li>
+                    <li><Link href="/Ccntact">Contact</Link></li>
                 </ul>
                 <h2>Blog Posts</h2>
                 <ul>

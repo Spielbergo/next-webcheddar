@@ -306,7 +306,7 @@ export const aboutPage = [
         subtitle: 'Our Specialties',
         text: 'Web Cheddar Web Solutions excels in transforming digital concepts into functional realities. We specialize in revitalizing existing websites to reflect the latest technological advancements and in converting client-specific designs from formats like PSD or Figma into responsive, dynamic websites. Our portfolio is a testament to our adaptability and expertise in handling a wide array of projects.',
         image: '/about/about-us-page-02.webp',
-        alt: 'Computer screen and latop screen side by side with keyboard in front. Users hands are visible and code is on both screens',
+        alt: 'Computer screen and latop screen side by side with keyboard in front. Users hands are visible.',
         class: 'shadow'
     },
     {
@@ -324,7 +324,7 @@ export const aboutPage = [
         subtitle: 'Competitive Pricing and Timely Completion',
         text: 'Recognizing the importance of budgetary efficiency and prompt delivery, Web Cheddar Web Solutions is committed to providing high-quality solutions at competitive prices. Our project management strategies are designed to ensure the timely completion of projects, respecting both budgetary needs and deadlines.',
         image: '/about/about-us-page-04.webp',
-        alt: 'A smaller Mac laptop with neon purple and blue lights',
+        alt: 'A glowing Mac laptop that is half closed',
         class: 'shadow'
     },    
 ]
@@ -336,7 +336,7 @@ export const servicePageOne = [
         subtitle: 'Figma/Photoshop to Web',
         text: 'Have a site designed already? We excel in transforming your Figma or Photoshop designs into fully functional, responsive websites. Our team ensures every detail of your original design is meticulously brought to life, preserving the integrity and intent of your creative vision. Whether it is a pixel-perfect replication or a flexible adaptation, we bridge the gap between design and development seamlessly.',
         image: '/services/design-and-development.webp',
-        alt: 'Design to web services - Photoshop Figma to Web',
+        alt: 'Design to web services - Photoshop Figma to Web - Web Design & Development',
         class: 'flex flex_nowrap',
     },
     {
@@ -345,7 +345,7 @@ export const servicePageOne = [
         subtitle: 'Search Engine Optimization',
         text: 'Elevate your online visibility with Web Cheddar Web Solutio\' expert Search Engine Optimization (SEO) services. Our proactive approach ensures that your website ranks higher in search engine results, driving increased traffic and engagement. Through comprehensive keyword research, strategic content optimization, and continuous monitoring, we optimize your digital presence to attract your target audience effectively. Work with us to advance your business to the forefront of search engine rankings, securing sustainable growth and continual success.',
         image: '/services/search-engine-optimization.webp',
-        alt: 'Search Engine Optimization',
+        alt: 'Search Engine Optimization - Coloured circles each with an SEO discipline in them',
         class: 'flex flex_nowrap flex_flip_row',
     },
     {
@@ -354,7 +354,7 @@ export const servicePageOne = [
         subtitle: 'E-Commerce Solutions',
         text: 'Unlock the full potential of your online store with Web Cheddar Web Solutions\' robust e-commerce solutions. Our approach ensures seamless integration, intuitive user experience, and secure payment processing, empowering you to maximize sales and streamline operations. From customizing your storefront to implementing advanced inventory management systems, we tailor our solutions to meet your unique business needs. Trust us to elevate your e-commerce platform, drive revenue growth, and deliver unparalleled customer satisfaction for lasting success in the digital marketplace.',
         image: '/services/ecommerce.webp',
-        alt: 'E-commerce Solutions',
+        alt: 'E-commerce Solutions - Keyboard with the enter button coloured blue and says Add to Cart',
         class: 'flex flex_nowrap',
     },
 ]
@@ -366,7 +366,7 @@ export const servicePageTwo = [
         subtitle: 'Special Events Websites',
         text: 'Celebrate life\'s special moments with our bespoke Special Events website services. Whether it\'s a wedding, anniversary, birthday, reunion, or any other memorable occasion, we specialize in crafting customized template sites to perfectly complement your event. Our intuitive designs and user-friendly interfaces ensure that your guests can easily access event details, RSVP, and share memories. From elegant themes for weddings to vibrant designs for birthdays, we create tailored solutions that capture the essence of your special event and leave a lasting impression on your guests. Let us help you make every moment unforgettable with our Special Events website services.',
         image: '/services/special-events.webp',
-        alt: 'Lorem Ipsum',
+        alt: 'Special events - Woman raising a glass of champagne at a wedding',
         class: 'flex flex_nowrap',
     },
     {
@@ -375,7 +375,7 @@ export const servicePageTwo = [
         subtitle: 'Website Maintenance',
         text: 'Keep your website running smoothly with Web Cheddar Web Solutions\' website maintenance services. Our dedicated team ensures that your site stays secure, up-to-date, and optimized for peak performance. From regular backups and security patches to content updates and software upgrades, we handle all aspects of website maintenance so you can focus on growing your business. With our active approach, we identify and resolve issues before they impact your site\'s functionality, providing peace of mind and uninterrupted online presence for your visitors. Trust us to safeguard your website and keep it operating at its best.',
         image: '/services/website-maintenance.webp',
-        alt: 'Lorem Ipsum',
+        alt: 'Website Maintenance - Clipboard with a list of maintence duties written on it',
         class: 'flex flex_nowrap flex_flip_row',
     },    
     {
@@ -384,7 +384,7 @@ export const servicePageTwo = [
         subtitle: 'Social Media Management',
         text: 'Maximize your brand\'s online presence with our social media management services. Our dedicated team crafts engaging content, schedules posts, and interacts with your audience across various social media platforms to boost engagement and drive traffic to your website. From strategic planning and content creation to performance tracking and optimization, we handle all aspects of social media management to elevate your brand\'s visibility and foster meaningful connections with your audience. Let us take your social media presence to the next level and amplify your brand\'s impact in the digital landscape.',
         image: '/services/social-media-management.webp',
-        alt: 'Lorem Ipsum',
+        alt: 'Social Media Management - iPhone with the main social media icons shown ',
         class: 'flex flex_nowrap',
     },
 ]

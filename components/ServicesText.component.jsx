@@ -14,8 +14,8 @@ const ServicesText = ({ service }) => {
                 <Image 
                     src={service.image}
                     className="shadow"
-                    alt="Header image - code on a screen with an orange overlay" 
-                    aria-label="Header image - code on a screen with an orange overlay" 
+                    alt={service.alt} 
+                    aria-label={service.alt} 
                     width="600" 
                     height="400"
                 />

@@ -1,4 +1,3 @@
-/* styles/DynamicButton.module.css */
 .button {
     padding: 15px 20px;
     border: none;
@@ -56,7 +55,7 @@
 }
 
 .get_a_quote {
-    background-image: linear-gradient(135deg, #e56100, #ffa366, #fd7304); /* Starting darker, brightening, and then not darkening again */
+    background-image: linear-gradient(135deg, #e56100, #ffa366, #fd7304);
     color: white;
     width: 130px;
     margin: 10px 0;
@@ -67,17 +66,17 @@
 
 .outline:hover,
 .primary {
-    background-image: linear-gradient(135deg, #e56100, #ffa366, #fd7304); /* Consistent with the default button */
+    background-image: linear-gradient(135deg, #e56100, #ffa366, #fd7304);
     color: white;
 }
 
 .secondary {
-    background-image: linear-gradient(135deg, #c7c7c7, #ffffff, #eaeaea); /* Adjusted to match the pattern with other buttons */
+    background-image: linear-gradient(135deg, #c7c7c7, #ffffff, #eaeaea);
     color: black;
 }
 
 .danger {
-    background-image: linear-gradient(135deg, #c93232, #ff8080, #e53e3e); /* Similarly adjusted */
+    background-image: linear-gradient(135deg, #c93232, #ff8080, #e53e3e);
     color: white;
 }
   

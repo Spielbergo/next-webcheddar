@@ -1,6 +1,5 @@
-// ColorToggleButton.js
 import { useState } from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa'; // Import icons from react-icons
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 import styles from './color-toggle-button.module.css';
 

@@ -68,13 +68,13 @@ export default function Blog({ initialPosts, totalPages, allCategories, error })
   );
 
   if (error) {
-    return <div className='error_messge__loading'>Error loading blogs: {error.message}</div>;
+    return <div className='error_message__loading'>Error loading blogs: {error.message}</div>;
   }
 
   return (
     <>
     <Head>
-        <title>Web CHeddar Blog - Web Cheddar - Websites - Social Media</title>
+        <title>Web Cheddar Blog - Web Cheddar - Websites - Social Media</title>
         <meta name="description" content='Web Cheddar Blog - Web Cheddar Websites - Social Media 🧀 Read the latest articles on web design trends, tips, and industry news.'></meta>
         <meta property="og:description" content='Web Cheddar Blog - Web Cheddar Websites - Social Media 🧀 Read the latest articles on web design trends, tips, and industry news.'></meta>
     </Head>

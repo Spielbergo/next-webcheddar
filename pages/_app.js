@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Router from 'next/router';
-import Script from 'next/script'; // Import Script for Google Analytics
+import Script from 'next/script';
 
 import { ModalProvider } from '../contexts/ModalContext';
 
@@ -25,7 +25,7 @@ Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
 // Google Analytics Tracking ID
-const GA_TRACKING_ID = 'G-3YRS631DZE'; // Replace with your actual tracking ID
+const GA_TRACKING_ID = 'G-3YRS631DZE';
 
 export default function App({ Component, pageProps }) {
     const router = useRouter();

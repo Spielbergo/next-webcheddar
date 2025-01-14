@@ -3,11 +3,12 @@ import Head from 'next/head';
 import { servicePageOne, servicePageTwo } from '../data';
 
 import FeaturedImage from '../components/FeaturedImage.component';
-import Layout from '../components/Layout';
 import Services from '../components/Services.component';
 import ServiceText from '../components/ServicesText.component'; 
 import ContactSection from '../components/ContactSection.component';
 import TestimonialSlider from '../components/TestimonialSlider.component';
+
+import Layout from '../components/Layout';
 
 const ServicesPage = () => {
     const featuredImage = (

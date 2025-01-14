@@ -2,14 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import Button from './Button.component';
 import services from '../data/services';
-
-import styles from './services.module.css';
 
 import { MdOutlineWeb, MdEvent, MdOutlineShoppingCart, MdOutlineQueryStats } from "react-icons/md";
 import { IoSearchCircle, IoConstructOutline, IoCodeSlashSharp  } from "react-icons/io5";
 import { TiSocialAtCircular } from "react-icons/ti";
+
+import styles from './services.module.css';
 
 const iconComponents = {
     IoCodeSlashSharp: IoCodeSlashSharp,
