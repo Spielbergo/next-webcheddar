@@ -12,6 +12,7 @@ export default function ContactForm() {
     email: '',
     message: '',
   });
+  const [successMessage, setSuccessMessage] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
 
@@ -38,6 +39,7 @@ export default function ContactForm() {
         message: '',
       });
       setError(null);
+      setSuccessMessage('Thank you for your message. We will get back to you shortly!');
     } catch (err) {
       setError(err.message);
     } finally {
@@ -107,6 +109,7 @@ export default function ContactForm() {
       <Button className={buttonStyles.default__flat} type="submit" disabled={isSubmitting}>
         {isSubmitting ? 'Submitting...' : 'Submit'}
       </Button>
+      {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </form>
   );
