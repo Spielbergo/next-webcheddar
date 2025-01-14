@@ -19,7 +19,7 @@ export default async function handler(req, res) {
   });
 
   const mailData = {
-    from: process.env.SMTP_USER, // Ensure this matches your SMTP user
+    from: `Web Cheddar Web Solutions <${process.env.SMTP_USER}>`, // Ensure this matches your SMTP user
     to: `${email}`, 
     subject: `Contact from ${firstName} ${lastName}`,
     text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nMessage: ${message}`,
@@ -29,7 +29,7 @@ export default async function handler(req, res) {
     await transporter.sendMail(mailData);
     res.status(200).json({ status: 'success' });
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error('Error sending email:', error.message);
     res.status(500).json({ status: 'error', error: error.message });
   }
 }
