@@ -22,7 +22,7 @@ export default async function handler(req, res) {
 
   const mailData = {
     from: `Web Cheddar Web Solutions <${process.env.SMTP_USER}>`, // Ensure this matches your SMTP user
-    to: `${email}`, 
+    to: `${SMTP_USER}`, 
     subject: `Contact from ${firstName} ${lastName}`,
     text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nMessage: ${message}`,
   };

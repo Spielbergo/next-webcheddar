@@ -109,7 +109,7 @@ export default function ContactForm() {
       <Button className={buttonStyles.default__flat} type="submit" disabled={isSubmitting}>
         {isSubmitting ? 'Submitting...' : 'Submit'}
       </Button>
-      {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+      {successMessage && <p style={{ color: 'green', fontWeight: '600' }}>{successMessage}</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </form>
   );
