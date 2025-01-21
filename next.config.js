@@ -12,6 +12,21 @@ const nextConfig = {
     loader: 'default',
   },
   trailingSlash: true,
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'next-webcheddar-git-main-spielbergos-projects.vercel.app', // Replace with your actual Vercel domain
+          },
+        ],
+        destination: 'https://webcheddar.ca/',
+        permanent: true,
+      },
+    ];
+  },
   // Add other configurations here as needed
 };
 
