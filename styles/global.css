@@ -1,5 +1,5 @@
 :root {
-  --container-width-small: 1200px;
+  --container-width-small: 1280px;
   --container-width-large: 1400px;
   --max-width: 1100px;
   --border-radius: 12px;
@@ -266,6 +266,10 @@ button:hover {
   border-bottom: 75px solid #000; */
 }
 
+.page_header__bottom {
+  object-position: bottom;
+}
+
 .page_header__text {
   position: absolute;
   display: flex;
@@ -458,6 +462,16 @@ button:hover {
   border-top: 1px solid;
   border-bottom: 1px solid;
   padding: 20px 0;
+}
+
+
+.related-article--container {
+  padding: 15px 0;
+  margin: 25px 0;
+  color: var(--title-color);
+  font-size: 1.2em;
+  border-top: 1px solid var(--primary-bg-color);
+  border-bottom: 1px solid var(--primary-bg-color);
 }
 
 .related_article__container a {

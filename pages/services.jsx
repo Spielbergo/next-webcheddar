@@ -14,9 +14,10 @@ const ServicesPage = () => {
     const featuredImage = (
         <FeaturedImage 
           title="Services" 
-          imageSrc="/header.webp" 
+          imageSrc="/home/hero-bg-wave-2.webp" 
           alt="Services Page - Lines of code in the background" 
           aria-label="Services Page - Lines of code in the background"
+          className="page_header__bottom"
         />
     );
 

@@ -13,7 +13,7 @@ const Sitemap = () => {
     // Fetch WordPress blog posts
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('https://www.webcheddar.ca/blog/wp-json/wp/v2/posts?_embed&per_page=100'); // Adjust per_page as needed
+        const response = await fetch('https://blog.webcheddar.ca/wp-json/wp/v2/posts?_embed&per_page=100'); // Adjust per_page as needed
         if (!response.ok) {
           throw new Error('Failed to fetch blog posts');
         }

@@ -156,6 +156,12 @@ export default function Post({ post, hasTOC, error }) {
             </div>
             <div>{parse(post.content?.rendered || 'No content available')}</div>
           </article>
+
+          {/* <div className={styles.blog_post__sidebar}>
+              <div>
+                
+              </div>
+          </div> */}
         </div>
       </div>
     </>

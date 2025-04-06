@@ -10,6 +10,7 @@
     z-index: 10000;
 }
 
+
 .blog_post__blog_title_container {
     display: flex;
     flex-direction: column;
@@ -63,6 +64,14 @@
     color: var(--text-color);
     background: #222;
     border-radius: 10px
+}
+
+.blog_post__content_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 .blog_post__content h1,
@@ -140,7 +149,7 @@
     }
 
     .blog_post__content {
-        max-width: 85%;
+        max-width: 1100px;
         padding: 50px 61px;
     }
 }
