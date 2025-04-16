@@ -14,6 +14,7 @@ import Footer from '../components/Footer.component';
 import NProgress from 'nprogress';
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 import '../styles/global.css';
 import 'nprogress/nprogress.css';
@@ -112,9 +113,11 @@ export default function App({ Component, pageProps }) {
                 `}
             </Script>
             
-            {/* Vercel Speed Insights */}
+            {/* Vercel Speed Insights and Analytics */}
             <SpeedInsights/>
-            
+            <Analytics />
+
+            {/* Meta Head */}
             <MetaHead />
             <ModalProvider>
                 {isMobile ? <NavigationMobile /> : <Navigation />}
