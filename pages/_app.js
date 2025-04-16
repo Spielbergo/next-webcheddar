@@ -13,6 +13,8 @@ import Footer from '../components/Footer.component';
 
 import NProgress from 'nprogress';
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 import '../styles/global.css';
 import 'nprogress/nprogress.css';
 

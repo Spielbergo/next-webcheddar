@@ -467,7 +467,7 @@ button:hover {
 
 .related-article--container {
   padding: 20px 0 20px 20px;
-  margin: 0 0 20px;
+  margin: 20px 0;
   color: var(--title-color);
   font-size: 1.1em;
   border-top: 1px solid var(--primary-bg-color);

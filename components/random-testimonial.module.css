@@ -20,6 +20,9 @@
 
 .random_testimonial_quote {
     display: flex;
+    position: relative;
+    left: -17px;
+    margin-bottom: 15px;
     font-size: 1.2em;
     font-weight: 400;
 }
