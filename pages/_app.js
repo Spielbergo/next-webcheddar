@@ -111,7 +111,10 @@ export default function App({ Component, pageProps }) {
                   });
                 `}
             </Script>
-
+            
+            {/* Vercel Speed Insights */}
+            <SpeedInsights/>
+            
             <MetaHead />
             <ModalProvider>
                 {isMobile ? <NavigationMobile /> : <Navigation />}
