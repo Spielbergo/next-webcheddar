@@ -464,7 +464,6 @@ button:hover {
   padding: 20px 0;
 }
 
-
 .related-article--container {
   padding: 20px 0 20px 20px;
   margin: 20px 0;
@@ -476,6 +475,27 @@ button:hover {
 
 .related_article__container a {
   color: var(--primary-color);
+}
+
+/* Target Page shortcode */
+.target_shortcode__card {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: var(--border-radius);
+  background-color: #333;
+}
+
+.target_shortcode__image {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+}
+
+.target_shortcode__category {
+  font-weight: 700;
 }
 
 /* @media (prefers-color-scheme: dark) {
