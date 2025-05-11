@@ -149,7 +149,7 @@ export default function Post({ post, hasTOC, prevPost, nextPost, error }) {
 
         <div className={styles.blog_post__content}>
           {hasTOC && (
-            <button onClick={toggleTOC}>
+            <button onClick={toggleTOC} className="blog_post__toc_button">
               {isTOCVisible ? 'Hide Table of Contents' : 'Show Table of Contents'}
             </button>
           )}

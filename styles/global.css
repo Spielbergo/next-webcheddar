@@ -449,6 +449,14 @@ button:hover {
   line-height: 1.3;
 }
 
+.blog_post__toc_button {
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 1rem;  
+  border-radius: 8px;
+}
+
 .blog_post_tldr__section {
   padding: 25px 0;
   margin: 20px 0 20px;
@@ -476,6 +484,12 @@ button:hover {
 
 .related_article__container a {
   color: var(--primary-color);
+}
+
+/* CodePen */
+.codepen_caption {
+  margin-bottom: 20px;
+  font-style: italic;
 }
 
 /* Target Page shortcode */

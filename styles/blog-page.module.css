@@ -151,12 +151,11 @@
   
   .blog_post__nav_link {
     text-decoration: none;
-    color: #0070f3;
-    font-weight: 600;
   }
   
   .blog_post__nav_link:hover {
     text-decoration: underline;
+    text-underline-offset: 5px;
   }
   
 
