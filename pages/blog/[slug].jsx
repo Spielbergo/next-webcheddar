@@ -1,3 +1,5 @@
+// pages/blog/[slug].jsx
+
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
@@ -11,7 +13,7 @@ import globalMeta from '../../data/globalMeta';
 
 import styles from '../../styles/blog-page.module.css';
 
-export default function Post({ post, hasTOC, error }) {
+export default function Post({ post, hasTOC, prevPost, nextPost, error }) {
   const [isTOCVisible, setTOCVisible] = useState(false);
   const contentRef = useRef(null);
   const router = useRouter();
@@ -22,7 +24,7 @@ export default function Post({ post, hasTOC, error }) {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": `${globalMeta.siteName}`,
-    "legalName" : `${globalMeta.siteLegalName}`,
+    "legalName": `${globalMeta.siteLegalName}`,
     "url": `${globalMeta.siteUrl}${router.asPath}`,
     "logo": `${globalMeta.siteUrl}${globalMeta.siteLogo}`,
     "foundingDate": `${globalMeta.siteFoundingDate}`,
@@ -44,15 +46,15 @@ export default function Post({ post, hasTOC, error }) {
     },
     "sameAs": [
       "http://www.facebook.com/webcheddar",
-      "https://www.linkedin.com/company/web-cheddar/",
-    ]}
-  );
+      "https://www.linkedin.com/company/web-cheddar/"
+    ]
+  });
 
   useEffect(() => {
     const toc = contentRef.current?.querySelector('.blog_post__toc');
     if (toc) {
       toc.style.visibility = isTOCVisible ? 'visible' : 'hidden';
-      toc.style.maxHeight = isTOCVisible ? '1000px' : '0'; // Adjust as needed
+      toc.style.maxHeight = isTOCVisible ? '1000px' : '0';
       toc.style.overflow = 'hidden';
       toc.style.transition = 'visibility 0.3s, max-height 0.4s ease-in-out';
     }
@@ -85,7 +87,7 @@ export default function Post({ post, hasTOC, error }) {
   return (
     <>
       {includesCodePen && (
-        <Script 
+        <Script
           src="https://cpwebassets.codepen.io/assets/embed/ei.js"
           strategy="lazyOnload"
         />
@@ -111,15 +113,18 @@ export default function Post({ post, hasTOC, error }) {
         {/* Schema */}
         <script
           type="application/ld+json"
-        	dangerouslySetInnerHTML={{__html: structuredLd}}
-        	key="item-jsonld"
-    	  />
+          dangerouslySetInnerHTML={{ __html: structuredLd }}
+          key="item-jsonld"
+        />
       </Head>
 
-      <div className={styles.blog_post__container}>        
+      <div className={styles.blog_post__container}>
         <div className={styles.blog_post__image_container}>
           <div className={styles.blog_post__blog_title_container}>
             <div><h1 className={styles.blog_post__blog_title}>{parse(post.title?.rendered || 'Untitled')}</h1></div>
+            <div>
+              <h2 className={styles.blog_post__publisher}>Published by: Scott Sutherland</h2>
+            </div>
             <div className={styles.blog_post__breadcrumbs}>
               <Link href="/">Home</Link>
               {' > '}
@@ -139,11 +144,10 @@ export default function Post({ post, hasTOC, error }) {
               height={550}
               priority
             />
-          )}          
+          )}
         </div>
 
-        <div className={styles.blog_post__content}>      
-
+        <div className={styles.blog_post__content}>
           {hasTOC && (
             <button onClick={toggleTOC}>
               {isTOCVisible ? 'Hide Table of Contents' : 'Show Table of Contents'}
@@ -151,17 +155,22 @@ export default function Post({ post, hasTOC, error }) {
           )}
 
           <article ref={contentRef}>
-            <div>
-              <h2>Published by: Scott Sutherland</h2>
-            </div>
             <div>{parse(post.content?.rendered || 'No content available')}</div>
           </article>
 
-          {/* <div className={styles.blog_post__sidebar}>
-              <div>
-                
-              </div>
-          </div> */}
+          {/* Navigation Buttons */}
+          <div className={styles.blog_post__nav}>
+            {prevPost && (
+              <Link href={`/blog/${prevPost.slug}`} className={styles.blog_post__nav_link}>
+                ← {prevPost.title.rendered}
+              </Link>
+            )}
+            {nextPost && (
+              <Link href={`/blog/${nextPost.slug}`} className={styles.blog_post__nav_link}>
+                {nextPost.title.rendered} →
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </>
@@ -186,15 +195,36 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   try {
+    // Fetch the current post
     const response = await fetch(`https://blog.webcheddar.ca/wp-json/wp/v2/posts?_embed&slug=${params.slug}`);
     const posts = await response.json();
     const post = posts[0] || null;
 
+    if (!post) {
+      return { notFound: true };
+    }
+
     const hasTOC = post?.content?.rendered?.includes('class="blog_post__toc"');
 
-    return { props: { post, hasTOC }, revalidate: 60 };
+    // Get the first category ID
+    const categoryId = post.categories?.[0] || null;
+
+    let prevPost = null;
+    let nextPost = null;
+
+    if (categoryId) {
+      // Fetch all posts in the same category, ordered by date
+      const categoryPostsRes = await fetch(`https://blog.webcheddar.ca/wp-json/wp/v2/posts?categories=${categoryId}&_fields=id,slug,title&per_page=100&orderby=date&order=asc`);
+      const categoryPosts = await categoryPostsRes.json();
+
+      const currentIndex = categoryPosts.findIndex(p => p.id === post.id);
+      prevPost = currentIndex > 0 ? categoryPosts[currentIndex - 1] : null;
+      nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[currentIndex + 1] : null;
+    }
+
+    return { props: { post, hasTOC, prevPost, nextPost }, revalidate: 60 };
   } catch (error) {
     console.error('Error fetching post:', error);
-    return { props: { post: null, hasTOC: false, error: { message: 'Failed to fetch post data.' } }, revalidate: 60 };
+    return { props: { post: null, hasTOC: false, prevPost: null, nextPost: null, error: { message: 'Failed to fetch post data.' } }, revalidate: 60 };
   }
 }

@@ -482,7 +482,7 @@ button:hover {
 .target_shortcode__card {
   display: flex;
   align-items: center;
-  gap: 50px;
+  flex-wrap: wrap;
   padding: 20px;
   margin: 20px 0;
   border-radius: var(--border-radius);
@@ -490,7 +490,6 @@ button:hover {
 }
 
 .target_shortcode__image {
-  max-width: 300px;
   width: 100%;
   height: auto;
 }
@@ -502,6 +501,17 @@ button:hover {
 .target_shortcode__excerpt {
   max-width: 450px;
   width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .target_shortcode__card {
+    flex-wrap: nowrap;
+    gap: 50px;
+  }
+
+  .target_shortcode__image {
+    max-width: 300px;
+  }
 }
 
 /* @media (prefers-color-scheme: dark) {
