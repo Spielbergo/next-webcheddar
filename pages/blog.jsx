@@ -4,32 +4,55 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import parse from 'html-react-parser';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 
 import FeaturedImage from '../components/FeaturedImage.component';
 import Layout from '../components/Layout';
 
 import styles from '../styles/blog-index-page.module.css';
 
-export default function Blog({ initialPosts, totalPages, allCategories, error }) {
-  const [posts, setPosts] = useState(initialPosts);
+export default function Blog() {
+  const [posts, setPosts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [filteredPosts, setFilteredPosts] = useState(initialPosts);
+  const [filteredPosts, setFilteredPosts] = useState([]);
   const [currentCategory, setCurrentCategory] = useState('All');
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
   const [isClient, setIsClient] = useState(false);
   const [loadError, setLoadError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
-    filterCategoriesWithPosts();
-  }, []);
+    async function fetchData() {
+      NProgress.start();
+      setLoading(true);
+      try {
+        const postsRes = await fetch('https://blog.webcheddar.ca/wp-json/wp/v2/posts?_embed&per_page=40');
+        if (!postsRes.ok) throw new Error(`Failed to fetch posts: ${postsRes.status}`);
+        const postsData = await postsRes.json();
+        setPosts(postsData);
+        setFilteredPosts(postsData);
+        setTotalPages(Math.ceil(postsData.length / 40));
 
-  const filterCategoriesWithPosts = () => {
-    const categoriesWithPosts = allCategories.filter(category => 
-      initialPosts.some(post => post.categories.includes(category.id))
-    );
-    setCategories([{ id: 'All', name: 'All' }, ...categoriesWithPosts]);
-  };
+        const catsRes = await fetch('https://blog.webcheddar.ca/wp-json/wp/v2/categories');
+        if (!catsRes.ok) throw new Error(`Failed to fetch categories: ${catsRes.status}`);
+        const catsData = await catsRes.json();
+
+        const categoriesWithPosts = catsData.filter(category =>
+          postsData.some(post => post.categories.includes(category.id))
+        );
+        setCategories([{ id: 'All', name: 'All' }, ...categoriesWithPosts]);
+      } catch (err) {
+        setLoadError('Failed to fetch data.');
+      } finally {
+        setLoading(false);
+        NProgress.done();
+      }
+    }
+    fetchData();
+  }, []);
 
   const handleCategoryChange = (categoryId) => {
     setCurrentCategory(categoryId);
@@ -49,11 +72,10 @@ export default function Blog({ initialPosts, totalPages, allCategories, error })
           throw new Error(`API call failed: ${response.status}`);
         }
         const newPosts = await response.json();
-        setPosts([...posts, ...newPosts]);
-        setFilteredPosts([...filteredPosts, ...newPosts]);
+        setPosts(prev => [...prev, ...newPosts]);
+        setFilteredPosts(prev => [...prev, ...newPosts]);
         setCurrentPage(nextPage);
       } catch (error) {
-        console.error('Error fetching more posts:', error);
         setLoadError('Failed to load more posts.');
       }
     }
@@ -67,8 +89,8 @@ export default function Blog({ initialPosts, totalPages, allCategories, error })
     />
   );
 
-  if (error) {
-    return <div className='error_message__loading'>Error loading blogs: {error.message}</div>;
+  if (loadError) {
+    return <div className='error_message__loading'>Error loading blogs: {loadError}</div>;
   }
 
   return (
@@ -124,8 +146,8 @@ export default function Blog({ initialPosts, totalPages, allCategories, error })
             ) : (
               !isClient && <div>Loading posts...</div>
             )}
-            {isClient && filteredPosts.length === 0 && <div>No posts found.</div>}
-            {loadError && <div>{loadError}</div>}
+            {isClient && filteredPosts.length === 0 && <div>Loading Posts...</div>}
+            {loadError && <div>{loadError}No posts found.</div>}
           </div>
           {isClient && currentPage < totalPages && (
             <button onClick={loadMorePosts}>Load More</button>
@@ -138,36 +160,11 @@ export default function Blog({ initialPosts, totalPages, allCategories, error })
 }
 
 export async function getStaticProps() {
-  try {
-    const postsResponse = await fetch('https://blog.webcheddar.ca/wp-json/wp/v2/posts?_embed&per_page=40');
-    if (!postsResponse.ok) {
-      throw new Error(`Failed to fetch posts: ${postsResponse.status}`);
-    }
-    const initialPosts = await postsResponse.json();
-
-    const categoriesResponse = await fetch('https://blog.webcheddar.ca/wp-json/wp/v2/categories');
-    if (!categoriesResponse.ok) {
-      throw new Error(`Failed to fetch categories: ${categoriesResponse.status}`);
-    }
-    const allCategories = await categoriesResponse.json();
-
-    return {
-      props: {
-        initialPosts,
-        allCategories,
-        totalPages: Math.ceil(initialPosts.length / 40),
-      },
-      revalidate: 86400, // 24 hours
-    };
-  } catch (error) {
-    console.error('Error in getStaticProps:', error);
-    return {
-      props: {
-        initialPosts: [],
-        allCategories: [],
-        totalPages: 0,
-        error: { message: 'Failed to fetch data.' },
-      },
-    };
-  }
+  return {
+    props: {
+      initialPosts: [],
+      allCategories: [],
+      totalPages: 0,
+    },
+  };
 }
