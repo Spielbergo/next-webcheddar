@@ -5,13 +5,13 @@ import { FaFacebookF, FaGithub, FaLinkedin, FaMapMarkerAlt, FaShopify } from "re
 import { SiNextdotjs, SiPhp, SiWoocommerce  } from "react-icons/si";
 
 export const navigation = [
-    {
-        id: "home",
-        anchor: 'Home',
-        link: '/',
-        subLinks: [], 
-        subLink_class: 'subLinks__parent',
-    },
+    // {
+    //     id: "home",
+    //     anchor: 'Home',
+    //     link: '/',
+    //     subLinks: [], 
+    //     subLink_class: 'subLinks__parent',
+    // },
     {
         id: "about",
         anchor: 'About',
