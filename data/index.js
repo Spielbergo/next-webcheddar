@@ -216,7 +216,15 @@ export const featuredBlogs = [
     }
 ]
 
-export const projectsHome = [
+export const projectsHome = [{
+        id: 'project-0',
+        class: 'slide-right',
+        title: 'ClipifyIt',
+        text: 'ClipifyIt',
+        image: '/projects/clipifyit-folders-768.webp',
+        alt: 'ClipifyIt Website Screenshot',
+        url: 'https://clipifyit.com',
+    },
     {
         id: 'project-1',
         class: 'slide-right',
@@ -244,15 +252,15 @@ export const projectsHome = [
         alt: 'Rosemary Hutton Website Screenshot',
         url: 'https://www.rohutton.com',
     },
-    {
-        id: 'project-4',
-        class: 'slide-right',
-        title: 'Organize This',
-        text: 'Oragnizers',
-        image: '/projects/org-this.webp',
-        alt: 'Organize This Website Screenshot',
-        url: 'https://www.organizethisto.ca/',
-    },
+    // {
+    //     id: 'project-4',
+    //     class: 'slide-right',
+    //     title: 'Organize This',
+    //     text: 'Oragnizers',
+    //     image: '/projects/org-this.webp',
+    //     alt: 'Organize This Website Screenshot',
+    //     url: 'https://www.organizethisto.ca/',
+    // },
     {
         id: 'project-5',
         class: 'slide-up delay-1',
