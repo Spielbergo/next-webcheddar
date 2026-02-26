@@ -34,9 +34,9 @@ const Services = () => {
                     const IconComponent = iconComponents[service.icon];
                     return (
                         <div key={service.id} className={`${styles.services_home__card} ${service.class} shadow`}>                            
-                            <div className={styles.services_home__icon}>
+                            {/* <div className={styles.services_home__icon}>
                                 {IconComponent && <IconComponent />}
-                            </div>
+                            </div> */}
                             <Link href={service.path}>
                                 <h2>{service.title}</h2>
                             </Link>
